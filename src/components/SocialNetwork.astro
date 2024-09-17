@@ -1,0 +1,86 @@
+---
+interface Props {
+  icon: string;
+  alt: string;
+  href: string;
+  text: string;
+  title: string;
+}
+
+const { icon, alt, title, href, text } = Astro.props;
+---
+
+<style>
+  img {
+    width: 2rem;
+    height: 2rem;
+    max-height: 100%;
+    object-fit: contain;
+    padding: 0.25rem;
+    opacity: 0.5;
+  }
+
+  a:hover > img {
+    opacity: 1;
+  }
+
+  img[src$='x.svg'] {
+    background-color: black;
+    border-radius: 5rem;
+  }
+
+  a {
+    --local-link-rgb-color: var(--link-rgb-color, 10, 10, 10);
+    --local-link-alpha-color: var(--link-alpha-color, 0.5);
+    --local-link-color: rgba(var(--local-link-rgb-color), var(--local-link-alpha-color));
+
+    color: var(--link-color, var(--local-link-color));
+
+    border-radius: 0.5rem;
+    width: 18rem;
+    max-width: 90%;
+    padding: 0.5rem;
+    margin: 0 auto;
+    font-size: 1.25rem;
+    text-transform: uppercase;
+
+    display: flex;
+    flex-direction: row;
+    place-items: center;
+    justify-items: center;
+    gap: 1rem;
+  }
+
+  a:visited {
+    --local-link-rgb-color: var(--visited-link-rgb-color, 10, 10, 10);
+    --local-link-alpha-color: var(--visited-link-alpha-color, 0.5);
+    --local-link-color: rgba(var(--local-link-rgb-color), var(--local-link-alpha-color));
+
+    color: var(--link-color, var(--local-link-color));
+  }
+
+  a:hover,
+  a:focus {
+    --local-link-rgb-color: var(--hover-link-rgb-color, 10, 10, 10);
+    --local-link-alpha-color: var(--hover-link-alpha-color, 1);
+    --local-link-color: rgba(var(--local-link-rgb-color), var(--local-link-alpha-color));
+
+    color: var(--link-color, var(--local-link-color));
+  }
+
+  @media (prefers-color-scheme: dark) {
+    a,
+    a:visited,
+    a:hover,
+    a:focus {
+      --link-rgb-color: 240, 240, 240;
+      --hover-link-rgb-color: var(--link-rgb-color);
+      --visited-link-rgb-color: var(--link-rgb-color);
+    }
+  }
+</style>
+
+<a href={href} title={title}>
+  <img src=`/assets/images/${icon}.svg` alt={alt} aria-hidden='true' width='32' height='32' />
+  <span>{text}</span>
+</a>

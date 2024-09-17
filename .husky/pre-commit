@@ -1,0 +1,3 @@
+bun fmt
+bunx lint-staged
+bun check

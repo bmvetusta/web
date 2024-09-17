@@ -1,17 +1,59 @@
 {
-  "name": "",
+  "name": "balonmanovetusta",
   "type": "module",
   "version": "0.0.1",
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
+    "check": "astro check",
     "build": "astro check && astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "prepare": "husky",
+    "fmt": "prettier . --write",
+    "lint": "eslint --no-error-on-unmatched-pattern --no-warn-ignored --cache --fix **/*.{js,jsx,ts,tsx,astro} src"
   },
   "dependencies": {
-    "astro": "^4.15.6",
-    "@astrojs/check": "^0.9.3",
-    "typescript": "^5.6.2"
+    "@astrojs/check": "0.9.3",
+    "@astrojs/react": "3.6.2",
+    "@types/react": "18.3.7",
+    "@types/react-dom": "18.3.0",
+    "astro": "5.0.0-beta.1",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "typescript": "5.6.2"
+  },
+  "devDependencies": {
+    "husky": "9.1.6",
+    "lint-staged": "15.2.10",
+    "prettier": "3.3.3",
+    "prettier-plugin-astro": "0.14.1",
+    "@typescript-eslint/parser": "8.6.0",
+    "eslint": "9.10.0",
+    "eslint-plugin-astro": "1.2.4",
+    "eslint-plugin-jsx-a11y": "6.10.0"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx,astro}": "bun lint"
+  },
+  "prettier": {
+    "plugins": [
+      "prettier-plugin-astro"
+    ],
+    "overrides": [
+      {
+        "files": "*.astro",
+        "options": {
+          "parser": "astro"
+        }
+      }
+    ],
+    "trailingComma": "es5",
+    "tabWidth": 2,
+    "semi": true,
+    "singleQuote": true,
+    "jsxSingleQuote": true,
+    "quoteProps": "consistent",
+    "printWidth": 100
   }
 }

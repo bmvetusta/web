@@ -1,16 +1,128 @@
 ---
+import { Image } from 'astro:assets';
+import SocialNetwork from '../components/SocialNetwork.astro';
 
+import logo from '../assets/images/abonate2425.png';
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
+<html lang='en'>
+  <head>
+    <meta charset='utf-8' />
+    <link rel='icon' type='image/svg+xml' href='/favicon.svg' />
+    <meta name='viewport' content='width=device-width' />
+    <meta name='generator' content={Astro.generator} />
+    <title>Club Balonmano Vetusta</title>
+    <style>
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+
+      * {
+        box-sizing: border-box;
+        min-width: 0;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode',
+          Geneva, Verdana, sans-serif;
+
+        margin: 0 auto;
+        max-width: 100dvw;
+        min-height: 100dvh;
+        max-height: 100dvh;
+
+        color-scheme: light dark;
+        background-color: canvas;
+        color: canvasText;
+
+        direction: ltr;
+        display: flex;
+        flex-direction: column;
+        place-items: center;
+        align-items: center;
+        gap: 1rem;
+      }
+
+      img {
+        max-width: min(30dvw, 256px);
+        object-fit: contain;
+        margin: 0 auto;
+      }
+
+      a {
+        opacity: 0.6;
+
+        display: flex;
+        flex-direction: column;
+        justify-items: center;
+        align-items: center;
+      }
+
+      a:visited {
+        opacity: 0.6;
+      }
+
+      a:hover,
+      a:focus {
+        opacity: 1;
+      }
+
+      @media (prefers-color-scheme: dark) {
+        a,
+        a:visited,
+        a:hover,
+        a:focus {
+          --link-rgb-color: 240, 240, 240;
+          --hover-link-rgb-color: var(--link-rgb-color);
+          --visited-link-rgb-color: var(--link-rgb-color);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <a href='/abonate' title='Abonate y apoyanos. Contamos contigo'
+      ><Image
+        src={logo}
+        alt='Cartel de la campaña de abonados 2024/25'
+        width={300}
+        height={600}
+        loading='eager'
+      /></a
+    >
+
+    <SocialNetwork
+      icon='vetusta'
+      href='/abonate'
+      text='¡Hazte socio y ven a vernos!'
+      alt='Escudo del club balonmano vetusta'
+      title='Enlace al formulario para hacerse socio del club'
+    />
+
+    <SocialNetwork
+      icon='yt'
+      href='https://youtube.com/@balonmanovetusta?sub_confirmation=1'
+      text='¡Suscribete! Para ver nuestros partidos'
+      alt='Logo de Youtube'
+      title='Suscribete a nuestro canal de Youtube'
+    />
+
+    <SocialNetwork
+      icon='x'
+      href='https://x.com/BM_Vetusta'
+      text='@BM_Vetusta'
+      alt='Logo de X (Twitter)'
+      title='Enlace a la cuenta en X (Twitter) del club'
+    />
+
+    <SocialNetwork
+      icon='instagram'
+      href='https://instagram.com/balonmanovetusta'
+      text='@balonmanovetusta'
+      alt='Logo de Instagram'
+      title='Enlace a la cuenta en Instagram del club'
+    />
+  </body>
 </html>
