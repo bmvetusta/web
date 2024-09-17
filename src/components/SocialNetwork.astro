@@ -78,6 +78,12 @@ const { icon, alt, title, href, text } = Astro.props;
       --visited-link-rgb-color: var(--link-rgb-color);
     }
   }
+
+  @media (hover: none) {
+    a {
+      opacity: 1 !important;
+    }
+  }
 </style>
 
 <a href={href} title={title}>
