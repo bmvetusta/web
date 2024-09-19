@@ -34,11 +34,12 @@ export default defineConfig({
   integrations: [react()],
   output: 'server',
   adapter: vercel({
+    includeFiles: [
+      'public/assets/fonts/alumni/AlumniSans-Bold.ttf',
+      'public/assets/fonts/alumni/AlumniSans-BoldItalic.ttf',
+    ],
     webAnalytics: { enabled: true },
     imageService: true,
     devImageService: 'sharp',
-    isr: {
-      expiration: 3600,
-    },
   }),
 });
