@@ -1,8 +1,9 @@
 ---
 import { Image } from 'astro:assets';
+import advertMemberImage from '../assets/images/abonate2425.png';
 import SocialNetwork from '../components/SocialNetwork.astro';
 
-import advertMemberImage from '../assets/images/abonate2425.png';
+export const prerender = true;
 
 const canonicalUrl = Astro.url.href;
 const title = `Club Balonmano Vetusta 🤾‍♂️ - Primera Nacional - Asturias`;
