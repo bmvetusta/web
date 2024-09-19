@@ -51,7 +51,7 @@ const ogImage = advertMemberImage; // { src, width, height}
 
     <meta name='generator' content={Astro.generator} />
     <title>Club Balonmano Vetusta</title>
-    <style>
+    <style is:global>
       *::before,
       *::after {
         box-sizing: border-box;
@@ -85,20 +85,8 @@ const ogImage = advertMemberImage; // { src, width, height}
         gap: 1rem;
       }
 
-      img {
-        max-width: min(30dvw, 256px);
-        height: auto;
-        object-fit: contain;
-        margin: 0 auto;
-      }
-
       a {
         opacity: 0.6;
-
-        display: flex;
-        flex-direction: column;
-        justify-items: center;
-        align-items: center;
       }
 
       a:visited {
@@ -125,6 +113,21 @@ const ogImage = advertMemberImage; // { src, width, height}
         a {
           opacity: 1 !important;
         }
+      }
+    </style>
+    <style>
+      img {
+        max-width: min(30dvw, 256px);
+        height: auto;
+        object-fit: contain;
+        margin: 0 auto;
+      }
+
+      a {
+        display: flex;
+        flex-direction: column;
+        justify-items: center;
+        align-items: center;
       }
     </style>
   </head>
