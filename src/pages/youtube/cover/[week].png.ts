@@ -68,6 +68,8 @@ export async function GET({ site, params }: APIContext<{ week: number }>) {
       throw new Error('No match found');
     }
 
+    console.log('local file url', import.meta.url);
+
     const fonts = await getFontOptionsFromFontPaths(
       '../../../assets/fonts/alumni-sans/AlumniSans-BoldItalic.ttf',
       '../../../assets/fonts/alumni-sans/AlumniSans-Bold.ttf'
