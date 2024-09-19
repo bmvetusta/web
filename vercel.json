@@ -1,0 +1,47 @@
+{
+  "version": 2,
+  "trailingSlash": true,
+  "redirects": [
+    {
+      "source": "/abonate/",
+      "destination": "https://docs.google.com/forms/d/e/1FAIpQLSdTxjkWce3ZmPJuYLygisxlAqtWZc35ipfOWx4_kDTClBw47g/viewform"
+    },
+    {
+      "source": "/abono/",
+      "destination": "https://docs.google.com/forms/d/e/1FAIpQLSdTxjkWce3ZmPJuYLygisxlAqtWZc35ipfOWx4_kDTClBw47g/viewform"
+    },
+    {
+      "source": "/twitter/",
+      "destination": "https://x.com/BM_Vetusta"
+    },
+    {
+      "source": "/x/",
+      "destination": "https://x.com/BM_Vetusta"
+    },
+    {
+      "source": "/instagram/",
+      "destination": "https://instagram.com/balonmanovetusta"
+    },
+    {
+      "source": "/youtube/",
+      "destination": "https://www.youtube.com/@balonmanovetusta?sub_confirmation=1"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/(.*).(avif|webp|svg|png|jpg)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, stale-while-revalidate=120"
+        }
+      ]
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/proxy/:match*",
+      "destination": "/:match*"
+    }
+  ]
+}

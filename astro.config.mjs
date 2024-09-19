@@ -1,14 +1,12 @@
 // @ts-check
 import react from '@astrojs/react';
+import vercel from '@astrojs/vercel/serverless';
 import { defineConfig, envField } from 'astro/config';
 import { site } from './.meta/site-url.mjs';
 
 // https://astro.build/config
 export default defineConfig({
   site: site.href,
-  // redirects: {
-  //   '/abonate': 'https://abonate.balonmanovetusta.com', // Done on Cloudflare
-  // },
   env: {
     schema: {
       RFEBM_API_BASE_HREF: envField.string({
@@ -34,5 +32,13 @@ export default defineConfig({
     },
   },
   integrations: [react()],
-  output: 'static',
+  output: 'server',
+  adapter: vercel({
+    webAnalytics: { enabled: true },
+    imageService: true,
+    devImageService: 'sharp',
+    isr: {
+      expiration: 3600,
+    },
+  }),
 });
