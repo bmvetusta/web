@@ -1,8 +1,6 @@
 import { ImageResponse } from '@vercel/og';
 import type { APIContext } from 'astro';
 import { PRIMERA_GROUP_ID, PRIMERA_TEAM_ID } from 'astro:env/server';
-import { readFile } from 'node:fs/promises';
-import { createRequire } from 'node:module';
 import { YoutubeCover } from '../../../components/youtube-cover/react';
 import { rfebmGetCalendar } from '../../../services/rfebm/get-calendar';
 
@@ -25,15 +23,13 @@ const getWeightNumber = (fileLower: string) => {
 
 async function getFontOptionsFromFontPaths(...fontPaths: string[]) {
   return await Promise.all(
-    fontPaths.map(async (fontFilePath) => {
-      const fontFilePathLowerCase = fontFilePath.toLocaleLowerCase('es-ES').replaceAll(' ', '');
+    fontPaths.map(async (fontUrlPathname) => {
+      const fontFilePathLowerCase = fontUrlPathname.toLocaleLowerCase('es-ES').replaceAll(' ', '');
       const name = 'Alumni Sans';
-      const weight = getWeightNumber(fontFilePath);
+      const weight = getWeightNumber(fontUrlPathname);
       const style = fontFilePathLowerCase.includes('italic') ? 'italic' : 'normal';
 
-      const require = createRequire(import.meta.url);
-      const fontPath = require.resolve(fontFilePath);
-      const data = await readFile(fontPath);
+      const data = await fetch(fontUrlPathname).then((res) => res.arrayBuffer());
 
       return {
         name,
@@ -68,11 +64,9 @@ export async function GET({ site, params }: APIContext<{ week: number }>) {
       throw new Error('No match found');
     }
 
-    console.log('local file url', import.meta.url);
-
     const fonts = await getFontOptionsFromFontPaths(
-      '../../../assets/fonts/alumni-sans/AlumniSans-BoldItalic.ttf',
-      '../../../assets/fonts/alumni-sans/AlumniSans-Bold.ttf'
+      '/assets/fonts/alumni/AlumniSans-BoldItalic.ttf',
+      '/assets/fonts/alumni/AlumniSans-Bold.ttf'
     );
     const imgUrl = match.visitorTeam.shieldUrl;
 

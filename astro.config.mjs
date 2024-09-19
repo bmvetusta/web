@@ -34,10 +34,6 @@ export default defineConfig({
   integrations: [react()],
   output: 'server',
   adapter: vercel({
-    includeFiles: [
-      './src/assets/fonts/alumni-sans/AlumniSans-Bold.ttf',
-      './src/assets/fonts/alumni-sans/AlumniSans-BoldItalic.ttf',
-    ],
     webAnalytics: { enabled: true },
     imageService: true,
     devImageService: 'sharp',
