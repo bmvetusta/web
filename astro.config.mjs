@@ -1,11 +1,38 @@
 // @ts-check
 import react from '@astrojs/react';
-import { defineConfig } from 'astro/config';
+import { defineConfig, envField } from 'astro/config';
+import { site } from './.meta/site-url.mjs';
 
 // https://astro.build/config
 export default defineConfig({
-  redirects: {
-    '/abonate': 'https://abonate.balonmanovetusta.com',
+  site: site.href,
+  // redirects: {
+  //   '/abonate': 'https://abonate.balonmanovetusta.com', // Done on Cloudflare
+  // },
+  env: {
+    schema: {
+      RFEBM_API_BASE_HREF: envField.string({
+        context: 'server',
+        access: 'public',
+        optional: false,
+      }),
+      PRIMERA_GROUP_ID: envField.number({
+        context: 'server',
+        access: 'public',
+        optional: false,
+      }),
+      PRIMERA_TEAM_ID: envField.number({
+        context: 'server',
+        access: 'public',
+        optional: false,
+      }),
+      SEASON_ID: envField.number({
+        context: 'server',
+        access: 'public',
+        optional: false,
+      }),
+    },
   },
   integrations: [react()],
+  output: 'static',
 });
