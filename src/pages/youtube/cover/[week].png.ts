@@ -1,6 +1,9 @@
 import { ImageResponse } from '@vercel/og';
 import type { APIContext } from 'astro';
 import { PRIMERA_GROUP_ID, PRIMERA_TEAM_ID } from 'astro:env/server';
+import { readFile } from 'node:fs/promises';
+import { createRequire } from 'node:module';
+import { join } from 'node:path';
 import { YoutubeCover } from '../../../components/youtube-cover/react';
 import { rfebmGetCalendar } from '../../../services/rfebm/get-calendar';
 
@@ -21,18 +24,19 @@ const getWeightNumber = (fileLower: string) => {
   return 400;
 };
 
-async function getFontOptionsFromFontPaths(...fontPaths: (string | URL)[]) {
+async function getFontOptionsFromFontPaths(...fontPaths: string[]) {
   return await Promise.all(
-    fontPaths.map(async (fontUrlPathname) => {
-      const fontFilePathLowerCase = fontUrlPathname
+    fontPaths.map(async (fontPath) => {
+      const fontFilePathLowerCase = fontPath
         .toString()
         .toLocaleLowerCase('es-ES')
         .replaceAll(' ', '');
       const name = 'Alumni Sans';
-      const weight = getWeightNumber(fontUrlPathname.toString());
+      const weight = getWeightNumber(fontPath.toString());
       const style = fontFilePathLowerCase.includes('italic') ? 'italic' : 'normal';
-
-      const data = await fetch(fontUrlPathname).then((res) => res.arrayBuffer());
+      const require = createRequire(import.meta.url);
+      const resolvedFontPath = require.resolve(fontPath);
+      const data = await readFile(resolvedFontPath); // Font as buffer
 
       return {
         name,
@@ -67,9 +71,10 @@ export async function GET({ site, params }: APIContext<{ week: number }>) {
       throw new Error('No match found');
     }
 
+    const fontPath = import.meta.env.DEV ? '../../../../public' : '.';
     const fonts = await getFontOptionsFromFontPaths(
-      new URL('/assets/fonts/alumni/AlumniSans-BoldItalic.ttf', site.href),
-      new URL('/assets/fonts/alumni/AlumniSans-Bold.ttf', site.href)
+      join(fontPath, '/assets/fonts/alumni/AlumniSans-BoldItalic.ttf'),
+      join(fontPath, '/assets/fonts/alumni/AlumniSans-Bold.ttf')
     );
     const imgUrl = match.visitorTeam.shieldUrl;
 
