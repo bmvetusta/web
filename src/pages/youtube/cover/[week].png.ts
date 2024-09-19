@@ -21,12 +21,15 @@ const getWeightNumber = (fileLower: string) => {
   return 400;
 };
 
-async function getFontOptionsFromFontPaths(...fontPaths: string[]) {
+async function getFontOptionsFromFontPaths(...fontPaths: (string | URL)[]) {
   return await Promise.all(
     fontPaths.map(async (fontUrlPathname) => {
-      const fontFilePathLowerCase = fontUrlPathname.toLocaleLowerCase('es-ES').replaceAll(' ', '');
+      const fontFilePathLowerCase = fontUrlPathname
+        .toString()
+        .toLocaleLowerCase('es-ES')
+        .replaceAll(' ', '');
       const name = 'Alumni Sans';
-      const weight = getWeightNumber(fontUrlPathname);
+      const weight = getWeightNumber(fontUrlPathname.toString());
       const style = fontFilePathLowerCase.includes('italic') ? 'italic' : 'normal';
 
       const data = await fetch(fontUrlPathname).then((res) => res.arrayBuffer());
@@ -65,8 +68,8 @@ export async function GET({ site, params }: APIContext<{ week: number }>) {
     }
 
     const fonts = await getFontOptionsFromFontPaths(
-      '/assets/fonts/alumni/AlumniSans-BoldItalic.ttf',
-      '/assets/fonts/alumni/AlumniSans-Bold.ttf'
+      new URL('/assets/fonts/alumni/AlumniSans-BoldItalic.ttf', site.href),
+      new URL('/assets/fonts/alumni/AlumniSans-Bold.ttf', site.href)
     );
     const imgUrl = match.visitorTeam.shieldUrl;
 
