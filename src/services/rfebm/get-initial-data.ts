@@ -9,7 +9,7 @@ export async function rfebmGetInitialData() {
   const data = await fetch(url, {
     method: 'POST',
     headers: getRFEBMHeaders(),
-  }).then((res) => res.text());
+  }).then((res) => res.json());
 
   return data;
 }

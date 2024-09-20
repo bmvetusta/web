@@ -1,11 +1,11 @@
 import { ImageResponse } from '@vercel/og';
 import type { APIContext } from 'astro';
-import { PRIMERA_GROUP_ID, PRIMERA_TEAM_ID } from 'astro:env/server';
+import { PRIMERA_TEAM_ID } from 'astro:env/server';
 import { readFile } from 'node:fs/promises';
 import { createRequire } from 'node:module';
 import { join } from 'node:path';
 import { YoutubeCover } from '../../../components/youtube-cover/react';
-import { rfebmGetCalendar } from '../../../services/rfebm/get-calendar';
+import { getWeekData } from '../../../services/get-week-data';
 
 export const prerender = false;
 
@@ -46,29 +46,6 @@ async function getFontOptionsFromFontPaths(...fontPaths: string[]) {
       } as any;
     })
   );
-}
-
-export async function getWeekData(week?: number | string | null) {
-  if (!week) {
-    return;
-  }
-
-  const weekNumber = +week;
-  if (Number.isNaN(weekNumber) || !Number.isFinite(weekNumber) || weekNumber < 1) {
-    return;
-  }
-
-  const data = await rfebmGetCalendar(PRIMERA_GROUP_ID);
-  if (!data) {
-    return;
-  }
-
-  const match = data.find((m) => m.week === weekNumber);
-  if (!match) {
-    return;
-  }
-
-  return match;
 }
 
 export async function GET({ site, params }: APIContext<{ week: number }>) {

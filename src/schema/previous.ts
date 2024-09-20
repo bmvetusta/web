@@ -46,5 +46,4 @@ export const previousSchema = z
     referees: p.arbitros,
     localTeamId: p.id_local,
     visitorTeamId: p.id_visitante,
-  }))
-  .pipe(pipedPreviousSchema);
+  }));

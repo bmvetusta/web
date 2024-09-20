@@ -11,13 +11,16 @@ export async function rfebmGetPreviewData(matchId: string | number) {
   const responseData = await fetch(url, {
     method: 'POST',
     headers: getRFEBMHeaders(),
-  }).then((res) => res.text());
+    body,
+  }).then((res) => res.json());
 
-  const parsedData = previousSchema.safeParse(responseData);
+  const parsedData = previousSchema.safeParse(responseData?.previo);
 
   if (parsedData.success) {
     return parsedData.data;
   }
+
+  console.error(parsedData.error);
 
   return null;
 }
