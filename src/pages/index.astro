@@ -1,8 +1,8 @@
 ---
+import SpeedInsights from '@vercel/speed-insights/astro';
 import { Image } from 'astro:assets';
 import advertMemberImage from '../assets/images/abonate2425.png';
 import SocialNetwork from '../components/SocialNetwork.astro';
-
 export const prerender = true;
 
 const canonicalUrl = Astro.url.href;
@@ -135,6 +135,7 @@ const ogImage = advertMemberImage; // { src, width, height}
         align-items: center;
       }
     </style>
+    <SpeedInsights />
   </head>
   <body>
     <a href='/abonate' title='Abonate y apoyanos. Contamos contigo'
