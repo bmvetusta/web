@@ -6,19 +6,26 @@ export function YoutubeCover({
   weekDate,
   time,
   visitorShieldSrc,
+  isLocal = true,
 }: {
   baseUrlHref: string;
   weekNumber: number | string;
   weekDate?: string | null;
   time?: string | null;
   visitorShieldSrc: string;
+  isLocal?: boolean;
 }) {
   if (!visitorShieldSrc) {
     throw new Error('You need to define a visitorShieldSrc and must be a valid Image URL');
   }
 
   const bgImageUrl = new URL(baseUrlHref);
-  bgImageUrl.pathname = '/assets/images/base-bg.png';
+  bgImageUrl.pathname = isLocal
+    ? '/assets/images/base-bg.png'
+    : '/assets/images/base-bg-visitor.png';
+
+  // Visitor Shield coords
+  const visitorShieldLeft = isLocal ? 1035 : 265;
 
   return (
     <div
@@ -96,7 +103,7 @@ export function YoutubeCover({
           position: 'absolute',
           transform: 'translate(-50%, -50%)',
           top: 380,
-          left: 1035,
+          left: visitorShieldLeft,
           objectFit: 'contain',
           height: 300,
           maxWidth: 300,

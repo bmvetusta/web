@@ -48,28 +48,42 @@ async function getFontOptionsFromFontPaths(...fontPaths: string[]) {
   );
 }
 
+async function getWeekData(week?: number | string | null) {
+  if (!week) {
+    return;
+  }
+
+  const weekNumber = +week;
+  if (Number.isNaN(weekNumber) || !Number.isFinite(weekNumber) || weekNumber < 1) {
+    return;
+  }
+
+  const data = await rfebmGetCalendar(PRIMERA_GROUP_ID);
+  if (!data) {
+    return;
+  }
+
+  const match = data.find((m) => m.week === weekNumber);
+  if (!match) {
+    return;
+  }
+
+  return match;
+}
+
 export async function GET({ site, params }: APIContext<{ week: number }>) {
   try {
     if (!site) {
       throw new Error('No site url configured');
     }
 
-    const { week } = params;
-    const data = await rfebmGetCalendar(PRIMERA_GROUP_ID);
-
-    if (!data) {
-      throw new Error(`No calendar found ${PRIMERA_GROUP_ID}`);
-    }
-
-    if (!week) {
-      throw new Error('Not week provided');
-    }
-
-    const match = data.find((m) => m.week === +week && m.localTeam.id === PRIMERA_TEAM_ID);
+    const match = await getWeekData(params.week);
 
     if (!match) {
       throw new Error('No match found');
     }
+
+    const isLocal = match.localTeam.id === PRIMERA_TEAM_ID;
 
     const isVercel = process.env.VERCEL === '1' || false;
     const fontPath = isVercel ? `./public` : '../../../../public';
@@ -84,9 +98,10 @@ export async function GET({ site, params }: APIContext<{ week: number }>) {
       YoutubeCover({
         baseUrlHref: site.href,
         visitorShieldSrc: imgUrl,
-        weekNumber: week,
+        weekNumber: match.week,
         weekDate: match.date,
         time: match.time,
+        isLocal,
       }),
       {
         fonts,
