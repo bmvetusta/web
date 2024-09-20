@@ -20,6 +20,10 @@ const { icon, alt, title, href, text } = Astro.props;
     opacity: 0.5;
   }
 
+  p {
+    font-weight: 600;
+  }
+
   a:hover > img {
     opacity: 1;
   }
@@ -88,5 +92,5 @@ const { icon, alt, title, href, text } = Astro.props;
 
 <a href={href} title={title}>
   <img src=`/assets/images/${icon}.svg` alt={alt} aria-hidden='true' width='32' height='32' />
-  <span>{text}</span>
+  <p>{text}</p>
 </a>
