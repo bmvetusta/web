@@ -1,7 +1,7 @@
 import { ImageResponse } from '@vercel/og';
 import type { APIContext } from 'astro';
 import { PRIMERA_GROUP_ID, PRIMERA_TEAM_ID } from 'astro:env/server';
-import { readFile, readdir } from 'node:fs/promises';
+import { readFile } from 'node:fs/promises';
 import { createRequire } from 'node:module';
 import { join } from 'node:path';
 import { YoutubeCover } from '../../../components/youtube-cover/react';
@@ -72,10 +72,8 @@ export async function GET({ site, params }: APIContext<{ week: number }>) {
     }
 
     const isVercel = process.env.VERCEL === '1' || false;
-    console.log({ isVercel, cwd: process.cwd() });
     const fontPath = isVercel ? `./public` : '../../../../public';
 
-    console.log({ dirs: await readdir(fontPath) });
     const fonts = await getFontOptionsFromFontPaths(
       join(fontPath, 'assets/fonts/alumni/AlumniSans-BoldItalic.ttf'),
       join(fontPath, 'assets/fonts/alumni/AlumniSans-Bold.ttf')

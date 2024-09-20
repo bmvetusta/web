@@ -17,8 +17,6 @@ export function YoutubeCover({
     throw new Error('You need to define a visitorShieldSrc and must be a valid Image URL');
   }
 
-  const weekTop = weekDate ? (time ? 200 : 180) : 160;
-
   const bgImageUrl = new URL(baseUrlHref);
   bgImageUrl.pathname = '/assets/images/base-bg.png';
 
@@ -45,7 +43,7 @@ export function YoutubeCover({
           gap: 5,
           position: 'absolute',
           transform: 'translate(-50%, -50%)',
-          top: weekTop,
+          top: 180,
           left: 640,
           textTransform: 'uppercase',
           textAlign: 'center',
@@ -61,33 +59,35 @@ export function YoutubeCover({
         >
           Jornada {weekNumber?.toString().padStart(2, '0')}
         </span>
-        {weekDate ? (
-          <span
-            style={{
-              color: 'white',
-              fontSize: 42,
-              fontWeight: 700,
-            }}
-          >
-            {weekDate}
-          </span>
-        ) : (
-          ''
-        )}
-        {time ? (
-          <span
-            style={{
-              color: 'white',
-              fontSize: 42,
-              fontWeight: 700,
-            }}
-          >
-            {time}
-          </span>
-        ) : (
-          ''
-        )}
       </div>
+
+      {weekDate ? (
+        <div
+          data-name='date-time'
+          style={{
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'center',
+            alignItems: 'center',
+            gap: 0,
+            position: 'absolute',
+            transform: 'translate(-50%, -50%)',
+            top: 300,
+            left: 640,
+            textTransform: 'uppercase',
+            textAlign: 'center',
+            lineHeight: '100%',
+            fontSize: 52,
+            fontWeight: 700,
+            color: 'white',
+          }}
+        >
+          <span>{weekDate}</span>
+          {time ? <span>{time}</span> : ''}
+        </div>
+      ) : (
+        ''
+      )}
 
       <img
         src={visitorShieldSrc}
