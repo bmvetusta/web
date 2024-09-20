@@ -19,8 +19,16 @@
       "destination": "https://x.com/BM_Vetusta"
     },
     {
+      "source": "/ig/",
+      "destination": "https://instagram.com/balonmanovetusta"
+    },
+    {
       "source": "/instagram/",
       "destination": "https://instagram.com/balonmanovetusta"
+    },
+    {
+      "source": "/yt/",
+      "destination": "https://www.youtube.com/@balonmanovetusta?sub_confirmation=1"
     },
     {
       "source": "/youtube/",
