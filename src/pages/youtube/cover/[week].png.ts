@@ -48,7 +48,7 @@ async function getFontOptionsFromFontPaths(...fontPaths: string[]) {
   );
 }
 
-async function getWeekData(week?: number | string | null) {
+export async function getWeekData(week?: number | string | null) {
   if (!week) {
     return;
   }
