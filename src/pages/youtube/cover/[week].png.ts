@@ -69,7 +69,7 @@ export async function GET({ site, params }: APIContext<{ week: number }>) {
       join(fontPath, 'assets/fonts/alumni/AlumniSans-BoldItalic.ttf'),
       join(fontPath, 'assets/fonts/alumni/AlumniSans-Bold.ttf')
     );
-    const imgUrl = match.visitorTeam.shieldUrl;
+    const imgUrl = isLocal ? match.visitorTeam.shieldUrl : match.localTeam.shieldUrl;
 
     return new ImageResponse(
       YoutubeCover({
