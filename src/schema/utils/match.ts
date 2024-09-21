@@ -6,8 +6,9 @@ export const pipedMatchSchema = z.object({
   matchId: z.number(),
   week: z.number(),
   urlStreaming: z.string().nullable().optional(),
-  date: z.string().nullable().optional(),
-  time: z.string().nullable().optional(),
+  status: z.string(),
+  date: z.string().nullable().default(null).optional(),
+  time: z.string().nullable().default(null).optional(),
   localTeam: teamSchema,
   visitorTeam: teamSchema,
 });
@@ -72,6 +73,7 @@ export const matchSchema = z
   })
   .transform((result) => ({
     matchId: result.id,
+    status: result.estado_partido,
     week: result.jornada,
     urlStreaming: result.url_streaming?.length ? result.url_streaming : null,
     date: result.fecha.date,

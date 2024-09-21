@@ -29,15 +29,23 @@ export default defineConfig({
         access: 'public',
         optional: false,
       }),
+      YOUTUBE_CHANNEL: envField.string({
+        context: 'server',
+        access: 'public',
+        optional: false,
+        default: '@balonmanovetusta',
+      }),
+      // YOUTUBE_CHANNEL_ID: envField.string({
+      //   context: 'server',
+      //   access: 'public',
+      //   optional: true,
+      //   default: 'UCIL4QnwwTj0h4zFH57K-u9A',
+      // }),
     },
   },
   integrations: [react()],
   output: 'server',
   adapter: vercel({
-    includeFiles: [
-      'public/assets/fonts/alumni/AlumniSans-Bold.ttf',
-      'public/assets/fonts/alumni/AlumniSans-BoldItalic.ttf',
-    ],
     webAnalytics: { enabled: true },
     imageService: true,
     devImageService: 'sharp',
