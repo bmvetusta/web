@@ -3,6 +3,7 @@ import SpeedInsights from '@vercel/speed-insights/astro';
 import { Image } from 'astro:assets';
 import advertMemberImage from '../assets/images/abonate2425.png';
 import SocialNetwork from '../components/SocialNetwork.astro';
+import ViewLiveVideo from '../components/ViewLiveVideo.astro';
 export const prerender = true;
 
 const canonicalUrl = Astro.url.href;
@@ -57,7 +58,14 @@ const ogImage = advertMemberImage; // { src, width, height}
       href='https://fonts.bunny.net/css?family=alumni-sans:400,400i,600,600i'
       rel='stylesheet'
     />
+    <script>
+      import '@justinribeiro/lite-youtube';
+    </script>
     <style is:global>
+      :root {
+        --live-color-hex: #ff00de;
+        --live-color-rgb: 255, 0, 222;
+      }
       *::before,
       *::after {
         box-sizing: border-box;
@@ -138,6 +146,7 @@ const ogImage = advertMemberImage; // { src, width, height}
     <SpeedInsights />
   </head>
   <body>
+    <ViewLiveVideo server:defer />
     <a href='/abonate' title='Abonate y apoyanos. Contamos contigo'
       ><Image
         src={advertMemberImage}

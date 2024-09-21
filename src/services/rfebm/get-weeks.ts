@@ -19,5 +19,7 @@ export async function rfebmGetWeeks(groupId: string | number) {
     return parsedData.data;
   }
 
+  console.error(parsedData.error);
+
   return null;
 }

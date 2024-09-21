@@ -1,0 +1,145 @@
+---
+import { PRIMERA_GROUP_ID, PRIMERA_TEAM_ID, YOUTUBE_CHANNEL } from 'astro:env/server';
+import { isYoutubeChannelLive } from '../services/is-yotube-channel-live';
+import { rfebmGetWeeks } from '../services/rfebm/get-weeks';
+
+export const partial = true;
+let youtubeVideoId;
+
+const isChannelLive = await isYoutubeChannelLive(YOUTUBE_CHANNEL);
+
+if (isChannelLive) {
+  youtubeVideoId = isChannelLive === true ? YOUTUBE_CHANNEL : isChannelLive;
+}
+
+if (!isChannelLive) {
+  const today = new Date();
+  const [dayString, monthString, yearString, _, currentHourString] = today
+    .toLocaleTimeString('es-ES', {
+      timeZone: 'Europe/Madrid',
+      hour12: false,
+      day: '2-digit',
+      month: '2-digit',
+      year: 'numeric',
+      hour: '2-digit',
+    })
+    .split(/[, \/]/);
+  const currentDateString = `${dayString}-${monthString}-${yearString}`;
+  const day = +dayString;
+  const month = +monthString;
+  const currentHour = +currentHourString;
+
+  // Match Schedule rules page 103: https://www.rfebm.com/sites/default/files/documentos/04_1a_masculina_2425.pdf
+  const isFirstPartSeasonDate = yearString === '2024' && month >= 9;
+  const isSecondPartSeasonDate =
+    (yearString === '2025' && month < 5) || (yearString === '2025' && month === 5 && day <= 4);
+
+  if (isFirstPartSeasonDate || isSecondPartSeasonDate) {
+    if (currentHour >= 10 && currentHour <= 23) {
+      // Get data
+      const weekData = await rfebmGetWeeks(PRIMERA_GROUP_ID);
+      if (weekData) {
+        const match = weekData.results.find(
+          (m) => m.localTeam.id === PRIMERA_TEAM_ID || m.visitorTeam.id === PRIMERA_TEAM_ID
+        );
+
+        if (match && match.date === currentDateString && match.urlStreaming) {
+          const isLive = await isYoutubeChannelLive(match.urlStreaming);
+
+          console.log({ isLive });
+
+          if (isLive && isLive !== true) {
+            youtubeVideoId = isLive;
+          }
+        }
+      }
+    }
+  }
+}
+
+if (!youtubeVideoId) {
+  return '';
+}
+---
+
+<script>
+  import '@justinribeiro/lite-youtube';
+</script>
+
+<div id='live'>
+  <div class='title'>
+    <p>Estamos en directo</p>
+    <button>X</button>
+  </div>
+
+  <lite-youtube videoId={youtubeVideoId} loading='lazy' videoplay='Ver partido en directo'
+  ></lite-youtube>
+</div>
+
+<style>
+  #live {
+    border-radius: 1rem;
+    padding: 1rem;
+    overflow: hidden;
+    border: 5pt solid var(--live-color-hex, tomato);
+    position: absolute;
+    z-index: 5;
+    bottom: 0;
+    right: 0;
+    max-width: 280px;
+    height: fit-content;
+    max-width: 100dvw;
+    max-height: 300px;
+    background: canvas;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    justify-content: center;
+  }
+
+  #live lite-youtube {
+    aspect-ratio: 16/9;
+    width: auto;
+    height: 240px;
+    max-width: 100%;
+    max-height: 100%;
+  }
+
+  div.title {
+    position: relative;
+    top: 0;
+    right: 2rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-left: 2rem;
+    z-index: 1;
+    width: 100%;
+    height: 2rem;
+    font-size: 1.25rem;
+    color: var(--live-color-hex, tomato);
+    font-weight: 900;
+    text-transform: uppercase;
+  }
+  div.title button {
+    padding: 0.5rem;
+    width: 2rem;
+    height: 2rem;
+    font-size: 0.8rem;
+    line-height: 100%;
+    border-radius: 50%;
+    background-color: #666;
+    color: #000;
+    border: none;
+  }
+</style>
+
+<script type='module' is:inline>
+  const live = document.querySelector('#live');
+  const btn = document.querySelector('div.title button');
+  btn.addEventListener('click', () => {
+    live.style.display = 'none';
+  });
+</script>
