@@ -5,9 +5,10 @@ interface Props {
   href: string;
   text: string;
   title: string;
+  [key: string]: string;
 }
 
-const { icon, alt, title, href, text } = Astro.props;
+const { icon, alt, title, href, text, ...props } = Astro.props;
 ---
 
 <style>
@@ -35,7 +36,7 @@ const { icon, alt, title, href, text } = Astro.props;
 
   a {
     --local-link-rgb-color: var(--link-rgb-color, 10, 10, 10);
-    --local-link-alpha-color: var(--link-alpha-color, 0.5);
+    --local-link-alpha-color: var(--link-alpha-color, 0.8);
     --local-link-color: rgba(var(--local-link-rgb-color), var(--local-link-alpha-color));
 
     color: var(--link-color, var(--local-link-color));
@@ -57,7 +58,7 @@ const { icon, alt, title, href, text } = Astro.props;
 
   a:visited {
     --local-link-rgb-color: var(--visited-link-rgb-color, 10, 10, 10);
-    --local-link-alpha-color: var(--visited-link-alpha-color, 0.5);
+    --local-link-alpha-color: var(--visited-link-alpha-color, 0.8);
     --local-link-color: rgba(var(--local-link-rgb-color), var(--local-link-alpha-color));
 
     color: var(--link-color, var(--local-link-color));
@@ -90,7 +91,7 @@ const { icon, alt, title, href, text } = Astro.props;
   }
 </style>
 
-<a href={href} title={title}>
+<a href={href} title={title} {...props}>
   <img src=`/assets/images/${icon}.svg` alt={alt} aria-hidden='true' width='32' height='32' />
   <p>{text}</p>
 </a>
