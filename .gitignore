@@ -25,3 +25,6 @@ pnpm-debug.log*
 .idea/
 
 .eslintcache
+
+# Ignore some downloaded samples for development and testing
+*.json
