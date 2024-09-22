@@ -85,7 +85,8 @@ const { icon, alt, title, href, text, ...props } = Astro.props;
   }
 
   @media (hover: none) {
-    a {
+    a,
+    a:visited {
       opacity: 1 !important;
     }
   }

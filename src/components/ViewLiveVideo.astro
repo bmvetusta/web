@@ -5,7 +5,7 @@ import { rfebmGetWeeks } from '../services/rfebm/get-weeks';
 import SocialNetwork from './SocialNetwork.astro';
 
 export const partial = true;
-let youtubeVideoId;
+let youtubeVideoId, match;
 
 const isChannelLive = await isYoutubeChannelLive(YOUTUBE_CHANNEL);
 
@@ -40,14 +40,12 @@ if (!isChannelLive) {
       // Get data
       const weekData = await rfebmGetWeeks(PRIMERA_GROUP_ID);
       if (weekData) {
-        const match = weekData.results.find(
+        match = weekData.results.find(
           (m) => m.localTeam.id === PRIMERA_TEAM_ID || m.visitorTeam.id === PRIMERA_TEAM_ID
         );
 
         if (match && match.date === currentDateString && match.urlStreaming) {
           const isLive = await isYoutubeChannelLive(match.urlStreaming);
-
-          console.log({ isLive });
 
           if (isLive && isLive !== true) {
             youtubeVideoId = isLive;

@@ -1,0 +1,42 @@
+:root {
+  --live-color-hex: #ff00de;
+  --live-color-rgb: 255, 0, 222;
+}
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  box-sizing: border-box;
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+}
+
+a,
+a:visited {
+  opacity: 0.8;
+}
+
+a:hover,
+a:focus {
+  opacity: 1;
+}
+
+@media (prefers-color-scheme: dark) {
+  a,
+  a:visited,
+  a:hover,
+  a:focus {
+    --link-rgb-color: 240, 240, 240;
+    --hover-link-rgb-color: var(--link-rgb-color);
+    --visited-link-rgb-color: var(--link-rgb-color);
+  }
+}
+
+@media (hover: none) {
+  a {
+    opacity: 1 !important;
+  }
+}

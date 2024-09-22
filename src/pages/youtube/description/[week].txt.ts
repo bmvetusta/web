@@ -1,6 +1,6 @@
 import type { APIContext } from 'astro';
 import { getWeekData } from '../../../services/get-week-data';
-import { rfebmGetPreviewData } from '../../../services/rfebm/get-previo';
+import { rfebmGetPreviousData } from '../../../services/rfebm/get-previous';
 
 const textLayout = ({
   visitorName,
@@ -56,7 +56,7 @@ Queremos agradecer a todos nuestros patrocinadores su colaboración:
 
 async function getData(matchId?: string | number) {
   if (matchId) {
-    return rfebmGetPreviewData(matchId);
+    return rfebmGetPreviousData(matchId);
   }
 }
 

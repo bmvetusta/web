@@ -1,9 +1,11 @@
 ---
 import SpeedInsights from '@vercel/speed-insights/astro';
-import { Image } from 'astro:assets';
 import advertMemberImage from '../assets/images/abonate2425.png';
 import SocialNetwork from '../components/SocialNetwork.astro';
 import ViewLiveVideo from '../components/ViewLiveVideo.astro';
+import '../assets/styles/global.css';
+import MemberPoster from '../components/MemberPoster.astro';
+
 export const prerender = true;
 
 const canonicalUrl = Astro.url.href;
@@ -61,23 +63,7 @@ const ogImage = advertMemberImage; // { src, width, height}
     <script>
       import '@justinribeiro/lite-youtube';
     </script>
-    <style is:global>
-      :root {
-        --live-color-hex: #ff00de;
-        --live-color-rgb: 255, 0, 222;
-      }
-      *::before,
-      *::after {
-        box-sizing: border-box;
-      }
-
-      * {
-        box-sizing: border-box;
-        min-width: 0;
-        margin: 0;
-        padding: 0;
-      }
-
+    <style>
       body {
         font-family: 'Alumni Sans', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
           'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
@@ -100,62 +86,12 @@ const ogImage = advertMemberImage; // { src, width, height}
         align-items: center;
         gap: 1rem;
       }
-
-      a,
-      a:visited {
-        opacity: 0.8;
-      }
-
-      a:hover,
-      a:focus {
-        opacity: 1;
-      }
-
-      @media (prefers-color-scheme: dark) {
-        a,
-        a:visited,
-        a:hover,
-        a:focus {
-          --link-rgb-color: 240, 240, 240;
-          --hover-link-rgb-color: var(--link-rgb-color);
-          --visited-link-rgb-color: var(--link-rgb-color);
-        }
-      }
-
-      @media (hover: none) {
-        a {
-          opacity: 1 !important;
-        }
-      }
-    </style>
-    <style>
-      img {
-        max-width: min(30dvw, 256px);
-        height: auto;
-        object-fit: contain;
-        margin: 0 auto;
-      }
-
-      a {
-        display: flex;
-        flex-direction: column;
-        justify-items: center;
-        align-items: center;
-      }
     </style>
     <SpeedInsights />
   </head>
   <body>
     <ViewLiveVideo server:defer />
-    <a href='/abonate' title='Abonate y apoyanos. Contamos contigo'
-      ><Image
-        src={advertMemberImage}
-        alt='Cartel de la campaña de abonados 2024/25'
-        width={256}
-        height={455}
-        loading='eager'
-      /></a
-    >
+    <MemberPoster />
 
     <SocialNetwork
       icon='vetusta'

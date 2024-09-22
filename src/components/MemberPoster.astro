@@ -1,0 +1,47 @@
+---
+import { Image } from 'astro:assets';
+import advertMemberImage from '../assets/images/abonate2425.png';
+---
+
+<a href='/abonate' title='Abonate y apoyanos. Contamos contigo'
+  ><Image
+    src={advertMemberImage}
+    alt='Cartel de la campaña de abonados 2024/25'
+    width={280}
+    height={497}
+    loading='eager'
+  /></a
+>
+
+<style>
+  img {
+    max-width: min(90dvw, 280px);
+    height: auto;
+    object-fit: contain;
+    margin: 0 auto;
+  }
+
+  a {
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+  }
+
+  a,
+  a:visited {
+    opacity: 0.85;
+  }
+
+  a:hover,
+  a:focus {
+    opacity: 1;
+  }
+
+  @media (hover: none) {
+    a,
+    a:visited {
+      opacity: 1 !important;
+    }
+  }
+</style>
