@@ -3,26 +3,12 @@ import type { APIContext } from 'astro';
 import { PRIMERA_TEAM_ID } from 'astro:env/server';
 import { readFile } from 'node:fs/promises';
 import { createRequire } from 'node:module';
-import { join } from 'node:path';
 import { YoutubeCover } from '../../../components/youtube-cover/react';
+import { getRelativeAppRootPath } from '../../../lib/get-relative-app-root-path';
+import { getWeightNumberByName } from '../../../lib/get-weight-number-by-name';
 import { getWeekData } from '../../../services/get-week-data';
 
 export const prerender = false;
-
-const getWeightNumber = (fileLower: string) => {
-  if (fileLower.includes('extrablack') || fileLower.includes('ultrablack')) return 950;
-  if (fileLower.includes('black') || fileLower.includes('heavy')) return 900;
-  if (fileLower.includes('extrabold') || fileLower.includes('extrabold')) return 800;
-  if (fileLower.includes('bold')) return 700;
-  if (fileLower.includes('emibold')) return 600; // Semi || Demi
-  if (fileLower.includes('medium')) return 500;
-  if (fileLower.includes('normal') || fileLower.includes('regular')) return 400;
-  if (fileLower.includes('light')) return 300;
-  if (fileLower.includes('extralight') || fileLower.includes('ultralight')) return 200;
-  if (fileLower.includes('thin') || fileLower.includes('hairline')) return 100;
-
-  return 400;
-};
 
 async function getFontOptionsFromFontPaths(...fontPaths: string[]) {
   return await Promise.all(
@@ -32,7 +18,7 @@ async function getFontOptionsFromFontPaths(...fontPaths: string[]) {
         .toLocaleLowerCase('es-ES')
         .replaceAll(' ', '');
       const name = 'Alumni Sans';
-      const weight = getWeightNumber(fontPath.toString());
+      const weight = getWeightNumberByName(fontPath.toString());
       const style = fontFilePathLowerCase.includes('italic') ? 'italic' : 'normal';
       const require = createRequire(import.meta.url);
       const resolvedFontPath = require.resolve(fontPath);
@@ -61,15 +47,12 @@ export async function GET({ site, params }: APIContext<{ week: number }>) {
     }
 
     const isLocal = match.localTeam.id === PRIMERA_TEAM_ID;
-
-    const isVercel = process.env.VERCEL === '1' || false;
-    const fontPath = isVercel ? `./public` : '../../../../public';
+    const imgUrl = isLocal ? match.visitorTeam.shieldUrl : match.localTeam.shieldUrl;
 
     const fonts = await getFontOptionsFromFontPaths(
-      join(fontPath, 'assets/fonts/alumni/AlumniSans-BoldItalic.ttf'),
-      join(fontPath, 'assets/fonts/alumni/AlumniSans-Bold.ttf')
+      getRelativeAppRootPath('public', 'assets', 'fonts', 'alumni', 'AlumniSans-BoldItalic.ttf'),
+      getRelativeAppRootPath('public', 'assets', 'fonts', 'alumni', 'AlumniSans-Bold.ttf')
     );
-    const imgUrl = isLocal ? match.visitorTeam.shieldUrl : match.localTeam.shieldUrl;
 
     return new ImageResponse(
       YoutubeCover({
