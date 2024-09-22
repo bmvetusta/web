@@ -1,38 +1,12 @@
 import { ImageResponse } from '@vercel/og';
 import type { APIContext } from 'astro';
 import { PRIMERA_TEAM_ID } from 'astro:env/server';
-import { readFile } from 'node:fs/promises';
-import { createRequire } from 'node:module';
 import { YoutubeCover } from '../../../components/youtube-cover/react';
+import { getFontOptionsFromFontPaths } from '../../../lib/get-font-options-from-font-paths';
 import { getRelativeAppRootPath } from '../../../lib/get-relative-app-root-path';
-import { getWeightNumberByName } from '../../../lib/get-weight-number-by-name';
 import { getWeekData } from '../../../services/get-week-data';
 
 export const prerender = false;
-
-async function getFontOptionsFromFontPaths(...fontPaths: string[]) {
-  return await Promise.all(
-    fontPaths.map(async (fontPath) => {
-      const fontFilePathLowerCase = fontPath
-        .toString()
-        .toLocaleLowerCase('es-ES')
-        .replaceAll(' ', '');
-      const name = 'Alumni Sans';
-      const weight = getWeightNumberByName(fontPath.toString());
-      const style = fontFilePathLowerCase.includes('italic') ? 'italic' : 'normal';
-      const require = createRequire(import.meta.url);
-      const resolvedFontPath = require.resolve(fontPath);
-      const data = await readFile(resolvedFontPath); // Font as buffer
-
-      return {
-        name,
-        data,
-        weight,
-        style,
-      } as any;
-    })
-  );
-}
 
 export async function GET({ site, params }: APIContext<{ week: number }>) {
   try {
