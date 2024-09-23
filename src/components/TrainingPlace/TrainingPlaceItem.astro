@@ -1,6 +1,6 @@
 ---
 import type { z } from 'astro:schema';
-import type { trainingSchema } from 'src/schema/training';
+import type { scheduleSchema, trainingSchema } from 'src/schema/training';
 import { getWeekDayName } from './get-week-day-name';
 
 type Props = z.infer<typeof trainingSchema>;
@@ -13,7 +13,7 @@ const conjunctionList = new Intl.ListFormat('es', {
   type: 'conjunction',
 });
 
-const schedules = Astro.props.schedules.map((s) => {
+const schedules = Astro.props.schedules.map((s: z.infer<typeof scheduleSchema>) => {
   const weekDaysNames = s.weekDays.map((n) => getWeekDayName(n)).filter((v) => !!v);
   const weekDays = conjunctionList.format(weekDaysNames);
   const time = `${s.start} a ${s.end}`;

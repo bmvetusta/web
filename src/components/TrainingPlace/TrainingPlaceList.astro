@@ -1,12 +1,10 @@
 ---
-import { getCollection } from 'astro:content';
+import trainingPlaces from 'src/content/trainings/trainings.json' with { type: 'json' };
 import TrainingPlaceItem from './TrainingPlaceItem.astro';
-
-const trainingplaces = await getCollection('trainings');
 ---
 
 <div>
-  {trainingplaces.map((place) => <TrainingPlaceItem {...place.data} />)}
+  {trainingPlaces?.map((place) => <TrainingPlaceItem {...place} />)}
 </div>
 
 <style>

@@ -1,7 +1,8 @@
+import { getWeekDayName } from '@components/TrainingPlace/get-week-day-name';
 import type { APIContext } from 'astro';
-import { getEntry, type z } from 'astro:content';
+import { type z } from 'astro:content';
+import trainings from 'src/content/trainings/trainings.json' with { type: 'json' };
 import type { scheduleSchema, trainingSchema } from 'src/schema/training';
-import { getWeekDayName } from '../../components/TrainingPlace/get-week-day-name';
 
 type Schedule = z.infer<typeof scheduleSchema>;
 type PlaceToTrain = z.infer<typeof trainingSchema>;
@@ -79,14 +80,14 @@ END:VCALENDAR
 `;
 }
 
-async function findPlace(placeId?: string) {
+function findPlace(placeId?: string) {
   if (placeId) {
-    return getEntry('trainings', placeId);
+    return trainings.find((t) => t.id === placeId);
   }
 }
 
 export async function GET({ params: { placeId } }: APIContext<{ placeId: string }>) {
-  const placeToTrain = await findPlace(placeId).then((e) => e?.data);
+  const placeToTrain = findPlace(placeId);
 
   if (placeToTrain) {
     const { schedules, ...trainingPlace } = placeToTrain;
