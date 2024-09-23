@@ -112,3 +112,7 @@ export async function GET({ params: { placeId } }: APIContext<{ placeId: string 
     status: 204,
   });
 }
+
+export function getStaticPaths() {
+  return trainings.map((t) => ({ params: { placeId: t.id } }));
+}
