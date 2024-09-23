@@ -1,5 +1,5 @@
+import places from '@assets/data/training-schedules.json' with { type: 'json' };
 import type { APIContext } from 'astro';
-import places from '../../assets/data/training-schedules.json';
 import { getWeekDayName } from '../../components/TrainingPlace/get-week-day-name';
 import type {
   PlaceToTrain,
@@ -8,7 +8,7 @@ import type {
 
 function findPlace(place?: string): PlaceToTrain | undefined {
   if (place) {
-    return places.find((p) => p.id === place);
+    return places.find((p: PlaceToTrain) => p.id === place);
   }
 }
 
