@@ -1,0 +1,82 @@
+---
+import { getWeekDayName } from './get-week-day-name';
+
+type Schedule = {
+  weekDays: number[];
+  start: string;
+  end: string;
+};
+
+interface Props {
+  place: string;
+  address: string;
+  schedules: Schedule[];
+}
+
+const { place } = Astro.props;
+const address = `${place} ${Astro.props.address}`;
+
+const conjunctionList = new Intl.ListFormat('es', {
+  style: 'short',
+  type: 'conjunction',
+});
+
+const schedules = Astro.props.schedules.map((s) => {
+  const weekDaysNames = s.weekDays.map((n) => getWeekDayName(n)).filter((v) => !!v);
+  const weekDays = conjunctionList.format(weekDaysNames);
+  const time = `${s.start} a ${s.end}`;
+
+  return `${weekDays} de ${time}.`;
+});
+---
+
+<details name='training-place'>
+  <summary>
+    {place}
+    {schedules.map((schedule) => <p>{schedule}</p>)}
+  </summary>
+  <address>
+    <a
+      href=`maps://?q=${address}`
+      title=`Ver en el mapa donde queda ${address}`
+      aria-label={address}
+    >
+      Ver la dirección en el Mapa
+    </a>
+  </address>
+</details>
+
+<style>
+  details {
+    border-radius: 0.25rem;
+    padding: 1rem;
+    font-size: 1.25rem;
+    background: #333;
+    width: 260px;
+    max-width: 260px;
+    text-align: justify;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  details *,
+  details summary p {
+    opacity: 0.7;
+  }
+
+  details summary {
+    opacity: 1;
+  }
+
+  address::before {
+    content: '📍 ';
+  }
+
+  a,
+  a:visited {
+    color: var(--primary-text-color);
+    text-decoration: underline;
+  }
+</style>

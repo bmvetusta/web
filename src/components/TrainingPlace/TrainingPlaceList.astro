@@ -1,0 +1,16 @@
+---
+import trainingplaces from '../../assets/data/training-schedules.json';
+import TrainingPlaceItem from './TrainingPlaceItem.astro';
+---
+
+<div>
+  {trainingplaces.map((place) => <TrainingPlaceItem {...place} />)}
+</div>
+
+<style>
+  div {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+</style>

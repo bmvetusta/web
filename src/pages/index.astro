@@ -2,9 +2,11 @@
 import SpeedInsights from '@vercel/speed-insights/astro';
 import advertMemberImage from '../assets/images/abonate2425.png';
 import SocialNetwork from '../components/SocialNetwork.astro';
-import ViewLiveVideo from '../components/ViewLiveVideo.astro';
+// import ViewLiveVideo from '../components/ViewLiveVideo.astro';
 import '../assets/styles/global.css';
 import MemberPoster from '../components/MemberPoster.astro';
+import TrainingPlace from '../components/TrainingPlace/TrainingPlaceItem.astro';
+import TrainingPlaceList from '../components/TrainingPlace/TrainingPlaceList.astro';
 
 export const prerender = true;
 
@@ -64,21 +66,8 @@ const ogImage = advertMemberImage; // { src, width, height}
       import '@justinribeiro/lite-youtube';
     </script>
     <style>
-      body {
-        font-family: 'Alumni Sans', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
-          'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-        font-weight: 400;
-        font-size: 1rem;
-
-        margin: 0 auto;
-        max-width: 100dvw;
-        min-height: 100dvh;
-        max-height: 100dvh;
-
-        color-scheme: light dark;
-        background-color: canvas;
-        color: canvasText;
-
+      body,
+      article {
         direction: ltr;
         display: flex;
         flex-direction: column;
@@ -90,39 +79,59 @@ const ogImage = advertMemberImage; // { src, width, height}
     <SpeedInsights />
   </head>
   <body>
-    <ViewLiveVideo server:defer />
-    <MemberPoster />
+    <!-- <ViewLiveVideo server:defer /> -->
 
-    <SocialNetwork
-      icon='vetusta'
-      href='/abonate'
-      text='¡Hazte socio y ven a vernos!'
-      alt='Escudo del club balonmano vetusta'
-      title='Enlace al formulario para hacerse socio del club'
-    />
+    <article id='abonate'>
+      <main>
+        <MemberPoster />
+        <SocialNetwork
+          icon='vetusta'
+          href='/abonate'
+          text='¡Hazte socio y ven a vernos!'
+          alt='Escudo del club balonmano vetusta'
+          title='Enlace al formulario para hacerse socio del club'
+        />
+      </main>
+    </article>
 
-    <SocialNetwork
-      icon='yt'
-      href='https://youtube.com/@balonmanovetusta?sub_confirmation=1'
-      text='¡Suscribete! Para ver nuestros partidos'
-      alt='Logo de Youtube'
-      title='Suscribete a nuestro canal de Youtube'
-    />
+    <article id='redes'>
+      <header>
+        <h2>Redes Sociales</h2>
+      </header>
+      <main>
+        <SocialNetwork
+          icon='yt'
+          href='https://youtube.com/@balonmanovetusta?sub_confirmation=1'
+          text='¡Suscribete! Para ver nuestros partidos'
+          alt='Logo de Youtube'
+          title='Suscribete a nuestro canal de Youtube'
+        />
 
-    <SocialNetwork
-      icon='x'
-      href='https://x.com/BM_Vetusta'
-      text='@BM_Vetusta'
-      alt='Logo de X (Twitter)'
-      title='Enlace a la cuenta en X (Twitter) del club'
-    />
+        <SocialNetwork
+          icon='x'
+          href='https://x.com/BM_Vetusta'
+          text='@BM_Vetusta'
+          alt='Logo de X (Twitter)'
+          title='Enlace a la cuenta en X (Twitter) del club'
+        />
 
-    <SocialNetwork
-      icon='instagram'
-      href='https://instagram.com/balonmanovetusta'
-      text='@balonmanovetusta'
-      alt='Logo de Instagram'
-      title='Enlace a la cuenta en Instagram del club'
-    />
+        <SocialNetwork
+          icon='instagram'
+          href='https://instagram.com/balonmanovetusta'
+          text='@balonmanovetusta'
+          alt='Logo de Instagram'
+          title='Enlace a la cuenta en Instagram del club'
+        />
+      </main>
+    </article>
+
+    <article id='entrena'>
+      <header>
+        <h2>¿Dónde entrenar con nostros?</h2>
+      </header>
+      <main>
+        <TrainingPlaceList />
+      </main>
+    </article>
   </body>
 </html>
