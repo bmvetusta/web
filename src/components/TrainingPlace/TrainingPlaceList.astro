@@ -19,7 +19,7 @@ export type PlaceToTrain = {
 ---
 
 <div>
-  {trainingplaces.map((place) => <TrainingPlaceItem {...place} />)}
+  {trainingplaces.map((place: PlaceToTrain) => <TrainingPlaceItem {...place} />)}
 </div>
 
 <style>
