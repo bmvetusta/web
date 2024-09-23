@@ -27,4 +27,4 @@ pnpm-debug.log*
 .eslintcache
 
 # Ignore some downloaded samples for development and testing
-*.json
+sample-rfbem-data/*.json
