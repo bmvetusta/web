@@ -27,6 +27,8 @@
       ]
     },
     "jsx": "react-jsx",
-    "jsxImportSource": "react"
+    "jsxImportSource": "react",
+    "strictNullChecks": true,
+    "allowJs": true
   }
 }

@@ -1,25 +1,12 @@
 ---
-import trainingplaces from '@assets/data/training-schedules.json' with { type: 'json' };
+import { getCollection } from 'astro:content';
 import TrainingPlaceItem from './TrainingPlaceItem.astro';
 
-export type Schedule = {
-  weekDays: number[];
-  start: string;
-  end: string;
-};
-
-export type PlaceToTrain = {
-  id: string;
-  place: string;
-  address: string;
-  startDate: string;
-  endDate: string;
-  schedules: Schedule[];
-};
+const trainingplaces = await getCollection('trainingPlaces');
 ---
 
 <div>
-  {trainingplaces.map((place: PlaceToTrain) => <TrainingPlaceItem {...place} />)}
+  {trainingplaces.map((place) => <TrainingPlaceItem {...place.data} />)}
 </div>
 
 <style>

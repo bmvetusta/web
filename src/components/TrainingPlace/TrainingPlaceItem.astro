@@ -1,8 +1,9 @@
 ---
+import type { z } from 'astro:schema';
+import type { trainingPlaceSchema } from 'src/schema/training-places';
 import { getWeekDayName } from './get-week-day-name';
-import type { PlaceToTrain } from './TrainingPlaceList.astro';
 
-type Props = PlaceToTrain;
+type Props = z.infer<typeof trainingPlaceSchema>;
 
 const { id, place } = Astro.props;
 const address = `${place} ${Astro.props.address}`;
