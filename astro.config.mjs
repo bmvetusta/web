@@ -46,7 +46,6 @@ export default defineConfig({
   integrations: [react()],
   output: 'server',
   adapter: vercel({
-    includeFiles: ['./src/assets/data/training-schedules.json'],
     webAnalytics: { enabled: true },
     imageService: true,
     devImageService: 'sharp',

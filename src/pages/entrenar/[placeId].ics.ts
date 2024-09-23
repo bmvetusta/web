@@ -1,10 +1,10 @@
 import type { APIContext } from 'astro';
 import { getEntry, type z } from 'astro:content';
-import type { scheduleSchema, trainingPlaceSchema } from 'src/schema/training-places';
+import type { scheduleSchema, trainingSchema } from 'src/schema/training';
 import { getWeekDayName } from '../../components/TrainingPlace/get-week-day-name';
 
 type Schedule = z.infer<typeof scheduleSchema>;
-type PlaceToTrain = z.infer<typeof trainingPlaceSchema>;
+type PlaceToTrain = z.infer<typeof trainingSchema>;
 
 function weekDaysAsFreq(weekDays: number[] | number): string {
   if (Array.isArray(weekDays)) {
@@ -81,7 +81,7 @@ END:VCALENDAR
 
 async function findPlace(placeId?: string) {
   if (placeId) {
-    return getEntry('trainingPlaces', placeId);
+    return getEntry('trainings', placeId);
   }
 }
 

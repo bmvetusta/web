@@ -1,10 +1,10 @@
 import { file } from 'astro/loaders';
 import { defineCollection } from 'astro:content';
-import { trainingPlaceSchema } from 'src/schema/training-places';
+import { trainingSchema } from 'src/schema/training';
 
-const trainingPlaces = defineCollection({
-  loader: file('src/assets/data/training-schedules.json'),
-  schema: trainingPlaceSchema,
+const trainings = defineCollection({
+  loader: file('src/content/trainings/trainings.json'),
+  schema: trainingSchema,
 });
 
-export const collections = { trainingPlaces };
+export const collections = { trainings };

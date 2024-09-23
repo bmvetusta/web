@@ -6,7 +6,7 @@ export const scheduleSchema = z.object({
   end: z.string(),
 });
 
-export const trainingPlaceSchema = z.object({
+export const trainingSchema = z.object({
   id: z.string(),
   place: z.string(),
   address: z.string(),
