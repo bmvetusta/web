@@ -1,5 +1,6 @@
 {
   "version": 2,
+  "includeFiles": ["src/assets/data/training-schedules.json"],
   "trailingSlash": true,
   "redirects": [
     {
