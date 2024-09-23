@@ -8,12 +8,13 @@ type Schedule = {
 };
 
 interface Props {
+  id: string;
   place: string;
   address: string;
   schedules: Schedule[];
 }
 
-const { place } = Astro.props;
+const { id, place } = Astro.props;
 const address = `${place} ${Astro.props.address}`;
 
 const conjunctionList = new Intl.ListFormat('es', {
@@ -36,6 +37,7 @@ const schedules = Astro.props.schedules.map((s) => {
     {schedules.map((schedule) => <p>{schedule}</p>)}
   </summary>
   <address>
+    📍
     <a
       href=`maps://?q=${address}`
       title=`Ver en el mapa donde queda ${address}`
@@ -44,6 +46,14 @@ const schedules = Astro.props.schedules.map((s) => {
       Ver la dirección en el Mapa
     </a>
   </address>
+  <p>
+    🗓️
+    <a
+      href=`/entrenar/${id}.ics`
+      title='Añadir entrenamiento al calendario'
+      aria-label=`Añadir al calendario los días de entrenamiento`>Añadir al calendario</a
+    >
+  </p>
 </details>
 
 <style>
@@ -54,11 +64,18 @@ const schedules = Astro.props.schedules.map((s) => {
     background: #333;
     width: 260px;
     max-width: 260px;
-    text-align: justify;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     gap: 1rem;
+  }
+
+  details > address,
+  details > p {
+    text-align: center;
+  }
+
+  details summary p {
+    text-indent: 1rem;
   }
 
   details *,
@@ -68,10 +85,6 @@ const schedules = Astro.props.schedules.map((s) => {
 
   details summary {
     opacity: 1;
-  }
-
-  address::before {
-    content: '📍 ';
   }
 
   a,

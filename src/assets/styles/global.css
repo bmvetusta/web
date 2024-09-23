@@ -42,9 +42,9 @@ body {
   color: var(--primary-text-color, canvasText);
 
   margin: 0 auto;
+  padding-bottom: 2rem;
   max-width: 100dvw;
   min-height: 100dvh;
-  max-height: 100dvh;
 }
 
 h1,
