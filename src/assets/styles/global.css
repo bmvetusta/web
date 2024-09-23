@@ -1,6 +1,24 @@
 :root {
+  --background-color-rgb: 18, 18, 18;
+  --background-color-alpha: 1;
+  --background-color: rgb(var(--background-color-rgb));
+
   --live-color-hex: #ff00de;
   --live-color-rgb: 255, 0, 222;
+
+  --primary-text-color-rgb: 255, 255, 255;
+  --primary-text-alpha: 0.8;
+  --primary-text-color: rgb(var(--primary-text-color));
+
+  --headline-text-color-rgb: var(--primary-text-color-rgb);
+  /* --headline-text-color-rgb: 200, 100, 255; */
+  --headline-text-alpha: 1;
+  --headline-text-color: rgba(var(--headline-text-color-rgb), var(--headline-text-alpha));
+
+  --subheadline-text-color-rgb: var(--primary-text-color-rgb);
+  /* --subheadline-text-color-rgb: 200, 100, 255; */
+  --subheadline-text-alpha: 0.9;
+  --subheadline-text-color: rgba(var(--subheadline-text-color-rgb), var(--subheadline-text-alpha));
 }
 *::before,
 *::after {
@@ -14,6 +32,42 @@
   padding: 0;
 }
 
+body {
+  font-family: 'Alumni Sans', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+
+  color-scheme: light dark;
+  background-color: var(--background-color, canvas);
+  color: var(--primary-text-color, canvasText);
+
+  margin: 0 auto;
+  max-width: 100dvw;
+  min-height: 100dvh;
+  max-height: 100dvh;
+}
+
+h1,
+h2 {
+  color: var(--headline-text-color);
+  /* color: rgba(var(var(--headline-text-color)), var(var(--headline-text-alpha))); */
+}
+
+h3,
+h4,
+h5,
+h6 {
+  color: var(--subheadline-text-color);
+  /* opacity: rgba(
+    var(var(--subheadline-text-color)),
+    var(var(--subheadline-text-alpha))
+  ); */
+}
+
+p {
+  opacity: var(--primary-text-alpha, 0.8);
+}
+
 a,
 a:visited {
   opacity: 0.8;
@@ -24,16 +78,22 @@ a:focus {
   opacity: 1;
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
+  :root {
+    --primary-text-color-rgb: 255 255 255;
+    --headline-text-color-rgb: 255 51 255;
+    --subheadline-text-color-rgb: 255 51 255;
+  }
+
   a,
   a:visited,
   a:hover,
   a:focus {
-    --link-rgb-color: 240, 240, 240;
+    --link-rgb-color: 240 240 240;
     --hover-link-rgb-color: var(--link-rgb-color);
     --visited-link-rgb-color: var(--link-rgb-color);
   }
-}
+} */
 
 @media (hover: none) {
   a {
