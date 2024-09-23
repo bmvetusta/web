@@ -50,7 +50,6 @@ body {
 h1,
 h2 {
   color: var(--headline-text-color);
-  /* color: rgba(var(var(--headline-text-color)), var(var(--headline-text-alpha))); */
 }
 
 h3,
@@ -58,10 +57,6 @@ h4,
 h5,
 h6 {
   color: var(--subheadline-text-color);
-  /* opacity: rgba(
-    var(var(--subheadline-text-color)),
-    var(var(--subheadline-text-alpha))
-  ); */
 }
 
 p {

@@ -1,18 +1,8 @@
 ---
 import { getWeekDayName } from './get-week-day-name';
+import type { PlaceToTrain } from './TrainingPlaceList.astro';
 
-type Schedule = {
-  weekDays: number[];
-  start: string;
-  end: string;
-};
-
-interface Props {
-  id: string;
-  place: string;
-  address: string;
-  schedules: Schedule[];
-}
+type Props = PlaceToTrain;
 
 const { id, place } = Astro.props;
 const address = `${place} ${Astro.props.address}`;

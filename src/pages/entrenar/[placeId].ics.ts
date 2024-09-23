@@ -1,8 +1,12 @@
 import type { APIContext } from 'astro';
 import places from '../../assets/data/training-schedules.json';
 import { getWeekDayName } from '../../components/TrainingPlace/get-week-day-name';
+import type {
+  PlaceToTrain,
+  Schedule,
+} from '../../components/TrainingPlace/TrainingPlaceList.astro';
 
-function findPlace(place?: string) {
+function findPlace(place?: string): PlaceToTrain | undefined {
   if (place) {
     return places.find((p) => p.id === place);
   }
@@ -45,28 +49,29 @@ const conjunctionList = new Intl.ListFormat('es', {
   type: 'conjunction',
 });
 
-function generateTrainingIcs({
-  id,
-  address,
-  schedule,
-}: {
-  id: string;
-  address: string;
-  schedule: { start: string; end: string; weekDays: number[] };
-}) {
+function generateTrainingIcs(
+  { id, address, startDate, endDate }: Omit<PlaceToTrain, 'schedules'>,
+  schedule: Schedule
+) {
+  const dateStart = startDate.replaceAll('-', '');
+  const timeStart = schedule.start.replaceAll(':', '');
+  const dateEnd = endDate.replaceAll('-', '');
+  const timeEnd = schedule.end.replaceAll(':', '');
   const byday = weekDaysAsFreq(schedule.weekDays);
   const weekDaysList = schedule.weekDays.map(getWeekDayName).filter((w) => !!w);
   const weekDays = conjunctionList.format(weekDaysList);
   const description = `Entrenamiento de balonmano los ${weekDays} de ${schedule.start} a ${schedule.end} con el Club Balonmano Vetusta`;
   return `BEGIN:VCALENDAR
 VERSION:2.0
-PRODID:-//Club Balonmano Vetusta//NONSGML v1.0//EN
+PRODID:-//Club Balonmano Vetusta//NONSGML v1.0//ES
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
 BEGIN:VEVENT
 UID:event-training-${id}@balonmanovetusta.com
-DTSTAMP:20240923T120000Z
-DTSTART;TZID=Europe/Madrid:20240923T${schedule.start.replaceAll(':', '')}00
-DTEND;TZID=Europe/Madrid:20240923T${schedule.end.replaceAll(':', '')}00
-RRULE:FREQ=WEEKLY;BYDAY=${byday}
+DTSTAMP:${dateStart}T000000Z
+DTSTART;TZID=Europe/Madrid:${dateStart}T${timeStart}00
+DTEND;TZID=Europe/Madrid:${dateStart}T${timeEnd}00
+RRULE:FREQ=WEEKLY;BYDAY=${byday};UNTIL=${dateEnd}T${timeEnd}00Z
 SUMMARY:Entrenamiento de Balonmano
 LOCATION:${address}
 DESCRIPTION:${description}
@@ -76,31 +81,27 @@ DESCRIPTION:Recordatorio: Entrenamiento de balonmano
 TRIGGER:-PT30M
 END:VALARM
 END:VEVENT
-END:VCALENDAR`;
+END:VCALENDAR
+`;
 }
 
 export async function GET({ params: { placeId } }: APIContext<{ placeId: string }>) {
   const placeToTrain = findPlace(placeId);
 
   if (placeToTrain) {
-    const { id, schedules, address: addr, place } = placeToTrain;
-    const address = `${place}, ${addr}`;
+    const { schedules, ...trainingPlace } = placeToTrain;
+    trainingPlace.address = `${trainingPlace.place}, ${trainingPlace.address}`;
 
-    const ics = generateTrainingIcs({
-      id,
-      address,
-      schedule: schedules[0],
-    });
+    const ics = schedules
+      .map((schedule) => generateTrainingIcs(trainingPlace, schedule))
+      .join('\n\n');
 
     if (ics) {
-      // header('Content-Disposition: attachment; filename='.$quoted);
-      // header('Content-Transfer-Encoding: binary');
-      // header('Connection: Keep-Alive');
       return new Response(ics, {
         headers: {
           'Content-Description': 'File Transfer',
           'Content-Type': 'application/octet-stream',
-          'Content-Disposition': `attachment; filename=entrenamientos-${placeToTrain.place.replaceAll(/[\s\.]/g, '')}.ics`,
+          'Content-Disposition': `attachment; filename=entrenamientos-${placeToTrain.place.replaceAll(/[\s\.\(\)]/g, '')}.ics`,
         },
       });
     }
