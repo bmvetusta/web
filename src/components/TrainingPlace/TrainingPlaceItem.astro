@@ -6,7 +6,7 @@ import { getWeekDayName } from 'src/services/get-week-day-name';
 type Props = z.infer<typeof trainingSchema>;
 
 const { id, place } = Astro.props;
-const address = `${place} ${Astro.props.address}`;
+const address = `${place}, ${Astro.props.address}`;
 
 const conjunctionList = new Intl.ListFormat('es', {
   style: 'short',
