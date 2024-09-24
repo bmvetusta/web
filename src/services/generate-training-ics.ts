@@ -1,6 +1,4 @@
-import type { APIContext } from 'astro';
-import { type z } from 'astro:content';
-import trainings from 'src/content/trainings/trainings.json' with { type: 'json' };
+import { z } from 'astro:schema';
 import type { scheduleSchema, trainingSchema } from 'src/schema/training';
 import { getWeekDayName } from 'src/services/get-week-day-name';
 
@@ -8,10 +6,17 @@ type Schedule = z.infer<typeof scheduleSchema>;
 type PlaceToTrain = z.infer<typeof trainingSchema>;
 
 const officialHolidayDatesOviedo = [
+  // 12 Oct
   '20241012',
+
+  // 01 Nov
   '20241101',
+
+  // Constitution
   '20241206',
   '20241209',
+
+  // Chrismas
   '20241223',
   '20241224',
   '20241225',
@@ -28,6 +33,8 @@ const officialHolidayDatesOviedo = [
   '20250105',
   '20250106',
   '20250107',
+
+  // Holy week
   '20250412',
   '20250413',
   '20250414',
@@ -37,7 +44,11 @@ const officialHolidayDatesOviedo = [
   '20250418',
   '20250419',
   '20250420',
+
+  // Workers day
   '20250501',
+
+  // Local holiday
   '20250521',
 ];
 
@@ -130,38 +141,4 @@ export function generateTrainingICS(training: PlaceToTrain) {
     .join('\n\n');
 
   return ics;
-}
-
-function findPlace(placeId?: string) {
-  if (placeId) {
-    return trainings.find((t) => t.id === placeId);
-  }
-}
-
-export async function GET({ params: { placeId } }: APIContext<{ placeId: string }>) {
-  const placeToTrain = findPlace(placeId);
-
-  if (placeToTrain) {
-    const ics = generateTrainingICS(placeToTrain);
-
-    if (ics) {
-      const filename = `entrenamientos-${placeToTrain.id}.ics`;
-
-      return new Response(ics, {
-        headers: {
-          'Content-Description': 'File Transfer',
-          'Content-Type': 'application/octet-stream',
-          'Content-Disposition': `attachment; filename=${filename}`,
-        },
-      });
-    }
-  }
-
-  return new Response('', {
-    status: 204,
-  });
-}
-
-export function getStaticPaths() {
-  return trainings.map((t) => ({ params: { placeId: t.id } }));
 }

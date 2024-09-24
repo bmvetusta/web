@@ -1,7 +1,7 @@
 ---
 import type { z } from 'astro:schema';
 import type { scheduleSchema, trainingSchema } from 'src/schema/training';
-import { getWeekDayName } from './get-week-day-name';
+import { getWeekDayName } from 'src/services/get-week-day-name';
 
 type Props = z.infer<typeof trainingSchema>;
 
@@ -20,6 +20,9 @@ const schedules = Astro.props.schedules.map((s: z.infer<typeof scheduleSchema>) 
 
   return `${weekDays} de ${time}.`;
 });
+
+const baseURL = new URL(Astro.url);
+baseURL.pathname = '';
 ---
 
 <details name='training-place'>

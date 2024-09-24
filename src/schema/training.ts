@@ -13,4 +13,5 @@ export const trainingSchema = z.object({
   startDate: z.string(),
   endDate: z.string(),
   schedules: z.array(scheduleSchema),
+  excludeDates: z.array(z.string()).optional(),
 });
