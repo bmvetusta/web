@@ -98,11 +98,14 @@ export async function GET({ params: { placeId } }: APIContext<{ placeId: string 
       .join('\n\n');
 
     if (ics) {
+      const filename = `entrenamientos-${placeToTrain.place.replaceAll(/[\s\.\(\)-]/g, '')}.ics`;
+
+      console.log({ filename });
       return new Response(ics, {
         headers: {
           'Content-Description': 'File Transfer',
           'Content-Type': 'application/octet-stream',
-          'Content-Disposition': `attachment; filename=entrenamientos-${placeToTrain.place.replaceAll(/[\s\.\(\)]/g, '')}.ics`,
+          'Content-Disposition': `attachment; filename=${filename}`,
         },
       });
     }
