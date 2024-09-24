@@ -8,15 +8,15 @@
 
   --primary-text-color-rgb: 255, 255, 255;
   --primary-text-alpha: 0.8;
-  --primary-text-color: rgb(var(--primary-text-color));
+  --primary-text-color: rgb(var(--primary-text-color-rgb));
 
-  --headline-text-color-rgb: var(--primary-text-color-rgb);
-  /* --headline-text-color-rgb: 200, 100, 255; */
+  /* --headline-text-color-rgb: var(--primary-text-color-rgb); */
+  --headline-text-color-rgb: 200, 100, 255;
   --headline-text-alpha: 1;
   --headline-text-color: rgba(var(--headline-text-color-rgb), var(--headline-text-alpha));
 
-  --subheadline-text-color-rgb: var(--primary-text-color-rgb);
-  /* --subheadline-text-color-rgb: 200, 100, 255; */
+  --subheadline-text-color-rgb: 200, 100, 255;
+  /* --subheadline-text-color-rgb: var(--primary-text-color-rgb); */
   --subheadline-text-alpha: 0.9;
   --subheadline-text-color: rgba(var(--subheadline-text-color-rgb), var(--subheadline-text-alpha));
 }
