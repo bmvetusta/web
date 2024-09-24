@@ -98,7 +98,7 @@ export async function GET({ params: { placeId } }: APIContext<{ placeId: string 
       .join('\n\n');
 
     if (ics) {
-      const filename = `entrenamientos-${placeToTrain.place.replaceAll(/[\s\.\(\)-]/g, '')}.ics`;
+      const filename = `entrenamientos-${placeToTrain.id}.ics`;
 
       console.log({ filename });
       return new Response(ics, {
