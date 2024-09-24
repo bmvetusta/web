@@ -19,6 +19,8 @@
   /* --subheadline-text-color-rgb: var(--primary-text-color-rgb); */
   --subheadline-text-alpha: 0.9;
   --subheadline-text-color: rgba(var(--subheadline-text-color-rgb), var(--subheadline-text-alpha));
+
+  --shield-path-color: #fceb00;
 }
 *::before,
 *::after {
