@@ -9,6 +9,12 @@ interface Props {
 }
 
 const { icon, alt, title, href, text, ...props } = Astro.props;
+
+let src = `/assets/images/${icon}.svg`;
+
+if (icon === 'vetusta') {
+  src = `/assets/images/vetusta-icon-32.png`;
+}
 ---
 
 <style>
@@ -93,6 +99,6 @@ const { icon, alt, title, href, text, ...props } = Astro.props;
 </style>
 
 <a href={href} title={title} {...props}>
-  <img src=`/assets/images/${icon}.svg` alt={alt} aria-hidden='true' width='32' height='32' />
+  <img src={src} alt={alt} aria-hidden='true' width='32' height='32' />
   <p>{text}</p>
 </a>
