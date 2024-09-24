@@ -21,6 +21,8 @@
   --subheadline-text-color: rgba(var(--subheadline-text-color-rgb), var(--subheadline-text-alpha));
 
   --shield-path-color: #fceb00;
+
+  --training-details-background: #333;
 }
 *::before,
 *::after {
