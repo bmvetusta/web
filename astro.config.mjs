@@ -9,6 +9,11 @@ export default defineConfig({
   site: site.href,
   env: {
     schema: {
+      RFEBM_USER_AGENT: envField.string({
+        context: 'server',
+        access: 'secret',
+        optional: false,
+      }),
       RFEBM_API_BASE_HREF: envField.string({
         context: 'server',
         access: 'public',
