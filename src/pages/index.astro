@@ -6,6 +6,8 @@ import SocialNetwork from '../components/SocialNetwork.astro';
 import '../assets/styles/global.css';
 import MemberPoster from '../components/MemberPoster.astro';
 import TrainingPlaceList from '../components/TrainingPlace/TrainingPlaceList.astro';
+import { RFEBM_USER_AGENT } from 'astro:env/server';
+import ViewLiveVideo from 'src/components/ViewLiveVideo.astro';
 
 export const prerender = true;
 
@@ -15,6 +17,8 @@ const description = `Web del Club Balonmano Vetusta, también conocido como Auto
 const twitterDescription = `Web del Club Balonmano Vetusta, también conocido como Auto-Center Principado Vetusta por motivos de patrocinio. Somos de Oviedo.`;
 const type = 'website';
 const ogImage = advertMemberImage; // { src, width, height}
+
+const ua = RFEBM_USER_AGENT;
 ---
 
 <html lang='en'>
@@ -82,7 +86,8 @@ const ogImage = advertMemberImage; // { src, width, height}
     <SpeedInsights />
   </head>
   <body>
-    <!-- <ViewLiveVideo server:defer /> -->
+    <pre>{ua}</pre>
+    <ViewLiveVideo server:defer />
 
     <article id='abonate'>
       <main>
