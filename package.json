@@ -4,7 +4,7 @@
   "private": true,
   "version": "0.0.1",
   "scripts": {
-    "dev": "NODE_ENV=development astro dev",
+    "dev": "astro dev --host",
     "start": "astro dev",
     "check": "astro check",
     "build": "astro check && astro build",
