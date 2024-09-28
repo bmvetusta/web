@@ -3,6 +3,8 @@ import { PRIMERA_GROUP_ID, PRIMERA_TEAM_ID, YOUTUBE_CHANNEL } from 'astro:env/se
 import { isYoutubeChannelLive } from '../services/is-yotube-channel-live';
 import { rfebmGetWeeks } from '../services/rfebm/get-weeks';
 import SocialNetwork from './SocialNetwork.astro';
+import SafariYoutubeVideo from './youtube/SafariYoutubeVideo.astro';
+import YoutubeVideo from './youtube/YoutubeVideo.astro';
 
 export const partial = true;
 let youtubeVideoId, match;
@@ -59,11 +61,10 @@ if (!isChannelLive) {
 if (!youtubeVideoId) {
   return '';
 }
+const ua = Astro.request.headers.get('User-Agent');
+const isSafari = ua?.includes('AppleWebKit') && !ua?.includes('Chrome');
+console.log({ isSafari });
 ---
-
-<script>
-  import '@justinribeiro/lite-youtube';
-</script>
 
 <SocialNetwork
   icon='yt'
@@ -74,80 +75,85 @@ if (!youtubeVideoId) {
   style='--link-color: var(--live-color-hex, tomato); --link-alpha-color: 0.9;'
 />
 
-<div id='live'>
-  <div class='title'>
+<article class='live'>
+  <header>
     <p>Estamos en directo</p>
     <button>X</button>
-  </div>
+  </header>
 
-  <lite-youtube videoId={youtubeVideoId} loading='lazy' videoplay='Ver partido en directo'
-  ></lite-youtube>
-
-  <style>
-    #live {
-      border-radius: 1rem;
-      padding: 1rem;
-      overflow: hidden;
-      border: 5pt solid var(--live-color-hex, tomato);
-      position: absolute;
-      z-index: 5;
-      bottom: 0;
-      right: 0;
-      max-width: 280px;
-      height: fit-content;
-      max-width: 100dvw;
-      max-height: 300px;
-      background: canvas;
-      margin: 0 auto;
-      display: flex;
-      flex-direction: column;
-      gap: 0.25rem;
-      justify-content: center;
+  <main>
+    {
+      isSafari ? (
+        <SafariYoutubeVideo videoId={youtubeVideoId} />
+      ) : (
+        <YoutubeVideo videoId={youtubeVideoId} />
+      )
     }
+  </main>
+</article>
 
-    #live lite-youtube {
-      aspect-ratio: 16/9;
-      width: auto;
-      height: 240px;
-      max-width: 100%;
-      max-height: 100%;
-    }
+<style>
+  article {
+    border-radius: 1rem;
+    padding: 1rem;
+    overflow: hidden;
+    border: 5pt solid var(--live-color-hex, tomato);
+    position: absolute;
+    z-index: 5;
+    bottom: 0;
+    right: 0;
+    max-width: 280px;
+    background: var(--background-color, canvas);
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    justify-content: center;
+  }
 
-    div.title {
-      position: relative;
-      top: 0;
-      right: 2rem;
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-      gap: 1rem;
-      margin-left: 2rem;
-      z-index: 1;
-      width: 100%;
-      height: 2rem;
-      font-size: 1.25rem;
-      color: var(--live-color-hex, tomato);
-      font-weight: 900;
-      text-transform: uppercase;
-    }
-    div.title button {
-      padding: 0.5rem;
-      width: 2rem;
-      height: 2rem;
-      font-size: 0.8rem;
-      line-height: 100%;
-      border-radius: 50%;
-      background-color: #666;
-      color: #000;
-      border: none;
-    }
-  </style>
+  article > main {
+    object-fit: contain;
+    max-width: 100%;
+    max-height: 100%;
+    aspect-ratio: 16 / 9;
+  }
 
-  <script type='module' is:inline>
-    const live = document.querySelector('#live');
-    const btn = document.querySelector('div.title button');
-    btn.addEventListener('click', () => {
-      live.style.display = 'none';
-    });
-  </script>
-</div>
+  article > header {
+    position: relative;
+    top: 0;
+    right: 2rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-left: 2rem;
+    z-index: 1;
+    width: 100%;
+    height: 2rem;
+    font-size: 1.25rem;
+    color: var(--live-color-hex, tomato);
+    font-weight: 900;
+    text-transform: uppercase;
+  }
+  article > header button {
+    padding: 0.5rem;
+    width: 2rem;
+    height: 2rem;
+    font-size: 0.8rem;
+    line-height: 100%;
+    border-radius: 50%;
+    background-color: #666;
+    color: #000;
+    border: none;
+    position: relative;
+    top: -0.5rem;
+  }
+</style>
+
+<script type='module' is:inline>
+  const live = document.querySelector('article.live');
+  const btn = document.querySelector('article.live button');
+  btn.addEventListener('click', () => {
+    live.style.display = 'none';
+  });
+</script>

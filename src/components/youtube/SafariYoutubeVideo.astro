@@ -1,0 +1,50 @@
+---
+interface Props {
+  videoId: string;
+}
+
+const { videoId } = Astro.props;
+---
+
+<div>
+  <a href=`https://www.youtube.com/watch?v=${videoId}` title='Pulsa para ver el vídeo en youtube'>
+    <picture>
+      <source src=`https://i.ytimg.com/vi_webp/${videoId}/hqdefault.webp` type='image/webp' />
+      <source src=`https://i.ytimg.com/vi/${videoId}/hqdefault.jpg` type='image/jpeg' />
+      <img
+        src=`https://i.ytimg.com/vi/${videoId}/hqdefault.jpg`
+        alt='Portada partido en directo Balonmano Vetusta'
+        referrerpolicy='origin'
+        loading='eager'
+        width='480'
+        height='360'
+      />
+    </picture>
+    <img
+      src=`/assets/images/yt.svg`
+      alt='Logo de youtube, pulsa para ir al vídeo'
+      width='32px'
+      height='32px'
+    />
+  </a>
+</div>
+
+<style>
+  div {
+    max-width: 100%;
+    height: 100%;
+  }
+  picture,
+  picture * {
+    object-fit: contain;
+    max-width: 100%;
+    max-height: 100%;
+  }
+
+  div > a > img {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 55%;
+    left: 50%;
+  }
+</style>

@@ -1,0 +1,79 @@
+---
+import advertMemberImage from '@assets/images/abonate2425.png';
+import '@assets/styles/global.css';
+import SpeedInsights from '@vercel/speed-insights/astro';
+
+interface Props {
+  title?: string;
+  description?: string;
+  twitterDescription?: string;
+  type?: 'website' | 'article';
+  ogImage?: ImageMetadata;
+  ogImageAlt?: string;
+  canonicalUrl?: string;
+}
+
+const canonicalUrl = Astro.url.href;
+const title = Astro.props.title ?? `Club Balonmano Vetusta 🤾‍♂️ - Primera Nacional - Asturias`;
+const description =
+  Astro.props.description ??
+  `Web del Club Balonmano Vetusta, también conocido como Auto-Center Principado Vetusta por motivos de patrocinio. Somos de Oviedo y disputamos la liga de Primera Nacional de España encuadrado en el grupo B. También tenemos escuelas en distintos colegios de Oviedo y disputamos la liga Territorial senior masculino de Asturias.`;
+const twitterDescription =
+  Astro.props.twitterDescription ??
+  Astro.props.description ??
+  `Web del Club Balonmano Vetusta, también conocido como Auto-Center Principado Vetusta por motivos de patrocinio. Somos de Oviedo.`;
+const type = Astro.props.type ?? 'website';
+const ogImage = Astro.props.ogImage ?? advertMemberImage; // { src, width, height}
+const ogImageAlt =
+  Astro.props.ogImageAlt ??
+  'Club Balonmano Vetusta. Abonate y ven a disfrutar del balonmano de Primera Nacional con nosotros.';
+---
+
+<html lang='es'>
+  <head>
+    <meta charset='utf-8' />
+    <title>{title}</title>
+
+    <meta name='description' content={description} />
+
+    <meta property='og:title' content={title} />
+    <meta property='og:description' content={description} />
+
+    <meta property='twitter:title' content={title} />
+    <meta property='twitter:description' content={twitterDescription} />
+
+    <meta property='og:url' content={canonicalUrl} />
+    <meta property='og:type' content='website' />
+    <meta
+      property='og:site_name'
+      content='Club Balonmano Vetusta, club de la ciudad de Oviedo. También conocido como Auto-Center Principado Vetusta por motivos de patrocinio.'
+    />
+    <meta property='og:image:alt' content={ogImageAlt} />
+    <meta property='og:image:locale' content='es-ES' />
+    <meta property={`og:image`} content={ogImage.src} />
+    <meta property={`og:image:type`} content={type} />
+    <meta property={`og:image:width`} content={ogImage.width.toString()} />
+    <meta property={`og:image:height`} content={ogImage.height.toString()} />
+
+    <link rel='image_src' href={ogImage.src} />
+
+    <meta name='viewport' content='width=device-width, initial-scale=1' />
+
+    <link rel='icon' type='image/x-icon' href='/favicon.ico' />
+    <link rel='mask-icon' href='/favicon.svg' color='#151111' />
+    <meta name='theme-color' content='#151111' />
+
+    <meta name='generator' content={Astro.generator} />
+    <title>Club Balonmano Vetusta</title>
+    <link rel='preconnect' href='https://fonts.bunny.net' />
+    <link
+      href='https://fonts.bunny.net/css?family=alumni-sans:400,400i,600,600i'
+      rel='stylesheet'
+    />
+    <SpeedInsights />
+    <slot name='head' />
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>
