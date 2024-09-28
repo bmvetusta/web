@@ -52,7 +52,9 @@ Queremos agradecer a todos nuestros patrocinadores su colaboración:
  - https://www.dominospizza.es
  - https://www.autocaresepifanio.com/
  - https://www.elgallodeoro.com/
- - Torrevarela`;
+ - Torrevarela
+ - Ovicent Fisioterapia
+`;
 
 async function getData(matchId?: string | number) {
   if (matchId) {
