@@ -9,10 +9,10 @@ const { videoId } = Astro.props;
 <div>
   <a href=`https://www.youtube.com/watch?v=${videoId}` title='Pulsa para ver el vídeo en youtube'>
     <picture>
-      <source src=`https://i.ytimg.com/vi_webp/${videoId}/hqdefault.webp` type='image/webp' />
-      <source src=`https://i.ytimg.com/vi/${videoId}/hqdefault.jpg` type='image/jpeg' />
+      <source src=`https://i.ytimg.com/vi_webp/${videoId}/mqdefault.webp` type='image/webp' />
+      <source src=`https://i.ytimg.com/vi/${videoId}/mqdefault.jpg` type='image/jpeg' />
       <img
-        src=`https://i.ytimg.com/vi/${videoId}/hqdefault.jpg`
+        src=`https://i.ytimg.com/vi/${videoId}/mqdefault.jpg`
         alt='Portada partido en directo Balonmano Vetusta'
         referrerpolicy='origin'
         loading='eager'

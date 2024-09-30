@@ -2,7 +2,7 @@
 import MemberPoster from '@components/MemberPoster.astro';
 import SocialNetwork from '@components/SocialNetwork.astro';
 import TrainingPlaceList from '@components/TrainingPlace/TrainingPlaceList.astro';
-import ViewLiveVideo from '@components/ViewLiveVideo.astro';
+import CurrentLiveVideo from 'src/components/CurrentLiveVideo.astro';
 import Layout from 'src/layouts/Layout.astro';
 
 export const prerender = true;
@@ -11,7 +11,7 @@ const canonicalUrl = Astro.url.href;
 ---
 
 <Layout canonicalUrl={canonicalUrl}>
-  <ViewLiveVideo server:defer />
+  <CurrentLiveVideo server:defer />
 
   <style>
     div.container,

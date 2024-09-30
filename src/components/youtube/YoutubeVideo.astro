@@ -7,8 +7,13 @@ interface Props {
 <script>
   import '@justinribeiro/lite-youtube';
 </script>
-<lite-youtube videoId={Astro.props.videoId} loading='lazy' videoplay='Ver partido en directo'
-></lite-youtube>
+<lite-youtube
+  videoId={Astro.props.videoId}
+  loading='lazy'
+  videoplay='Ver partido en directo'
+  posterquality='mqdefault'
+  posterloading='edge'
+  param='rel=0'></lite-youtube>
 
 <style>
   lite-youtube {
