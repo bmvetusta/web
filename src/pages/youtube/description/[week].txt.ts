@@ -1,4 +1,5 @@
 import type { APIContext } from 'astro';
+import { capitalizeString } from 'src/lib/capitalize-string';
 import { getWeekData } from '../../../services/get-week-data';
 import { rfebmGetPreviousData } from '../../../services/rfebm/get-previous';
 
@@ -60,29 +61,6 @@ async function getData(matchId?: string | number) {
   if (matchId) {
     return rfebmGetPreviousData(matchId);
   }
-}
-
-function capitalizeString(
-  str: string,
-  all = true,
-  locales: Intl.LocalesArgument = 'es-ES'
-): string {
-  const chunks = str.split(' ');
-
-  if (chunks.length === 0) {
-    return str;
-  }
-
-  if (!all) {
-    const [firstLetter, ...otherLetters] = chunks[0].toLocaleLowerCase(locales).split('');
-
-    return `${firstLetter.toLocaleUpperCase(locales)}${otherLetters.join('')} ${chunks
-      .slice(1)
-      .map((c) => c.toLocaleLowerCase(locales))
-      .join(' ')}`.trim();
-  }
-
-  return chunks.map((word) => capitalizeString(word, false, locales)).join(' ');
 }
 
 export async function GET({ params: { week } }: APIContext<{ week: string }>) {
