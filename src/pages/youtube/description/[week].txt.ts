@@ -65,7 +65,7 @@ async function getData(matchId?: string | number) {
 
 export async function GET({ params: { week } }: APIContext<{ week: string }>) {
   const match = await getWeekData(week);
-  const previous = await getData(match?.matchId);
+  const previous = await getData(match?.id);
 
   if (!match || !previous) {
     // probably check previous should be enough
