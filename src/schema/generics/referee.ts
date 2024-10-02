@@ -1,4 +1,4 @@
-import { z } from 'astro:schema';
+import { z } from 'zod';
 
 export const pipedRefereeSchema = z.object({
   name: z.string(),

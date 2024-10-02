@@ -1,5 +1,5 @@
-import { z } from 'astro:schema';
-import { matchSchema, pipedMatchSchema } from './utils/match';
+import { z } from 'zod';
+import { matchSchema, transformableCalendarMatchSchema } from './calendar/match';
 
 // FIXME Fail when add weeksDateSchema because something is not parsing well
 // const pipedWeeksDatesSchema = z.object({
@@ -23,7 +23,7 @@ export const pipedWeekSchema = z.object({
   currentWeek: z.coerce.number(),
   totalWeeks: z.coerce.number(),
   // weeksDates: pipedWeeksDatesSchema,
-  results: z.array(pipedMatchSchema),
+  results: z.array(matchSchema),
 });
 
 export const weekSchema = z
@@ -31,7 +31,7 @@ export const weekSchema = z
     jornada_actual: z.coerce.number(),
     total_jornadas: z.coerce.number(),
     // fechas_jornadas: z.array(weeksDatesSchema),
-    resultados: z.array(matchSchema),
+    resultados: z.array(transformableCalendarMatchSchema),
   })
   .transform((w) => ({
     currentWeek: w.jornada_actual,

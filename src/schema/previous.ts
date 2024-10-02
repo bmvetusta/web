@@ -1,7 +1,7 @@
-import { z } from 'astro:schema';
-import { datetime } from './utils/datetime';
-import { pipedRefereeSchema, refereeSchema } from './utils/referee';
-import { stadiumSchema } from './utils/stadium';
+import { z } from 'zod';
+import { transformableDateSchema } from './generics/datetime';
+import { pipedRefereeSchema, refereeSchema } from './generics/referee';
+import { stadiumSchema } from './generics/stadium';
 
 export const pipedPreviousSchema = z.object({
   stadium: stadiumSchema,
@@ -19,7 +19,7 @@ export const previousSchema = z
     id_local: z.coerce.number(),
     id_visitante: z.coerce.number(),
     estado_partido: z.string(),
-    fecha: datetime.nullable().default(null),
+    fecha: transformableDateSchema.nullable().default(null),
     aforo: z.coerce.number().nullable().default(null),
     direccion: z.string().nullable().default(null),
     modalidad: z.string(),

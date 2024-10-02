@@ -1,4 +1,4 @@
-import { z } from 'astro:schema';
+import { z } from 'zod';
 
 export const scheduleSchema = z.object({
   weekDays: z.array(z.number().min(0).max(7)),
