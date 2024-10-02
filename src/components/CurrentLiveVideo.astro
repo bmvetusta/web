@@ -39,6 +39,8 @@ if (!isChannelLive) {
   //   (yearString === '2025' && month < 5) || (yearString === '2025' && month === 5 && day <= 4);
   // if (isFirstPartSeasonDate || isSecondPartSeasonDate) {
 
+  console.log({ currentHour });
+
   if (month <= 6 || month >= 8) {
     // Only in July there are no matchs for sure
     if (currentHour >= 10 && currentHour <= 23) {
