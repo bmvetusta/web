@@ -2,7 +2,8 @@ import { z } from 'zod';
 import { transformableDateSchema } from '../generics/datetime';
 import { matchSchema } from '../generics/match';
 import { transformableMatchStatusSchema } from '../generics/match-status';
-import { calendarTeamSchema, transformableCalendarTeamSchema } from './team';
+import { teamSchema } from '../generics/team';
+import { transformableCalendarTeamSchema } from './team';
 
 // export const matchSchema = z.object({
 //   id: z.number(),
@@ -15,13 +16,12 @@ import { calendarTeamSchema, transformableCalendarTeamSchema } from './team';
 //   visitorTeam: teamSchema,
 // });
 
-const finalTeamSchema = calendarTeamSchema.extend({
+const finalTeamSchema = teamSchema.extend({
   score: z.number().nullable(),
 });
 
 export const calendarMatchSchema = matchSchema
   .omit({
-    urlStreaming: true,
     localTeam: true,
     visitorTeam: true,
   })

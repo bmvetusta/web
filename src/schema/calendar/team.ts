@@ -1,13 +1,5 @@
 import { z } from 'zod';
 
-export const calendarTeamSchema = z.object({
-  id: z.number(),
-  responsibleId: z.number(),
-  name: z.string(),
-  category: z.string(),
-  shieldUrl: z.string().url(),
-});
-
 export const transformableCalendarTeamSchema = z
   .object({
     id: z.coerce.number(),

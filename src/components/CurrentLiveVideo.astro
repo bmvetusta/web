@@ -4,8 +4,9 @@ import { isYoutubeChannelLive } from '../services/is-yotube-channel-live';
 import SocialNetwork from './SocialNetwork.astro';
 import SafariYoutubeVideo from './youtube/SafariYoutubeVideo.astro';
 import YoutubeVideo from './youtube/YoutubeVideo.astro';
-import { rfebmAPIGetTeam } from 'src/services/rfebm-api/get-team';
 import { getYoutubeVideoIdFromURL } from 'src/services/get-youtube-video-id-from-url';
+import { rfebmAPIGetCalendar } from 'src/services/rfebm-api/get-calendar';
+import { PRIMERA_GROUP_ID } from 'astro:env/server';
 
 export const partial = true;
 let youtubeVideoId, match, isLive;
@@ -43,9 +44,15 @@ if (!isChannelLive) {
     // Only in July there are no matchs for sure
     if (currentHour >= 10 && currentHour <= 23) {
       // Get data
-      const weekData = await rfebmAPIGetTeam(PRIMERA_TEAM_ID);
-      if (weekData) {
-        match = weekData.matches.find((m) => m.date === sqlCurrentDateString);
+      const weekData = await rfebmAPIGetCalendar(PRIMERA_GROUP_ID);
+
+      if (Array.isArray(weekData)) {
+        match = weekData.find(
+          (m) =>
+            ['PENDING', 'PLAYING'].includes(m.status) &&
+            m.date === sqlCurrentDateString &&
+            (m.localTeam.id === PRIMERA_TEAM_ID || m.visitorTeam.id === PRIMERA_TEAM_ID)
+        );
 
         if (match && match.urlStreaming) {
           // GAME DAY

@@ -1,3 +1,4 @@
+import type { Redis } from '@upstash/redis';
 import { RFEBM_API_BASE_HREF } from 'astro:env/server';
 import EventEmitter from 'node:events';
 import { z } from 'zod';
@@ -40,7 +41,8 @@ export async function rfebmAPIFetch<T extends z.ZodType = z.ZodType>(
   const now = Date.now();
 
   // Redis stuff
-  let redis, data;
+  let redis: Redis | undefined;
+  let data: CacheStoredObject<T> | null = null;
   const cacheUrl = new URL(url.href);
 
   if (body) {
@@ -61,7 +63,7 @@ export async function rfebmAPIFetch<T extends z.ZodType = z.ZodType>(
 
       // Not fallback or fallback but we can consider not old data due cacheTTL
       if (!data.isFallback || !isExpired) {
-        return data.data;
+        return data.data as T;
       }
     }
   }
@@ -70,7 +72,7 @@ export async function rfebmAPIFetch<T extends z.ZodType = z.ZodType>(
     const init = {
       method: 'POST',
       body,
-      headers: { ...getRFEBMAPIHeaders() },
+      headers: getRFEBMAPIHeaders(),
     };
     const responseData = await fetch(url, init).then((res) => res.json());
 
@@ -78,8 +80,14 @@ export async function rfebmAPIFetch<T extends z.ZodType = z.ZodType>(
       const parsedData = schema.safeParse(responseData);
 
       if (parsedData.success) {
+        data = {
+          createdAt: now,
+          isFallback: cacheAsFallback,
+          data: parsedData.data,
+        };
+
         if (redis) {
-          await redis.set(cacheUrl.href, parsedData.data);
+          await redis.set(cacheUrl.href, data);
 
           // If we should expire the value, this mean
           // not used as fallback cache and period defines
