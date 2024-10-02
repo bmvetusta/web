@@ -21,6 +21,7 @@
     "@justinribeiro/lite-youtube": "1.5.0",
     "@types/react": "18.3.9",
     "@types/react-dom": "18.3.0",
+    "@upstash/redis": "1.34.1",
     "@vercel/og": "0.6.3",
     "@vercel/speed-insights": "1.0.12",
     "astro": "5.0.0-beta.2",
