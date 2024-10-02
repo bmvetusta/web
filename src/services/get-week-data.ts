@@ -1,5 +1,5 @@
-import { PRIMERA_GROUP_ID, PRIMERA_TEAM_ID } from 'astro:env/server';
-import { rfebmAPIGetCalendar } from './rfebm-api/get-calendar';
+import { PRIMERA_TEAM_ID } from 'astro:env/server';
+import { rfebmAPIGetTeam } from './rfebm-api/get-team';
 
 export async function getWeekData(week?: number | string | null) {
   if (!week) {
@@ -11,12 +11,13 @@ export async function getWeekData(week?: number | string | null) {
     return;
   }
 
-  const data = await rfebmAPIGetCalendar(PRIMERA_GROUP_ID);
+  const data = await rfebmAPIGetTeam(PRIMERA_TEAM_ID, 2425, 1);
+  console.log({ data });
   if (!data) {
     return;
   }
 
-  const match = data.find(
+  const match = data.matches.find(
     (m) =>
       m.week === weekNumber &&
       (m.localTeam.id === PRIMERA_TEAM_ID || m.visitorTeam.id === PRIMERA_TEAM_ID)

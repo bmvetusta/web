@@ -9,11 +9,9 @@ export async function rfebmAPIGetTeam(
 ) {
   const pathname = '/ws/equipo';
   const body = new URLSearchParams();
-  body.append('id_ambito', ambitoId.toString());
   body.append('id_equipo', teamId.toString());
   body.append('id_temporada', seasonId.toString());
+  body.append('id_ambito', ambitoId.toString());
 
-  const data = rfebmAPIFetch(pathname, responseTeamSchema);
-
-  return data;
+  return rfebmAPIFetch(pathname, responseTeamSchema, body);
 }

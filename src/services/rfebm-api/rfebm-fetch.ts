@@ -6,6 +6,7 @@ import { getRFEBMAPIHeaders } from './base-href';
 export const fetchEmitter = new EventEmitter();
 export const fetchEventError = 'error:fetch:rfebm';
 
+// const RFEBM_API_BASE_HREF = 'https://balonmano.isquad.es';
 export async function rfebmAPIFetch<T extends z.ZodType = z.ZodType>(
   pathname: string,
   schema: T,
@@ -24,11 +25,11 @@ export async function rfebmAPIFetch<T extends z.ZodType = z.ZodType>(
     };
     const responseData = await fetch(url, init).then((res) => res.json());
 
-    if (responseData.ok === 'OK') {
+    if (responseData.status === 'OK') {
       const parsedData = schema.safeParse(responseData);
 
       if (parsedData.success) {
-        return parsedData;
+        return parsedData.data;
       }
 
       if (shouldReturnUnparsedIfFail) {
@@ -41,7 +42,7 @@ export async function rfebmAPIFetch<T extends z.ZodType = z.ZodType>(
     // If any error while requesting data we emit an error to allow
     // some automations in case any header has expired because they
     // change User-Agent sometimes due is used as a password
-    if (responseData.ok === 'KO' && shouldEmitErrorsIfFetchFail) {
+    if (responseData.status === 'KO' && shouldEmitErrorsIfFetchFail) {
       fetchEmitter.emit(fetchEventError, {
         url,
         requestInit: init,
