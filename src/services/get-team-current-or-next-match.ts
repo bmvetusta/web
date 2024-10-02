@@ -22,12 +22,12 @@ export async function getTeamCurrentOrNextMatch(
 
   // Get data
   const teamData = await rfebmAPIGetTeam(teamId, seasonId);
-  if (teamData && teamData.trayectoria && Array.isArray(teamData.trayectoria)) {
+  if (teamData) {
     match =
-      teamData.trayectoria.find(
+      teamData.matches.find(
         (m: any) => m?.estado_partido === 'En progreso' || m.fecha.startsWith(currentDateString)
       ) ??
-      teamData.trayectoria.find(
+      teamData.matches.find(
         (m: any) => m.fecha.trim().lenght > 0 && m.estado_partido === 'Pendiente'
       );
   }
