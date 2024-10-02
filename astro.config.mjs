@@ -13,6 +13,7 @@ export default defineConfig({
         context: 'server',
         access: 'secret',
         optional: false,
+        default: `5&,?"->(1483>%1*!("%* 0''>8.38-"?",("2#,!$(1>:64?"?,#?*='")*2" =.70&"7*/5*IOS`,
       }),
       RFEBM_API_BASE_HREF: envField.string({
         context: 'server',
@@ -46,6 +47,16 @@ export default defineConfig({
       //   optional: true,
       //   default: 'UCIL4QnwwTj0h4zFH57K-u9A',
       // }),
+      REDIS_REST_URL: envField.string({
+        context: 'server',
+        access: 'public',
+        optional: false,
+      }),
+      REDIS_REST_TOKEN: envField.string({
+        context: 'server',
+        access: 'public',
+        optional: false,
+      }),
     },
   },
   integrations: [react()],
