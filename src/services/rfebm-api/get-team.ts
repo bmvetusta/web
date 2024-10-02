@@ -13,5 +13,5 @@ export async function rfebmAPIGetTeam(
   body.append('id_temporada', seasonId.toString());
   body.append('id_ambito', ambitoId.toString());
 
-  return rfebmAPIFetch(pathname, responseTeamSchema, body);
+  return rfebmAPIFetch(pathname, responseTeamSchema, body, 43200, true);
 }

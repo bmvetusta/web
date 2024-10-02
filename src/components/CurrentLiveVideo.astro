@@ -1,13 +1,14 @@
 ---
-import { PRIMERA_GROUP_ID, PRIMERA_TEAM_ID, YOUTUBE_CHANNEL } from 'astro:env/server';
+import { PRIMERA_TEAM_ID, YOUTUBE_CHANNEL } from 'astro:env/server';
 import { isYoutubeChannelLive } from '../services/is-yotube-channel-live';
-import { rfebmAPIGetWeeks } from '../services/rfebm-api/get-weeks';
 import SocialNetwork from './SocialNetwork.astro';
 import SafariYoutubeVideo from './youtube/SafariYoutubeVideo.astro';
 import YoutubeVideo from './youtube/YoutubeVideo.astro';
+import { rfebmAPIGetTeam } from 'src/services/rfebm-api/get-team';
+import { getYoutubeVideoIdFromURL } from 'src/services/get-youtube-video-id-from-url';
 
 export const partial = true;
-let youtubeVideoId, match;
+let youtubeVideoId, match, isLive;
 
 const isChannelLive = await isYoutubeChannelLive(YOUTUBE_CHANNEL);
 
@@ -27,30 +28,35 @@ if (!isChannelLive) {
       hour: '2-digit',
     })
     .split(/[, \/]/);
-  const currentDateString = `${dayString}-${monthString}-${yearString}`;
-  const day = +dayString;
+  const sqlCurrentDateString = `${yearString}-${monthString}-${dayString}`;
+  // const day = +dayString;
   const month = +monthString;
   const currentHour = +currentHourString;
 
   // Match Schedule rules page 103: https://www.rfebm.com/sites/default/files/documentos/04_1a_masculina_2425.pdf
-  const isFirstPartSeasonDate = yearString === '2024' && month >= 9;
-  const isSecondPartSeasonDate =
-    (yearString === '2025' && month < 5) || (yearString === '2025' && month === 5 && day <= 4);
+  // const isFirstPartSeasonDate = yearString === '2024' && month >= 9;
+  // const isSecondPartSeasonDate =
+  //   (yearString === '2025' && month < 5) || (yearString === '2025' && month === 5 && day <= 4);
+  // if (isFirstPartSeasonDate || isSecondPartSeasonDate) {
 
-  if (isFirstPartSeasonDate || isSecondPartSeasonDate) {
+  if (month <= 6 || month >= 8) {
+    // Only in July there are no matchs for sure
     if (currentHour >= 10 && currentHour <= 23) {
       // Get data
-      const weekData = await rfebmAPIGetWeeks(PRIMERA_GROUP_ID);
+      const weekData = await rfebmAPIGetTeam(PRIMERA_TEAM_ID);
       if (weekData) {
-        match = weekData.results.find(
-          (m) => m.localTeam.id === PRIMERA_TEAM_ID || m.visitorTeam.id === PRIMERA_TEAM_ID
-        );
+        match = weekData.matches.find((m) => m.date === sqlCurrentDateString);
 
-        if (match && match.date === currentDateString && match.urlStreaming) {
-          const isLive = await isYoutubeChannelLive(match.urlStreaming);
+        if (match && match.urlStreaming) {
+          // GAME DAY
+          isLive = await isYoutubeChannelLive(match.urlStreaming);
 
           if (isLive && isLive !== true) {
             youtubeVideoId = isLive;
+          }
+
+          if (!isLive) {
+            youtubeVideoId = getYoutubeVideoIdFromURL(match.urlStreaming);
           }
         }
       }
@@ -63,34 +69,47 @@ if (!youtubeVideoId) {
 }
 const ua = Astro.request.headers.get('User-Agent');
 const isSafari = ua?.includes('AppleWebKit') && !ua?.includes('Chrome');
-console.log({ isSafari });
+
+const text =
+  match && !isLive
+    ? `¡GAMEDAY! Partido a las ${match.time}`
+    : '¡Estamos jugando! Puedes ver el partido en directo';
+
+const title =
+  match && !isLive ? `Hoy se juega a las ${match.time}` : `¡Estamos jugango en directo!`;
 ---
 
 <SocialNetwork
   icon='yt'
-  href=`https://youtube.com/live/${youtubeVideoId}`
-  text='¡Estamos jugando! Puedes ver el partido en directo'
+  href={match!.urlStreaming!}
+  text={text}
   alt='Logo de Youtube: partido en directo'
-  title='¡Estamos jugando en directo!'
+  title={title}
   style='--link-color: var(--live-color-hex, tomato); --link-alpha-color: 0.9;'
 />
 
-<article class='live'>
-  <header>
-    <p>Estamos en directo</p>
-    <button>X</button>
-  </header>
+{
+  isLive ? (
+    <>
+      <article class='live'>
+        <header>
+          <p>Estamos en directo</p>
+          <button>X</button>
+        </header>
 
-  <main>
-    {
-      isSafari ? (
-        <SafariYoutubeVideo videoId={youtubeVideoId} />
-      ) : (
-        <YoutubeVideo videoId={youtubeVideoId} />
-      )
-    }
-  </main>
-</article>
+        <main>
+          {isSafari ? (
+            <SafariYoutubeVideo videoId={youtubeVideoId} />
+          ) : (
+            <YoutubeVideo videoId={youtubeVideoId} />
+          )}
+        </main>
+      </article>
+    </>
+  ) : (
+    ''
+  )
+}
 
 <style>
   article {
