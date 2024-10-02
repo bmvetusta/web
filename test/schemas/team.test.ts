@@ -1,10 +1,10 @@
 import { describe, expect, test } from 'bun:test';
-import { teamResponseSchema } from 'src/schema/team/response';
+import { responseTeamSchema } from 'src/schema/team/response';
 import teamj2 from '../mock/team-j2-end.json' with { type: 'json' };
 
 test('Check Team JSON Response Data', () => {
   describe('First Response Schema parse test', () => {
-    const data = teamResponseSchema.safeParse(teamj2);
+    const data = responseTeamSchema.safeParse(teamj2);
 
     // if (data.success === false) {
     //   console.error(data.error?.errors);
@@ -14,7 +14,7 @@ test('Check Team JSON Response Data', () => {
   });
 
   describe('Second Response Schema parse test', () => {
-    const data = teamResponseSchema.safeParse(teamj2);
+    const data = responseTeamSchema.safeParse(teamj2);
 
     // if (data.success === false) {
     //   console.error(data.error?.errors);

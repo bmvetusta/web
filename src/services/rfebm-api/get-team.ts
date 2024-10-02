@@ -1,22 +1,19 @@
-import { RFEBM_API_BASE_HREF } from 'astro:env/server';
-import { getRFEBMAPIHeaders } from './base-href';
+import { responseTeamSchema } from 'src/schema/team/response';
 import { getCurrentSeasonId } from './get-current-season-id';
+import { rfebmAPIFetch } from './rfebm-fetch';
 
 export async function rfebmAPIGetTeam(
   teamId: string | number,
   seasonId: string | number = getCurrentSeasonId(),
   ambitoId: string | number = 1
 ) {
-  const basepath = '/ws/equipo';
-  const url = new URL(basepath, RFEBM_API_BASE_HREF);
-  url.searchParams.append('id_ambito', ambitoId.toString());
-  url.searchParams.append('id_equipo', teamId.toString());
-  url.searchParams.append('id_temporada', seasonId.toString());
+  const pathname = '/ws/equipo';
+  const body = new URLSearchParams();
+  body.append('id_ambito', ambitoId.toString());
+  body.append('id_equipo', teamId.toString());
+  body.append('id_temporada', seasonId.toString());
 
-  const data = await fetch(url, {
-    method: 'POST',
-    headers: getRFEBMAPIHeaders(),
-  }).then((res) => res.json());
+  const data = rfebmAPIFetch(pathname, responseTeamSchema);
 
   return data;
 }
