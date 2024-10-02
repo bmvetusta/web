@@ -22,5 +22,4 @@ export const transformableCalendarTeamSchema = z
     name: v.nombre,
     category: v.categoria,
     shieldUrl: v.imagen,
-  }))
-  .pipe(calendarTeamSchema);
+  }));

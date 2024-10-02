@@ -11,6 +11,7 @@ export const matchStatusSchema = z.enum([
 
 export const transformableMatchStatusSchema = z
   .string()
+  .default('unknown')
   // .enum(['Finalizado', 'Pendiente', 'en progreso', 'Finalizado por exclusion', 'Suspendido'])
   .transform((v) => {
     switch (v) {
