@@ -1,12 +1,12 @@
 import { RFEBM_API_BASE_HREF } from 'astro:env/server';
 import EventEmitter from 'node:events';
 import { z } from 'zod';
-import { getRFEBMHeaders } from './base-href';
+import { getRFEBMAPIHeaders } from './base-href';
 
 export const fetchEmitter = new EventEmitter();
 export const fetchEventError = 'error:fetch:rfebm';
 
-export async function rfebmFetch<T extends z.ZodType = z.ZodTypeAny>(
+export async function rfebmAPIFetch<T extends z.ZodType = z.ZodType>(
   pathname: string,
   schema: T,
   body?: BodyInit,
@@ -20,20 +20,9 @@ export async function rfebmFetch<T extends z.ZodType = z.ZodTypeAny>(
     const init = {
       method: 'POST',
       body,
-      headers: { ...getRFEBMHeaders() },
+      headers: { ...getRFEBMAPIHeaders() },
     };
     const responseData = await fetch(url, init).then((res) => res.json());
-
-    // If any error while requesting data we emit an error to allow
-    // some automations in case any header has expired because they
-    // change User-Agent sometimes due is used as a password
-    if (responseData.ok === 'KO' && shouldEmitErrorsIfFetchFail) {
-      fetchEmitter.emit(fetchEventError, {
-        url,
-        requestInit: init,
-        response: responseData,
-      });
-    }
 
     if (responseData.ok === 'OK') {
       const parsedData = schema.safeParse(responseData);
@@ -47,6 +36,17 @@ export async function rfebmFetch<T extends z.ZodType = z.ZodTypeAny>(
       }
 
       throw new z.ZodError(parsedData.error.errors);
+    }
+
+    // If any error while requesting data we emit an error to allow
+    // some automations in case any header has expired because they
+    // change User-Agent sometimes due is used as a password
+    if (responseData.ok === 'KO' && shouldEmitErrorsIfFetchFail) {
+      fetchEmitter.emit(fetchEventError, {
+        url,
+        requestInit: init,
+        response: responseData,
+      });
     }
 
     if (shouldReturnUnparsedIfFail) {

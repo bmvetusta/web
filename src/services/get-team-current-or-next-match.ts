@@ -1,5 +1,5 @@
-import { getCurrentSeasonId } from './rfebm/get-current-season-id';
-import { rfebmGetTeam } from './rfebm/get-team';
+import { getCurrentSeasonId } from './rfebm-api/get-current-season-id';
+import { rfebmAPIGetTeam } from './rfebm-api/get-team';
 
 export async function getTeamCurrentOrNextMatch(
   teamId: string | number,
@@ -21,7 +21,7 @@ export async function getTeamCurrentOrNextMatch(
   const currentDateString = `${yearString}-${monthString}-${dayString}`;
 
   // Get data
-  const teamData = await rfebmGetTeam(teamId, seasonId);
+  const teamData = await rfebmAPIGetTeam(teamId, seasonId);
   if (teamData && teamData.trayectoria && Array.isArray(teamData.trayectoria)) {
     match =
       teamData.trayectoria.find(

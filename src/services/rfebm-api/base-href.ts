@@ -1,6 +1,6 @@
 import { RFEBM_USER_AGENT } from 'astro:env/server';
 
-export function getRFEBMHeaders() {
+export function getRFEBMAPIHeaders() {
   const headers = new Headers({
     'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8',
     'Connection': 'keep-alive',

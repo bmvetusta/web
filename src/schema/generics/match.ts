@@ -5,6 +5,7 @@ import { teamSchema } from './team';
 export const matchSchema = z.object({
   id: z.number(),
   groupId: z.coerce.number().nullable().default(null),
+  stadiumId: z.coerce.number().nullable().default(null),
   uploadedReport: z.boolean().nullable().default(null),
   competitionName: z.string().nullish(),
   week: z.number(),

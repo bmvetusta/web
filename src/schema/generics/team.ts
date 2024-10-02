@@ -7,4 +7,6 @@ export const teamSchema = z.object({
   shieldUrl: shieldImageUrl,
   score: z.coerce.number().nullable().default(null),
   position: z.coerce.number().nullable().default(null),
+  responsibleId: z.coerce.number().nullable().default(null),
+  category: z.string().or(z.number()).nullable().default(null),
 });

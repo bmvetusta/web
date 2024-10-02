@@ -1,7 +1,7 @@
 ---
 import { PRIMERA_GROUP_ID, PRIMERA_TEAM_ID, YOUTUBE_CHANNEL } from 'astro:env/server';
 import { isYoutubeChannelLive } from '../services/is-yotube-channel-live';
-import { rfebmGetWeeks } from '../services/rfebm/get-weeks';
+import { rfebmAPIGetWeeks } from '../services/rfebm-api/get-weeks';
 import SocialNetwork from './SocialNetwork.astro';
 import SafariYoutubeVideo from './youtube/SafariYoutubeVideo.astro';
 import YoutubeVideo from './youtube/YoutubeVideo.astro';
@@ -40,7 +40,7 @@ if (!isChannelLive) {
   if (isFirstPartSeasonDate || isSecondPartSeasonDate) {
     if (currentHour >= 10 && currentHour <= 23) {
       // Get data
-      const weekData = await rfebmGetWeeks(PRIMERA_GROUP_ID);
+      const weekData = await rfebmAPIGetWeeks(PRIMERA_GROUP_ID);
       if (weekData) {
         match = weekData.results.find(
           (m) => m.localTeam.id === PRIMERA_TEAM_ID || m.visitorTeam.id === PRIMERA_TEAM_ID

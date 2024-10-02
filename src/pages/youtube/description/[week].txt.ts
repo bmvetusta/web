@@ -1,7 +1,7 @@
 import type { APIContext } from 'astro';
 import { capitalizeString } from 'src/lib/capitalize-string';
 import { getWeekData } from '../../../services/get-week-data';
-import { rfebmGetPreviousData } from '../../../services/rfebm/get-previous';
+import { rfebmAPIGetPreviousData } from '../../../services/rfebm-api/get-previous';
 
 const textLayout = ({
   visitorName,
@@ -59,7 +59,7 @@ Queremos agradecer a todos nuestros patrocinadores su colaboración:
 
 async function getData(matchId?: string | number) {
   if (matchId) {
-    return rfebmGetPreviousData(matchId);
+    return rfebmAPIGetPreviousData(matchId);
   }
 }
 

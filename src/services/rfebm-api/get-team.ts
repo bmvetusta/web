@@ -1,8 +1,8 @@
 import { RFEBM_API_BASE_HREF } from 'astro:env/server';
-import { getRFEBMHeaders } from './base-href';
+import { getRFEBMAPIHeaders } from './base-href';
 import { getCurrentSeasonId } from './get-current-season-id';
 
-export async function rfebmGetTeam(
+export async function rfebmAPIGetTeam(
   teamId: string | number,
   seasonId: string | number = getCurrentSeasonId(),
   ambitoId: string | number = 1
@@ -15,7 +15,7 @@ export async function rfebmGetTeam(
 
   const data = await fetch(url, {
     method: 'POST',
-    headers: getRFEBMHeaders(),
+    headers: getRFEBMAPIHeaders(),
   }).then((res) => res.json());
 
   return data;

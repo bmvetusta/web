@@ -1,0 +1,674 @@
+{
+  "status": "OK",
+  "jornada_actual": "1",
+  "total_jornadas": "30",
+  "fechas_jornadas": [
+    { "jornada": "1", "fecha": "2024-09-22", "ronda": null },
+    { "jornada": "2", "fecha": "2024-09-29", "ronda": null },
+    { "jornada": "3", "fecha": "2024-10-06", "ronda": null },
+    { "jornada": "4", "fecha": "2024-10-13", "ronda": null },
+    { "jornada": "5", "fecha": "2024-10-20", "ronda": null },
+    { "jornada": "6", "fecha": "2024-10-27", "ronda": null },
+    { "jornada": "7", "fecha": "2024-11-03", "ronda": null },
+    { "jornada": "8", "fecha": "2024-11-10", "ronda": null },
+    { "jornada": "9", "fecha": "2024-11-17", "ronda": null },
+    { "jornada": "10", "fecha": "2024-11-24", "ronda": null },
+    { "jornada": "11", "fecha": "2024-12-01", "ronda": null },
+    { "jornada": "12", "fecha": "2024-12-08", "ronda": null },
+    { "jornada": "13", "fecha": "2024-12-15", "ronda": null },
+    { "jornada": "14", "fecha": "2024-12-22", "ronda": null },
+    { "jornada": "15", "fecha": "2025-01-12", "ronda": null },
+    { "jornada": "16", "fecha": "2025-01-19", "ronda": null },
+    { "jornada": "17", "fecha": "2025-01-26", "ronda": null },
+    { "jornada": "18", "fecha": "2025-02-02", "ronda": null },
+    { "jornada": "19", "fecha": "2025-02-09", "ronda": null },
+    { "jornada": "20", "fecha": "2025-02-16", "ronda": null },
+    { "jornada": "21", "fecha": "2025-02-23", "ronda": null },
+    { "jornada": "22", "fecha": "2025-03-02", "ronda": null },
+    { "jornada": "23", "fecha": "2025-03-09", "ronda": null },
+    { "jornada": "24", "fecha": "2025-03-16", "ronda": null },
+    { "jornada": "25", "fecha": "2025-03-23", "ronda": null },
+    { "jornada": "26", "fecha": "2025-03-30", "ronda": null },
+    { "jornada": "27", "fecha": "2025-04-06", "ronda": null },
+    { "jornada": "28", "fecha": "2025-04-13", "ronda": null },
+    { "jornada": "29", "fecha": "2025-04-27", "ronda": null },
+    { "jornada": "30", "fecha": "2025-05-04", "ronda": null }
+  ],
+  "resultados": [
+    {
+      "id": "1385786",
+      "id_estadio": "1000121",
+      "id_grupo": "1023856",
+      "estado_partido": "Finalizado",
+      "fecha": "2024-09-21 20:00:00",
+      "acta_subida": "1",
+      "jornada": "1",
+      "tipo_partido": 1,
+      "resultado_local_penaltis": null,
+      "resultado_visitante_penaltis": null,
+      "url_streaming": "https://www.youtube.com/watch?v=Rou2YQwwztw",
+
+      "id_local": "214998",
+      "nombre_local_default": "REAL GRUPO DE CULTURA COVADONGA",
+      "nombre_local": "REAL GRUPO DE CULTURA COVADONGA",
+      "url_escudo_local": "http://balonmano.isquad.es/images/afiliacion_clubs/70/square_646e366b316534346e76.jpg",
+      "resultado_local": "37",
+
+      "id_visitante": "204021",
+      "nombre_visitante_default": "LA FUENTE PEREDA",
+      "nombre_visitante": "LA FUENTE PEREDA",
+      "url_escudo_visitante": "http://balonmano.isquad.es/images/afiliacion_clubs/100625/square_34397965676d386c7565.jpg",
+      "resultado_visitante": "25",
+
+      "sets": [
+        {
+          "id": "1",
+          "nombre": "Set1",
+          "resultado_local": null,
+          "resultado_visitante": null,
+          "tiebreak_local": null,
+          "tiebreak_visitante": null
+        },
+        {
+          "id": "2",
+          "nombre": "Set2",
+          "resultado_local": null,
+          "resultado_visitante": null,
+          "tiebreak_local": null,
+          "tiebreak_visitante": null
+        },
+        {
+          "id": "3",
+          "nombre": "set3",
+          "resultado_local": null,
+          "resultado_visitante": null,
+          "tiebreak_local": null,
+          "tiebreak_visitante": null
+        },
+        {
+          "id": "4",
+          "nombre": "Set4",
+          "resultado_local": null,
+          "resultado_visitante": null,
+          "tiebreak_local": null,
+          "tiebreak_visitante": null
+        },
+        {
+          "id": "5",
+          "nombre": "Set5",
+          "resultado_local": null,
+          "resultado_visitante": null,
+          "tiebreak_local": null,
+          "tiebreak_visitante": null
+        }
+      ],
+      "equipo_local": {
+        "nombre": "REAL GRUPO DE CULTURA COVADONGA",
+        "categoria": "Primera Nacional",
+        "responsable": "1256",
+        "imagen": "http://balonmano.isquad.es/images/afiliacion_clubs/70/square_646e366b316534346e76.jpg",
+        "id": "214998"
+      },
+      "equipo_visitante": {
+        "nombre": "LAFUENTE PEREDA CIUDAD DE SANTANDER",
+        "categoria": "Primera Nacional",
+        "responsable": "1042557",
+        "imagen": "http://balonmano.isquad.es/images/afiliacion_clubs/100625/square_34397965676d386c7565.jpg",
+        "id": "204021"
+      }
+    },
+    {
+      "id": "1385785",
+      "id_estadio": "1000004",
+      "id_local": "215350",
+      "nombre_local_default": "RECOLETAS ARROYO CABERO EDIFICACIONES",
+      "nombre_local": "RECOLETAS ARROYO CABERO EDIFICACIONES",
+      "url_escudo_local": "http://balonmano.isquad.es/images/afiliacion_clubs/807/square_6d686d673264306d316f.jpg",
+      "resultado_local": "32",
+      "id_visitante": "212129",
+      "nombre_visitante_default": "BATHCO BM. TORRELAVEGA",
+      "nombre_visitante": "BATHCO BM. TORRELAVEGA",
+      "url_escudo_visitante": "http://balonmano.isquad.es/images/afiliacion_clubs/117/square_73726e3132697065736b.jpg",
+      "resultado_visitante": "38",
+      "estado_partido": "Finalizado",
+      "fecha": "2024-09-21 19:30:00",
+      "acta_subida": "1",
+      "jornada": "1",
+      "id_grupo": "1023856",
+      "sets": [
+        {
+          "id": "1",
+          "nombre": "Set1",
+          "resultado_local": null,
+          "resultado_visitante": null,
+          "tiebreak_local": null,
+          "tiebreak_visitante": null
+        },
+        {
+          "id": "2",
+          "nombre": "Set2",
+          "resultado_local": null,
+          "resultado_visitante": null,
+          "tiebreak_local": null,
+          "tiebreak_visitante": null
+        },
+        {
+          "id": "3",
+          "nombre": "set3",
+          "resultado_local": null,
+          "resultado_visitante": null,
+          "tiebreak_local": null,
+          "tiebreak_visitante": null
+        },
+        {
+          "id": "4",
+          "nombre": "Set4",
+          "resultado_local": null,
+          "resultado_visitante": null,
+          "tiebreak_local": null,
+          "tiebreak_visitante": null
+        },
+        {
+          "id": "5",
+          "nombre": "Set5",
+          "resultado_local": null,
+          "resultado_visitante": null,
+          "tiebreak_local": null,
+          "tiebreak_visitante": null
+        }
+      ],
+      "tipo_partido": 1,
+      "resultado_local_penaltis": null,
+      "resultado_visitante_penaltis": null,
+      "url_streaming": "https://youtube.com/live/S-1nombKESU?feature=share",
+      "equipo_local": {
+        "nombre": "RECOLETAS ARROYO CABERO EDIFICACIONES",
+        "categoria": "Primera Nacional",
+        "responsable": "1001574",
+        "imagen": "http://balonmano.isquad.es/images/afiliacion_clubs/807/square_6d686d673264306d316f.jpg",
+        "id": "215350"
+      },
+      "equipo_visitante": {
+        "nombre": "BATHCO BM. TORRELAVEGA",
+        "categoria": "Primera Nacional",
+        "responsable": "1040510",
+        "imagen": "http://balonmano.isquad.es/images/afiliacion_clubs/117/square_73726e3132697065736b.jpg",
+        "id": "212129"
+      }
+    },
+    {
+      "id": "1385784",
+      "id_estadio": "1000005",
+      "id_local": "209180",
+      "nombre_local_default": "CONGESA XXI BALONMANO CIUDAD DE SALAMANCA",
+      "nombre_local": "CONGESA XXI BALONMANO CIUDAD DE SALAMANCA",
+      "url_escudo_local": "http://balonmano.isquad.es/images/afiliacion_clubs/135/square_366a6b36366f3834316a.jpg",
+      "resultado_local": "4",
+      "id_visitante": "209500",
+      "nombre_visitante_default": "AUTO-CENTER PRINCIPADO",
+      "nombre_visitante": "AUTO-CENTER PRINCIPADO",
+      "url_escudo_visitante": "http://balonmano.isquad.es/images/afiliacion_clubs/2898/square_35723432687275366a39.jpg",
+      "resultado_visitante": "6",
+      "estado_partido": "en progreso",
+      "fecha": "2024-09-22 13:00:00",
+      "acta_subida": "0",
+      "jornada": "1",
+      "id_grupo": "1023856",
+      "sets": [
+        {
+          "id": "1",
+          "nombre": "Set1",
+          "resultado_local": null,
+          "resultado_visitante": null,
+          "tiebreak_local": null,
+          "tiebreak_visitante": null
+        },
+        {
+          "id": "2",
+          "nombre": "Set2",
+          "resultado_local": null,
+          "resultado_visitante": null,
+          "tiebreak_local": null,
+          "tiebreak_visitante": null
+        },
+        {
+          "id": "3",
+          "nombre": "set3",
+          "resultado_local": null,
+          "resultado_visitante": null,
+          "tiebreak_local": null,
+          "tiebreak_visitante": null
+        },
+        {
+          "id": "4",
+          "nombre": "Set4",
+          "resultado_local": null,
+          "resultado_visitante": null,
+          "tiebreak_local": null,
+          "tiebreak_visitante": null
+        },
+        {
+          "id": "5",
+          "nombre": "Set5",
+          "resultado_local": null,
+          "resultado_visitante": null,
+          "tiebreak_local": null,
+          "tiebreak_visitante": null
+        }
+      ],
+      "tipo_partido": 1,
+      "resultado_local_penaltis": null,
+      "resultado_visitante_penaltis": null,
+      "url_streaming": "https://www.youtube.com/live/DFHEuQYu8YA",
+      "equipo_local": {
+        "nombre": "CONGESA XXI BALONMANO CIUDAD DE SALAMANCA",
+        "categoria": "Primera Nacional",
+        "responsable": "1058653",
+        "imagen": "http://balonmano.isquad.es/images/afiliacion_clubs/135/square_366a6b36366f3834316a.jpg",
+        "id": "209180"
+      },
+      "equipo_visitante": {
+        "nombre": "AUTO-CENTER PRINCIPADO",
+        "categoria": "Primera Nacional",
+        "responsable": "29347",
+        "imagen": "http://balonmano.isquad.es/images/afiliacion_clubs/2898/square_35723432687275366a39.jpg",
+        "id": "209500"
+      }
+    },
+    {
+      "id": "1385783",
+      "id_estadio": "1000000",
+      "id_local": "218714",
+      "nombre_local_default": "BALONMANO CAJA RURAL ZAMORA",
+      "nombre_local": "BALONMANO CAJA RURAL ZAMORA",
+      "url_escudo_local": "http://balonmano.isquad.es/images/afiliacion_clubs/437/square_766f6d6d376d6972346c.jpg",
+      "resultado_local": "32",
+      "id_visitante": "201273",
+      "nombre_visitante_default": "UNIVERSIDAD DE LE\u00f3N ADEMAR",
+      "nombre_visitante": "UNIVERSIDAD DE LE\u00f3N ADEMAR",
+      "url_escudo_visitante": "http://balonmano.isquad.es/images/afiliacion_clubs/126/square_70636d736b6d31387577.jpg",
+      "resultado_visitante": "24",
+      "estado_partido": "Finalizado",
+      "fecha": "2024-09-21 19:00:00",
+      "acta_subida": "1",
+      "jornada": "1",
+      "id_grupo": "1023856",
+      "sets": [
+        {
+          "id": "1",
+          "nombre": "Set1",
+          "resultado_local": null,
+          "resultado_visitante": null,
+          "tiebreak_local": null,
+          "tiebreak_visitante": null
+        },
+        {
+          "id": "2",
+          "nombre": "Set2",
+          "resultado_local": null,
+          "resultado_visitante": null,
+          "tiebreak_local": null,
+          "tiebreak_visitante": null
+        },
+        {
+          "id": "3",
+          "nombre": "set3",
+          "resultado_local": null,
+          "resultado_visitante": null,
+          "tiebreak_local": null,
+          "tiebreak_visitante": null
+        },
+        {
+          "id": "4",
+          "nombre": "Set4",
+          "resultado_local": null,
+          "resultado_visitante": null,
+          "tiebreak_local": null,
+          "tiebreak_visitante": null
+        },
+        {
+          "id": "5",
+          "nombre": "Set5",
+          "resultado_local": null,
+          "resultado_visitante": null,
+          "tiebreak_local": null,
+          "tiebreak_visitante": null
+        }
+      ],
+      "tipo_partido": 1,
+      "resultado_local_penaltis": null,
+      "resultado_visitante_penaltis": null,
+      "url_streaming": "https://youtube.com/live/qWLIaN0MEwc?feature=share",
+      "equipo_local": {
+        "nombre": "BALONMANO CAJA RURAL ZAMORA",
+        "categoria": "Primera Nacional",
+        "responsable": "1106631",
+        "imagen": "http://balonmano.isquad.es/images/afiliacion_clubs/437/square_766f6d6d376d6972346c.jpg",
+        "id": "218714"
+      },
+      "equipo_visitante": {
+        "nombre": "UNIVERSIDAD DE LE\u00f3N ADEMAR",
+        "categoria": "Primera Nacional",
+        "responsable": "41939",
+        "imagen": "http://balonmano.isquad.es/images/afiliacion_clubs/126/square_70636d736b6d31387577.jpg",
+        "id": "201273"
+      }
+    },
+    {
+      "id": "1385782",
+      "id_estadio": "1000166",
+      "id_local": "203934",
+      "nombre_local_default": "BM. SANTO\u00d1A",
+      "nombre_local": "BM. SANTO\u00d1A",
+      "url_escudo_local": "http://balonmano.isquad.es/images/afiliacion_clubs/767/square_64727237756f70706669.jpg",
+      "resultado_local": "27",
+      "id_visitante": "215209",
+      "nombre_visitante_default": "SDC ASTANDER ASTILLERO",
+      "nombre_visitante": "SDC ASTANDER ASTILLERO",
+      "url_escudo_visitante": "http://balonmano.isquad.es/images/afiliacion_clubs/112/square_626a3568337770617030.jpg",
+      "resultado_visitante": "27",
+      "estado_partido": "Finalizado",
+      "fecha": "2024-09-21 18:30:00",
+      "acta_subida": "1",
+      "jornada": "1",
+      "id_grupo": "1023856",
+      "sets": [
+        {
+          "id": "1",
+          "nombre": "Set1",
+          "resultado_local": null,
+          "resultado_visitante": null,
+          "tiebreak_local": null,
+          "tiebreak_visitante": null
+        },
+        {
+          "id": "2",
+          "nombre": "Set2",
+          "resultado_local": null,
+          "resultado_visitante": null,
+          "tiebreak_local": null,
+          "tiebreak_visitante": null
+        },
+        {
+          "id": "3",
+          "nombre": "set3",
+          "resultado_local": null,
+          "resultado_visitante": null,
+          "tiebreak_local": null,
+          "tiebreak_visitante": null
+        },
+        {
+          "id": "4",
+          "nombre": "Set4",
+          "resultado_local": null,
+          "resultado_visitante": null,
+          "tiebreak_local": null,
+          "tiebreak_visitante": null
+        },
+        {
+          "id": "5",
+          "nombre": "Set5",
+          "resultado_local": null,
+          "resultado_visitante": null,
+          "tiebreak_local": null,
+          "tiebreak_visitante": null
+        }
+      ],
+      "tipo_partido": 1,
+      "resultado_local_penaltis": null,
+      "resultado_visitante_penaltis": null,
+      "url_streaming": null,
+      "equipo_local": {
+        "nombre": "BM. SANTO\u00d1A",
+        "categoria": "Primera Nacional",
+        "responsable": "1121",
+        "imagen": "http://balonmano.isquad.es/images/afiliacion_clubs/767/square_64727237756f70706669.jpg",
+        "id": "203934"
+      },
+      "equipo_visitante": {
+        "nombre": "SDC ASTANDER ASTILLERO",
+        "categoria": "Primera Nacional",
+        "responsable": "1028118",
+        "imagen": "http://balonmano.isquad.es/images/afiliacion_clubs/112/square_626a3568337770617030.jpg",
+        "id": "215209"
+      }
+    },
+    {
+      "id": "1385781",
+      "id_estadio": "1000055",
+      "id_local": "212098",
+      "nombre_local_default": "CLUB BALONMANO SORIA",
+      "nombre_local": "CLUB BALONMANO SORIA",
+      "url_escudo_local": "http://balonmano.isquad.es/images/afiliacion_clubs/139/square_6a68756a757030356e76.jpg",
+      "resultado_local": "52",
+      "id_visitante": "209286",
+      "nombre_visitante_default": "EZEQUIEL 4VALLES LA ROBLA",
+      "nombre_visitante": "EZEQUIEL 4VALLES LA ROBLA",
+      "url_escudo_visitante": "http://balonmano.isquad.es/images/afiliacion_clubs/2896/square_6675636c6a6d30346366.jpg",
+      "resultado_visitante": "19",
+      "estado_partido": "Finalizado",
+      "fecha": "2024-09-21 18:00:00",
+      "acta_subida": "1",
+      "jornada": "1",
+      "id_grupo": "1023856",
+      "sets": [
+        {
+          "id": "1",
+          "nombre": "Set1",
+          "resultado_local": null,
+          "resultado_visitante": null,
+          "tiebreak_local": null,
+          "tiebreak_visitante": null
+        },
+        {
+          "id": "2",
+          "nombre": "Set2",
+          "resultado_local": null,
+          "resultado_visitante": null,
+          "tiebreak_local": null,
+          "tiebreak_visitante": null
+        },
+        {
+          "id": "3",
+          "nombre": "set3",
+          "resultado_local": null,
+          "resultado_visitante": null,
+          "tiebreak_local": null,
+          "tiebreak_visitante": null
+        },
+        {
+          "id": "4",
+          "nombre": "Set4",
+          "resultado_local": null,
+          "resultado_visitante": null,
+          "tiebreak_local": null,
+          "tiebreak_visitante": null
+        },
+        {
+          "id": "5",
+          "nombre": "Set5",
+          "resultado_local": null,
+          "resultado_visitante": null,
+          "tiebreak_local": null,
+          "tiebreak_visitante": null
+        }
+      ],
+      "tipo_partido": 1,
+      "resultado_local_penaltis": null,
+      "resultado_visitante_penaltis": null,
+      "url_streaming": "https://www.youtube.com/live/IJEgT2fYN7c?si=zXr9RCOeKMUGV7iq",
+      "equipo_local": {
+        "nombre": "CLUB BALONMANO SORIA",
+        "categoria": "Primera Nacional",
+        "responsable": "1054086",
+        "imagen": "http://balonmano.isquad.es/images/afiliacion_clubs/139/square_6a68756a757030356e76.jpg",
+        "id": "212098"
+      },
+      "equipo_visitante": {
+        "nombre": "EZEQUIEL 4VALLES LA ROBLA",
+        "categoria": "Primera Nacional",
+        "responsable": "1114999",
+        "imagen": "http://balonmano.isquad.es/images/afiliacion_clubs/2896/square_6675636c6a6d30346366.jpg",
+        "id": "209286"
+      }
+    },
+    {
+      "id": "1385780",
+      "id_estadio": "1000110",
+      "id_local": "209246",
+      "nombre_local_default": "ROYAL PREMIUM GIJON",
+      "nombre_local": "ROYAL PREMIUM GIJON",
+      "url_escudo_local": "http://balonmano.isquad.es/images/afiliacion_clubs/488/square_32383967706436617972.jpg",
+      "resultado_local": "23",
+      "id_visitante": "201150",
+      "nombre_visitante_default": "HORIZONTE ATLETICA",
+      "nombre_visitante": "HORIZONTE ATLETICA",
+      "url_escudo_visitante": "http://balonmano.isquad.es/images/afiliacion_clubs/69/square_6d6b7235397562793961.jpg",
+      "resultado_visitante": "29",
+      "estado_partido": "Finalizado",
+      "fecha": "2024-09-21 17:00:00",
+      "acta_subida": "1",
+      "jornada": "1",
+      "id_grupo": "1023856",
+      "sets": [
+        {
+          "id": "1",
+          "nombre": "Set1",
+          "resultado_local": null,
+          "resultado_visitante": null,
+          "tiebreak_local": null,
+          "tiebreak_visitante": null
+        },
+        {
+          "id": "2",
+          "nombre": "Set2",
+          "resultado_local": null,
+          "resultado_visitante": null,
+          "tiebreak_local": null,
+          "tiebreak_visitante": null
+        },
+        {
+          "id": "3",
+          "nombre": "set3",
+          "resultado_local": null,
+          "resultado_visitante": null,
+          "tiebreak_local": null,
+          "tiebreak_visitante": null
+        },
+        {
+          "id": "4",
+          "nombre": "Set4",
+          "resultado_local": null,
+          "resultado_visitante": null,
+          "tiebreak_local": null,
+          "tiebreak_visitante": null
+        },
+        {
+          "id": "5",
+          "nombre": "Set5",
+          "resultado_local": null,
+          "resultado_visitante": null,
+          "tiebreak_local": null,
+          "tiebreak_visitante": null
+        }
+      ],
+      "tipo_partido": 1,
+      "resultado_local_penaltis": null,
+      "resultado_visitante_penaltis": null,
+      "url_streaming": "https://www.youtube.com/live/JYMa0eH5lQ8",
+      "equipo_local": {
+        "nombre": "ROYAL PREMIUM GIJON",
+        "categoria": "Primera Nacional",
+        "responsable": "37751",
+        "imagen": "http://balonmano.isquad.es/images/afiliacion_clubs/488/square_32383967706436617972.jpg",
+        "id": "209246"
+      },
+      "equipo_visitante": {
+        "nombre": "HORIZONTE ATLETICA",
+        "categoria": "Primera Nacional",
+        "responsable": "272",
+        "imagen": "http://balonmano.isquad.es/images/afiliacion_clubs/69/square_6d6b7235397562793961.jpg",
+        "id": "201150"
+      }
+    },
+    {
+      "id": "1385779",
+      "id_estadio": "1000068",
+      "id_local": "218784",
+      "nombre_local_default": "Uni\u00f3n Financiera",
+      "nombre_local": "UNI\u00f3N FINANCIERA",
+      "url_escudo_local": "http://balonmano.isquad.es/images/afiliacion_clubs/439/square_7868636d337739673532.jpg",
+      "resultado_local": "27",
+      "id_visitante": "209685",
+      "nombre_visitante_default": "CLUB BALONMANO CAMARGO",
+      "nombre_visitante": "CLUB BALONMANO CAMARGO",
+      "url_escudo_visitante": "http://balonmano.isquad.es/images/afiliacion_clubs/115/square_633062667072386c3368.jpg",
+      "resultado_visitante": "13",
+      "estado_partido": "Finalizado",
+      "fecha": "2024-09-21 18:30:00",
+      "acta_subida": "1",
+      "jornada": "1",
+      "id_grupo": "1023856",
+      "sets": [
+        {
+          "id": "1",
+          "nombre": "Set1",
+          "resultado_local": null,
+          "resultado_visitante": null,
+          "tiebreak_local": null,
+          "tiebreak_visitante": null
+        },
+        {
+          "id": "2",
+          "nombre": "Set2",
+          "resultado_local": null,
+          "resultado_visitante": null,
+          "tiebreak_local": null,
+          "tiebreak_visitante": null
+        },
+        {
+          "id": "3",
+          "nombre": "set3",
+          "resultado_local": null,
+          "resultado_visitante": null,
+          "tiebreak_local": null,
+          "tiebreak_visitante": null
+        },
+        {
+          "id": "4",
+          "nombre": "Set4",
+          "resultado_local": null,
+          "resultado_visitante": null,
+          "tiebreak_local": null,
+          "tiebreak_visitante": null
+        },
+        {
+          "id": "5",
+          "nombre": "Set5",
+          "resultado_local": null,
+          "resultado_visitante": null,
+          "tiebreak_local": null,
+          "tiebreak_visitante": null
+        }
+      ],
+      "tipo_partido": 1,
+      "resultado_local_penaltis": null,
+      "resultado_visitante_penaltis": null,
+      "url_streaming": "https://www.youtube.com/live/CbTIOwg01tc",
+      "equipo_local": {
+        "nombre": "Uni\u00f3n Financiera",
+        "categoria": "Primera Nacional",
+        "responsable": "1055404",
+        "imagen": "http://balonmano.isquad.es/images/afiliacion_clubs/439/square_7868636d337739673532.jpg",
+        "id": "218784"
+      },
+      "equipo_visitante": {
+        "nombre": "CLUB BALONMANO CAMARGO",
+        "categoria": "Primera Nacional",
+        "responsable": "27892",
+        "imagen": "http://balonmano.isquad.es/images/afiliacion_clubs/115/square_633062667072386c3368.jpg",
+        "id": "209685"
+      }
+    }
+  ]
+}

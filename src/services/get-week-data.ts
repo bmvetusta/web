@@ -1,5 +1,5 @@
 import { PRIMERA_GROUP_ID, PRIMERA_TEAM_ID } from 'astro:env/server';
-import { rfebmGetCalendar } from './rfebm/get-calendar';
+import { rfebmAPIGetCalendar } from './rfebm-api/get-calendar';
 
 export async function getWeekData(week?: number | string | null) {
   if (!week) {
@@ -11,7 +11,7 @@ export async function getWeekData(week?: number | string | null) {
     return;
   }
 
-  const data = await rfebmGetCalendar(PRIMERA_GROUP_ID);
+  const data = await rfebmAPIGetCalendar(PRIMERA_GROUP_ID);
   if (!data) {
     return;
   }

@@ -1,7 +1,10 @@
 import { RFEBM_API_BASE_HREF } from 'astro:env/server';
-import { getRFEBMHeaders } from './base-href';
+import { getRFEBMAPIHeaders } from './base-href';
 
-export async function rfebmGetOfficialReport(groupId: string | number, matchId: string | number) {
+export async function rfebmAPIGetOfficialReport(
+  groupId: string | number,
+  matchId: string | number
+) {
   const basepath = '/ws/acta';
   const url = new URL(basepath, RFEBM_API_BASE_HREF);
   const body = new URLSearchParams();
@@ -10,7 +13,7 @@ export async function rfebmGetOfficialReport(groupId: string | number, matchId: 
 
   const data = await fetch(url, {
     method: 'POST',
-    headers: getRFEBMHeaders(),
+    headers: getRFEBMAPIHeaders(),
     body,
   }).then((res) => res.json());
 
