@@ -28,12 +28,16 @@ export async function GET({ site, params }: APIContext<{ week: number }>) {
       getRelativeAppRootPath('public', 'assets', 'fonts', 'alumni', 'AlumniSans-Bold.ttf')
     );
 
+    const dateParts = match.date?.split('-');
+    const isFirstPartYear = match.date !== null && dateParts?.at(0)?.length === 4;
+    const weekDate = isFirstPartYear ? dateParts?.reverse().join('-') : match.date;
+
     return new ImageResponse(
       YoutubeCover({
         baseUrlHref: site.href,
         visitorShieldSrc: imgUrl,
         weekNumber: match.week,
-        weekDate: match.date,
+        weekDate,
         time: match.time,
         isLocal,
       }),
