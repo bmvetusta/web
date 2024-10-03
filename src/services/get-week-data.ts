@@ -1,4 +1,5 @@
 import { PRIMERA_TEAM_ID } from 'astro:env/server';
+import { getCurrentSeasonId } from './rfebm-api/get-current-season-id';
 import { rfebmAPIGetTeam } from './rfebm-api/get-team';
 
 export async function getWeekData(week?: number | string | null) {
@@ -11,8 +12,8 @@ export async function getWeekData(week?: number | string | null) {
     return;
   }
 
-  const data = await rfebmAPIGetTeam(PRIMERA_TEAM_ID, 2425, 1);
-  console.log({ data });
+  const data = await rfebmAPIGetTeam(PRIMERA_TEAM_ID, getCurrentSeasonId(), 1);
+
   if (!data) {
     return;
   }
