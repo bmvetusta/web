@@ -98,7 +98,7 @@ export async function rfebmAPIFetch<T extends z.ZodType = z.ZodType>(
       const parsedData = schema.safeParse(responseData);
 
       // console.log('Data fetched and parsed', { parsedStatus: parsedData.success });
-      if (parsedData.success) {
+      if (parsedData.success && parsedData.data) {
         data = {
           createdAt: now,
           isFallback: cacheAsFallback,
@@ -120,7 +120,12 @@ export async function rfebmAPIFetch<T extends z.ZodType = z.ZodType>(
         return parsedData.data;
       }
 
-      throw new z.ZodError(parsedData.error.errors);
+      if (parsedData.success === false) {
+        throw new z.ZodError(parsedData.error.errors);
+      }
+
+      console.error('Not valid data received while fetching url: "%s"', url.href);
+      return null;
     }
 
     // If any error while requesting data we emit an error to allow
