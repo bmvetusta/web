@@ -16,6 +16,8 @@ export async function GET({ site, params }: APIContext<{ week: number }>) {
 
     const match = await getWeekData(params.week);
 
+    console.log({ match });
+
     if (!match) {
       throw new Error('No match found');
     }
@@ -28,9 +30,13 @@ export async function GET({ site, params }: APIContext<{ week: number }>) {
       getRelativeAppRootPath('public', 'assets', 'fonts', 'alumni', 'AlumniSans-Bold.ttf')
     );
 
+    console.log({ fonts });
+
     const dateParts = match.date?.split('-');
     const isFirstPartYear = match.date !== null && dateParts?.at(0)?.length === 4;
     const weekDate = isFirstPartYear ? dateParts?.reverse().join('-') : match.date;
+
+    console.log('Previous to return', { weekDate });
 
     return new ImageResponse(
       YoutubeCover({
