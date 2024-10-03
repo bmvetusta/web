@@ -20,7 +20,7 @@ type CacheStoredObject<T> = {
 // 1. If we provide a cacheTTL > 0 and cacheAsFallback as true, the value will be tried
 //     to be get from redis if its still on cacheTTL then the value is retrieved. If is
 //     expired will try to get the value from rfebm if it is not posible the cached
-//     version is retrieved and error is emited
+//     version is retrieved and error is emited. This means it is revalidated after ttl.
 // 2. cacheTTL === Infinity and cacheAsFallback as true, cached value is only retrieved
 //     if rfebm fetch fails
 // 3. cacheAsFallback = false, the value will be set with expire option as cacheTTL seconds
@@ -51,22 +51,22 @@ export async function rfebmAPIFetch<T extends z.ZodType = z.ZodType>(
     }
   }
 
-  console.log('rfebmAPIFetch', { url: url.href, body });
+  // console.log('rfebmAPIFetch', { url: url.href, body });
 
   if (cacheTTL > 0) {
     redis = clientUpstash();
 
-    console.log('Trying to get cached data for key "%s"', cacheUrl.href);
+    // console.log('Trying to get cached data for key "%s"', cacheUrl.href);
     data = await redis.get<CacheStoredObject<T>>(cacheUrl.href);
-    console.log({ cachedDataGotSomething: !!data });
+    // console.log({ cachedDataGotSomething: !!data });
 
     // If is fallback
     if (data) {
-      console.log('Cached Data exists', {
-        isFallback: data.isFallback,
-        cacheTTL,
-        createdAt: data.createdAt,
-      });
+      // console.log('Cached Data exists', {
+      //   isFallback: data.isFallback,
+      //   cacheTTL,
+      //   createdAt: data.createdAt,
+      // });
 
       if (!data.isFallback) {
         return data.data;
@@ -91,13 +91,13 @@ export async function rfebmAPIFetch<T extends z.ZodType = z.ZodType>(
       headers: getRFEBMAPIHeaders(),
     };
 
-    console.log('Fetching the data', { init });
+    // console.log('Fetching the data', { init });
     const responseData = await fetch(url, init).then((res) => res.json());
 
     if (responseData.status === 'OK') {
       const parsedData = schema.safeParse(responseData);
 
-      console.log('Data fetched and parsed', { parsedStatus: parsedData.success });
+      // console.log('Data fetched and parsed', { parsedStatus: parsedData.success });
       if (parsedData.success) {
         data = {
           createdAt: now,
@@ -106,7 +106,7 @@ export async function rfebmAPIFetch<T extends z.ZodType = z.ZodType>(
         };
 
         if (redis) {
-          console.log('Storing the data');
+          // console.log('Storing the data');
           await redis.set(cacheUrl.href, data);
 
           // If we should expire the value, this mean
