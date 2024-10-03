@@ -51,12 +51,12 @@ export async function rfebmAPIFetch<T extends z.ZodType = z.ZodType>(
     }
   }
 
-  // console.log('rfebmAPIFetch', { url: url.href, body });
+  console.log('rfebmAPIFetch', { url: url.href, body });
 
   if (cacheTTL > 0) {
     redis = clientUpstash();
 
-    // console.log('Trying to get cached data for key "%s"', cacheUrl.href);
+    console.log('Trying to get cached data for key "%s"', cacheUrl.href);
     data = await redis.get<CacheStoredObject<T>>(cacheUrl.href);
     // console.log({ cachedDataGotSomething: !!data });
 
@@ -91,13 +91,13 @@ export async function rfebmAPIFetch<T extends z.ZodType = z.ZodType>(
       headers: getRFEBMAPIHeaders(),
     };
 
-    // console.log('Fetching the data', { init });
+    console.log('Fetching the data', { init });
     const responseData = await fetch(url, init).then((res) => res.json());
 
     if (responseData.status === 'OK') {
       const parsedData = schema.safeParse(responseData);
 
-      // console.log('Data fetched and parsed', { parsedStatus: parsedData.success });
+      console.log('Data fetched and parsed', { parsedStatus: parsedData.success });
       if (parsedData.success && parsedData.data) {
         data = {
           createdAt: now,
@@ -106,7 +106,7 @@ export async function rfebmAPIFetch<T extends z.ZodType = z.ZodType>(
         };
 
         if (redis) {
-          // console.log('Storing the data');
+          console.log('Storing the data');
           await redis.set(cacheUrl.href, data);
 
           // If we should expire the value, this mean

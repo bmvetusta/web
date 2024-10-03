@@ -3,6 +3,7 @@ import { rfebmAPIFetch } from './rfebm-fetch';
 
 export async function rfebmAPIGetPreviousData(matchId?: string | number) {
   if (!matchId) {
+    console.error('No matchId for previous data');
     return null;
   }
 
