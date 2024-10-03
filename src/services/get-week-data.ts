@@ -20,8 +20,8 @@ export async function getWeekData(week?: number | string | null) {
 
   const match = data.matches.find(
     (m) =>
-      m.week === weekNumber &&
-      (m.localTeam.id === PRIMERA_TEAM_ID || m.visitorTeam.id === PRIMERA_TEAM_ID)
+      (m.week === weekNumber && m.localTeam.id === PRIMERA_TEAM_ID) ||
+      (m.week === weekNumber && m.visitorTeam.id === PRIMERA_TEAM_ID)
   );
   if (!match) {
     return;
