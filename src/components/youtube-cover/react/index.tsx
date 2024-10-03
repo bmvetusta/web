@@ -16,6 +16,7 @@ export function YoutubeCover({
   isLocal?: boolean;
 }) {
   if (!visitorShieldSrc) {
+    console.log('Invalid visitorShieldSRC');
     throw new Error('You need to define a visitorShieldSrc and must be a valid Image URL');
   }
 
@@ -26,6 +27,8 @@ export function YoutubeCover({
 
   // Visitor Shield coords
   const visitorShieldLeft = isLocal ? 1035 : 265;
+
+  console.log(`We'll go generate the cover`);
 
   return (
     <div

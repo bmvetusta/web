@@ -32,6 +32,8 @@ export async function GET({ site, params }: APIContext<{ week: number }>) {
       site.href + '/assets/fonts/alumni/AlumniSans-BoldItalic.ttf'
     );
 
+    console.log({ fonts });
+
     const dateParts = match.date?.split('-');
     const isFirstPartYear = match.date !== null && dateParts?.at(0)?.length === 4;
     const weekDate = isFirstPartYear ? dateParts?.reverse().join('-') : match.date;
