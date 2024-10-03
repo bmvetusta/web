@@ -3,6 +3,8 @@ import { capitalizeString } from 'src/lib/capitalize-string';
 import { getWeekData } from '../../../services/get-week-data';
 import { rfebmAPIGetPreviousData } from '../../../services/rfebm-api/get-previous';
 
+export const prerender = false;
+
 const textLayout = ({
   localName,
   visitorName,

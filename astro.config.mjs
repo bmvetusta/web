@@ -60,7 +60,7 @@ export default defineConfig({
     },
   },
   integrations: [react()],
-  output: 'server',
+  output: 'static',
   adapter: vercel({
     webAnalytics: { enabled: true },
     imageService: true,
