@@ -65,11 +65,13 @@ async function getData(matchId?: string | number) {
   }
 }
 
-export async function GET({ params: { week }, site }: APIContext<{ week: string }>) {
+export async function GET({ params: { week }, request }: APIContext<{ week: string }>) {
   // Only works on localhost
-  if (!site?.hostname.includes('localhost')) {
-    return new Response('Not allowed', { status: 401 });
-  }
+  // if (!site?.hostname.includes('localhost')) {
+  //   return new Response('Not allowed', { status: 401 });
+  // }
+
+  console.log(request.headers.toJSON());
 
   const match = await getWeekData(week);
   const previous = await getData(match?.id);
