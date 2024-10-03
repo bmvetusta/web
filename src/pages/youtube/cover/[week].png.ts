@@ -28,6 +28,7 @@ export async function GET({ site, params }: APIContext<{ week: number }>) {
 
     // console.log('cover/[week].png', { match });
     const isVercel = process.env.VERCEL === '1';
+    console.log({ cwd: process.cwd(), url: import.meta.url });
     const fontPaths = [
       '/assets/fonts/alumni/AlumniSans-Bold.ttf',
       '/assets/fonts/alumni/AlumniSans-BoldItalic.ttf',
