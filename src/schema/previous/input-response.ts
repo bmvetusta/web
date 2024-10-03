@@ -20,7 +20,7 @@ export const inputResponsePreviousSchema = z
     longitud: z.string().nullable().default(null),
     municipio: z.string().nullable().default(null),
     nombre_estadio: z.string(),
-    arbitros: z.array(transformableRefereeSchema.innerType()),
+    arbitros: z.array(transformableRefereeSchema),
     enfrentamientosPrevios: z.object({
       partidos: z.array(z.any()),
       ganados_local: z.coerce.number(),
@@ -33,7 +33,7 @@ export const inputResponsePreviousSchema = z
   })
   .transform((p) => {
     const datetime = transformableDateSchema.parse(p.fecha);
-    const referees = p.arbitros.map((r) => transformableRefereeSchema.parse(r));
+    const referees = p.arbitros;
     const stadium = stadiumSchema.parse({
       id: p.id_estadio,
       name: p.nombre_estadio,
