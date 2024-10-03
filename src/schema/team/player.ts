@@ -2,7 +2,7 @@ import { z } from 'zod';
 import { profilePhotoUrl } from '../generics/profile-photo-url';
 import { stringToBooleanSchema } from '../generics/string-to-boolean';
 
-export const playerSchema = z.object({
+export const playerTeamSchema = z.object({
   id: z.number(),
   name: z.string(),
   profileImageUrl: profilePhotoUrl,
@@ -10,7 +10,7 @@ export const playerSchema = z.object({
   isPlayer: z.boolean(),
 });
 
-export const transformablePlayerSchema = z
+export const transformablePlayerTeamSchema = z
   .object({
     id: z.coerce.number(),
     nombre: z.string(), // capitalizedStringSchema(true, 'es-ES'), // This can be a limit because there are players from many nationalities

@@ -30,14 +30,14 @@ const singleSportsWear = z
   }))
   .pipe(singleSportsWearSchema);
 
-export const sportsWearSchema = z.object({
+export const sportsWearTeamSchema = z.object({
   player1: singleSportsWearSchema,
   player2: singleSportsWearSchema,
   goalkeeper1: singleSportsWearSchema,
   goalkeeper2: singleSportsWear,
 });
 
-export const transformableSportsWearSchema = z
+export const transformableSportsWearTeamSchema = z
   .object({
     primeraEquipacionJugador: singleSportsWear,
     segundaEquipacionJugador: singleSportsWear,

@@ -2,7 +2,11 @@ import { RFEBM_API_BASE_HREF } from 'astro:env/server';
 import { previousSchema } from '../../schema/previous';
 import { getRFEBMAPIHeaders } from './base-href';
 
-export async function rfebmAPIGetPreviousData(matchId: string | number) {
+export async function rfebmAPIGetPreviousData(matchId?: string | number) {
+  if (!matchId) {
+    return null;
+  }
+
   const basepath = '/ws/previo';
   const url = new URL(basepath, RFEBM_API_BASE_HREF);
   const body = new URLSearchParams();

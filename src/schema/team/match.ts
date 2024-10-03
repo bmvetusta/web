@@ -3,7 +3,7 @@ import { transformableDateSchema } from '../generics/datetime';
 import { transformableMatchStatusSchema } from '../generics/match-status';
 import { stringToBooleanSchema } from '../generics/string-to-boolean';
 
-export const transformableTeamMatchSchema = z
+export const transformableMatchTeamSchema = z
   .object({
     id: z.coerce.number(),
     id_grupo: z.coerce.number(),

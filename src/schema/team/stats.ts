@@ -2,7 +2,7 @@ import { z } from 'zod';
 
 const n = z.coerce.number().default(0);
 
-export const statsSchema = z.object({
+export const statsTeamSchema = z.object({
   week: n,
   position: n,
   points: n,
@@ -14,7 +14,7 @@ export const statsSchema = z.object({
   goalsAgainst: n,
 });
 
-export const transformableStatsSchema = z
+export const transformableStatsTeamSchema = z
   .object({
     jornada: n,
     posicion: n,

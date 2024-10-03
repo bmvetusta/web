@@ -3,10 +3,10 @@ import { matchSchema } from '../generics/match';
 import { seasonSchema, transformableSeasonSchema } from '../generics/season';
 import { shieldImageUrl } from '../generics/shield-image-url';
 import { stadiumSchema } from '../generics/stadium';
-import { transformableTeamMatchSchema } from './match';
-import { transformablePlayerSchema } from './player';
-import { sportsWearSchema, transformableSportsWearSchema } from './sports-wear-schema';
-import { statsSchema, transformableStatsSchema } from './stats';
+import { transformableMatchTeamSchema } from './match';
+import { transformablePlayerTeamSchema } from './player';
+import { sportsWearTeamSchema, transformableSportsWearTeamSchema } from './sports-wear-schema';
+import { statsTeamSchema, transformableStatsTeamSchema } from './stats';
 
 const defaultNullableString = z.string().nullable().default(null);
 
@@ -44,9 +44,9 @@ export const teamSchema = z.object({
     hour: defaultNullableString,
   }),
   groups: z.array(group),
-  sportsWear: sportsWearSchema,
+  sportsWear: sportsWearTeamSchema,
   matches: z.array(matchSchema),
-  stats: z.array(statsSchema),
+  stats: z.array(statsTeamSchema),
   seasons: z.array(seasonSchema),
 });
 
@@ -88,10 +88,10 @@ export const transformTeamSchema = z
     equipos_totales: z.string(),
     modalidad: z.string(), // This is the category name
 
-    equipaciones: transformableSportsWearSchema.innerType(),
-    plantilla: z.array(transformablePlayerSchema.innerType()),
-    trayectoria: z.array(transformableTeamMatchSchema.innerType()),
-    estadisticas: z.array(transformableStatsSchema.innerType()),
+    equipaciones: transformableSportsWearTeamSchema.innerType(),
+    plantilla: z.array(transformablePlayerTeamSchema.innerType()),
+    trayectoria: z.array(transformableMatchTeamSchema.innerType()),
+    estadisticas: z.array(transformableStatsTeamSchema.innerType()),
     temporadas: z.array(transformableSeasonSchema.innerType()),
   })
   .transform((v) => {
@@ -148,10 +148,10 @@ export const transformTeamSchema = z
       time: prefDate?.[1] ?? null,
     };
 
-    const sportsWear = transformableSportsWearSchema.safeParse(v.equipaciones).data ?? {};
-    const players = z.array(transformablePlayerSchema).safeParse(v.plantilla).data ?? [];
-    const matches = z.array(transformableTeamMatchSchema).safeParse(v.trayectoria).data ?? [];
-    const stats = z.array(transformableStatsSchema).safeParse(v.estadisticas).data ?? [];
+    const sportsWear = transformableSportsWearTeamSchema.safeParse(v.equipaciones).data ?? {};
+    const players = z.array(transformablePlayerTeamSchema).safeParse(v.plantilla).data ?? [];
+    const matches = z.array(transformableMatchTeamSchema).safeParse(v.trayectoria).data ?? [];
+    const stats = z.array(transformableStatsTeamSchema).safeParse(v.estadisticas).data ?? [];
     const seasons = z.array(transformableSeasonSchema).safeParse(v.temporadas).data ?? [];
 
     return {

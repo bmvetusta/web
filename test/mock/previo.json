@@ -1,0 +1,980 @@
+{
+  "status": "OK",
+  "previo": {
+    "id_estadio": "1000095",
+    "id_local": "209500",
+    "id_visitante": "212098",
+    "estado_partido": "Pendiente",
+    "fecha": "2024-10-12 17:30:00",
+    "previo": null,
+    "aforo": "900",
+    "direccion": "C. Vald\u00e9s, 2, 33012 Oviedo, Asturias, Espa\u00f1a",
+    "modalidad": "Primera Nacional",
+    "latitud": "43.36563874569288",
+    "longitud": "-5.874707605279583",
+    "url_imagen": null,
+    "municipio": "",
+    "nombre_estadio": "POLIDEPORTIVO MUNICIPAL FLORIDA ARENA",
+    "superficie": null,
+    "luz": "Con iluminaci\u00f3n",
+    "altitud": "0",
+    "arbitros": [
+      {
+        "arbitro": "SANTIAGO PI\u00d1ERA FOMBONA",
+        "foto": "http://balonmano.isquad.es/images/afiliacion/foto/square_6f67677034766637386b.jpg",
+        "tipo": "ARBITRO",
+        "id_tipo": "1"
+      },
+      {
+        "arbitro": "PABLO CASTELLANOS GARCI",
+        "foto": "http://balonmano.isquad.es/images/afiliacion/foto/square_63703073687768666262.jpg",
+        "tipo": "ARBITRO",
+        "id_tipo": "1"
+      }
+    ],
+    "estadisticas": [
+      {
+        "estadistica": "Partidos ganados",
+        "local": "0",
+        "totalLocal": "2",
+        "visitante": "2",
+        "totalVisitante": "2"
+      },
+      {
+        "estadistica": "Patidos perdidos",
+        "local": "2",
+        "totalLocal": "2",
+        "visitante": "0",
+        "totalVisitante": "2"
+      },
+      {
+        "estadistica": "Partidos empatados",
+        "local": "0",
+        "totalLocal": "2",
+        "visitante": "0",
+        "totalVisitante": "2"
+      },
+      {
+        "estadistica": "Goles a favor",
+        "local": "58",
+        "totalLocal": "121",
+        "visitante": "88",
+        "totalVisitante": "131"
+      },
+      {
+        "estadistica": "Goles en contra",
+        "local": "63",
+        "totalLocal": "121",
+        "visitante": "43",
+        "totalVisitante": "131"
+      }
+    ],
+    "enfrentamientosPrevios": {
+      "partidos": [
+        {
+          "id_partido": "1298750",
+          "id_local": "209500",
+          "id_visitante": "212098",
+          "resultado": "28 - 33",
+          "resultado_local": "28",
+          "resultado_visitante": "33",
+          "resultado_local_penaltis": null,
+          "resultado_visitante_penaltis": null,
+          "competicion": "PRIMERA DIVISI\u00d3N MASCULINA",
+          "fase": "PRIMERA FASE",
+          "grupo": "GRUPO B",
+          "temporada": "2324",
+          "fecha": "2024-02-17 18:30:00",
+          "nombreLocal": "ADMINISTRACIONES LORCA BM VETUSTA",
+          "nombreVisitante": "CLUB BALONMANO SORIA",
+          "escudoLocal": "http://balonmano.isquad.es/images/afiliacion_clubs/2898/square_35723432687275366a39.jpg",
+          "escudoVisitante": "http://balonmano.isquad.es/images/afiliacion_clubs/139/square_6a68756a757030356e76.jpg",
+          "estadio": "POLIDEPORTIVO MUNICIPAL FLORIDA ARENA",
+          "direccion": "C. VALD\u00c9S, 2, 33012 OVIEDO, ASTURIAS, ESPA\u00d1A",
+          "tipo_partido": 1,
+          "sets": [
+            {
+              "id": "1",
+              "nombre": "Set1",
+              "resultado_local": null,
+              "resultado_visitante": null,
+              "tiebreak_local": null,
+              "tiebreak_visitante": null
+            },
+            {
+              "id": "2",
+              "nombre": "Set2",
+              "resultado_local": null,
+              "resultado_visitante": null,
+              "tiebreak_local": null,
+              "tiebreak_visitante": null
+            },
+            {
+              "id": "3",
+              "nombre": "set3",
+              "resultado_local": null,
+              "resultado_visitante": null,
+              "tiebreak_local": null,
+              "tiebreak_visitante": null
+            },
+            {
+              "id": "4",
+              "nombre": "Set4",
+              "resultado_local": null,
+              "resultado_visitante": null,
+              "tiebreak_local": null,
+              "tiebreak_visitante": null
+            },
+            {
+              "id": "5",
+              "nombre": "Set5",
+              "resultado_local": null,
+              "resultado_visitante": null,
+              "tiebreak_local": null,
+              "tiebreak_visitante": null
+            }
+          ]
+        },
+        {
+          "id_partido": "1298630",
+          "id_local": "212098",
+          "id_visitante": "209500",
+          "resultado": "38 - 28",
+          "resultado_local": "38",
+          "resultado_visitante": "28",
+          "resultado_local_penaltis": null,
+          "resultado_visitante_penaltis": null,
+          "competicion": "PRIMERA DIVISI\u00d3N MASCULINA",
+          "fase": "PRIMERA FASE",
+          "grupo": "GRUPO B",
+          "temporada": "2324",
+          "fecha": "2023-10-21 19:00:00",
+          "nombreLocal": "CLUB BALONMANO SORIA",
+          "nombreVisitante": "ADMINISTRACIONES LORCA BM VETUSTA",
+          "escudoLocal": "http://balonmano.isquad.es/images/afiliacion_clubs/139/square_6a68756a757030356e76.jpg",
+          "escudoVisitante": "http://balonmano.isquad.es/images/afiliacion_clubs/2898/square_35723432687275366a39.jpg",
+          "estadio": "PABELLON SAN ANDRES",
+          "direccion": "CALLE GE\u00d3LOGO PALACIOS, 6, 42004 SORIA, ESPA\u00d1A",
+          "tipo_partido": 1,
+          "sets": [
+            {
+              "id": "1",
+              "nombre": "Set1",
+              "resultado_local": null,
+              "resultado_visitante": null,
+              "tiebreak_local": null,
+              "tiebreak_visitante": null
+            },
+            {
+              "id": "2",
+              "nombre": "Set2",
+              "resultado_local": null,
+              "resultado_visitante": null,
+              "tiebreak_local": null,
+              "tiebreak_visitante": null
+            },
+            {
+              "id": "3",
+              "nombre": "set3",
+              "resultado_local": null,
+              "resultado_visitante": null,
+              "tiebreak_local": null,
+              "tiebreak_visitante": null
+            },
+            {
+              "id": "4",
+              "nombre": "Set4",
+              "resultado_local": null,
+              "resultado_visitante": null,
+              "tiebreak_local": null,
+              "tiebreak_visitante": null
+            },
+            {
+              "id": "5",
+              "nombre": "Set5",
+              "resultado_local": null,
+              "resultado_visitante": null,
+              "tiebreak_local": null,
+              "tiebreak_visitante": null
+            }
+          ]
+        },
+        {
+          "id_partido": "1221037",
+          "id_local": "209500",
+          "id_visitante": "212098",
+          "resultado": "26 - 31",
+          "resultado_local": "26",
+          "resultado_visitante": "31",
+          "resultado_local_penaltis": null,
+          "resultado_visitante_penaltis": null,
+          "competicion": "PRIMERA DIVISION MASCULINA",
+          "fase": "PRIMERA FASE",
+          "grupo": "GRUPO B",
+          "temporada": "2223",
+          "fecha": "2023-04-15 17:00:00",
+          "nombreLocal": "ADMINISTRACIONES LORCA BM VETUSTA",
+          "nombreVisitante": "CLUB BALONMANO SORIA",
+          "escudoLocal": "http://balonmano.isquad.es/images/afiliacion_clubs/2898/square_35723432687275366a39.jpg",
+          "escudoVisitante": "http://balonmano.isquad.es/images/afiliacion_clubs/139/square_6a68756a757030356e76.jpg",
+          "estadio": "POLIDEPORTIVO MUNICIPAL FLORIDA ARENA",
+          "direccion": "C. VALD\u00c9S, 2, 33012 OVIEDO, ASTURIAS, ESPA\u00d1A",
+          "tipo_partido": 1,
+          "sets": [
+            {
+              "id": "1",
+              "nombre": "Set1",
+              "resultado_local": null,
+              "resultado_visitante": null,
+              "tiebreak_local": null,
+              "tiebreak_visitante": null
+            },
+            {
+              "id": "2",
+              "nombre": "Set2",
+              "resultado_local": null,
+              "resultado_visitante": null,
+              "tiebreak_local": null,
+              "tiebreak_visitante": null
+            },
+            {
+              "id": "3",
+              "nombre": "set3",
+              "resultado_local": null,
+              "resultado_visitante": null,
+              "tiebreak_local": null,
+              "tiebreak_visitante": null
+            },
+            {
+              "id": "4",
+              "nombre": "Set4",
+              "resultado_local": null,
+              "resultado_visitante": null,
+              "tiebreak_local": null,
+              "tiebreak_visitante": null
+            },
+            {
+              "id": "5",
+              "nombre": "Set5",
+              "resultado_local": null,
+              "resultado_visitante": null,
+              "tiebreak_local": null,
+              "tiebreak_visitante": null
+            }
+          ]
+        },
+        {
+          "id_partido": "1220917",
+          "id_local": "212098",
+          "id_visitante": "209500",
+          "resultado": "35 - 33",
+          "resultado_local": "35",
+          "resultado_visitante": "33",
+          "resultado_local_penaltis": null,
+          "resultado_visitante_penaltis": null,
+          "competicion": "PRIMERA DIVISION MASCULINA",
+          "fase": "PRIMERA FASE",
+          "grupo": "GRUPO B",
+          "temporada": "2223",
+          "fecha": "2022-12-03 19:00:00",
+          "nombreLocal": "CLUB BALONMANO SORIA",
+          "nombreVisitante": "ADMINISTRACIONES LORCA BM VETUSTA",
+          "escudoLocal": "http://balonmano.isquad.es/images/afiliacion_clubs/139/square_6a68756a757030356e76.jpg",
+          "escudoVisitante": "http://balonmano.isquad.es/images/afiliacion_clubs/2898/square_35723432687275366a39.jpg",
+          "estadio": "PABELLON SAN ANDRES",
+          "direccion": "CALLE GE\u00d3LOGO PALACIOS, 6, 42004 SORIA, ESPA\u00d1A",
+          "tipo_partido": 1,
+          "sets": [
+            {
+              "id": "1",
+              "nombre": "Set1",
+              "resultado_local": null,
+              "resultado_visitante": null,
+              "tiebreak_local": null,
+              "tiebreak_visitante": null
+            },
+            {
+              "id": "2",
+              "nombre": "Set2",
+              "resultado_local": null,
+              "resultado_visitante": null,
+              "tiebreak_local": null,
+              "tiebreak_visitante": null
+            },
+            {
+              "id": "3",
+              "nombre": "set3",
+              "resultado_local": null,
+              "resultado_visitante": null,
+              "tiebreak_local": null,
+              "tiebreak_visitante": null
+            },
+            {
+              "id": "4",
+              "nombre": "Set4",
+              "resultado_local": null,
+              "resultado_visitante": null,
+              "tiebreak_local": null,
+              "tiebreak_visitante": null
+            },
+            {
+              "id": "5",
+              "nombre": "Set5",
+              "resultado_local": null,
+              "resultado_visitante": null,
+              "tiebreak_local": null,
+              "tiebreak_visitante": null
+            }
+          ]
+        }
+      ],
+      "ganados_local": 4,
+      "empates": 0,
+      "ganados_visitante": 0
+    },
+    "partidosPreviosLocal": [
+      {
+        "id_partido": "1385792",
+        "id_local": "209500",
+        "id_visitante": "218714",
+        "nombreLocal": "ADMINISTRACIONES LORCA BM VETUSTA",
+        "nombreVisitante": "BM ZAMORA  ENAMORA",
+        "escudoLocal": "http://balonmano.isquad.es/images/afiliacion_clubs/2898/square_35723432687275366a39.jpg",
+        "escudoVisitante": "http://balonmano.isquad.es/images/afiliacion_clubs/437/square_766f6d6d376d6972346c.jpg",
+        "resultado": "30 - 32",
+        "resultado_local": "30",
+        "resultado_visitante": "32",
+        "resultado_local_penaltis": null,
+        "resultado_visitante_penaltis": null,
+        "competicion": "PRIMERA DIVISI\u00d3N MASCULINA",
+        "fase": "LIGA REGULAR",
+        "grupo": "GRUPO B",
+        "temporada": "2425",
+        "fecha": "2024-09-28 18:00:00",
+        "estadio": "POLIDEPORTIVO MUNICIPAL FLORIDA ARENA",
+        "direccion": "C. VALD\u00c9S, 2, 33012 OVIEDO, ASTURIAS, ESPA\u00d1A",
+        "tipo_partido": 1,
+        "sets": [
+          {
+            "id": "1",
+            "nombre": "Set1",
+            "resultado_local": null,
+            "resultado_visitante": null,
+            "tiebreak_local": null,
+            "tiebreak_visitante": null
+          },
+          {
+            "id": "2",
+            "nombre": "Set2",
+            "resultado_local": null,
+            "resultado_visitante": null,
+            "tiebreak_local": null,
+            "tiebreak_visitante": null
+          },
+          {
+            "id": "3",
+            "nombre": "set3",
+            "resultado_local": null,
+            "resultado_visitante": null,
+            "tiebreak_local": null,
+            "tiebreak_visitante": null
+          },
+          {
+            "id": "4",
+            "nombre": "Set4",
+            "resultado_local": null,
+            "resultado_visitante": null,
+            "tiebreak_local": null,
+            "tiebreak_visitante": null
+          },
+          {
+            "id": "5",
+            "nombre": "Set5",
+            "resultado_local": null,
+            "resultado_visitante": null,
+            "tiebreak_local": null,
+            "tiebreak_visitante": null
+          }
+        ]
+      },
+      {
+        "id_partido": "1385784",
+        "id_local": "209180",
+        "id_visitante": "209500",
+        "nombreLocal": "CONGESA XXI",
+        "nombreVisitante": "ADMINISTRACIONES LORCA BM VETUSTA",
+        "escudoLocal": "http://balonmano.isquad.es/images/afiliacion_clubs/135/square_366a6b36366f3834316a.jpg",
+        "escudoVisitante": "http://balonmano.isquad.es/images/afiliacion_clubs/2898/square_35723432687275366a39.jpg",
+        "resultado": "31 - 28",
+        "resultado_local": "31",
+        "resultado_visitante": "28",
+        "resultado_local_penaltis": null,
+        "resultado_visitante_penaltis": null,
+        "competicion": "PRIMERA DIVISI\u00d3N MASCULINA",
+        "fase": "LIGA REGULAR",
+        "grupo": "GRUPO B",
+        "temporada": "2425",
+        "fecha": "2024-09-22 13:00:00",
+        "estadio": "P.M. RIO TORMES",
+        "direccion": "C/ JOAQU\u00cdN RODRIGO 38, 37008 SALAMANCA, ESPA\u00d1A",
+        "tipo_partido": 1,
+        "sets": [
+          {
+            "id": "1",
+            "nombre": "Set1",
+            "resultado_local": null,
+            "resultado_visitante": null,
+            "tiebreak_local": null,
+            "tiebreak_visitante": null
+          },
+          {
+            "id": "2",
+            "nombre": "Set2",
+            "resultado_local": null,
+            "resultado_visitante": null,
+            "tiebreak_local": null,
+            "tiebreak_visitante": null
+          },
+          {
+            "id": "3",
+            "nombre": "set3",
+            "resultado_local": null,
+            "resultado_visitante": null,
+            "tiebreak_local": null,
+            "tiebreak_visitante": null
+          },
+          {
+            "id": "4",
+            "nombre": "Set4",
+            "resultado_local": null,
+            "resultado_visitante": null,
+            "tiebreak_local": null,
+            "tiebreak_visitante": null
+          },
+          {
+            "id": "5",
+            "nombre": "Set5",
+            "resultado_local": null,
+            "resultado_visitante": null,
+            "tiebreak_local": null,
+            "tiebreak_visitante": null
+          }
+        ]
+      },
+      {
+        "id_partido": "1393044",
+        "id_local": "218784",
+        "id_visitante": "209500",
+        "nombreLocal": "UNI\u00d3N FINANCIERA",
+        "nombreVisitante": "ADMINISTRACIONES LORCA BM VETUSTA",
+        "escudoLocal": "http://balonmano.isquad.es/images/afiliacion_clubs/439/square_7868636d337739673532.jpg",
+        "escudoVisitante": "http://balonmano.isquad.es/images/afiliacion_clubs/2898/square_35723432687275366a39.jpg",
+        "resultado": "28 - 22",
+        "resultado_local": "28",
+        "resultado_visitante": "22",
+        "resultado_local_penaltis": null,
+        "resultado_visitante_penaltis": null,
+        "competicion": "X COPA PRINCIPADO - S\u00c9NIOR MASCULINA",
+        "fase": "FASE FINAL",
+        "grupo": "FASE FINAL",
+        "temporada": "2425",
+        "fecha": "2024-09-15 13:00:00",
+        "estadio": "POLIDEPORTIVO TOSO MU\u00d1IZ",
+        "direccion": "CALLE MIGUEL \u00c1NGEL BLANCO, 1, 33404 SOBRE LAS VEGAS, ASTURIAS, ESPA\u00d1A",
+        "tipo_partido": 1,
+        "sets": [
+          {
+            "id": "1",
+            "nombre": "Set1",
+            "resultado_local": null,
+            "resultado_visitante": null,
+            "tiebreak_local": null,
+            "tiebreak_visitante": null
+          },
+          {
+            "id": "2",
+            "nombre": "Set2",
+            "resultado_local": null,
+            "resultado_visitante": null,
+            "tiebreak_local": null,
+            "tiebreak_visitante": null
+          },
+          {
+            "id": "3",
+            "nombre": "set3",
+            "resultado_local": null,
+            "resultado_visitante": null,
+            "tiebreak_local": null,
+            "tiebreak_visitante": null
+          },
+          {
+            "id": "4",
+            "nombre": "Set4",
+            "resultado_local": null,
+            "resultado_visitante": null,
+            "tiebreak_local": null,
+            "tiebreak_visitante": null
+          },
+          {
+            "id": "5",
+            "nombre": "Set5",
+            "resultado_local": null,
+            "resultado_visitante": null,
+            "tiebreak_local": null,
+            "tiebreak_visitante": null
+          }
+        ]
+      },
+      {
+        "id_partido": "1393043",
+        "id_local": "201150",
+        "id_visitante": "209500",
+        "nombreLocal": "CAFES TOSCAF - ATLETICA",
+        "nombreVisitante": "ADMINISTRACIONES LORCA BM VETUSTA",
+        "escudoLocal": "http://balonmano.isquad.es/images/afiliacion_clubs/69/square_6d6b7235397562793961.jpg",
+        "escudoVisitante": "http://balonmano.isquad.es/images/afiliacion_clubs/2898/square_35723432687275366a39.jpg",
+        "resultado": "25 - 27",
+        "resultado_local": "25",
+        "resultado_visitante": "27",
+        "resultado_local_penaltis": null,
+        "resultado_visitante_penaltis": null,
+        "competicion": "X COPA PRINCIPADO - S\u00c9NIOR MASCULINA",
+        "fase": "FASE FINAL",
+        "grupo": "FASE FINAL",
+        "temporada": "2425",
+        "fecha": "2024-09-14 19:30:00",
+        "estadio": "POLIDEPORTIVO TOSO MU\u00d1IZ",
+        "direccion": "CALLE MIGUEL \u00c1NGEL BLANCO, 1, 33404 SOBRE LAS VEGAS, ASTURIAS, ESPA\u00d1A",
+        "tipo_partido": 1,
+        "sets": [
+          {
+            "id": "1",
+            "nombre": "Set1",
+            "resultado_local": null,
+            "resultado_visitante": null,
+            "tiebreak_local": null,
+            "tiebreak_visitante": null
+          },
+          {
+            "id": "2",
+            "nombre": "Set2",
+            "resultado_local": null,
+            "resultado_visitante": null,
+            "tiebreak_local": null,
+            "tiebreak_visitante": null
+          },
+          {
+            "id": "3",
+            "nombre": "set3",
+            "resultado_local": null,
+            "resultado_visitante": null,
+            "tiebreak_local": null,
+            "tiebreak_visitante": null
+          },
+          {
+            "id": "4",
+            "nombre": "Set4",
+            "resultado_local": null,
+            "resultado_visitante": null,
+            "tiebreak_local": null,
+            "tiebreak_visitante": null
+          },
+          {
+            "id": "5",
+            "nombre": "Set5",
+            "resultado_local": null,
+            "resultado_visitante": null,
+            "tiebreak_local": null,
+            "tiebreak_visitante": null
+          }
+        ]
+      },
+      {
+        "id_partido": "1401678",
+        "id_local": "209500",
+        "id_visitante": "201330",
+        "nombreLocal": "ADMINISTRACIONES LORCA BM VETUSTA",
+        "nombreVisitante": "CALVO XIRIA",
+        "escudoLocal": "http://balonmano.isquad.es/images/afiliacion_clubs/2898/square_35723432687275366a39.jpg",
+        "escudoVisitante": "http://balonmano.isquad.es/images/afiliacion_clubs/260/square_76786a66626c326a6838.jpg",
+        "resultado": "25 - 26",
+        "resultado_local": "25",
+        "resultado_visitante": "26",
+        "resultado_local_penaltis": null,
+        "resultado_visitante_penaltis": null,
+        "competicion": "AMISTOSOS",
+        "fase": "FASE \u00daNICA",
+        "grupo": "XIII TORNEO SOLIDARIO BM VETUSTA",
+        "temporada": "2425",
+        "fecha": "2024-09-08 13:00:00",
+        "estadio": "POLIDEPORTIVO MUNICIPAL FLORIDA ARENA",
+        "direccion": "C. VALD\u00c9S, 2, 33012 OVIEDO, ASTURIAS, ESPA\u00d1A",
+        "tipo_partido": 1,
+        "sets": [
+          {
+            "id": "1",
+            "nombre": "Set1",
+            "resultado_local": null,
+            "resultado_visitante": null,
+            "tiebreak_local": null,
+            "tiebreak_visitante": null
+          },
+          {
+            "id": "2",
+            "nombre": "Set2",
+            "resultado_local": null,
+            "resultado_visitante": null,
+            "tiebreak_local": null,
+            "tiebreak_visitante": null
+          },
+          {
+            "id": "3",
+            "nombre": "set3",
+            "resultado_local": null,
+            "resultado_visitante": null,
+            "tiebreak_local": null,
+            "tiebreak_visitante": null
+          },
+          {
+            "id": "4",
+            "nombre": "Set4",
+            "resultado_local": null,
+            "resultado_visitante": null,
+            "tiebreak_local": null,
+            "tiebreak_visitante": null
+          },
+          {
+            "id": "5",
+            "nombre": "Set5",
+            "resultado_local": null,
+            "resultado_visitante": null,
+            "tiebreak_local": null,
+            "tiebreak_visitante": null
+          }
+        ]
+      }
+    ],
+    "partidosPreviosVisitante": [
+      {
+        "id_partido": "1385790",
+        "id_local": "215209",
+        "id_visitante": "212098",
+        "nombreLocal": "SDC ASTANDER ASTILLERO",
+        "nombreVisitante": "CLUB BALONMANO SORIA",
+        "escudoLocal": "http://balonmano.isquad.es/images/afiliacion_clubs/112/square_626a3568337770617030.jpg",
+        "escudoVisitante": "http://balonmano.isquad.es/images/afiliacion_clubs/139/square_6a68756a757030356e76.jpg",
+        "resultado": "24 - 36",
+        "resultado_local": "24",
+        "resultado_visitante": "36",
+        "resultado_local_penaltis": null,
+        "resultado_visitante_penaltis": null,
+        "competicion": "PRIMERA DIVISI\u00d3N MASCULINA",
+        "fase": "LIGA REGULAR",
+        "grupo": "GRUPO B",
+        "temporada": "2425",
+        "fecha": "2024-09-29 12:00:00",
+        "estadio": "PABELLON LA CANTABRICA",
+        "direccion": "C. LA INDUSTRIA, 43, 39610 ASTILLERO, CANTABRIA, ESPA\u00d1A",
+        "tipo_partido": 1,
+        "sets": [
+          {
+            "id": "1",
+            "nombre": "Set1",
+            "resultado_local": null,
+            "resultado_visitante": null,
+            "tiebreak_local": null,
+            "tiebreak_visitante": null
+          },
+          {
+            "id": "2",
+            "nombre": "Set2",
+            "resultado_local": null,
+            "resultado_visitante": null,
+            "tiebreak_local": null,
+            "tiebreak_visitante": null
+          },
+          {
+            "id": "3",
+            "nombre": "set3",
+            "resultado_local": null,
+            "resultado_visitante": null,
+            "tiebreak_local": null,
+            "tiebreak_visitante": null
+          },
+          {
+            "id": "4",
+            "nombre": "Set4",
+            "resultado_local": null,
+            "resultado_visitante": null,
+            "tiebreak_local": null,
+            "tiebreak_visitante": null
+          },
+          {
+            "id": "5",
+            "nombre": "Set5",
+            "resultado_local": null,
+            "resultado_visitante": null,
+            "tiebreak_local": null,
+            "tiebreak_visitante": null
+          }
+        ]
+      },
+      {
+        "id_partido": "1385781",
+        "id_local": "212098",
+        "id_visitante": "209286",
+        "nombreLocal": "CLUB BALONMANO SORIA",
+        "nombreVisitante": "EZEQUIEL 4VALLES LA ROBLA",
+        "escudoLocal": "http://balonmano.isquad.es/images/afiliacion_clubs/139/square_6a68756a757030356e76.jpg",
+        "escudoVisitante": "http://balonmano.isquad.es/images/afiliacion_clubs/2896/square_6675636c6a6d30346366.jpg",
+        "resultado": "52 - 19",
+        "resultado_local": "52",
+        "resultado_visitante": "19",
+        "resultado_local_penaltis": null,
+        "resultado_visitante_penaltis": null,
+        "competicion": "PRIMERA DIVISI\u00d3N MASCULINA",
+        "fase": "LIGA REGULAR",
+        "grupo": "GRUPO B",
+        "temporada": "2425",
+        "fecha": "2024-09-21 18:00:00",
+        "estadio": "PABELLON SAN ANDRES",
+        "direccion": "CALLE GE\u00d3LOGO PALACIOS, 6, 42004 SORIA, ESPA\u00d1A",
+        "tipo_partido": 1,
+        "sets": [
+          {
+            "id": "1",
+            "nombre": "Set1",
+            "resultado_local": null,
+            "resultado_visitante": null,
+            "tiebreak_local": null,
+            "tiebreak_visitante": null
+          },
+          {
+            "id": "2",
+            "nombre": "Set2",
+            "resultado_local": null,
+            "resultado_visitante": null,
+            "tiebreak_local": null,
+            "tiebreak_visitante": null
+          },
+          {
+            "id": "3",
+            "nombre": "set3",
+            "resultado_local": null,
+            "resultado_visitante": null,
+            "tiebreak_local": null,
+            "tiebreak_visitante": null
+          },
+          {
+            "id": "4",
+            "nombre": "Set4",
+            "resultado_local": null,
+            "resultado_visitante": null,
+            "tiebreak_local": null,
+            "tiebreak_visitante": null
+          },
+          {
+            "id": "5",
+            "nombre": "Set5",
+            "resultado_local": null,
+            "resultado_visitante": null,
+            "tiebreak_local": null,
+            "tiebreak_visitante": null
+          }
+        ]
+      },
+      {
+        "id_partido": "1401360",
+        "id_local": "212098",
+        "id_visitante": "212068",
+        "nombreLocal": "CLUB BALONMANO SORIA",
+        "nombreVisitante": "ZARAGOZA BALONMANO",
+        "escudoLocal": "http://balonmano.isquad.es/images/afiliacion_clubs/139/square_6a68756a757030356e76.jpg",
+        "escudoVisitante": "http://balonmano.isquad.es/images/afiliacion_clubs/100771/square_30796d6b767864303836.jpg",
+        "resultado": "34 - 30",
+        "resultado_local": "34",
+        "resultado_visitante": "30",
+        "resultado_local_penaltis": null,
+        "resultado_visitante_penaltis": null,
+        "competicion": "AMISTOSO 17 SORIA",
+        "fase": "FASE \u00daNICA",
+        "grupo": "",
+        "temporada": "2425",
+        "fecha": "2024-08-24 19:00:00",
+        "estadio": "PABELLON SAN ANDRES",
+        "direccion": "CALLE GE\u00d3LOGO PALACIOS, 6, 42004 SORIA, ESPA\u00d1A",
+        "tipo_partido": 1,
+        "sets": [
+          {
+            "id": "1",
+            "nombre": "Set1",
+            "resultado_local": null,
+            "resultado_visitante": null,
+            "tiebreak_local": null,
+            "tiebreak_visitante": null
+          },
+          {
+            "id": "2",
+            "nombre": "Set2",
+            "resultado_local": null,
+            "resultado_visitante": null,
+            "tiebreak_local": null,
+            "tiebreak_visitante": null
+          },
+          {
+            "id": "3",
+            "nombre": "set3",
+            "resultado_local": null,
+            "resultado_visitante": null,
+            "tiebreak_local": null,
+            "tiebreak_visitante": null
+          },
+          {
+            "id": "4",
+            "nombre": "Set4",
+            "resultado_local": null,
+            "resultado_visitante": null,
+            "tiebreak_local": null,
+            "tiebreak_visitante": null
+          },
+          {
+            "id": "5",
+            "nombre": "Set5",
+            "resultado_local": null,
+            "resultado_visitante": null,
+            "tiebreak_local": null,
+            "tiebreak_visitante": null
+          }
+        ]
+      },
+      {
+        "id_partido": "1401359",
+        "id_local": "212098",
+        "id_visitante": "206858",
+        "nombreLocal": "CLUB BALONMANO SORIA",
+        "nombreVisitante": "1\u00c2\u00aa NACIONAL BM TARAZONA",
+        "escudoLocal": "http://balonmano.isquad.es/images/afiliacion_clubs/139/square_6a68756a757030356e76.jpg",
+        "escudoVisitante": "http://balonmano.isquad.es/images/afiliacion_clubs/100489/square_67696f756e6a6c367433.jpg",
+        "resultado": "32 - 18",
+        "resultado_local": "32",
+        "resultado_visitante": "18",
+        "resultado_local_penaltis": null,
+        "resultado_visitante_penaltis": null,
+        "competicion": "AMISTOSO 16 SORIA",
+        "fase": "FASE \u00daNICA",
+        "grupo": "",
+        "temporada": "2425",
+        "fecha": "2024-08-21 19:00:00",
+        "estadio": "PABELLON SAN ANDRES",
+        "direccion": "CALLE GE\u00d3LOGO PALACIOS, 6, 42004 SORIA, ESPA\u00d1A",
+        "tipo_partido": 1,
+        "sets": [
+          {
+            "id": "1",
+            "nombre": "Set1",
+            "resultado_local": null,
+            "resultado_visitante": null,
+            "tiebreak_local": null,
+            "tiebreak_visitante": null
+          },
+          {
+            "id": "2",
+            "nombre": "Set2",
+            "resultado_local": null,
+            "resultado_visitante": null,
+            "tiebreak_local": null,
+            "tiebreak_visitante": null
+          },
+          {
+            "id": "3",
+            "nombre": "set3",
+            "resultado_local": null,
+            "resultado_visitante": null,
+            "tiebreak_local": null,
+            "tiebreak_visitante": null
+          },
+          {
+            "id": "4",
+            "nombre": "Set4",
+            "resultado_local": null,
+            "resultado_visitante": null,
+            "tiebreak_local": null,
+            "tiebreak_visitante": null
+          },
+          {
+            "id": "5",
+            "nombre": "Set5",
+            "resultado_local": null,
+            "resultado_visitante": null,
+            "tiebreak_local": null,
+            "tiebreak_visitante": null
+          }
+        ]
+      },
+      {
+        "id_partido": "1399978",
+        "id_local": "212098",
+        "id_visitante": "218787",
+        "nombreLocal": "CLUB BALONMANO SORIA",
+        "nombreVisitante": "TUBOS ARANDA VILLA DE ARANDA",
+        "escudoLocal": "http://balonmano.isquad.es/images/afiliacion_clubs/139/square_6a68756a757030356e76.jpg",
+        "escudoVisitante": "http://balonmano.isquad.es/images/afiliacion_clubs/123/square_75716133683865697473.jpg",
+        "resultado": "19 - 20",
+        "resultado_local": "19",
+        "resultado_visitante": "20",
+        "resultado_local_penaltis": null,
+        "resultado_visitante_penaltis": null,
+        "competicion": "TRIANGULAR VDA",
+        "fase": "LIGA REGULAR",
+        "grupo": "",
+        "temporada": "2425",
+        "fecha": "2024-08-17 20:00:00",
+        "estadio": "PABELLON SANTIAGO MANGUAN",
+        "direccion": "C. DIEGO LA\u00cdNEZ, 20, 09400 ARANDA DE DUERO, BURGOS, ESPA\u00d1A",
+        "tipo_partido": 1,
+        "sets": [
+          {
+            "id": "1",
+            "nombre": "Set1",
+            "resultado_local": null,
+            "resultado_visitante": null,
+            "tiebreak_local": null,
+            "tiebreak_visitante": null
+          },
+          {
+            "id": "2",
+            "nombre": "Set2",
+            "resultado_local": null,
+            "resultado_visitante": null,
+            "tiebreak_local": null,
+            "tiebreak_visitante": null
+          },
+          {
+            "id": "3",
+            "nombre": "set3",
+            "resultado_local": null,
+            "resultado_visitante": null,
+            "tiebreak_local": null,
+            "tiebreak_visitante": null
+          },
+          {
+            "id": "4",
+            "nombre": "Set4",
+            "resultado_local": null,
+            "resultado_visitante": null,
+            "tiebreak_local": null,
+            "tiebreak_visitante": null
+          },
+          {
+            "id": "5",
+            "nombre": "Set5",
+            "resultado_local": null,
+            "resultado_visitante": null,
+            "tiebreak_local": null,
+            "tiebreak_visitante": null
+          }
+        ]
+      }
+    ]
+  }
+}
