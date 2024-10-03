@@ -3,7 +3,6 @@ import type { APIContext } from 'astro';
 import { PRIMERA_TEAM_ID } from 'astro:env/server';
 import { YoutubeCover } from '../../../components/youtube-cover/react';
 import { getFontOptionsFromFontPaths } from '../../../lib/get-font-options-from-font-paths';
-import { getRelativeAppRootPath } from '../../../lib/get-relative-app-root-path';
 import { getWeekData } from '../../../services/get-week-data';
 
 export const prerender = false;
@@ -26,8 +25,8 @@ export async function GET({ site, params }: APIContext<{ week: number }>) {
     const imgUrl = isLocal ? match.visitorTeam.shieldUrl : match.localTeam.shieldUrl;
 
     const fonts = await getFontOptionsFromFontPaths(
-      getRelativeAppRootPath('public', 'assets', 'fonts', 'alumni', 'AlumniSans-BoldItalic.ttf'),
-      getRelativeAppRootPath('public', 'assets', 'fonts', 'alumni', 'AlumniSans-Bold.ttf')
+      new URL('../../../../public/assets/fonts/alumni/AlumniSans-Bold.ttf', import.meta.url),
+      new URL('../../../../public/assets/fonts/alumni/AlumniSans-BoldItalic.ttf', import.meta.url)
     );
 
     console.log({ fonts });
