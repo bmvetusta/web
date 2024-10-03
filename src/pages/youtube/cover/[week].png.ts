@@ -22,10 +22,7 @@ export async function GET({ site, params }: APIContext<{ week: number }>) {
     const isLocal = match.localTeam.id === PRIMERA_TEAM_ID;
     const imgUrl = isLocal ? match.visitorTeam.shieldUrl : match.localTeam.shieldUrl;
 
-    const fonts = await getFontOptionsFromFontPaths(
-      site.href + 'assets/fonts/alumni/AlumniSans-Bold.ttf',
-      site.href + '/assets/fonts/alumni/AlumniSans-BoldItalic.ttf'
-    );
+    const fonts = getFontOptionsFromFontPaths();
 
     const dateParts = match.date?.split('-');
     const isFirstPartYear = match.date !== null && dateParts?.at(0)?.length === 4;
