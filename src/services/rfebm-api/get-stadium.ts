@@ -1,7 +1,11 @@
 import { RFEBM_API_BASE_HREF } from 'astro:env/server';
 import { getRFEBMAPIHeaders } from './base-href';
 
-export async function rfebmAPIGetOfficialReport(stadiumId: string | number) {
+export async function rfebmAPIGetOfficialReport(stadiumId?: string | number) {
+  if (!stadiumId) {
+    return null;
+  }
+
   const basepath = '/ws/estadio';
   const url = new URL(basepath, RFEBM_API_BASE_HREF);
   const body = new URLSearchParams();
