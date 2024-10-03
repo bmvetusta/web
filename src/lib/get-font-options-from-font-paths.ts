@@ -14,6 +14,8 @@ export async function getFontOptionsFromFontPaths(...fontPaths: (URL | string)[]
       // const data = await readFile(resolvedFontPath); // Font as buffer
       const data = await fetch(fontPath).then((res) => res.arrayBuffer());
 
+      console.log('From getFontOptions', { isData: !!data });
+
       return {
         name,
         data,

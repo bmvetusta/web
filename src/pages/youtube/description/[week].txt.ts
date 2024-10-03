@@ -4,6 +4,7 @@ import { getWeekData } from '../../../services/get-week-data';
 import { rfebmAPIGetPreviousData } from '../../../services/rfebm-api/get-previous';
 
 const textLayout = ({
+  localName,
   visitorName,
   court = 'Florida Arena',
   address = 'C/Valdés, 33012 Oviedo, Asturias',
@@ -11,6 +12,7 @@ const textLayout = ({
   time = 'PENDIENTE',
   week = '<JORNADA>',
 }: {
+  localName: string;
   visitorName: string;
   court: string;
   address?: string | null;
@@ -19,7 +21,7 @@ const textLayout = ({
   week: string | number;
 }) => `Partido de balonmano disputado en el polideportivo ${court}, correspondiente a la jornada número ${week}.
 
-Auto-Center Principado - ${visitorName}
+${localName} - ${visitorName}
 Categoría: Primera Nacional - España
 Fecha: ${date}
 Hora: ${time}
@@ -32,7 +34,7 @@ https://www.youtube.com/playlist?list=PL98krSjmbnu7uiEZ2oix42p8HcPnHH3cA
 #ContamosContigo #CrecemosContigo #Balonmano #Asturias #RFEBM #PrimeraNacional
 ---
 ¡Abónate y apóyanos! ¡Hazte simpatizante del club desde 20€!
-🔗 http://abonate.balonmanovetusta.com
+🔗 http://balonmanovetusta.com/abonate
 
 ¡Síguenos en redes sociales y publica con el hashtag #SeguimosFozando !
 📸 https://balonmanovetusta.com/instagram
@@ -77,15 +79,17 @@ export async function GET({ params: { week } }: APIContext<{ week: string }>) {
     });
   }
 
-  // const localName = capitalizeString(match.localTeam.name, true, 'es-ES');
+  console.log('description/[week].png', { isMatch: !!match });
+  const localName = capitalizeString(match.localTeam.name, true, 'es-ES');
   const visitorName = capitalizeString(match.visitorTeam.name, true, 'es-ES');
   const weekString = match.week.toString().padStart(2, '0');
 
   return new Response(
-    `Balonmano - J${weekString} - Auto-Center Principado - ${visitorName}
+    `Balonmano - J${weekString} - ${localName} - ${visitorName}
 
       
 ${textLayout({
+  localName,
   visitorName,
   court: capitalizeString(previous.stadium.name, true, 'es-ES'),
   address: previous.stadium.address,
