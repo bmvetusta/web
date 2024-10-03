@@ -2,7 +2,7 @@
 // import { createRequire } from 'node:module';
 import { getWeightNumberByName } from './get-weight-number-by-name';
 
-export async function getFontOptionsFromFontPaths(...fontPaths: URL[]) {
+export async function getFontOptionsFromFontPaths(...fontPaths: (URL | string)[]) {
   return await Promise.all(
     fontPaths.map(async (fontPath) => {
       const fontFilePathLowerCase = fontPath.toString().toLocaleLowerCase('es-ES');
