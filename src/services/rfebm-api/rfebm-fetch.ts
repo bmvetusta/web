@@ -56,7 +56,9 @@ export async function rfebmAPIFetch<T extends z.ZodType = z.ZodType>(
   if (cacheTTL > 0) {
     redis = clientUpstash();
 
+    console.log('Trying to get cached data for key "%s"', cacheUrl.href);
     data = await redis.get<CacheStoredObject<T>>(cacheUrl.href);
+    console.log({ cachedDataGotSomething: !!data });
 
     // If is fallback
     if (data) {
