@@ -57,6 +57,18 @@ export default defineConfig({
         access: 'public',
         optional: false,
       }),
+      REDIS_TIMEOUT: envField.number({
+        context: 'server',
+        access: 'public',
+        optional: false,
+        default: 8_000,
+      }),
+      FETCH_TIMEOUT: envField.number({
+        context: 'server',
+        access: 'public',
+        optional: false,
+        default: 8_000,
+      }),
     },
   },
   integrations: [react()],
