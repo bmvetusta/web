@@ -52,10 +52,10 @@ export async function GET({ site, params }: APIContext<{ week: number }>) {
         fonts,
         width: 1280,
         height: 720,
-        headers: {
-          'Cache-Control':
-            'public, max-age=604800, stale-while-revalidate=86400, stale-if-error=86400',
-        },
+        // headers: {
+        //   'Cache-Control':
+        //     'public, max-age=604800, stale-while-revalidate=86400, stale-if-error=86400',
+        // },
       }
     );
   } catch (error) {
