@@ -1,32 +1,14 @@
-import { RFEBM_API_BASE_HREF } from 'astro:env/server';
-import { previousSchema } from '../../schema/previous';
-import { getRFEBMAPIHeaders } from './base-href';
+import { responsePreviousSchema } from 'src/schema/previous/response';
+import { rfebmAPIFetch } from './rfebm-fetch';
 
 export async function rfebmAPIGetPreviousData(matchId?: string | number) {
   if (!matchId) {
     return null;
   }
 
-  const basepath = '/ws/previo';
-  const url = new URL(basepath, RFEBM_API_BASE_HREF);
+  const pathname = '/ws/previo';
   const body = new URLSearchParams();
   body.append('id_partido', matchId.toString());
 
-  const responseData = await fetch(url, {
-    method: 'POST',
-    headers: getRFEBMAPIHeaders(),
-    body,
-  }).then((res) => res.json());
-
-  console.log('Previous', { responseData });
-
-  const parsedData = previousSchema.safeParse(responseData?.previo);
-
-  if (parsedData.success) {
-    return parsedData.data;
-  }
-
-  console.error(parsedData.error);
-
-  return null;
+  return rfebmAPIFetch(pathname, responsePreviousSchema, body, 86400, true);
 }

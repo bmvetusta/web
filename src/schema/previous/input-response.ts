@@ -2,6 +2,9 @@ import { z } from 'zod';
 import { transformableDateSchema } from '../generics/datetime';
 import { transformableRefereeSchema } from '../generics/referee';
 import { stadiumSchema } from '../generics/stadium';
+import { transformableMatchPreviousSchema } from './match';
+
+const transformableArrayOfMatches = z.array(transformableMatchPreviousSchema);
 
 export const inputResponsePreviousSchema = z
   .object({
@@ -24,6 +27,8 @@ export const inputResponsePreviousSchema = z
       empates: z.coerce.number(),
       ganados_visitante: z.coerce.number(),
     }),
+    partidosPreviosLocal: z.array(z.any()),
+    partidosPreviosVisitante: z.array(z.any()),
     estadisticas: z.array(z.any()),
   })
   .transform((p) => {
@@ -35,15 +40,18 @@ export const inputResponsePreviousSchema = z
       address: p.direccion,
       latitude: p.latitud,
       longitude: p.longitud,
-      capacity: p.aforo || null, // Prefer null over 0
+      capacity: p.aforo || null, // Prefer null over 0, because 0 seems unreal so it can be that they don't know the capacity
     });
 
     const statsBetween = {
       localWins: p.enfrentamientosPrevios.ganados_local,
       draws: p.enfrentamientosPrevios.empates,
       visitorWins: p.enfrentamientosPrevios.ganados_visitante,
-      matches: p.enfrentamientosPrevios.partidos,
+      matches: transformableArrayOfMatches.parse(p.enfrentamientosPrevios.partidos),
     };
+
+    const localMatches = transformableArrayOfMatches.parse(p.partidosPreviosLocal);
+    const visitorMatches = transformableArrayOfMatches.parse(p.partidosPreviosVisitante);
 
     const tournamentStats = p.estadisticas;
 
@@ -57,5 +65,7 @@ export const inputResponsePreviousSchema = z
       visitorTeamId: p.id_visitante,
       statsBetween,
       tournamentStats,
+      localMatches,
+      visitorMatches,
     };
   });
