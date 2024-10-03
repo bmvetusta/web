@@ -48,6 +48,7 @@ export async function GET({ site, params }: APIContext<{ week: number }>) {
         isLocal,
       }),
       {
+        debug: true,
         fonts,
         width: 1280,
         height: 720,
