@@ -26,11 +26,17 @@ export async function GET({ site, params }: APIContext<{ week: number }>) {
     const isLocal = match.localTeam.id === PRIMERA_TEAM_ID;
     const imgUrl = isLocal ? match.visitorTeam.shieldUrl : match.localTeam.shieldUrl;
 
+    // console.log('cover/[week].png', { match });
+    // const isVercel = process.env.VERCEL === '1';
+    // const prePath = isVercel ? '../../../../public' : '../../../..';
+
     const fontPaths = [
       '/assets/fonts/alumni/AlumniSans-Bold.ttf',
       '/assets/fonts/alumni/AlumniSans-BoldItalic.ttf',
-    ].map((p) => new URL(p, site.href));
+    ];
     const fonts = await getFontOptionsFromFontPaths(...fontPaths);
+
+    // console.log({ fonts });
 
     const dateParts = match.date?.split('-');
     const isFirstPartYear = match.date !== null && dateParts?.at(0)?.length === 4;
