@@ -26,13 +26,14 @@ export async function GET({ site, params }: APIContext<{ week: number }>) {
     const isLocal = match.localTeam.id === PRIMERA_TEAM_ID;
     const imgUrl = isLocal ? match.visitorTeam.shieldUrl : match.localTeam.shieldUrl;
 
-    console.log('cover/[week].png', { match });
-    const fonts = await getFontOptionsFromFontPaths(
-      site.href + 'assets/fonts/alumni/AlumniSans-Bold.ttf',
-      site.href + '/assets/fonts/alumni/AlumniSans-BoldItalic.ttf'
-    );
+    // console.log('cover/[week].png', { match });
+    const fontPaths = [
+      '/public/assets/fonts/alumni/AlumniSans-Bold.ttf',
+      '/public/assets/fonts/alumni/AlumniSans-BoldItalic.ttf',
+    ].map((p) => process.cwd() + p);
+    const fonts = await getFontOptionsFromFontPaths(...fontPaths);
 
-    console.log({ fonts });
+    // console.log({ fonts });
 
     const dateParts = match.date?.split('-');
     const isFirstPartYear = match.date !== null && dateParts?.at(0)?.length === 4;
@@ -48,14 +49,14 @@ export async function GET({ site, params }: APIContext<{ week: number }>) {
         isLocal,
       }),
       {
-        debug: true,
         fonts,
         width: 1280,
         height: 720,
-        // headers: {
-        //   'Cache-Control':
-        //     'public, max-age=604800, stale-while-revalidate=86400, stale-if-error=86400',
-        // },
+        headers: {
+          'Content-Type': 'image/png',
+          'Cache-Control':
+            'public, immutable, no-transform, max-age=31536000, stale-while-revalidate=86400, stale-if-error=86400',
+        },
       }
     );
   } catch (error) {
