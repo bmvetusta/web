@@ -47,7 +47,7 @@ body {
 
   margin: 0 auto;
   padding-bottom: 2rem;
-  max-width: 100dvw;
+  max-width: min(480px, 100dvw);
   min-height: 100dvh;
 }
 

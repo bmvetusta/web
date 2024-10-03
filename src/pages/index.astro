@@ -10,24 +10,13 @@ export const prerender = true;
 const canonicalUrl = Astro.url.href;
 ---
 
+<div id='more' aria-hidden='true'>
+  <img id='more' aria-hidden='true' src='/assets/images/arrow-right.svg' alt='Más contenido' />
+  <span>Ver más</span>
+</div>
+
 <Layout canonicalUrl={canonicalUrl}>
   <CurrentLiveVideo server:defer />
-
-  <style>
-    div.container,
-    article {
-      direction: ltr;
-      display: flex;
-      flex-direction: column;
-      place-items: center;
-      align-items: center;
-      gap: 0.5rem;
-    }
-
-    div.container {
-      gap: 2.5rem;
-    }
-  </style>
   <div class='container'>
     <article id='abonate'>
       <main>
@@ -49,15 +38,15 @@ const canonicalUrl = Astro.url.href;
       <main>
         <SocialNetwork
           icon='yt'
-          href='https://youtube.com/@balonmanovetusta?sub_confirmation=1'
-          text='¡Suscribete! Para ver nuestros partidos'
+          href='/youtube'
+          text='¡Suscribete para ver nuestros partidos!'
           alt='Logo de Youtube'
           title='Suscribete a nuestro canal de Youtube'
         />
 
         <SocialNetwork
           icon='x'
-          href='https://x.com/BM_Vetusta'
+          href='/x'
           text='@BM_Vetusta'
           alt='Logo de X (Twitter)'
           title='Enlace a la cuenta en X (Twitter) del club'
@@ -65,7 +54,7 @@ const canonicalUrl = Astro.url.href;
 
         <SocialNetwork
           icon='instagram'
-          href='https://instagram.com/balonmanovetusta'
+          href='/instagram'
           text='@balonmanovetusta'
           alt='Logo de Instagram'
           title='Enlace a la cuenta en Instagram del club'
@@ -83,3 +72,56 @@ const canonicalUrl = Astro.url.href;
     </article>
   </div>
 </Layout>
+
+<style>
+  div#more {
+    display: none;
+  }
+
+  @media (max-height: 720px) {
+    div#more {
+      position: absolute;
+      object-fit: contain;
+      bottom: 0;
+      right: 1rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    div#more span {
+      opacity: 0.8;
+      color: whitesmoke;
+    }
+
+    div#more img {
+      max-width: 64px;
+      max-height: 64px;
+      transform: rotate(90deg);
+      opacity: 0.3;
+    }
+  }
+
+  div.container,
+  article,
+  article > main {
+    direction: ltr;
+    display: flex;
+    flex-direction: column;
+    place-items: center;
+    align-items: center;
+    width: 100%;
+  }
+  article > main {
+    gap: 1rem;
+  }
+
+  article {
+    gap: 0.5rem;
+  }
+
+  div.container {
+    margin: 1.5rem auto;
+    gap: 1.5rem;
+  }
+</style>
