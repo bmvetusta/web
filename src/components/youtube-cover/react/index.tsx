@@ -28,7 +28,7 @@ export function YoutubeCover({
   // Visitor Shield coords
   const visitorShieldLeft = isLocal ? 1035 : 265;
 
-  console.log(`We'll go generate the cover`);
+  // console.log(`We'll go generate the cover`);
 
   return (
     <div
