@@ -59,12 +59,6 @@ Queremos agradecer a todos nuestros patrocinadores su colaboración:
  - Ovicent Fisioterapia
 `;
 
-async function getData(matchId?: string | number) {
-  if (matchId) {
-    return rfebmAPIGetPreviousData(matchId);
-  }
-}
-
 export async function GET({ params: { week } }: APIContext<{ week: string }>) {
   // Only works on localhost
   // if (!site?.hostname.includes('localhost')) {
@@ -73,7 +67,7 @@ export async function GET({ params: { week } }: APIContext<{ week: string }>) {
 
   const match = await getWeekData(week);
   // console.log({ match }); // I got this point
-  const previous = await getData(match?.id);
+  const previous = await rfebmAPIGetPreviousData(match?.id);
   console.log({ previous });
 
   if (!match || !previous) {

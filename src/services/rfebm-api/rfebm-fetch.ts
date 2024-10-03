@@ -51,19 +51,33 @@ export async function rfebmAPIFetch<T extends z.ZodType = z.ZodType>(
     }
   }
 
+  console.log('rfebmAPIFetch', { url: url.href, body });
+
   if (cacheTTL > 0) {
     redis = clientUpstash();
 
     data = await redis.get<CacheStoredObject<T>>(cacheUrl.href);
 
     // If is fallback
-    if (data && data.isFallback) {
-      const dataTTL = Math.floor((now - data.createdAt) / 1000);
-      const isExpired = data.isFallback && cacheTTL < Infinity && dataTTL > cacheTTL;
+    if (data) {
+      console.log('Cached Data exists', {
+        isFallback: data.isFallback,
+        cacheTTL,
+        createdAt: data.createdAt,
+      });
 
-      // Not fallback or fallback but we can consider not old data due cacheTTL
-      if (!data.isFallback || !isExpired) {
-        return data.data as T;
+      if (!data.isFallback) {
+        return data.data;
+      }
+
+      if (data.isFallback) {
+        const dataTTL = Math.floor((now - data.createdAt) / 1000);
+        const isExpired = data.isFallback && cacheTTL < Infinity && dataTTL > cacheTTL;
+
+        // Not fallback or fallback but we can consider not old data due cacheTTL
+        if (!data.isFallback || !isExpired) {
+          return data.data as T;
+        }
       }
     }
   }
@@ -74,11 +88,14 @@ export async function rfebmAPIFetch<T extends z.ZodType = z.ZodType>(
       body,
       headers: getRFEBMAPIHeaders(),
     };
+
+    console.log('Fetching the data', { init });
     const responseData = await fetch(url, init).then((res) => res.json());
 
     if (responseData.status === 'OK') {
       const parsedData = schema.safeParse(responseData);
 
+      console.log('Data fetched and parsed', { parsedStatus: parsedData.success });
       if (parsedData.success) {
         data = {
           createdAt: now,
@@ -87,6 +104,7 @@ export async function rfebmAPIFetch<T extends z.ZodType = z.ZodType>(
         };
 
         if (redis) {
+          console.log('Storing the data');
           await redis.set(cacheUrl.href, data);
 
           // If we should expire the value, this mean
@@ -107,6 +125,7 @@ export async function rfebmAPIFetch<T extends z.ZodType = z.ZodType>(
     // some automations in case any header has expired because they
     // change User-Agent sometimes due is used as a password
     if (shouldEmitErrorsIfFetchFail) {
+      console.error('Fetching the data from RFEBM website failed');
       fetchEmitter.emit(fetchEventError, {
         url,
         requestInit: init,
@@ -116,6 +135,7 @@ export async function rfebmAPIFetch<T extends z.ZodType = z.ZodType>(
 
     // In case fetch fails but the cache is persistent and used as fallback
     if (data && data.isFallback) {
+      console.error('Retrieving fallback data');
       return data;
     }
 
