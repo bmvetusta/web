@@ -1,6 +1,6 @@
 import { z } from 'zod';
 
-export const transformableCalendarTeamSchema = z
+export const transformableTeamCalendarSchema = z
   .object({
     id: z.coerce.number(),
     nombre: z.string(),

@@ -1,36 +1,9 @@
 import { z } from 'zod';
 import { transformableDateSchema } from '../generics/datetime';
-import { matchSchema } from '../generics/match';
 import { transformableMatchStatusSchema } from '../generics/match-status';
-import { teamSchema } from '../generics/team';
-import { transformableCalendarTeamSchema } from './team';
+import { transformableTeamCalendarSchema } from './team';
 
-// export const matchSchema = z.object({
-//   id: z.number(),
-//   week: z.number(),
-//   urlStreaming: z.string().nullish(),
-//   status: matchStatusSchema,
-//   date: z.string().nullable().default(null).optional(),
-//   time: z.string().nullable().default(null).optional(),
-//   localTeam: teamSchema,
-//   visitorTeam: teamSchema,
-// });
-
-const finalTeamSchema = teamSchema.extend({
-  score: z.number().nullable(),
-});
-
-export const calendarMatchSchema = matchSchema
-  .omit({
-    localTeam: true,
-    visitorTeam: true,
-  })
-  .extend({
-    localTeam: finalTeamSchema,
-    visitorTeam: finalTeamSchema,
-  });
-
-export const transformableCalendarMatchSchema = z
+export const transformableMatchCalendarSchema = z
   .object({
     id: z.coerce.number(),
     estado_partido: transformableMatchStatusSchema.innerType(),
@@ -46,8 +19,8 @@ export const transformableCalendarMatchSchema = z
     url_escudo_visitante: z.string().url(),
     resultado_visitante: z.coerce.number().nullable(),
 
-    equipo_local: transformableCalendarTeamSchema.innerType(),
-    equipo_visitante: transformableCalendarTeamSchema.innerType(),
+    equipo_local: transformableTeamCalendarSchema.innerType(),
+    equipo_visitante: transformableTeamCalendarSchema.innerType(),
   })
   .transform((result) => {
     const fecha = transformableDateSchema.safeParse(result.fecha).data ?? {

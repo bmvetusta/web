@@ -1,10 +1,10 @@
 import { z } from 'zod';
 import { matchSchema } from '../generics/match';
-import { transformableCalendarMatchSchema } from './match';
+import { transformableMatchCalendarSchema } from './match';
 
-export const calendarResponseSchema = z
+export const responseCalendarSchema = z
   .object({
-    calendarios: z.array(transformableCalendarMatchSchema.innerType()).default([]),
+    calendarios: z.array(transformableMatchCalendarSchema.innerType()).default([]),
   })
-  .transform((v) => v.calendarios.map((m) => transformableCalendarMatchSchema.parse(m)))
+  .transform((v) => v.calendarios.map((m) => transformableMatchCalendarSchema.parse(m)))
   .pipe(z.array(matchSchema));
