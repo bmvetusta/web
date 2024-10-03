@@ -27,10 +27,11 @@ export async function GET({ site, params }: APIContext<{ week: number }>) {
     const imgUrl = isLocal ? match.visitorTeam.shieldUrl : match.localTeam.shieldUrl;
 
     // console.log('cover/[week].png', { match });
+    const isVercel = process.env.VERCEL === '1';
     const fontPaths = [
-      '/public/assets/fonts/alumni/AlumniSans-Bold.ttf',
-      '/public/assets/fonts/alumni/AlumniSans-BoldItalic.ttf',
-    ].map((p) => process.cwd() + p);
+      '/assets/fonts/alumni/AlumniSans-Bold.ttf',
+      '/assets/fonts/alumni/AlumniSans-BoldItalic.ttf',
+    ].map((p) => process.cwd() + (isVercel ? p : `/public${p}`));
     const fonts = await getFontOptionsFromFontPaths(...fontPaths);
 
     // console.log({ fonts });
