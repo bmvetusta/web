@@ -72,7 +72,7 @@ export async function GET({ params: { week } }: APIContext<{ week: string }>) {
   // }
 
   const match = await getWeekData(week);
-  console.log({ match });
+  // console.log({ match }); // I got this point
   const previous = await getData(match?.id);
   console.log({ previous });
 

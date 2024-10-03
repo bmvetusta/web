@@ -14,6 +14,8 @@ export async function rfebmAPIGetPreviousData(matchId: string | number) {
     body,
   }).then((res) => res.json());
 
+  console.log('Previous', { responseData });
+
   const parsedData = previousSchema.safeParse(responseData?.previo);
 
   if (parsedData.success) {
