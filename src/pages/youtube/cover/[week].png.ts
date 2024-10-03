@@ -9,9 +9,9 @@ export const prerender = false;
 
 export async function GET({ site, params }: APIContext<{ week: number }>) {
   // Only works on localhost
-  // if (!site?.hostname.includes('localhost')) {
-  //   return new Response('Not allowed', { status: 401 });
-  // }
+  if (!site?.hostname.includes('localhost')) {
+    return new Response('Not allowed', { status: 401 });
+  }
   try {
     if (!site) {
       throw new Error('No site url configured');
