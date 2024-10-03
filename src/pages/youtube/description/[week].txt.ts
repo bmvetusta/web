@@ -79,13 +79,12 @@ export async function GET({ params: { week } }: APIContext<{ week: string }>) {
     });
   }
 
-  console.log('description/[week].png', { isMatch: !!match });
+  console.log('description/[week].png', { match });
   const localName = capitalizeString(match.localTeam.name, true, 'es-ES');
   const visitorName = capitalizeString(match.visitorTeam.name, true, 'es-ES');
   const weekString = match.week.toString().padStart(2, '0');
 
-  return new Response(
-    `Balonmano - J${weekString} - ${localName} - ${visitorName}
+  const youtubeDescription = `Balonmano - J${weekString} - ${localName} - ${visitorName}
 
       
 ${textLayout({
@@ -96,15 +95,12 @@ ${textLayout({
   date: match.date,
   time: match.time,
   week: weekString,
-})}
-    `.trim(),
+})}`.trim();
 
-    {
-      headers: {
-        'Content-Type': 'application/json',
-        'Cache-Control':
-          'public, max-age=604800, stale-while-revalidate=86400, stale-if-error=86400',
-      },
-    }
-  );
+  return new Response(youtubeDescription, {
+    headers: {
+      'Content-Type': 'application/json',
+      'Cache-Control': 'public, max-age=604800, stale-while-revalidate=86400, stale-if-error=86400',
+    },
+  });
 }

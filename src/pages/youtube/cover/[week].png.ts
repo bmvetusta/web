@@ -8,6 +8,10 @@ import { getWeekData } from '../../../services/get-week-data';
 export const prerender = false;
 
 export async function GET({ site, params }: APIContext<{ week: number }>) {
+  // Only works on localhost
+  // if (!site?.hostname.includes('localhost')) {
+  //   return new Response('Not allowed', { status: 401 });
+  // }
   try {
     if (!site) {
       throw new Error('No site url configured');
@@ -22,7 +26,7 @@ export async function GET({ site, params }: APIContext<{ week: number }>) {
     const isLocal = match.localTeam.id === PRIMERA_TEAM_ID;
     const imgUrl = isLocal ? match.visitorTeam.shieldUrl : match.localTeam.shieldUrl;
 
-    console.log('cover/[week].png', { isMatch: !!match });
+    console.log('cover/[week].png', { match });
     const fonts = await getFontOptionsFromFontPaths(
       site.href + 'assets/fonts/alumni/AlumniSans-Bold.ttf',
       site.href + '/assets/fonts/alumni/AlumniSans-BoldItalic.ttf'
