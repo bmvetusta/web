@@ -2,7 +2,7 @@ import { readFile } from 'node:fs/promises';
 import { getWeightNumberByName } from './get-weight-number-by-name';
 
 const isVercel = process.env.VERCEL === '1';
-const prePath = isVercel ? '../../../..' : '../../public';
+const prePath = isVercel ? '../..' : '../../public';
 export async function getFontOptionsFromFontPaths(...fontPaths: string[]) {
   return await Promise.all(
     fontPaths.map(async (fontPath) => {
