@@ -59,18 +59,23 @@ export async function rfebmAPIFetch<T extends z.ZodType = z.ZodType>(
         redisResolved.reason instanceof ExpiredDataAsError &&
         fetchResolved.status === 'rejected'
       ) {
+        console.debug('Retrieving fallback data');
         return redisResolved.reason.data.data as T;
       }
 
+      // Redis data
       if (redisResolved.status === 'fulfilled') {
+        console.debug('Retrieving cached data');
         return redisResolved.value?.data ?? null;
       }
 
+      // Fetched data
       if (fetchResolved.status === 'fulfilled') {
+        console.debug('Retrieving fetched data', { redis: redisResolved.status });
         return fetchResolved.value?.data ?? null;
       }
 
-      console.error('Redis and fetch failed, see the logs!');
+      console.error('Redis and fetch failed, see the logs!', { redisResolved, fetchResolved });
       return null;
     });
   }
