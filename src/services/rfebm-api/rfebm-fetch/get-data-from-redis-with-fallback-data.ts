@@ -29,17 +29,17 @@ export async function getDataFromRedisWithFallbackData<T extends z.ZodType = z.Z
   redis: Redis
 ): Promise<RedisStoredObject<T> | null | undefined> {
   return redis.get<RedisStoredObject<T>>(redisKey).then((data) => {
-    console.log('Response from redis');
+    console.debug('Response from redis');
     if (data) {
       if (!isRedisStoredObjectExpiredData(data, cacheTTL, now)) {
         // Not expired data
-        console.log('Not expired data');
+        console.debug('Not expired data');
         fetchSignal.abort();
         return data;
       }
 
       if (data.isFallback) {
-        console.log('Fallback data');
+        console.debug('Fallback data');
         throw new ExpiredDataAsError<T>(data);
       }
     }

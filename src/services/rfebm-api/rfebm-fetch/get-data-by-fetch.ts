@@ -27,7 +27,7 @@ export async function getDataByFetch<T extends z.ZodType = z.ZodType>(
   // console.debug('Fetching the data', { init });
   return fetch(url, init)
     .then((res) => res.json())
-    .then((response: any) => {
+    .then(async (response: any) => {
       // console.debug('Fetching response', response);
       if (response.status !== 'OK') {
         // If any error while requesting data we emit an error to allow
@@ -56,16 +56,13 @@ export async function getDataByFetch<T extends z.ZodType = z.ZodType>(
         };
 
         // console.debug('Storing object in Redis:', JSON.stringify(redisObject));
-        return redisKey && redis
-          ? redis
-              .set(redisKey, redisObject)
-              .then(() => redisObject)
-              .catch((e) => {
-                console.error('Data could not be set to redis', e);
+        if (redisKey && redis) {
+          await redis.set(redisKey, redisObject).catch((e) => {
+            console.error('Data could not be set to redis', e);
+          });
+        }
 
-                return redisObject;
-              })
-          : redisObject;
+        return redisObject;
       }
 
       if (data.success === false) {
