@@ -11,5 +11,10 @@ export async function rfebmAPIGetPreviousData(matchId?: string | number) {
   const body = new URLSearchParams();
   body.append('id_partido', matchId.toString());
 
-  return rfebmAPIFetch(pathname, responsePreviousSchema, body, 86400, true);
+  return rfebmAPIFetch(
+    pathname,
+    responsePreviousSchema,
+    body
+    // , 86400, true
+  );
 }

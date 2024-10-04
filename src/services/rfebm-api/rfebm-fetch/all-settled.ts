@@ -80,7 +80,7 @@ export async function rfebmAPIFetch<T extends z.ZodType = z.ZodType>(
               .set(redisKey, {
                 data: fetchResolved.value,
                 createdAt: now,
-                isFallback: false,
+                isFallback: cacheAsFallback,
               })
               .catch((e) => {
                 console.error('Error while setting the fetched data to redis', { e });
