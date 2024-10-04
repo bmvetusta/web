@@ -13,23 +13,22 @@ export async function getDataByFetch<T extends z.ZodType = z.ZodType>(
     method: 'POST',
     body,
     headers: getRFEBMAPIHeaders(),
-    signal: AbortSignal.timeout(FETCH_TIMEOUT),
-    // signal: fetchSignal.signal,
+    signal: fetchSignal.signal,
   };
 
-  // const timeoutId = setTimeout(() => fetchSignal.abort(), FETCH_TIMEOUT);
+  const timeoutId = setTimeout(() => fetchSignal.abort(), FETCH_TIMEOUT);
 
   // console.debug('Fetching the data', { init });
   return fetch(url, init)
     .then((res) => res.json())
     .then(async (response: any) => {
-      // console.debug('Fetching response', { status: response?.status });
+      console.debug('Fetching response', { status: response?.status });
 
       if (response.status === 'OK') {
         const data = schema.safeParse(response);
 
         if (data.success && data.data) {
-          // console.debug('Data fetched & parsed correctly');
+          console.debug('Data fetched & parsed correctly');
           return data.data as T;
         }
 
@@ -61,8 +60,8 @@ export async function getDataByFetch<T extends z.ZodType = z.ZodType>(
       // throw new Error(`Unknown error while fetching "${url.href}"`);
       return null;
     })
-    .catch(() => null);
-  // .finally(() => {
-  //   clearTimeout(timeoutId);
-  // });
+    .catch(() => null)
+    .finally(() => {
+      clearTimeout(timeoutId);
+    });
 }

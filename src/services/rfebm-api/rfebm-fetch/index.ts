@@ -1,11 +1,7 @@
-import type { Redis } from '@upstash/redis';
 import { RFEBM_API_BASE_HREF } from 'astro:env/server';
 // import EventEmitter from 'node:events';
 import type { z } from 'zod';
-import { clientUpstash } from '../../upstash/client';
-import { ExpiredDataAsError } from './expired-data-as-error';
 import { getDataByFetch } from './get-data-by-fetch';
-import { getDataFromRedisWithFallbackData } from './get-data-from-redis-with-fallback-data';
 
 // export const fetchEmitter = new EventEmitter();
 // export const fetchEventError = 'error:fetch:rfebm';
@@ -34,51 +30,6 @@ export async function rfebmAPIFetch<T extends z.ZodType = z.ZodType>(
   // shouldEmitErrorsIfFetchFail = true
 ): Promise<z.output<T> | null> {
   const url = new URL(pathname, RFEBM_API_BASE_HREF);
-  const now = Date.now();
 
-  if (cacheTTL > 0) {
-    // Redis stuff
-    const redis: Redis = clientUpstash();
-    const fetchUrlWithParams = new URL(url.href);
-
-    if (body) {
-      for (const [k, v] of body.entries()) {
-        fetchUrlWithParams.searchParams.set(k, v);
-      }
-    }
-
-    const redisKey = fetchUrlWithParams.href;
-
-    return Promise.allSettled([
-      getDataFromRedisWithFallbackData(redisKey, cacheTTL, now, redis),
-      getDataByFetch(url, schema, cacheAsFallback, now, body, redis, redisKey),
-    ]).then(([redisResolved, fetchResolved]) => {
-      // All rejected but with expired data
-      if (
-        redisResolved.status === 'rejected' &&
-        redisResolved.reason instanceof ExpiredDataAsError &&
-        fetchResolved.status === 'rejected'
-      ) {
-        console.debug('Retrieving fallback data');
-        return redisResolved.reason.data.data as T;
-      }
-
-      // Redis data
-      if (redisResolved.status === 'fulfilled') {
-        console.debug('Retrieving cached data');
-        return redisResolved.value?.data ?? null;
-      }
-
-      // Fetched data
-      if (fetchResolved.status === 'fulfilled') {
-        console.debug('Retrieving fetched data', { redis: redisResolved.status });
-        return fetchResolved.value?.data ?? null;
-      }
-
-      console.error('Redis and fetch failed, see the logs!', { redisResolved, fetchResolved });
-      return null;
-    });
-  }
-
-  return getDataByFetch<T>(url, schema, cacheAsFallback, now, body).catch(() => null);
+  return getDataByFetch<T>(url, schema, body);
 }

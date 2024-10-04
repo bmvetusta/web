@@ -9,6 +9,7 @@ export function clientUpstash() {
       url: REDIS_REST_URL,
       token: REDIS_REST_TOKEN,
       signal: AbortSignal.timeout(REDIS_TIMEOUT),
+      enableAutoPipelining: true,
     });
   }
 

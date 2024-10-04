@@ -46,7 +46,7 @@ if (!isChannelLive) {
       // Get data
       const weekData = await rfebmAPIGetCalendar(PRIMERA_GROUP_ID);
 
-      if (Array.isArray(weekData)) {
+      if (weekData) {
         match = weekData.find(
           (m) =>
             ['PENDING', 'PLAYING'].includes(m.status) &&

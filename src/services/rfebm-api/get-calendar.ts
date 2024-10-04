@@ -13,5 +13,11 @@ export async function rfebmAPIGetCalendar(
   const body = new URLSearchParams();
   body.append('id_grupo', groupId.toString());
 
-  return rfebmAPIFetch(pathname, responseCalendarSchema, body, 7200, true);
+  return rfebmAPIFetch<typeof responseCalendarSchema>(
+    pathname,
+    responseCalendarSchema,
+    body,
+    86400,
+    true
+  );
 }
