@@ -63,27 +63,27 @@ export default defineConfig({
         optional: false,
         default: 9_000,
       }),
-      FETCH_TIMEOUT: envField.number({
-        context: 'server',
-        access: 'public',
-        optional: false,
-        default: 9_000,
-      }),
-      PROXY_URL: envField.string({
-        context: 'server',
-        access: 'secret',
-        optional: true,
-      }),
-      PROXY_USER: envField.string({
-        context: 'server',
-        access: 'secret',
-        optional: true,
-      }),
-      PROXY_PASSWORD: envField.string({
-        context: 'server',
-        access: 'secret',
-        optional: true,
-      }),
+      // FETCH_TIMEOUT: envField.number({
+      //   context: 'server',
+      //   access: 'public',
+      //   optional: false,
+      //   default: 9_000,
+      // }),
+      // PROXY_URL: envField.string({
+      //   context: 'server',
+      //   access: 'secret',
+      //   optional: true,
+      // }),
+      // PROXY_USER: envField.string({
+      //   context: 'server',
+      //   access: 'secret',
+      //   optional: true,
+      // }),
+      // PROXY_PASSWORD: envField.string({
+      //   context: 'server',
+      //   access: 'secret',
+      //   optional: true,
+      // }),
     },
   },
   integrations: [react()],

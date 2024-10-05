@@ -1,4 +1,4 @@
-import trainings from 'src/content/trainings/trainings.json' with { type: 'json' };
+import trainings from 'src/content/trainings/data.json' with { type: 'json' };
 import { generateTrainingICS } from 'src/services/generate-training-ics';
 
 export async function GET() {

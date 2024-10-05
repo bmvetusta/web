@@ -1,0 +1,1556 @@
+{
+  "id": 209500,
+  "federationId": 28,
+  "name": "AUTO-CENTER PRINCIPADO",
+  "shieldImageUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/2898/square_35723432687275366a39.jpg",
+  "phone": "608 86 55 54",
+  "shirtRgb": "#f7f900/#000000",
+  "pantsRgb": "#000000",
+  "socksRgb": "#f7f900",
+  "stadium": {
+    "id": 1000095,
+    "name": "POLIDEPORTIVO MUNICIPAL FLORIDA ARENA",
+    "address": "C. Valdés, 2, 33012 Oviedo, Asturias, España",
+    "latitude": "43.36563874569288",
+    "longitude": "-5.874707605279583",
+    "capacity": null,
+    "province": "ASTURIAS"
+  },
+  "preferredDate": {
+    "dayOfWeek": "Sábado",
+    "hour": null
+  },
+  "groups": [
+    {
+      "id": 1023856,
+      "phaseId": 5,
+      "competitionId": 207297,
+      "name": "GRUPO B",
+      "phase": "LIGA REGULAR",
+      "competition": "PRIMERA DIVISIÓN MASCULINA"
+    },
+    {
+      "id": 1024586,
+      "phaseId": 30,
+      "competitionId": 207618,
+      "name": "GRUPO UNICO",
+      "phase": "PRIMERA FASE",
+      "competition": "X COPA PRINCIPADO - SÉNIOR MASCULINA"
+    },
+    {
+      "id": 1024587,
+      "phaseId": 35,
+      "competitionId": 207618,
+      "name": "FASE FINAL",
+      "phase": "FASE FINAL",
+      "competition": "X COPA PRINCIPADO - SÉNIOR MASCULINA"
+    },
+    {
+      "id": 1025237,
+      "phaseId": 10,
+      "competitionId": 207798,
+      "name": "XIII TORNEO SOLIDARIO BM VETUSTA",
+      "phase": "FASE ÚNICA",
+      "competition": "AMISTOSOS"
+    }
+  ],
+  "sportsWear": {
+    "player1": {
+      "shirtColor1": null,
+      "shirtColor2": null,
+      "pantsColor1": null,
+      "pantsColor2": null
+    },
+    "player2": {
+      "shirtColor1": null,
+      "shirtColor2": null,
+      "pantsColor1": null,
+      "pantsColor2": null
+    },
+    "goalkeeper1": {
+      "shirtColor1": null,
+      "shirtColor2": null,
+      "pantsColor1": null,
+      "pantsColor2": null
+    },
+    "goalkeeper2": {
+      "shirtColor1": null,
+      "shirtColor2": null,
+      "pantsColor1": null,
+      "pantsColor2": null
+    }
+  },
+  "matches": [
+    {
+      "id": 1393039,
+      "groupId": 1024586,
+      "stadiumId": null,
+      "uploadedReport": true,
+      "competitionName": "X COPA PRINCIPADO - SÉNIOR MASCULINA - PRIMERA FASE - GRUPO UNICO",
+      "week": 1,
+      "urlStreaming": null,
+      "status": "ENDED",
+      "date": "2024-08-30",
+      "time": "19:45",
+      "localTeam": {
+        "id": 209500,
+        "name": "AUTO-CENTER PRINCIPADO",
+        "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/2898/square_35723432687275366a39.jpg",
+        "score": 31,
+        "position": 1,
+        "responsibleId": null,
+        "category": null
+      },
+      "visitorTeam": {
+        "id": 214998,
+        "name": "REAL GRUPO DE CULTURA COVADONGA",
+        "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/70/square_646e366b316534346e76.jpg",
+        "score": 22,
+        "position": 2,
+        "responsibleId": null,
+        "category": null
+      }
+    },
+    {
+      "id": 1393041,
+      "groupId": 1024586,
+      "stadiumId": null,
+      "uploadedReport": true,
+      "competitionName": "X COPA PRINCIPADO - SÉNIOR MASCULINA - PRIMERA FASE - GRUPO UNICO",
+      "week": 3,
+      "urlStreaming": null,
+      "status": "ENDED",
+      "date": "2024-09-01",
+      "time": "12:00",
+      "localTeam": {
+        "id": 209246,
+        "name": "ROYAL PREMIUM GIJON",
+        "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/488/square_32383967706436617972.jpg",
+        "score": 20,
+        "position": 3,
+        "responsibleId": null,
+        "category": null
+      },
+      "visitorTeam": {
+        "id": 209500,
+        "name": "AUTO-CENTER PRINCIPADO",
+        "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/2898/square_35723432687275366a39.jpg",
+        "score": 29,
+        "position": 1,
+        "responsibleId": null,
+        "category": null
+      }
+    },
+    {
+      "id": 1401676,
+      "groupId": 1025237,
+      "stadiumId": null,
+      "uploadedReport": true,
+      "competitionName": "AMISTOSOS - FASE ÚNICA - XIII TORNEO SOLIDARIO BM VETUSTA",
+      "week": 1,
+      "urlStreaming": null,
+      "status": "ENDED",
+      "date": "2024-09-07",
+      "time": "16:00",
+      "localTeam": {
+        "id": 209500,
+        "name": "AUTO-CENTER PRINCIPADO",
+        "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/2898/square_35723432687275366a39.jpg",
+        "score": 24,
+        "position": 0,
+        "responsibleId": null,
+        "category": null
+      },
+      "visitorTeam": {
+        "id": 212088,
+        "name": "BALONMANO BARAKALDO",
+        "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/241/square_6e70336a3867636e6264.jpg",
+        "score": 15,
+        "position": 0,
+        "responsibleId": null,
+        "category": null
+      }
+    },
+    {
+      "id": 1401678,
+      "groupId": 1025237,
+      "stadiumId": null,
+      "uploadedReport": true,
+      "competitionName": "AMISTOSOS - FASE ÚNICA - XIII TORNEO SOLIDARIO BM VETUSTA",
+      "week": 2,
+      "urlStreaming": null,
+      "status": "ENDED",
+      "date": "2024-09-08",
+      "time": "13:00",
+      "localTeam": {
+        "id": 209500,
+        "name": "AUTO-CENTER PRINCIPADO",
+        "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/2898/square_35723432687275366a39.jpg",
+        "score": 25,
+        "position": 0,
+        "responsibleId": null,
+        "category": null
+      },
+      "visitorTeam": {
+        "id": 201330,
+        "name": "CALVO XIRIA",
+        "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/260/square_76786a66626c326a6838.jpg",
+        "score": 26,
+        "position": 0,
+        "responsibleId": null,
+        "category": null
+      }
+    },
+    {
+      "id": 1393043,
+      "groupId": 1024587,
+      "stadiumId": null,
+      "uploadedReport": true,
+      "competitionName": "X COPA PRINCIPADO - SÉNIOR MASCULINA - FASE FINAL - FASE FINAL",
+      "week": 1,
+      "urlStreaming": null,
+      "status": "ENDED",
+      "date": "2024-09-14",
+      "time": "19:30",
+      "localTeam": {
+        "id": 201150,
+        "name": "HORIZONTE ATLETICA",
+        "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/69/square_6d6b7235397562793961.jpg",
+        "score": 25,
+        "position": 0,
+        "responsibleId": null,
+        "category": null
+      },
+      "visitorTeam": {
+        "id": 209500,
+        "name": "AUTO-CENTER PRINCIPADO",
+        "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/2898/square_35723432687275366a39.jpg",
+        "score": 27,
+        "position": 0,
+        "responsibleId": null,
+        "category": null
+      }
+    },
+    {
+      "id": 1393044,
+      "groupId": 1024587,
+      "stadiumId": null,
+      "uploadedReport": true,
+      "competitionName": "X COPA PRINCIPADO - SÉNIOR MASCULINA - FASE FINAL - FASE FINAL",
+      "week": 2,
+      "urlStreaming": null,
+      "status": "ENDED",
+      "date": "2024-09-15",
+      "time": "13:00",
+      "localTeam": {
+        "id": 218784,
+        "name": "UNIÓN FINANCIERA",
+        "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/439/square_7868636d337739673532.jpg",
+        "score": 28,
+        "position": 0,
+        "responsibleId": null,
+        "category": null
+      },
+      "visitorTeam": {
+        "id": 209500,
+        "name": "AUTO-CENTER PRINCIPADO",
+        "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/2898/square_35723432687275366a39.jpg",
+        "score": 22,
+        "position": 0,
+        "responsibleId": null,
+        "category": null
+      }
+    },
+    {
+      "id": 1385784,
+      "groupId": 1023856,
+      "stadiumId": null,
+      "uploadedReport": true,
+      "competitionName": "PRIMERA DIVISIÓN MASCULINA - LIGA REGULAR - GRUPO B",
+      "week": 1,
+      "urlStreaming": null,
+      "status": "ENDED",
+      "date": "2024-09-22",
+      "time": "13:00",
+      "localTeam": {
+        "id": 209180,
+        "name": "CONGESA XXI BALONMANO CIUDAD DE SALAMANCA",
+        "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/135/square_366a6b36366f3834316a.jpg",
+        "score": 31,
+        "position": 7,
+        "responsibleId": null,
+        "category": null
+      },
+      "visitorTeam": {
+        "id": 209500,
+        "name": "AUTO-CENTER PRINCIPADO",
+        "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/2898/square_35723432687275366a39.jpg",
+        "score": 28,
+        "position": 10,
+        "responsibleId": null,
+        "category": null
+      }
+    },
+    {
+      "id": 1385792,
+      "groupId": 1023856,
+      "stadiumId": null,
+      "uploadedReport": true,
+      "competitionName": "PRIMERA DIVISIÓN MASCULINA - LIGA REGULAR - GRUPO B",
+      "week": 2,
+      "urlStreaming": null,
+      "status": "ENDED",
+      "date": "2024-09-28",
+      "time": "18:00",
+      "localTeam": {
+        "id": 209500,
+        "name": "AUTO-CENTER PRINCIPADO",
+        "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/2898/square_35723432687275366a39.jpg",
+        "score": 30,
+        "position": 14,
+        "responsibleId": null,
+        "category": null
+      },
+      "visitorTeam": {
+        "id": 218714,
+        "name": "BALONMANO CAJA RURAL ZAMORA",
+        "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/437/square_766f6d6d376d6972346c.jpg",
+        "score": 32,
+        "position": 4,
+        "responsibleId": null,
+        "category": null
+      }
+    },
+    {
+      "id": 1385799,
+      "groupId": 1023856,
+      "stadiumId": null,
+      "uploadedReport": false,
+      "competitionName": "PRIMERA DIVISIÓN MASCULINA - LIGA REGULAR - GRUPO B",
+      "week": 3,
+      "urlStreaming": null,
+      "status": "PENDING",
+      "date": "2024-10-05",
+      "time": "18:30",
+      "localTeam": {
+        "id": 203934,
+        "name": "BM. SANTOÑA",
+        "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/767/square_64727237756f70706669.jpg",
+        "score": null,
+        "position": 12,
+        "responsibleId": null,
+        "category": null
+      },
+      "visitorTeam": {
+        "id": 209500,
+        "name": "AUTO-CENTER PRINCIPADO",
+        "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/2898/square_35723432687275366a39.jpg",
+        "score": null,
+        "position": 14,
+        "responsibleId": null,
+        "category": null
+      }
+    },
+    {
+      "id": 1385807,
+      "groupId": 1023856,
+      "stadiumId": null,
+      "uploadedReport": false,
+      "competitionName": "PRIMERA DIVISIÓN MASCULINA - LIGA REGULAR - GRUPO B",
+      "week": 4,
+      "urlStreaming": null,
+      "status": "PENDING",
+      "date": "2024-10-12",
+      "time": "17:30",
+      "localTeam": {
+        "id": 209500,
+        "name": "AUTO-CENTER PRINCIPADO",
+        "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/2898/square_35723432687275366a39.jpg",
+        "score": null,
+        "position": 14,
+        "responsibleId": null,
+        "category": null
+      },
+      "visitorTeam": {
+        "id": 212098,
+        "name": "CLUB BALONMANO SORIA",
+        "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/139/square_6a68756a757030356e76.jpg",
+        "score": null,
+        "position": 1,
+        "responsibleId": null,
+        "category": null
+      }
+    },
+    {
+      "id": 1385814,
+      "groupId": 1023856,
+      "stadiumId": null,
+      "uploadedReport": false,
+      "competitionName": "PRIMERA DIVISIÓN MASCULINA - LIGA REGULAR - GRUPO B",
+      "week": 5,
+      "urlStreaming": null,
+      "status": "PENDING",
+      "date": "2024-10-19",
+      "time": "17:00",
+      "localTeam": {
+        "id": 209246,
+        "name": "ROYAL PREMIUM GIJON",
+        "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/488/square_32383967706436617972.jpg",
+        "score": null,
+        "position": 6,
+        "responsibleId": null,
+        "category": null
+      },
+      "visitorTeam": {
+        "id": 209500,
+        "name": "AUTO-CENTER PRINCIPADO",
+        "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/2898/square_35723432687275366a39.jpg",
+        "score": null,
+        "position": 14,
+        "responsibleId": null,
+        "category": null
+      }
+    },
+    {
+      "id": 1385822,
+      "groupId": 1023856,
+      "stadiumId": null,
+      "uploadedReport": false,
+      "competitionName": "PRIMERA DIVISIÓN MASCULINA - LIGA REGULAR - GRUPO B",
+      "week": 6,
+      "urlStreaming": null,
+      "status": "PENDING",
+      "date": "2024-10-26",
+      "time": "18:00",
+      "localTeam": {
+        "id": 209500,
+        "name": "AUTO-CENTER PRINCIPADO",
+        "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/2898/square_35723432687275366a39.jpg",
+        "score": null,
+        "position": 14,
+        "responsibleId": null,
+        "category": null
+      },
+      "visitorTeam": {
+        "id": 218784,
+        "name": "UNIÓN FINANCIERA",
+        "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/439/square_7868636d337739673532.jpg",
+        "score": null,
+        "position": 2,
+        "responsibleId": null,
+        "category": null
+      }
+    },
+    {
+      "id": 1385829,
+      "groupId": 1023856,
+      "stadiumId": null,
+      "uploadedReport": false,
+      "competitionName": "PRIMERA DIVISIÓN MASCULINA - LIGA REGULAR - GRUPO B",
+      "week": 7,
+      "urlStreaming": null,
+      "status": "PENDING",
+      "date": null,
+      "time": null,
+      "localTeam": {
+        "id": 209685,
+        "name": "CLUB BALONMANO CAMARGO",
+        "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/115/square_633062667072386c3368.jpg",
+        "score": null,
+        "position": 11,
+        "responsibleId": null,
+        "category": null
+      },
+      "visitorTeam": {
+        "id": 209500,
+        "name": "AUTO-CENTER PRINCIPADO",
+        "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/2898/square_35723432687275366a39.jpg",
+        "score": null,
+        "position": 14,
+        "responsibleId": null,
+        "category": null
+      }
+    },
+    {
+      "id": 1385837,
+      "groupId": 1023856,
+      "stadiumId": null,
+      "uploadedReport": false,
+      "competitionName": "PRIMERA DIVISIÓN MASCULINA - LIGA REGULAR - GRUPO B",
+      "week": 8,
+      "urlStreaming": null,
+      "status": "PENDING",
+      "date": "2024-11-09",
+      "time": "18:00",
+      "localTeam": {
+        "id": 209500,
+        "name": "AUTO-CENTER PRINCIPADO",
+        "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/2898/square_35723432687275366a39.jpg",
+        "score": null,
+        "position": 14,
+        "responsibleId": null,
+        "category": null
+      },
+      "visitorTeam": {
+        "id": 201150,
+        "name": "HORIZONTE ATLETICA",
+        "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/69/square_6d6b7235397562793961.jpg",
+        "score": null,
+        "position": 7,
+        "responsibleId": null,
+        "category": null
+      }
+    },
+    {
+      "id": 1385844,
+      "groupId": 1023856,
+      "stadiumId": null,
+      "uploadedReport": false,
+      "competitionName": "PRIMERA DIVISIÓN MASCULINA - LIGA REGULAR - GRUPO B",
+      "week": 9,
+      "urlStreaming": null,
+      "status": "PENDING",
+      "date": null,
+      "time": null,
+      "localTeam": {
+        "id": 209286,
+        "name": "EZEQUIEL 4VALLES LA ROBLA",
+        "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/2896/square_6675636c6a6d30346366.jpg",
+        "score": null,
+        "position": 16,
+        "responsibleId": null,
+        "category": null
+      },
+      "visitorTeam": {
+        "id": 209500,
+        "name": "AUTO-CENTER PRINCIPADO",
+        "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/2898/square_35723432687275366a39.jpg",
+        "score": null,
+        "position": 14,
+        "responsibleId": null,
+        "category": null
+      }
+    },
+    {
+      "id": 1385852,
+      "groupId": 1023856,
+      "stadiumId": null,
+      "uploadedReport": false,
+      "competitionName": "PRIMERA DIVISIÓN MASCULINA - LIGA REGULAR - GRUPO B",
+      "week": 10,
+      "urlStreaming": null,
+      "status": "PENDING",
+      "date": null,
+      "time": null,
+      "localTeam": {
+        "id": 209500,
+        "name": "AUTO-CENTER PRINCIPADO",
+        "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/2898/square_35723432687275366a39.jpg",
+        "score": null,
+        "position": 14,
+        "responsibleId": null,
+        "category": null
+      },
+      "visitorTeam": {
+        "id": 215209,
+        "name": "SDC ASTANDER ASTILLERO",
+        "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/112/square_626a3568337770617030.jpg",
+        "score": null,
+        "position": 13,
+        "responsibleId": null,
+        "category": null
+      }
+    },
+    {
+      "id": 1385859,
+      "groupId": 1023856,
+      "stadiumId": null,
+      "uploadedReport": false,
+      "competitionName": "PRIMERA DIVISIÓN MASCULINA - LIGA REGULAR - GRUPO B",
+      "week": 11,
+      "urlStreaming": null,
+      "status": "PENDING",
+      "date": null,
+      "time": null,
+      "localTeam": {
+        "id": 201273,
+        "name": "UNIVERSIDAD DE LEÓN ADEMAR",
+        "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/126/square_70636d736b6d31387577.jpg",
+        "score": null,
+        "position": 8,
+        "responsibleId": null,
+        "category": null
+      },
+      "visitorTeam": {
+        "id": 209500,
+        "name": "AUTO-CENTER PRINCIPADO",
+        "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/2898/square_35723432687275366a39.jpg",
+        "score": null,
+        "position": 14,
+        "responsibleId": null,
+        "category": null
+      }
+    },
+    {
+      "id": 1385867,
+      "groupId": 1023856,
+      "stadiumId": null,
+      "uploadedReport": false,
+      "competitionName": "PRIMERA DIVISIÓN MASCULINA - LIGA REGULAR - GRUPO B",
+      "week": 12,
+      "urlStreaming": null,
+      "status": "PENDING",
+      "date": null,
+      "time": null,
+      "localTeam": {
+        "id": 209500,
+        "name": "AUTO-CENTER PRINCIPADO",
+        "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/2898/square_35723432687275366a39.jpg",
+        "score": null,
+        "position": 14,
+        "responsibleId": null,
+        "category": null
+      },
+      "visitorTeam": {
+        "id": 214998,
+        "name": "REAL GRUPO DE CULTURA COVADONGA",
+        "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/70/square_646e366b316534346e76.jpg",
+        "score": null,
+        "position": 5,
+        "responsibleId": null,
+        "category": null
+      }
+    },
+    {
+      "id": 1385875,
+      "groupId": 1023856,
+      "stadiumId": null,
+      "uploadedReport": false,
+      "competitionName": "PRIMERA DIVISIÓN MASCULINA - LIGA REGULAR - GRUPO B",
+      "week": 13,
+      "urlStreaming": null,
+      "status": "PENDING",
+      "date": null,
+      "time": null,
+      "localTeam": {
+        "id": 209500,
+        "name": "AUTO-CENTER PRINCIPADO",
+        "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/2898/square_35723432687275366a39.jpg",
+        "score": null,
+        "position": 14,
+        "responsibleId": null,
+        "category": null
+      },
+      "visitorTeam": {
+        "id": 212129,
+        "name": "BATHCO BM. TORRELAVEGA",
+        "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/117/square_73726e3132697065736b.jpg",
+        "score": null,
+        "position": 3,
+        "responsibleId": null,
+        "category": null
+      }
+    },
+    {
+      "id": 1385884,
+      "groupId": 1023856,
+      "stadiumId": null,
+      "uploadedReport": false,
+      "competitionName": "PRIMERA DIVISIÓN MASCULINA - LIGA REGULAR - GRUPO B",
+      "week": 14,
+      "urlStreaming": null,
+      "status": "PENDING",
+      "date": null,
+      "time": null,
+      "localTeam": {
+        "id": 204021,
+        "name": "LA FUENTE PEREDA",
+        "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/100625/square_34397965676d386c7565.jpg",
+        "score": null,
+        "position": 9,
+        "responsibleId": null,
+        "category": null
+      },
+      "visitorTeam": {
+        "id": 209500,
+        "name": "AUTO-CENTER PRINCIPADO",
+        "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/2898/square_35723432687275366a39.jpg",
+        "score": null,
+        "position": 14,
+        "responsibleId": null,
+        "category": null
+      }
+    },
+    {
+      "id": 1385892,
+      "groupId": 1023856,
+      "stadiumId": null,
+      "uploadedReport": false,
+      "competitionName": "PRIMERA DIVISIÓN MASCULINA - LIGA REGULAR - GRUPO B",
+      "week": 15,
+      "urlStreaming": null,
+      "status": "PENDING",
+      "date": null,
+      "time": null,
+      "localTeam": {
+        "id": 209500,
+        "name": "AUTO-CENTER PRINCIPADO",
+        "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/2898/square_35723432687275366a39.jpg",
+        "score": null,
+        "position": 14,
+        "responsibleId": null,
+        "category": null
+      },
+      "visitorTeam": {
+        "id": 215350,
+        "name": "RECOLETAS ARROYO CABERO EDIFICACIONES",
+        "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/807/square_6d686d673264306d316f.jpg",
+        "score": null,
+        "position": 15,
+        "responsibleId": null,
+        "category": null
+      }
+    },
+    {
+      "id": 1385904,
+      "groupId": 1023856,
+      "stadiumId": null,
+      "uploadedReport": false,
+      "competitionName": "PRIMERA DIVISIÓN MASCULINA - LIGA REGULAR - GRUPO B",
+      "week": 16,
+      "urlStreaming": null,
+      "status": "PENDING",
+      "date": null,
+      "time": null,
+      "localTeam": {
+        "id": 209500,
+        "name": "AUTO-CENTER PRINCIPADO",
+        "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/2898/square_35723432687275366a39.jpg",
+        "score": null,
+        "position": 14,
+        "responsibleId": null,
+        "category": null
+      },
+      "visitorTeam": {
+        "id": 209180,
+        "name": "CONGESA XXI BALONMANO CIUDAD DE SALAMANCA",
+        "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/135/square_366a6b36366f3834316a.jpg",
+        "score": null,
+        "position": 10,
+        "responsibleId": null,
+        "category": null
+      }
+    },
+    {
+      "id": 1385912,
+      "groupId": 1023856,
+      "stadiumId": null,
+      "uploadedReport": false,
+      "competitionName": "PRIMERA DIVISIÓN MASCULINA - LIGA REGULAR - GRUPO B",
+      "week": 17,
+      "urlStreaming": null,
+      "status": "PENDING",
+      "date": null,
+      "time": null,
+      "localTeam": {
+        "id": 218714,
+        "name": "BALONMANO CAJA RURAL ZAMORA",
+        "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/437/square_766f6d6d376d6972346c.jpg",
+        "score": null,
+        "position": 4,
+        "responsibleId": null,
+        "category": null
+      },
+      "visitorTeam": {
+        "id": 209500,
+        "name": "AUTO-CENTER PRINCIPADO",
+        "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/2898/square_35723432687275366a39.jpg",
+        "score": null,
+        "position": 14,
+        "responsibleId": null,
+        "category": null
+      }
+    },
+    {
+      "id": 1385919,
+      "groupId": 1023856,
+      "stadiumId": null,
+      "uploadedReport": false,
+      "competitionName": "PRIMERA DIVISIÓN MASCULINA - LIGA REGULAR - GRUPO B",
+      "week": 18,
+      "urlStreaming": null,
+      "status": "PENDING",
+      "date": null,
+      "time": null,
+      "localTeam": {
+        "id": 209500,
+        "name": "AUTO-CENTER PRINCIPADO",
+        "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/2898/square_35723432687275366a39.jpg",
+        "score": null,
+        "position": 14,
+        "responsibleId": null,
+        "category": null
+      },
+      "visitorTeam": {
+        "id": 203934,
+        "name": "BM. SANTOÑA",
+        "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/767/square_64727237756f70706669.jpg",
+        "score": null,
+        "position": 12,
+        "responsibleId": null,
+        "category": null
+      }
+    },
+    {
+      "id": 1385927,
+      "groupId": 1023856,
+      "stadiumId": null,
+      "uploadedReport": false,
+      "competitionName": "PRIMERA DIVISIÓN MASCULINA - LIGA REGULAR - GRUPO B",
+      "week": 19,
+      "urlStreaming": null,
+      "status": "PENDING",
+      "date": null,
+      "time": null,
+      "localTeam": {
+        "id": 212098,
+        "name": "CLUB BALONMANO SORIA",
+        "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/139/square_6a68756a757030356e76.jpg",
+        "score": null,
+        "position": 1,
+        "responsibleId": null,
+        "category": null
+      },
+      "visitorTeam": {
+        "id": 209500,
+        "name": "AUTO-CENTER PRINCIPADO",
+        "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/2898/square_35723432687275366a39.jpg",
+        "score": null,
+        "position": 14,
+        "responsibleId": null,
+        "category": null
+      }
+    },
+    {
+      "id": 1385934,
+      "groupId": 1023856,
+      "stadiumId": null,
+      "uploadedReport": false,
+      "competitionName": "PRIMERA DIVISIÓN MASCULINA - LIGA REGULAR - GRUPO B",
+      "week": 20,
+      "urlStreaming": null,
+      "status": "PENDING",
+      "date": null,
+      "time": null,
+      "localTeam": {
+        "id": 209500,
+        "name": "AUTO-CENTER PRINCIPADO",
+        "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/2898/square_35723432687275366a39.jpg",
+        "score": null,
+        "position": 14,
+        "responsibleId": null,
+        "category": null
+      },
+      "visitorTeam": {
+        "id": 209246,
+        "name": "ROYAL PREMIUM GIJON",
+        "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/488/square_32383967706436617972.jpg",
+        "score": null,
+        "position": 6,
+        "responsibleId": null,
+        "category": null
+      }
+    },
+    {
+      "id": 1385942,
+      "groupId": 1023856,
+      "stadiumId": null,
+      "uploadedReport": false,
+      "competitionName": "PRIMERA DIVISIÓN MASCULINA - LIGA REGULAR - GRUPO B",
+      "week": 21,
+      "urlStreaming": null,
+      "status": "PENDING",
+      "date": null,
+      "time": null,
+      "localTeam": {
+        "id": 218784,
+        "name": "UNIÓN FINANCIERA",
+        "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/439/square_7868636d337739673532.jpg",
+        "score": null,
+        "position": 2,
+        "responsibleId": null,
+        "category": null
+      },
+      "visitorTeam": {
+        "id": 209500,
+        "name": "AUTO-CENTER PRINCIPADO",
+        "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/2898/square_35723432687275366a39.jpg",
+        "score": null,
+        "position": 14,
+        "responsibleId": null,
+        "category": null
+      }
+    },
+    {
+      "id": 1385949,
+      "groupId": 1023856,
+      "stadiumId": null,
+      "uploadedReport": false,
+      "competitionName": "PRIMERA DIVISIÓN MASCULINA - LIGA REGULAR - GRUPO B",
+      "week": 22,
+      "urlStreaming": null,
+      "status": "PENDING",
+      "date": null,
+      "time": null,
+      "localTeam": {
+        "id": 209500,
+        "name": "AUTO-CENTER PRINCIPADO",
+        "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/2898/square_35723432687275366a39.jpg",
+        "score": null,
+        "position": 14,
+        "responsibleId": null,
+        "category": null
+      },
+      "visitorTeam": {
+        "id": 209685,
+        "name": "CLUB BALONMANO CAMARGO",
+        "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/115/square_633062667072386c3368.jpg",
+        "score": null,
+        "position": 11,
+        "responsibleId": null,
+        "category": null
+      }
+    },
+    {
+      "id": 1385957,
+      "groupId": 1023856,
+      "stadiumId": null,
+      "uploadedReport": false,
+      "competitionName": "PRIMERA DIVISIÓN MASCULINA - LIGA REGULAR - GRUPO B",
+      "week": 23,
+      "urlStreaming": null,
+      "status": "PENDING",
+      "date": null,
+      "time": null,
+      "localTeam": {
+        "id": 201150,
+        "name": "HORIZONTE ATLETICA",
+        "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/69/square_6d6b7235397562793961.jpg",
+        "score": null,
+        "position": 7,
+        "responsibleId": null,
+        "category": null
+      },
+      "visitorTeam": {
+        "id": 209500,
+        "name": "AUTO-CENTER PRINCIPADO",
+        "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/2898/square_35723432687275366a39.jpg",
+        "score": null,
+        "position": 14,
+        "responsibleId": null,
+        "category": null
+      }
+    },
+    {
+      "id": 1385964,
+      "groupId": 1023856,
+      "stadiumId": null,
+      "uploadedReport": false,
+      "competitionName": "PRIMERA DIVISIÓN MASCULINA - LIGA REGULAR - GRUPO B",
+      "week": 24,
+      "urlStreaming": null,
+      "status": "PENDING",
+      "date": null,
+      "time": null,
+      "localTeam": {
+        "id": 209500,
+        "name": "AUTO-CENTER PRINCIPADO",
+        "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/2898/square_35723432687275366a39.jpg",
+        "score": null,
+        "position": 14,
+        "responsibleId": null,
+        "category": null
+      },
+      "visitorTeam": {
+        "id": 209286,
+        "name": "EZEQUIEL 4VALLES LA ROBLA",
+        "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/2896/square_6675636c6a6d30346366.jpg",
+        "score": null,
+        "position": 16,
+        "responsibleId": null,
+        "category": null
+      }
+    },
+    {
+      "id": 1385972,
+      "groupId": 1023856,
+      "stadiumId": null,
+      "uploadedReport": false,
+      "competitionName": "PRIMERA DIVISIÓN MASCULINA - LIGA REGULAR - GRUPO B",
+      "week": 25,
+      "urlStreaming": null,
+      "status": "PENDING",
+      "date": null,
+      "time": null,
+      "localTeam": {
+        "id": 215209,
+        "name": "SDC ASTANDER ASTILLERO",
+        "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/112/square_626a3568337770617030.jpg",
+        "score": null,
+        "position": 13,
+        "responsibleId": null,
+        "category": null
+      },
+      "visitorTeam": {
+        "id": 209500,
+        "name": "AUTO-CENTER PRINCIPADO",
+        "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/2898/square_35723432687275366a39.jpg",
+        "score": null,
+        "position": 14,
+        "responsibleId": null,
+        "category": null
+      }
+    },
+    {
+      "id": 1385979,
+      "groupId": 1023856,
+      "stadiumId": null,
+      "uploadedReport": false,
+      "competitionName": "PRIMERA DIVISIÓN MASCULINA - LIGA REGULAR - GRUPO B",
+      "week": 26,
+      "urlStreaming": null,
+      "status": "PENDING",
+      "date": null,
+      "time": null,
+      "localTeam": {
+        "id": 209500,
+        "name": "AUTO-CENTER PRINCIPADO",
+        "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/2898/square_35723432687275366a39.jpg",
+        "score": null,
+        "position": 14,
+        "responsibleId": null,
+        "category": null
+      },
+      "visitorTeam": {
+        "id": 201273,
+        "name": "UNIVERSIDAD DE LEÓN ADEMAR",
+        "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/126/square_70636d736b6d31387577.jpg",
+        "score": null,
+        "position": 8,
+        "responsibleId": null,
+        "category": null
+      }
+    },
+    {
+      "id": 1385987,
+      "groupId": 1023856,
+      "stadiumId": null,
+      "uploadedReport": false,
+      "competitionName": "PRIMERA DIVISIÓN MASCULINA - LIGA REGULAR - GRUPO B",
+      "week": 27,
+      "urlStreaming": null,
+      "status": "PENDING",
+      "date": null,
+      "time": null,
+      "localTeam": {
+        "id": 214998,
+        "name": "REAL GRUPO DE CULTURA COVADONGA",
+        "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/70/square_646e366b316534346e76.jpg",
+        "score": null,
+        "position": 5,
+        "responsibleId": null,
+        "category": null
+      },
+      "visitorTeam": {
+        "id": 209500,
+        "name": "AUTO-CENTER PRINCIPADO",
+        "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/2898/square_35723432687275366a39.jpg",
+        "score": null,
+        "position": 14,
+        "responsibleId": null,
+        "category": null
+      }
+    },
+    {
+      "id": 1385995,
+      "groupId": 1023856,
+      "stadiumId": null,
+      "uploadedReport": false,
+      "competitionName": "PRIMERA DIVISIÓN MASCULINA - LIGA REGULAR - GRUPO B",
+      "week": 28,
+      "urlStreaming": null,
+      "status": "PENDING",
+      "date": null,
+      "time": null,
+      "localTeam": {
+        "id": 212129,
+        "name": "BATHCO BM. TORRELAVEGA",
+        "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/117/square_73726e3132697065736b.jpg",
+        "score": null,
+        "position": 3,
+        "responsibleId": null,
+        "category": null
+      },
+      "visitorTeam": {
+        "id": 209500,
+        "name": "AUTO-CENTER PRINCIPADO",
+        "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/2898/square_35723432687275366a39.jpg",
+        "score": null,
+        "position": 14,
+        "responsibleId": null,
+        "category": null
+      }
+    },
+    {
+      "id": 1386004,
+      "groupId": 1023856,
+      "stadiumId": null,
+      "uploadedReport": false,
+      "competitionName": "PRIMERA DIVISIÓN MASCULINA - LIGA REGULAR - GRUPO B",
+      "week": 29,
+      "urlStreaming": null,
+      "status": "PENDING",
+      "date": null,
+      "time": null,
+      "localTeam": {
+        "id": 209500,
+        "name": "AUTO-CENTER PRINCIPADO",
+        "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/2898/square_35723432687275366a39.jpg",
+        "score": null,
+        "position": 14,
+        "responsibleId": null,
+        "category": null
+      },
+      "visitorTeam": {
+        "id": 204021,
+        "name": "LA FUENTE PEREDA",
+        "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/100625/square_34397965676d386c7565.jpg",
+        "score": null,
+        "position": 11,
+        "responsibleId": null,
+        "category": null
+      }
+    },
+    {
+      "id": 1386012,
+      "groupId": 1023856,
+      "stadiumId": null,
+      "uploadedReport": false,
+      "competitionName": "PRIMERA DIVISIÓN MASCULINA - LIGA REGULAR - GRUPO B",
+      "week": 30,
+      "urlStreaming": null,
+      "status": "PENDING",
+      "date": null,
+      "time": null,
+      "localTeam": {
+        "id": 215350,
+        "name": "RECOLETAS ARROYO CABERO EDIFICACIONES",
+        "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/807/square_6d686d673264306d316f.jpg",
+        "score": null,
+        "position": 15,
+        "responsibleId": null,
+        "category": null
+      },
+      "visitorTeam": {
+        "id": 209500,
+        "name": "AUTO-CENTER PRINCIPADO",
+        "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/2898/square_35723432687275366a39.jpg",
+        "score": null,
+        "position": 14,
+        "responsibleId": null,
+        "category": null
+      }
+    }
+  ],
+  "stats": [
+    {
+      "week": 1,
+      "position": 1,
+      "points": 2,
+      "wins": 1,
+      "draw": 0,
+      "lost": 0,
+      "groupId": 1024586,
+      "goals": 31,
+      "goalsAgainst": 22
+    },
+    {
+      "week": 1,
+      "position": 10,
+      "points": 0,
+      "wins": 0,
+      "draw": 0,
+      "lost": 1,
+      "groupId": 1023856,
+      "goals": 28,
+      "goalsAgainst": 31
+    },
+    {
+      "week": 2,
+      "position": 1,
+      "points": 2,
+      "wins": 1,
+      "draw": 0,
+      "lost": 0,
+      "groupId": 1024586,
+      "goals": 31,
+      "goalsAgainst": 22
+    },
+    {
+      "week": 2,
+      "position": 14,
+      "points": 0,
+      "wins": 0,
+      "draw": 0,
+      "lost": 2,
+      "groupId": 1023856,
+      "goals": 58,
+      "goalsAgainst": 63
+    },
+    {
+      "week": 3,
+      "position": 14,
+      "points": 0,
+      "wins": 0,
+      "draw": 0,
+      "lost": 2,
+      "groupId": 1023856,
+      "goals": 58,
+      "goalsAgainst": 63
+    },
+    {
+      "week": 3,
+      "position": 1,
+      "points": 4,
+      "wins": 2,
+      "draw": 0,
+      "lost": 0,
+      "groupId": 1024586,
+      "goals": 60,
+      "goalsAgainst": 42
+    },
+    {
+      "week": 4,
+      "position": 14,
+      "points": 0,
+      "wins": 0,
+      "draw": 0,
+      "lost": 2,
+      "groupId": 1023856,
+      "goals": 58,
+      "goalsAgainst": 63
+    },
+    {
+      "week": 5,
+      "position": 14,
+      "points": 0,
+      "wins": 0,
+      "draw": 0,
+      "lost": 2,
+      "groupId": 1023856,
+      "goals": 58,
+      "goalsAgainst": 63
+    },
+    {
+      "week": 6,
+      "position": 14,
+      "points": 0,
+      "wins": 0,
+      "draw": 0,
+      "lost": 2,
+      "groupId": 1023856,
+      "goals": 58,
+      "goalsAgainst": 63
+    },
+    {
+      "week": 7,
+      "position": 14,
+      "points": 0,
+      "wins": 0,
+      "draw": 0,
+      "lost": 2,
+      "groupId": 1023856,
+      "goals": 58,
+      "goalsAgainst": 63
+    },
+    {
+      "week": 8,
+      "position": 14,
+      "points": 0,
+      "wins": 0,
+      "draw": 0,
+      "lost": 2,
+      "groupId": 1023856,
+      "goals": 58,
+      "goalsAgainst": 63
+    },
+    {
+      "week": 9,
+      "position": 14,
+      "points": 0,
+      "wins": 0,
+      "draw": 0,
+      "lost": 2,
+      "groupId": 1023856,
+      "goals": 58,
+      "goalsAgainst": 63
+    },
+    {
+      "week": 10,
+      "position": 14,
+      "points": 0,
+      "wins": 0,
+      "draw": 0,
+      "lost": 2,
+      "groupId": 1023856,
+      "goals": 58,
+      "goalsAgainst": 63
+    },
+    {
+      "week": 11,
+      "position": 14,
+      "points": 0,
+      "wins": 0,
+      "draw": 0,
+      "lost": 2,
+      "groupId": 1023856,
+      "goals": 58,
+      "goalsAgainst": 63
+    },
+    {
+      "week": 12,
+      "position": 14,
+      "points": 0,
+      "wins": 0,
+      "draw": 0,
+      "lost": 2,
+      "groupId": 1023856,
+      "goals": 58,
+      "goalsAgainst": 63
+    },
+    {
+      "week": 13,
+      "position": 14,
+      "points": 0,
+      "wins": 0,
+      "draw": 0,
+      "lost": 2,
+      "groupId": 1023856,
+      "goals": 58,
+      "goalsAgainst": 63
+    },
+    {
+      "week": 14,
+      "position": 14,
+      "points": 0,
+      "wins": 0,
+      "draw": 0,
+      "lost": 2,
+      "groupId": 1023856,
+      "goals": 58,
+      "goalsAgainst": 63
+    },
+    {
+      "week": 15,
+      "position": 14,
+      "points": 0,
+      "wins": 0,
+      "draw": 0,
+      "lost": 2,
+      "groupId": 1023856,
+      "goals": 58,
+      "goalsAgainst": 63
+    },
+    {
+      "week": 16,
+      "position": 14,
+      "points": 0,
+      "wins": 0,
+      "draw": 0,
+      "lost": 2,
+      "groupId": 1023856,
+      "goals": 58,
+      "goalsAgainst": 63
+    },
+    {
+      "week": 17,
+      "position": 14,
+      "points": 0,
+      "wins": 0,
+      "draw": 0,
+      "lost": 2,
+      "groupId": 1023856,
+      "goals": 58,
+      "goalsAgainst": 63
+    },
+    {
+      "week": 18,
+      "position": 14,
+      "points": 0,
+      "wins": 0,
+      "draw": 0,
+      "lost": 2,
+      "groupId": 1023856,
+      "goals": 58,
+      "goalsAgainst": 63
+    },
+    {
+      "week": 19,
+      "position": 14,
+      "points": 0,
+      "wins": 0,
+      "draw": 0,
+      "lost": 2,
+      "groupId": 1023856,
+      "goals": 58,
+      "goalsAgainst": 63
+    },
+    {
+      "week": 20,
+      "position": 14,
+      "points": 0,
+      "wins": 0,
+      "draw": 0,
+      "lost": 2,
+      "groupId": 1023856,
+      "goals": 58,
+      "goalsAgainst": 63
+    },
+    {
+      "week": 21,
+      "position": 14,
+      "points": 0,
+      "wins": 0,
+      "draw": 0,
+      "lost": 2,
+      "groupId": 1023856,
+      "goals": 58,
+      "goalsAgainst": 63
+    },
+    {
+      "week": 22,
+      "position": 14,
+      "points": 0,
+      "wins": 0,
+      "draw": 0,
+      "lost": 2,
+      "groupId": 1023856,
+      "goals": 58,
+      "goalsAgainst": 63
+    },
+    {
+      "week": 23,
+      "position": 14,
+      "points": 0,
+      "wins": 0,
+      "draw": 0,
+      "lost": 2,
+      "groupId": 1023856,
+      "goals": 58,
+      "goalsAgainst": 63
+    },
+    {
+      "week": 24,
+      "position": 14,
+      "points": 0,
+      "wins": 0,
+      "draw": 0,
+      "lost": 2,
+      "groupId": 1023856,
+      "goals": 58,
+      "goalsAgainst": 63
+    },
+    {
+      "week": 25,
+      "position": 14,
+      "points": 0,
+      "wins": 0,
+      "draw": 0,
+      "lost": 2,
+      "groupId": 1023856,
+      "goals": 58,
+      "goalsAgainst": 63
+    },
+    {
+      "week": 26,
+      "position": 14,
+      "points": 0,
+      "wins": 0,
+      "draw": 0,
+      "lost": 2,
+      "groupId": 1023856,
+      "goals": 58,
+      "goalsAgainst": 63
+    },
+    {
+      "week": 27,
+      "position": 14,
+      "points": 0,
+      "wins": 0,
+      "draw": 0,
+      "lost": 2,
+      "groupId": 1023856,
+      "goals": 58,
+      "goalsAgainst": 63
+    },
+    {
+      "week": 28,
+      "position": 14,
+      "points": 0,
+      "wins": 0,
+      "draw": 0,
+      "lost": 2,
+      "groupId": 1023856,
+      "goals": 58,
+      "goalsAgainst": 63
+    },
+    {
+      "week": 29,
+      "position": 14,
+      "points": 0,
+      "wins": 0,
+      "draw": 0,
+      "lost": 2,
+      "groupId": 1023856,
+      "goals": 58,
+      "goalsAgainst": 63
+    },
+    {
+      "week": 30,
+      "position": 14,
+      "points": 0,
+      "wins": 0,
+      "draw": 0,
+      "lost": 2,
+      "groupId": 1023856,
+      "goals": 58,
+      "goalsAgainst": 63
+    }
+  ],
+  "seasons": [
+    {
+      "id": 2122,
+      "name": "Temporada 2021/2022",
+      "start": "2021-07-01",
+      "end": "2022-06-30"
+    },
+    {
+      "id": 2223,
+      "name": "Temporada 2022/2023",
+      "start": "2022-07-01",
+      "end": "2023-06-30"
+    },
+    {
+      "id": 2324,
+      "name": "Temporada 2023/2024",
+      "start": "2023-07-01",
+      "end": "2024-06-30"
+    },
+    {
+      "id": 2425,
+      "name": "Temporada 2024/2025",
+      "start": "2024-07-01",
+      "end": "2025-06-30"
+    }
+  ]
+}

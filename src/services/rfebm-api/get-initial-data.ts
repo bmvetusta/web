@@ -1,15 +1,10 @@
-import { RFEBM_API_BASE_HREF } from 'astro:env/server';
-import { getRFEBMAPIHeaders } from './base-href';
+import { z } from 'zod';
+import { rfebmAPIFetch } from './rfebm-fetch';
 
 export async function rfebmAPIGetInitialData() {
-  const basepath = '/ws/datosIniciales';
-  const url = new URL(basepath, RFEBM_API_BASE_HREF);
-  url.searchParams.append('id_ambito', '1');
+  const pathname = '/ws/datosIniciales';
+  const body = new URLSearchParams();
+  body.append('id_ambito', '1');
 
-  const data = await fetch(url, {
-    method: 'POST',
-    headers: getRFEBMAPIHeaders(),
-  }).then((res) => res.json());
-
-  return data;
+  return rfebmAPIFetch(pathname, z.any(), body); // TODO: Define schema for this request
 }

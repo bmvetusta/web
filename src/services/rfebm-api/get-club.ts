@@ -1,20 +1,15 @@
-import { RFEBM_API_BASE_HREF } from 'astro:env/server';
-import { getRFEBMAPIHeaders } from './base-href';
+import { z } from 'zod';
+import { rfebmAPIFetch } from './rfebm-fetch';
 
 export async function rfebmAPIGetClub(clubId: string | number, ambitoId: string | number = 13) {
   if (!clubId) {
     return null;
   }
 
-  const basepath = '/ws/infoClub';
-  const url = new URL(basepath, RFEBM_API_BASE_HREF);
-  url.searchParams.append('idClub', clubId.toString());
-  url.searchParams.append('id_ambito', ambitoId.toString());
+  const pathname = '/ws/infoClub';
+  const body = new URLSearchParams();
+  body.append('idClub', clubId.toString());
+  body.append('id_ambito', ambitoId.toString());
 
-  const data = await fetch(url, {
-    method: 'POST',
-    headers: getRFEBMAPIHeaders(),
-  }).then((res) => res.json());
-
-  return data;
+  return rfebmAPIFetch(pathname, z.any(), body); // TODO: Create a schema for the response
 }

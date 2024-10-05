@@ -12,7 +12,8 @@
     "astro": "astro",
     "prepare": "husky",
     "fmt": "prettier . --write",
-    "lint": "eslint --no-error-on-unmatched-pattern --no-warn-ignored --cache --fix **/*.{js,jsx,ts,tsx,astro} src"
+    "lint": "eslint --no-error-on-unmatched-pattern --no-warn-ignored --cache --fix **/*.{js,jsx,ts,tsx,astro} src",
+    "rfebm-scripts": "bun run ./scripts/rfebm-data.ts"
   },
   "dependencies": {
     "@astrojs/check": "0.9.3",

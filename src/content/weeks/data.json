@@ -1,0 +1,360 @@
+{
+  "week": 3,
+  "totalWeeks": 30,
+  "weekDates": [
+    {
+      "week": 1,
+      "date": "2024-09-22"
+    },
+    {
+      "week": 2,
+      "date": "2024-09-29"
+    },
+    {
+      "week": 3,
+      "date": "2024-10-06"
+    },
+    {
+      "week": 4,
+      "date": "2024-10-13"
+    },
+    {
+      "week": 5,
+      "date": "2024-10-20"
+    },
+    {
+      "week": 6,
+      "date": "2024-10-27"
+    },
+    {
+      "week": 7,
+      "date": "2024-11-03"
+    },
+    {
+      "week": 8,
+      "date": "2024-11-10"
+    },
+    {
+      "week": 9,
+      "date": "2024-11-17"
+    },
+    {
+      "week": 10,
+      "date": "2024-11-24"
+    },
+    {
+      "week": 11,
+      "date": "2024-12-01"
+    },
+    {
+      "week": 12,
+      "date": "2024-12-08"
+    },
+    {
+      "week": 13,
+      "date": "2024-12-15"
+    },
+    {
+      "week": 14,
+      "date": "2024-12-22"
+    },
+    {
+      "week": 15,
+      "date": "2025-01-12"
+    },
+    {
+      "week": 16,
+      "date": "2025-01-19"
+    },
+    {
+      "week": 17,
+      "date": "2025-01-26"
+    },
+    {
+      "week": 18,
+      "date": "2025-02-02"
+    },
+    {
+      "week": 19,
+      "date": "2025-02-09"
+    },
+    {
+      "week": 20,
+      "date": "2025-02-16"
+    },
+    {
+      "week": 21,
+      "date": "2025-02-23"
+    },
+    {
+      "week": 22,
+      "date": "2025-03-02"
+    },
+    {
+      "week": 23,
+      "date": "2025-03-09"
+    },
+    {
+      "week": 24,
+      "date": "2025-03-16"
+    },
+    {
+      "week": 25,
+      "date": "2025-03-23"
+    },
+    {
+      "week": 26,
+      "date": "2025-03-30"
+    },
+    {
+      "week": 27,
+      "date": "2025-04-06"
+    },
+    {
+      "week": 28,
+      "date": "2025-04-13"
+    },
+    {
+      "week": 29,
+      "date": "2025-04-27"
+    },
+    {
+      "week": 30,
+      "date": "2025-05-04"
+    }
+  ],
+  "results": [
+    {
+      "id": 1385802,
+      "groupId": 1023856,
+      "stadiumId": 1000121,
+      "uploadedReport": false,
+      "week": 3,
+      "urlStreaming": "https://youtu.be/43MMHmU1G_w",
+      "status": "PENDING",
+      "date": "2024-10-05",
+      "time": "20:00",
+      "localTeam": {
+        "id": 214998,
+        "name": "REAL GRUPO DE CULTURA COVADONGA",
+        "shieldUrl": "https://www.rfebm.com/competiciones/images/escudos/sinescudo.jpg",
+        "score": null,
+        "position": null,
+        "responsibleId": 0,
+        "category": "Primera Nacional"
+      },
+      "visitorTeam": {
+        "id": 215350,
+        "name": "RECOLETAS ARROYO CABERO EDIFICACIONES",
+        "shieldUrl": "https://www.rfebm.com/competiciones/images/escudos/sinescudo.jpg",
+        "score": null,
+        "position": null,
+        "responsibleId": 0,
+        "category": "Primera Nacional"
+      }
+    },
+    {
+      "id": 1385801,
+      "groupId": 1023856,
+      "stadiumId": 1000005,
+      "uploadedReport": false,
+      "week": 3,
+      "urlStreaming": "https://www.youtube.com/live/TbldXSNh99k",
+      "status": "PENDING",
+      "date": "2024-10-05",
+      "time": "19:45",
+      "localTeam": {
+        "id": 209180,
+        "name": "CONGESA XXI BALONMANO CIUDAD DE SALAMANCA",
+        "shieldUrl": "https://www.rfebm.com/competiciones/images/escudos/sinescudo.jpg",
+        "score": null,
+        "position": null,
+        "responsibleId": 0,
+        "category": "Primera Nacional"
+      },
+      "visitorTeam": {
+        "id": 204021,
+        "name": "LAFUENTE PEREDA CIUDAD DE SANTANDER",
+        "shieldUrl": "https://www.rfebm.com/competiciones/images/escudos/sinescudo.jpg",
+        "score": null,
+        "position": null,
+        "responsibleId": 0,
+        "category": "Primera Nacional"
+      }
+    },
+    {
+      "id": 1385800,
+      "groupId": 1023856,
+      "stadiumId": 1000000,
+      "uploadedReport": false,
+      "week": 3,
+      "urlStreaming": "https://www.youtube.com/watch?v=52s_mYdrtBA",
+      "status": "PENDING",
+      "date": "2024-10-06",
+      "time": "12:30",
+      "localTeam": {
+        "id": 218714,
+        "name": "BALONMANO CAJA RURAL ZAMORA",
+        "shieldUrl": "https://www.rfebm.com/competiciones/images/escudos/sinescudo.jpg",
+        "score": null,
+        "position": null,
+        "responsibleId": 0,
+        "category": "Primera Nacional"
+      },
+      "visitorTeam": {
+        "id": 212129,
+        "name": "BATHCO BM. TORRELAVEGA",
+        "shieldUrl": "https://www.rfebm.com/competiciones/images/escudos/sinescudo.jpg",
+        "score": null,
+        "position": null,
+        "responsibleId": 0,
+        "category": "Primera Nacional"
+      }
+    },
+    {
+      "id": 1385799,
+      "groupId": 1023856,
+      "stadiumId": 1000166,
+      "uploadedReport": false,
+      "week": 3,
+      "urlStreaming": "https://www.youtube.com/live/dzyPGjuukao?si=bLIZZSqobU3Wh5kS",
+      "status": "PENDING",
+      "date": "2024-10-05",
+      "time": "18:30",
+      "localTeam": {
+        "id": 203934,
+        "name": "BM. SANTOÑA",
+        "shieldUrl": "https://www.rfebm.com/competiciones/images/escudos/sinescudo.jpg",
+        "score": null,
+        "position": null,
+        "responsibleId": 0,
+        "category": "Primera Nacional"
+      },
+      "visitorTeam": {
+        "id": 209500,
+        "name": "AUTO-CENTER PRINCIPADO",
+        "shieldUrl": "https://www.rfebm.com/competiciones/images/escudos/sinescudo.jpg",
+        "score": null,
+        "position": null,
+        "responsibleId": 0,
+        "category": "Primera Nacional"
+      }
+    },
+    {
+      "id": 1385798,
+      "groupId": 1023856,
+      "stadiumId": 1000055,
+      "uploadedReport": false,
+      "week": 3,
+      "urlStreaming": "https://www.youtube.com/live/sSseWTPfcWc?si=B6p54AzLXqhazvRC",
+      "status": "PENDING",
+      "date": "2024-10-05",
+      "time": "18:00",
+      "localTeam": {
+        "id": 212098,
+        "name": "CLUB BALONMANO SORIA",
+        "shieldUrl": "https://www.rfebm.com/competiciones/images/escudos/sinescudo.jpg",
+        "score": null,
+        "position": null,
+        "responsibleId": 0,
+        "category": "Primera Nacional"
+      },
+      "visitorTeam": {
+        "id": 201273,
+        "name": "UNIVERSIDAD DE LEóN ADEMAR",
+        "shieldUrl": "https://www.rfebm.com/competiciones/images/escudos/sinescudo.jpg",
+        "score": null,
+        "position": null,
+        "responsibleId": 0,
+        "category": "Primera Nacional"
+      }
+    },
+    {
+      "id": 1385797,
+      "groupId": 1023856,
+      "stadiumId": 1000110,
+      "uploadedReport": false,
+      "week": 3,
+      "urlStreaming": "https://www.youtube.com/live/PnRv6gGSZbM",
+      "status": "PENDING",
+      "date": "2024-10-05",
+      "time": "17:00",
+      "localTeam": {
+        "id": 209246,
+        "name": "ROYAL PREMIUM GIJON",
+        "shieldUrl": "https://www.rfebm.com/competiciones/images/escudos/sinescudo.jpg",
+        "score": null,
+        "position": null,
+        "responsibleId": 37751,
+        "category": "Primera Nacional"
+      },
+      "visitorTeam": {
+        "id": 215209,
+        "name": "SDC ASTANDER ASTILLERO",
+        "shieldUrl": "https://www.rfebm.com/competiciones/images/escudos/sinescudo.jpg",
+        "score": null,
+        "position": null,
+        "responsibleId": 1028118,
+        "category": "Primera Nacional"
+      }
+    },
+    {
+      "id": 1385796,
+      "groupId": 1023856,
+      "stadiumId": 1000068,
+      "uploadedReport": false,
+      "week": 3,
+      "urlStreaming": "https://www.youtube.com/live/b_xURhl3OUU",
+      "status": "PENDING",
+      "date": "2024-10-05",
+      "time": "18:30",
+      "localTeam": {
+        "id": 218784,
+        "name": "Unión Financiera",
+        "shieldUrl": "https://www.rfebm.com/competiciones/images/escudos/sinescudo.jpg",
+        "score": null,
+        "position": null,
+        "responsibleId": 0,
+        "category": "Primera Nacional"
+      },
+      "visitorTeam": {
+        "id": 209286,
+        "name": "EZEQUIEL 4VALLES LA ROBLA",
+        "shieldUrl": "https://www.rfebm.com/competiciones/images/escudos/sinescudo.jpg",
+        "score": null,
+        "position": null,
+        "responsibleId": 0,
+        "category": "Primera Nacional"
+      }
+    },
+    {
+      "id": 1385795,
+      "groupId": 1023856,
+      "stadiumId": 1000481,
+      "uploadedReport": false,
+      "week": 3,
+      "urlStreaming": "https://youtube.com/live/t4D2mLM43dw",
+      "status": "PLAYING",
+      "date": "2024-10-05",
+      "time": "16:30",
+      "localTeam": {
+        "id": 209685,
+        "name": "CLUB BALONMANO CAMARGO",
+        "shieldUrl": "https://www.rfebm.com/competiciones/images/escudos/sinescudo.jpg",
+        "score": null,
+        "position": null,
+        "responsibleId": 27892,
+        "category": "Primera Nacional"
+      },
+      "visitorTeam": {
+        "id": 201150,
+        "name": "HORIZONTE ATLETICA",
+        "shieldUrl": "https://www.rfebm.com/competiciones/images/escudos/sinescudo.jpg",
+        "score": null,
+        "position": null,
+        "responsibleId": 41856,
+        "category": "Primera Nacional"
+      }
+    }
+  ]
+}

@@ -1,6 +1,8 @@
-import { RFEBM_API_BASE_HREF } from 'astro:env/server';
 import type { z } from 'zod';
 import { getDataByFetch } from './get-data-by-fetch';
+
+const DEFAULT_RFEBM_API_BASE_HREF = 'https://balonmano.isquad.es';
+const RFEBM_API_BASE_HREF = process.env.RFEBM_API_BASE_HREF ?? DEFAULT_RFEBM_API_BASE_HREF;
 
 export async function rfebmAPIFetch<T extends z.ZodType = z.ZodType>(
   pathname: string,

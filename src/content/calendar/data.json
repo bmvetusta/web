@@ -1,0 +1,6962 @@
+[
+  {
+    "id": 1385786,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 1,
+    "urlStreaming": "https://www.youtube.com/watch?v=Rou2YQwwztw",
+    "status": "ENDED",
+    "date": "2024-09-21",
+    "time": "20:00",
+    "localTeam": {
+      "id": 214998,
+      "name": "REAL GRUPO DE CULTURA COVADONGA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/70/square_646e366b316534346e76.jpg",
+      "score": 37,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 204021,
+      "name": "LA FUENTE PEREDA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/100625/square_34397965676d386c7565.jpg",
+      "score": 25,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1385785,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 1,
+    "urlStreaming": "https://youtube.com/live/S-1nombKESU?feature=share",
+    "status": "ENDED",
+    "date": "2024-09-21",
+    "time": "19:30",
+    "localTeam": {
+      "id": 215350,
+      "name": "RECOLETAS ARROYO CABERO EDIFICACIONES",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/807/square_6d686d673264306d316f.jpg",
+      "score": 32,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 212129,
+      "name": "BATHCO BM. TORRELAVEGA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/117/square_73726e3132697065736b.jpg",
+      "score": 38,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1385784,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 1,
+    "urlStreaming": "https://www.youtube.com/live/DFHEuQYu8YA",
+    "status": "ENDED",
+    "date": "2024-09-22",
+    "time": "13:00",
+    "localTeam": {
+      "id": 209180,
+      "name": "CONGESA XXI BALONMANO CIUDAD DE SALAMANCA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/135/square_366a6b36366f3834316a.jpg",
+      "score": 31,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 209500,
+      "name": "AUTO-CENTER PRINCIPADO",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/2898/square_35723432687275366a39.jpg",
+      "score": 28,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1385783,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 1,
+    "urlStreaming": "https://youtube.com/live/qWLIaN0MEwc?feature=share",
+    "status": "ENDED",
+    "date": "2024-09-21",
+    "time": "19:00",
+    "localTeam": {
+      "id": 218714,
+      "name": "BALONMANO CAJA RURAL ZAMORA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/437/square_766f6d6d376d6972346c.jpg",
+      "score": 32,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 201273,
+      "name": "UNIVERSIDAD DE LEóN ADEMAR",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/126/square_70636d736b6d31387577.jpg",
+      "score": 24,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1385782,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 1,
+    "urlStreaming": null,
+    "status": "ENDED",
+    "date": "2024-09-21",
+    "time": "18:30",
+    "localTeam": {
+      "id": 203934,
+      "name": "BM. SANTOÑA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/767/square_64727237756f70706669.jpg",
+      "score": 27,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 215209,
+      "name": "SDC ASTANDER ASTILLERO",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/112/square_626a3568337770617030.jpg",
+      "score": 27,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1385781,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 1,
+    "urlStreaming": "https://www.youtube.com/live/IJEgT2fYN7c?si=zXr9RCOeKMUGV7iq",
+    "status": "ENDED",
+    "date": "2024-09-21",
+    "time": "18:00",
+    "localTeam": {
+      "id": 212098,
+      "name": "CLUB BALONMANO SORIA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/139/square_6a68756a757030356e76.jpg",
+      "score": 52,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 209286,
+      "name": "EZEQUIEL 4VALLES LA ROBLA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/2896/square_6675636c6a6d30346366.jpg",
+      "score": 19,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1385780,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 1,
+    "urlStreaming": "https://www.youtube.com/live/JYMa0eH5lQ8",
+    "status": "ENDED",
+    "date": "2024-09-21",
+    "time": "17:00",
+    "localTeam": {
+      "id": 209246,
+      "name": "ROYAL PREMIUM GIJON",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/488/square_32383967706436617972.jpg",
+      "score": 23,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 201150,
+      "name": "HORIZONTE ATLETICA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/69/square_6d6b7235397562793961.jpg",
+      "score": 29,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1385779,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 1,
+    "urlStreaming": "https://www.youtube.com/live/CbTIOwg01tc",
+    "status": "ENDED",
+    "date": "2024-09-21",
+    "time": "18:30",
+    "localTeam": {
+      "id": 218784,
+      "name": "UNIóN FINANCIERA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/439/square_7868636d337739673532.jpg",
+      "score": 27,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 209685,
+      "name": "CLUB BALONMANO CAMARGO",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/115/square_633062667072386c3368.jpg",
+      "score": 13,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1385794,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 2,
+    "urlStreaming": "https://www.youtube.com/live/cY0noLM_OrQ?si=e6BX6xgakDX4z01k",
+    "status": "ENDED",
+    "date": "2024-09-29",
+    "time": "12:30",
+    "localTeam": {
+      "id": 204021,
+      "name": "LA FUENTE PEREDA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/100625/square_34397965676d386c7565.jpg",
+      "score": 32,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 215350,
+      "name": "RECOLETAS ARROYO CABERO EDIFICACIONES",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/807/square_6d686d673264306d316f.jpg",
+      "score": 24,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1385793,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 2,
+    "urlStreaming": "https://www.youtube.com/live/7ukOWg8EiSA",
+    "status": "ENDED",
+    "date": "2024-09-29",
+    "time": "12:00",
+    "localTeam": {
+      "id": 212129,
+      "name": "BATHCO BM. TORRELAVEGA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/117/square_73726e3132697065736b.jpg",
+      "score": 40,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 209180,
+      "name": "CONGESA XXI BALONMANO CIUDAD DE SALAMANCA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/135/square_366a6b36366f3834316a.jpg",
+      "score": 30,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1385792,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 2,
+    "urlStreaming": "https://www.youtube.com/live/UibYrzJ0eZI",
+    "status": "ENDED",
+    "date": "2024-09-28",
+    "time": "18:00",
+    "localTeam": {
+      "id": 209500,
+      "name": "AUTO-CENTER PRINCIPADO",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/2898/square_35723432687275366a39.jpg",
+      "score": 30,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 218714,
+      "name": "BALONMANO CAJA RURAL ZAMORA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/437/square_766f6d6d376d6972346c.jpg",
+      "score": 32,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1385791,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 2,
+    "urlStreaming": "https://www.youtube.com/watch?v=zlStBKtTEOE",
+    "status": "ENDED",
+    "date": "2024-09-29",
+    "time": "12:00",
+    "localTeam": {
+      "id": 201273,
+      "name": "UNIVERSIDAD DE LEóN ADEMAR",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/126/square_70636d736b6d31387577.jpg",
+      "score": 32,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 203934,
+      "name": "BM. SANTOÑA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/767/square_64727237756f70706669.jpg",
+      "score": 27,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1385790,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 2,
+    "urlStreaming": "https://www.youtube.com/watch?v=YGOix-FPplE",
+    "status": "ENDED",
+    "date": "2024-09-29",
+    "time": "12:00",
+    "localTeam": {
+      "id": 215209,
+      "name": "SDC ASTANDER ASTILLERO",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/112/square_626a3568337770617030.jpg",
+      "score": 24,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 212098,
+      "name": "CLUB BALONMANO SORIA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/139/square_6a68756a757030356e76.jpg",
+      "score": 36,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1385789,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 2,
+    "urlStreaming": "https://youtube.com/live/kgz2D-e0BGI?feature=share",
+    "status": "ENDED",
+    "date": "2024-09-28",
+    "time": "17:00",
+    "localTeam": {
+      "id": 209286,
+      "name": "EZEQUIEL 4VALLES LA ROBLA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/2896/square_6675636c6a6d30346366.jpg",
+      "score": 17,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 209246,
+      "name": "ROYAL PREMIUM GIJON",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/488/square_32383967706436617972.jpg",
+      "score": 34,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1385788,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 2,
+    "urlStreaming": "https://youtube.com/live/w7_rYALMzOA?feature=share",
+    "status": "ENDED",
+    "date": "2024-09-28",
+    "time": "18:00",
+    "localTeam": {
+      "id": 201150,
+      "name": "HORIZONTE ATLETICA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/69/square_6d6b7235397562793961.jpg",
+      "score": 20,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 218784,
+      "name": "UNIóN FINANCIERA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/439/square_7868636d337739673532.jpg",
+      "score": 27,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1385787,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 2,
+    "urlStreaming": "https://youtube.com/live/Q1gtRCD0fCg",
+    "status": "ENDED",
+    "date": "2024-09-29",
+    "time": "12:30",
+    "localTeam": {
+      "id": 209685,
+      "name": "CLUB BALONMANO CAMARGO",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/115/square_633062667072386c3368.jpg",
+      "score": 37,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 214998,
+      "name": "REAL GRUPO DE CULTURA COVADONGA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/70/square_646e366b316534346e76.jpg",
+      "score": 36,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1385802,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 3,
+    "urlStreaming": "https://youtu.be/43MMHmU1G_w",
+    "status": "PENDING",
+    "date": "2024-10-05",
+    "time": "20:00",
+    "localTeam": {
+      "id": 214998,
+      "name": "REAL GRUPO DE CULTURA COVADONGA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/70/square_646e366b316534346e76.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 215350,
+      "name": "RECOLETAS ARROYO CABERO EDIFICACIONES",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/807/square_6d686d673264306d316f.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1385801,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 3,
+    "urlStreaming": "https://www.youtube.com/live/TbldXSNh99k",
+    "status": "PENDING",
+    "date": "2024-10-05",
+    "time": "19:45",
+    "localTeam": {
+      "id": 209180,
+      "name": "CONGESA XXI BALONMANO CIUDAD DE SALAMANCA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/135/square_366a6b36366f3834316a.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 204021,
+      "name": "LA FUENTE PEREDA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/100625/square_34397965676d386c7565.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1385800,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 3,
+    "urlStreaming": "https://www.youtube.com/watch?v=52s_mYdrtBA",
+    "status": "PENDING",
+    "date": "2024-10-06",
+    "time": "12:30",
+    "localTeam": {
+      "id": 218714,
+      "name": "BALONMANO CAJA RURAL ZAMORA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/437/square_766f6d6d376d6972346c.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 212129,
+      "name": "BATHCO BM. TORRELAVEGA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/117/square_73726e3132697065736b.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1385799,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 3,
+    "urlStreaming": "https://www.youtube.com/live/dzyPGjuukao?si=bLIZZSqobU3Wh5kS",
+    "status": "PENDING",
+    "date": "2024-10-05",
+    "time": "18:30",
+    "localTeam": {
+      "id": 203934,
+      "name": "BM. SANTOÑA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/767/square_64727237756f70706669.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 209500,
+      "name": "AUTO-CENTER PRINCIPADO",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/2898/square_35723432687275366a39.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1385798,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 3,
+    "urlStreaming": "https://www.youtube.com/live/sSseWTPfcWc?si=B6p54AzLXqhazvRC",
+    "status": "PENDING",
+    "date": "2024-10-05",
+    "time": "18:00",
+    "localTeam": {
+      "id": 212098,
+      "name": "CLUB BALONMANO SORIA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/139/square_6a68756a757030356e76.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 201273,
+      "name": "UNIVERSIDAD DE LEóN ADEMAR",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/126/square_70636d736b6d31387577.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1385797,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 3,
+    "urlStreaming": "https://www.youtube.com/live/PnRv6gGSZbM",
+    "status": "PENDING",
+    "date": "2024-10-05",
+    "time": "17:00",
+    "localTeam": {
+      "id": 209246,
+      "name": "ROYAL PREMIUM GIJON",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/488/square_32383967706436617972.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 215209,
+      "name": "SDC ASTANDER ASTILLERO",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/112/square_626a3568337770617030.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1385796,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 3,
+    "urlStreaming": "https://www.youtube.com/live/b_xURhl3OUU",
+    "status": "PENDING",
+    "date": "2024-10-05",
+    "time": "18:30",
+    "localTeam": {
+      "id": 218784,
+      "name": "UNIóN FINANCIERA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/439/square_7868636d337739673532.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 209286,
+      "name": "EZEQUIEL 4VALLES LA ROBLA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/2896/square_6675636c6a6d30346366.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1385795,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 3,
+    "urlStreaming": "https://youtube.com/live/t4D2mLM43dw",
+    "status": "PLAYING",
+    "date": "2024-10-05",
+    "time": "16:30",
+    "localTeam": {
+      "id": 209685,
+      "name": "CLUB BALONMANO CAMARGO",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/115/square_633062667072386c3368.jpg",
+      "score": 13,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 201150,
+      "name": "HORIZONTE ATLETICA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/69/square_6d6b7235397562793961.jpg",
+      "score": 12,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1385810,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 4,
+    "urlStreaming": null,
+    "status": "PENDING",
+    "date": "2024-10-12",
+    "time": "20:00",
+    "localTeam": {
+      "id": 215350,
+      "name": "RECOLETAS ARROYO CABERO EDIFICACIONES",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/807/square_6d686d673264306d316f.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 209180,
+      "name": "CONGESA XXI BALONMANO CIUDAD DE SALAMANCA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/135/square_366a6b36366f3834316a.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1385809,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 4,
+    "urlStreaming": null,
+    "status": "PENDING",
+    "date": "2024-10-13",
+    "time": "12:30",
+    "localTeam": {
+      "id": 204021,
+      "name": "LA FUENTE PEREDA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/100625/square_34397965676d386c7565.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 218714,
+      "name": "BALONMANO CAJA RURAL ZAMORA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/437/square_766f6d6d376d6972346c.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1385808,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 4,
+    "urlStreaming": null,
+    "status": "PENDING",
+    "date": "2024-10-13",
+    "time": "12:00",
+    "localTeam": {
+      "id": 212129,
+      "name": "BATHCO BM. TORRELAVEGA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/117/square_73726e3132697065736b.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 203934,
+      "name": "BM. SANTOÑA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/767/square_64727237756f70706669.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1385807,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 4,
+    "urlStreaming": "https://youtube.com/live/TLUhZA_QMIY",
+    "status": "PENDING",
+    "date": "2024-10-12",
+    "time": "17:30",
+    "localTeam": {
+      "id": 209500,
+      "name": "AUTO-CENTER PRINCIPADO",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/2898/square_35723432687275366a39.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 212098,
+      "name": "CLUB BALONMANO SORIA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/139/square_6a68756a757030356e76.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1385806,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 4,
+    "urlStreaming": null,
+    "status": "PENDING",
+    "date": "2024-10-13",
+    "time": "12:00",
+    "localTeam": {
+      "id": 201273,
+      "name": "UNIVERSIDAD DE LEóN ADEMAR",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/126/square_70636d736b6d31387577.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 209246,
+      "name": "ROYAL PREMIUM GIJON",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/488/square_32383967706436617972.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1385805,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 4,
+    "urlStreaming": "https://www.youtube.com/watch?v=g282JMCdCo8",
+    "status": "PENDING",
+    "date": "2024-10-13",
+    "time": "12:00",
+    "localTeam": {
+      "id": 215209,
+      "name": "SDC ASTANDER ASTILLERO",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/112/square_626a3568337770617030.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 218784,
+      "name": "UNIóN FINANCIERA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/439/square_7868636d337739673532.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1385804,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 4,
+    "urlStreaming": null,
+    "status": "PENDING",
+    "date": "2024-10-12",
+    "time": "17:00",
+    "localTeam": {
+      "id": 209286,
+      "name": "EZEQUIEL 4VALLES LA ROBLA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/2896/square_6675636c6a6d30346366.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 209685,
+      "name": "CLUB BALONMANO CAMARGO",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/115/square_633062667072386c3368.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1385803,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 4,
+    "urlStreaming": null,
+    "status": "PENDING",
+    "date": "2024-10-13",
+    "time": "12:00",
+    "localTeam": {
+      "id": 201150,
+      "name": "HORIZONTE ATLETICA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/69/square_6d6b7235397562793961.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 214998,
+      "name": "REAL GRUPO DE CULTURA COVADONGA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/70/square_646e366b316534346e76.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1385818,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 5,
+    "urlStreaming": null,
+    "status": "PENDING",
+    "date": "2024-10-19",
+    "time": "20:00",
+    "localTeam": {
+      "id": 214998,
+      "name": "REAL GRUPO DE CULTURA COVADONGA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/70/square_646e366b316534346e76.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 209180,
+      "name": "CONGESA XXI BALONMANO CIUDAD DE SALAMANCA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/135/square_366a6b36366f3834316a.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1385817,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 5,
+    "urlStreaming": null,
+    "status": "PENDING",
+    "date": "2024-10-20",
+    "time": "12:30",
+    "localTeam": {
+      "id": 218714,
+      "name": "BALONMANO CAJA RURAL ZAMORA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/437/square_766f6d6d376d6972346c.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 215350,
+      "name": "RECOLETAS ARROYO CABERO EDIFICACIONES",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/807/square_6d686d673264306d316f.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1385816,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 5,
+    "urlStreaming": null,
+    "status": "PENDING",
+    "date": "2024-10-19",
+    "time": "18:30",
+    "localTeam": {
+      "id": 203934,
+      "name": "BM. SANTOÑA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/767/square_64727237756f70706669.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 204021,
+      "name": "LA FUENTE PEREDA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/100625/square_34397965676d386c7565.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1385815,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 5,
+    "urlStreaming": "https://www.youtube.com/live/lsRtkuIOwp8?si=xkbCDDXsu8vstsO4",
+    "status": "PENDING",
+    "date": "2024-10-19",
+    "time": "18:00",
+    "localTeam": {
+      "id": 212098,
+      "name": "CLUB BALONMANO SORIA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/139/square_6a68756a757030356e76.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 212129,
+      "name": "BATHCO BM. TORRELAVEGA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/117/square_73726e3132697065736b.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1385814,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 5,
+    "urlStreaming": null,
+    "status": "PENDING",
+    "date": "2024-10-19",
+    "time": "17:00",
+    "localTeam": {
+      "id": 209246,
+      "name": "ROYAL PREMIUM GIJON",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/488/square_32383967706436617972.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 209500,
+      "name": "AUTO-CENTER PRINCIPADO",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/2898/square_35723432687275366a39.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1385813,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 5,
+    "urlStreaming": null,
+    "status": "PENDING",
+    "date": "2024-10-19",
+    "time": "18:30",
+    "localTeam": {
+      "id": 218784,
+      "name": "UNIóN FINANCIERA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/439/square_7868636d337739673532.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 201273,
+      "name": "UNIVERSIDAD DE LEóN ADEMAR",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/126/square_70636d736b6d31387577.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1385812,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 5,
+    "urlStreaming": null,
+    "status": "PENDING",
+    "date": "2024-10-19",
+    "time": "18:00",
+    "localTeam": {
+      "id": 209685,
+      "name": "CLUB BALONMANO CAMARGO",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/115/square_633062667072386c3368.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 215209,
+      "name": "SDC ASTANDER ASTILLERO",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/112/square_626a3568337770617030.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1385811,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 5,
+    "urlStreaming": null,
+    "status": "PENDING",
+    "date": "2024-10-19",
+    "time": "18:00",
+    "localTeam": {
+      "id": 201150,
+      "name": "HORIZONTE ATLETICA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/69/square_6d6b7235397562793961.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 209286,
+      "name": "EZEQUIEL 4VALLES LA ROBLA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/2896/square_6675636c6a6d30346366.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1385826,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 6,
+    "urlStreaming": null,
+    "status": "PENDING",
+    "date": "2024-10-26",
+    "time": "19:30",
+    "localTeam": {
+      "id": 209180,
+      "name": "CONGESA XXI BALONMANO CIUDAD DE SALAMANCA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/135/square_366a6b36366f3834316a.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 218714,
+      "name": "BALONMANO CAJA RURAL ZAMORA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/437/square_766f6d6d376d6972346c.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1385825,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 6,
+    "urlStreaming": null,
+    "status": "PENDING",
+    "date": "2024-10-26",
+    "time": "20:00",
+    "localTeam": {
+      "id": 215350,
+      "name": "RECOLETAS ARROYO CABERO EDIFICACIONES",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/807/square_6d686d673264306d316f.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 203934,
+      "name": "BM. SANTOÑA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/767/square_64727237756f70706669.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1385824,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 6,
+    "urlStreaming": null,
+    "status": "PENDING",
+    "date": "2024-10-27",
+    "time": "12:30",
+    "localTeam": {
+      "id": 204021,
+      "name": "LA FUENTE PEREDA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/100625/square_34397965676d386c7565.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 212098,
+      "name": "CLUB BALONMANO SORIA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/139/square_6a68756a757030356e76.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1385823,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 6,
+    "urlStreaming": null,
+    "status": "PENDING",
+    "date": "2024-10-27",
+    "time": "12:30",
+    "localTeam": {
+      "id": 212129,
+      "name": "BATHCO BM. TORRELAVEGA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/117/square_73726e3132697065736b.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 209246,
+      "name": "ROYAL PREMIUM GIJON",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/488/square_32383967706436617972.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1385822,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 6,
+    "urlStreaming": "https://youtube.com/live/8rN7t31WXq8",
+    "status": "PENDING",
+    "date": "2024-10-26",
+    "time": "18:00",
+    "localTeam": {
+      "id": 209500,
+      "name": "AUTO-CENTER PRINCIPADO",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/2898/square_35723432687275366a39.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 218784,
+      "name": "UNIóN FINANCIERA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/439/square_7868636d337739673532.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1385821,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 6,
+    "urlStreaming": null,
+    "status": "PENDING",
+    "date": "2024-10-27",
+    "time": "12:00",
+    "localTeam": {
+      "id": 201273,
+      "name": "UNIVERSIDAD DE LEóN ADEMAR",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/126/square_70636d736b6d31387577.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 209685,
+      "name": "CLUB BALONMANO CAMARGO",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/115/square_633062667072386c3368.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1385820,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 6,
+    "urlStreaming": null,
+    "status": "PENDING",
+    "date": "2024-10-26",
+    "time": "18:00",
+    "localTeam": {
+      "id": 215209,
+      "name": "SDC ASTANDER ASTILLERO",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/112/square_626a3568337770617030.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 201150,
+      "name": "HORIZONTE ATLETICA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/69/square_6d6b7235397562793961.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1385819,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 6,
+    "urlStreaming": null,
+    "status": "PENDING",
+    "date": "2024-10-26",
+    "time": "17:00",
+    "localTeam": {
+      "id": 209286,
+      "name": "EZEQUIEL 4VALLES LA ROBLA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/2896/square_6675636c6a6d30346366.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 214998,
+      "name": "REAL GRUPO DE CULTURA COVADONGA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/70/square_646e366b316534346e76.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1385834,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 7,
+    "urlStreaming": null,
+    "status": "PENDING",
+    "date": "2024-11-02",
+    "time": "20:00",
+    "localTeam": {
+      "id": 214998,
+      "name": "REAL GRUPO DE CULTURA COVADONGA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/70/square_646e366b316534346e76.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 218714,
+      "name": "BALONMANO CAJA RURAL ZAMORA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/437/square_766f6d6d376d6972346c.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1385833,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 7,
+    "urlStreaming": null,
+    "status": "PENDING",
+    "date": "2024-11-02",
+    "time": "18:30",
+    "localTeam": {
+      "id": 203934,
+      "name": "BM. SANTOÑA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/767/square_64727237756f70706669.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 209180,
+      "name": "CONGESA XXI BALONMANO CIUDAD DE SALAMANCA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/135/square_366a6b36366f3834316a.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1385832,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 7,
+    "urlStreaming": "https://www.youtube.com/live/Edb4QDfzQkQ?si=R3qtcu7EhxBVglGF",
+    "status": "PENDING",
+    "date": "2024-11-02",
+    "time": "18:00",
+    "localTeam": {
+      "id": 212098,
+      "name": "CLUB BALONMANO SORIA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/139/square_6a68756a757030356e76.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 215350,
+      "name": "RECOLETAS ARROYO CABERO EDIFICACIONES",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/807/square_6d686d673264306d316f.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1385831,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 7,
+    "urlStreaming": null,
+    "status": "PENDING",
+    "date": null,
+    "time": null,
+    "localTeam": {
+      "id": 209246,
+      "name": "ROYAL PREMIUM GIJON",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/488/square_32383967706436617972.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 204021,
+      "name": "LA FUENTE PEREDA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/100625/square_34397965676d386c7565.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1385830,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 7,
+    "urlStreaming": null,
+    "status": "PENDING",
+    "date": null,
+    "time": null,
+    "localTeam": {
+      "id": 218784,
+      "name": "UNIóN FINANCIERA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/439/square_7868636d337739673532.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 212129,
+      "name": "BATHCO BM. TORRELAVEGA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/117/square_73726e3132697065736b.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1385829,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 7,
+    "urlStreaming": null,
+    "status": "PENDING",
+    "date": null,
+    "time": null,
+    "localTeam": {
+      "id": 209685,
+      "name": "CLUB BALONMANO CAMARGO",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/115/square_633062667072386c3368.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 209500,
+      "name": "AUTO-CENTER PRINCIPADO",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/2898/square_35723432687275366a39.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1385828,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 7,
+    "urlStreaming": null,
+    "status": "PENDING",
+    "date": "2024-11-02",
+    "time": "18:00",
+    "localTeam": {
+      "id": 201150,
+      "name": "HORIZONTE ATLETICA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/69/square_6d6b7235397562793961.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 201273,
+      "name": "UNIVERSIDAD DE LEóN ADEMAR",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/126/square_70636d736b6d31387577.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1385827,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 7,
+    "urlStreaming": null,
+    "status": "PENDING",
+    "date": "2024-11-02",
+    "time": "17:00",
+    "localTeam": {
+      "id": 209286,
+      "name": "EZEQUIEL 4VALLES LA ROBLA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/2896/square_6675636c6a6d30346366.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 215209,
+      "name": "SDC ASTANDER ASTILLERO",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/112/square_626a3568337770617030.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1385842,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 8,
+    "urlStreaming": null,
+    "status": "PENDING",
+    "date": null,
+    "time": null,
+    "localTeam": {
+      "id": 218714,
+      "name": "BALONMANO CAJA RURAL ZAMORA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/437/square_766f6d6d376d6972346c.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 203934,
+      "name": "BM. SANTOÑA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/767/square_64727237756f70706669.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1385841,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 8,
+    "urlStreaming": null,
+    "status": "PENDING",
+    "date": null,
+    "time": null,
+    "localTeam": {
+      "id": 209180,
+      "name": "CONGESA XXI BALONMANO CIUDAD DE SALAMANCA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/135/square_366a6b36366f3834316a.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 212098,
+      "name": "CLUB BALONMANO SORIA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/139/square_6a68756a757030356e76.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1385840,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 8,
+    "urlStreaming": null,
+    "status": "PENDING",
+    "date": null,
+    "time": null,
+    "localTeam": {
+      "id": 215350,
+      "name": "RECOLETAS ARROYO CABERO EDIFICACIONES",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/807/square_6d686d673264306d316f.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 209246,
+      "name": "ROYAL PREMIUM GIJON",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/488/square_32383967706436617972.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1385839,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 8,
+    "urlStreaming": null,
+    "status": "PENDING",
+    "date": "2024-11-10",
+    "time": "12:30",
+    "localTeam": {
+      "id": 204021,
+      "name": "LA FUENTE PEREDA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/100625/square_34397965676d386c7565.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 218784,
+      "name": "UNIóN FINANCIERA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/439/square_7868636d337739673532.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1385838,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 8,
+    "urlStreaming": null,
+    "status": "PENDING",
+    "date": null,
+    "time": null,
+    "localTeam": {
+      "id": 212129,
+      "name": "BATHCO BM. TORRELAVEGA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/117/square_73726e3132697065736b.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 209685,
+      "name": "CLUB BALONMANO CAMARGO",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/115/square_633062667072386c3368.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1385837,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 8,
+    "urlStreaming": "https://youtube.com/live/4HJXWMtR_08",
+    "status": "PENDING",
+    "date": "2024-11-09",
+    "time": "18:00",
+    "localTeam": {
+      "id": 209500,
+      "name": "AUTO-CENTER PRINCIPADO",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/2898/square_35723432687275366a39.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 201150,
+      "name": "HORIZONTE ATLETICA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/69/square_6d6b7235397562793961.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1385836,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 8,
+    "urlStreaming": null,
+    "status": "PENDING",
+    "date": "2024-11-09",
+    "time": "18:00",
+    "localTeam": {
+      "id": 201273,
+      "name": "UNIVERSIDAD DE LEóN ADEMAR",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/126/square_70636d736b6d31387577.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 209286,
+      "name": "EZEQUIEL 4VALLES LA ROBLA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/2896/square_6675636c6a6d30346366.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1385835,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 8,
+    "urlStreaming": null,
+    "status": "PENDING",
+    "date": "2024-11-09",
+    "time": "18:00",
+    "localTeam": {
+      "id": 215209,
+      "name": "SDC ASTANDER ASTILLERO",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/112/square_626a3568337770617030.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 214998,
+      "name": "REAL GRUPO DE CULTURA COVADONGA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/70/square_646e366b316534346e76.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1385850,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 9,
+    "urlStreaming": null,
+    "status": "PENDING",
+    "date": null,
+    "time": null,
+    "localTeam": {
+      "id": 214998,
+      "name": "REAL GRUPO DE CULTURA COVADONGA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/70/square_646e366b316534346e76.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 203934,
+      "name": "BM. SANTOÑA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/767/square_64727237756f70706669.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1385849,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 9,
+    "urlStreaming": "https://www.youtube.com/live/Ly7AKaWbuVQ?si=2Onxpkoo7s71s_1-",
+    "status": "PENDING",
+    "date": null,
+    "time": null,
+    "localTeam": {
+      "id": 212098,
+      "name": "CLUB BALONMANO SORIA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/139/square_6a68756a757030356e76.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 218714,
+      "name": "BALONMANO CAJA RURAL ZAMORA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/437/square_766f6d6d376d6972346c.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1385848,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 9,
+    "urlStreaming": null,
+    "status": "PENDING",
+    "date": null,
+    "time": null,
+    "localTeam": {
+      "id": 209246,
+      "name": "ROYAL PREMIUM GIJON",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/488/square_32383967706436617972.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 209180,
+      "name": "CONGESA XXI BALONMANO CIUDAD DE SALAMANCA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/135/square_366a6b36366f3834316a.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1385847,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 9,
+    "urlStreaming": null,
+    "status": "PENDING",
+    "date": null,
+    "time": null,
+    "localTeam": {
+      "id": 218784,
+      "name": "UNIóN FINANCIERA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/439/square_7868636d337739673532.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 215350,
+      "name": "RECOLETAS ARROYO CABERO EDIFICACIONES",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/807/square_6d686d673264306d316f.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1385846,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 9,
+    "urlStreaming": null,
+    "status": "PENDING",
+    "date": null,
+    "time": null,
+    "localTeam": {
+      "id": 209685,
+      "name": "CLUB BALONMANO CAMARGO",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/115/square_633062667072386c3368.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 204021,
+      "name": "LA FUENTE PEREDA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/100625/square_34397965676d386c7565.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1385845,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 9,
+    "urlStreaming": null,
+    "status": "PENDING",
+    "date": null,
+    "time": null,
+    "localTeam": {
+      "id": 201150,
+      "name": "HORIZONTE ATLETICA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/69/square_6d6b7235397562793961.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 212129,
+      "name": "BATHCO BM. TORRELAVEGA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/117/square_73726e3132697065736b.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1385844,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 9,
+    "urlStreaming": null,
+    "status": "PENDING",
+    "date": null,
+    "time": null,
+    "localTeam": {
+      "id": 209286,
+      "name": "EZEQUIEL 4VALLES LA ROBLA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/2896/square_6675636c6a6d30346366.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 209500,
+      "name": "AUTO-CENTER PRINCIPADO",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/2898/square_35723432687275366a39.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1385843,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 9,
+    "urlStreaming": null,
+    "status": "PENDING",
+    "date": null,
+    "time": null,
+    "localTeam": {
+      "id": 215209,
+      "name": "SDC ASTANDER ASTILLERO",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/112/square_626a3568337770617030.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 201273,
+      "name": "UNIVERSIDAD DE LEóN ADEMAR",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/126/square_70636d736b6d31387577.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1385858,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 10,
+    "urlStreaming": null,
+    "status": "PENDING",
+    "date": null,
+    "time": null,
+    "localTeam": {
+      "id": 203934,
+      "name": "BM. SANTOÑA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/767/square_64727237756f70706669.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 212098,
+      "name": "CLUB BALONMANO SORIA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/139/square_6a68756a757030356e76.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1385857,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 10,
+    "urlStreaming": null,
+    "status": "PENDING",
+    "date": null,
+    "time": null,
+    "localTeam": {
+      "id": 218714,
+      "name": "BALONMANO CAJA RURAL ZAMORA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/437/square_766f6d6d376d6972346c.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 209246,
+      "name": "ROYAL PREMIUM GIJON",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/488/square_32383967706436617972.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1385856,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 10,
+    "urlStreaming": null,
+    "status": "PENDING",
+    "date": null,
+    "time": null,
+    "localTeam": {
+      "id": 209180,
+      "name": "CONGESA XXI BALONMANO CIUDAD DE SALAMANCA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/135/square_366a6b36366f3834316a.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 218784,
+      "name": "UNIóN FINANCIERA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/439/square_7868636d337739673532.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1385855,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 10,
+    "urlStreaming": null,
+    "status": "PENDING",
+    "date": null,
+    "time": null,
+    "localTeam": {
+      "id": 215350,
+      "name": "RECOLETAS ARROYO CABERO EDIFICACIONES",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/807/square_6d686d673264306d316f.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 209685,
+      "name": "CLUB BALONMANO CAMARGO",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/115/square_633062667072386c3368.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1385854,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 10,
+    "urlStreaming": null,
+    "status": "PENDING",
+    "date": null,
+    "time": null,
+    "localTeam": {
+      "id": 204021,
+      "name": "LA FUENTE PEREDA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/100625/square_34397965676d386c7565.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 201150,
+      "name": "HORIZONTE ATLETICA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/69/square_6d6b7235397562793961.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1385853,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 10,
+    "urlStreaming": null,
+    "status": "PENDING",
+    "date": null,
+    "time": null,
+    "localTeam": {
+      "id": 212129,
+      "name": "BATHCO BM. TORRELAVEGA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/117/square_73726e3132697065736b.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 209286,
+      "name": "EZEQUIEL 4VALLES LA ROBLA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/2896/square_6675636c6a6d30346366.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1385852,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 10,
+    "urlStreaming": null,
+    "status": "PENDING",
+    "date": null,
+    "time": null,
+    "localTeam": {
+      "id": 209500,
+      "name": "AUTO-CENTER PRINCIPADO",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/2898/square_35723432687275366a39.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 215209,
+      "name": "SDC ASTANDER ASTILLERO",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/112/square_626a3568337770617030.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1385851,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 10,
+    "urlStreaming": null,
+    "status": "PENDING",
+    "date": null,
+    "time": null,
+    "localTeam": {
+      "id": 201273,
+      "name": "UNIVERSIDAD DE LEóN ADEMAR",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/126/square_70636d736b6d31387577.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 214998,
+      "name": "REAL GRUPO DE CULTURA COVADONGA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/70/square_646e366b316534346e76.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1385866,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 11,
+    "urlStreaming": null,
+    "status": "PENDING",
+    "date": null,
+    "time": null,
+    "localTeam": {
+      "id": 214998,
+      "name": "REAL GRUPO DE CULTURA COVADONGA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/70/square_646e366b316534346e76.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 212098,
+      "name": "CLUB BALONMANO SORIA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/139/square_6a68756a757030356e76.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1385865,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 11,
+    "urlStreaming": null,
+    "status": "PENDING",
+    "date": null,
+    "time": null,
+    "localTeam": {
+      "id": 209246,
+      "name": "ROYAL PREMIUM GIJON",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/488/square_32383967706436617972.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 203934,
+      "name": "BM. SANTOÑA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/767/square_64727237756f70706669.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1385864,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 11,
+    "urlStreaming": null,
+    "status": "PENDING",
+    "date": null,
+    "time": null,
+    "localTeam": {
+      "id": 218784,
+      "name": "UNIóN FINANCIERA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/439/square_7868636d337739673532.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 218714,
+      "name": "BALONMANO CAJA RURAL ZAMORA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/437/square_766f6d6d376d6972346c.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1385863,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 11,
+    "urlStreaming": null,
+    "status": "PENDING",
+    "date": null,
+    "time": null,
+    "localTeam": {
+      "id": 209685,
+      "name": "CLUB BALONMANO CAMARGO",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/115/square_633062667072386c3368.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 209180,
+      "name": "CONGESA XXI BALONMANO CIUDAD DE SALAMANCA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/135/square_366a6b36366f3834316a.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1385862,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 11,
+    "urlStreaming": null,
+    "status": "PENDING",
+    "date": null,
+    "time": null,
+    "localTeam": {
+      "id": 201150,
+      "name": "HORIZONTE ATLETICA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/69/square_6d6b7235397562793961.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 215350,
+      "name": "RECOLETAS ARROYO CABERO EDIFICACIONES",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/807/square_6d686d673264306d316f.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1385861,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 11,
+    "urlStreaming": null,
+    "status": "PENDING",
+    "date": null,
+    "time": null,
+    "localTeam": {
+      "id": 209286,
+      "name": "EZEQUIEL 4VALLES LA ROBLA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/2896/square_6675636c6a6d30346366.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 204021,
+      "name": "LA FUENTE PEREDA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/100625/square_34397965676d386c7565.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1385860,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 11,
+    "urlStreaming": null,
+    "status": "PENDING",
+    "date": null,
+    "time": null,
+    "localTeam": {
+      "id": 215209,
+      "name": "SDC ASTANDER ASTILLERO",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/112/square_626a3568337770617030.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 212129,
+      "name": "BATHCO BM. TORRELAVEGA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/117/square_73726e3132697065736b.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1385859,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 11,
+    "urlStreaming": null,
+    "status": "PENDING",
+    "date": null,
+    "time": null,
+    "localTeam": {
+      "id": 201273,
+      "name": "UNIVERSIDAD DE LEóN ADEMAR",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/126/square_70636d736b6d31387577.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 209500,
+      "name": "AUTO-CENTER PRINCIPADO",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/2898/square_35723432687275366a39.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1385874,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 12,
+    "urlStreaming": "https://www.youtube.com/live/-B1BV2DqOvA?si=KqNC9p0o4SHazETV",
+    "status": "PENDING",
+    "date": null,
+    "time": null,
+    "localTeam": {
+      "id": 212098,
+      "name": "CLUB BALONMANO SORIA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/139/square_6a68756a757030356e76.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 209246,
+      "name": "ROYAL PREMIUM GIJON",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/488/square_32383967706436617972.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1385873,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 12,
+    "urlStreaming": null,
+    "status": "PENDING",
+    "date": null,
+    "time": null,
+    "localTeam": {
+      "id": 203934,
+      "name": "BM. SANTOÑA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/767/square_64727237756f70706669.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 218784,
+      "name": "UNIóN FINANCIERA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/439/square_7868636d337739673532.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1385872,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 12,
+    "urlStreaming": null,
+    "status": "PENDING",
+    "date": null,
+    "time": null,
+    "localTeam": {
+      "id": 218714,
+      "name": "BALONMANO CAJA RURAL ZAMORA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/437/square_766f6d6d376d6972346c.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 209685,
+      "name": "CLUB BALONMANO CAMARGO",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/115/square_633062667072386c3368.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1385871,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 12,
+    "urlStreaming": null,
+    "status": "PENDING",
+    "date": null,
+    "time": null,
+    "localTeam": {
+      "id": 209180,
+      "name": "CONGESA XXI BALONMANO CIUDAD DE SALAMANCA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/135/square_366a6b36366f3834316a.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 201150,
+      "name": "HORIZONTE ATLETICA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/69/square_6d6b7235397562793961.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1385870,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 12,
+    "urlStreaming": null,
+    "status": "PENDING",
+    "date": null,
+    "time": null,
+    "localTeam": {
+      "id": 215350,
+      "name": "RECOLETAS ARROYO CABERO EDIFICACIONES",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/807/square_6d686d673264306d316f.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 209286,
+      "name": "EZEQUIEL 4VALLES LA ROBLA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/2896/square_6675636c6a6d30346366.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1385869,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 12,
+    "urlStreaming": null,
+    "status": "PENDING",
+    "date": "2024-12-06",
+    "time": "12:30",
+    "localTeam": {
+      "id": 204021,
+      "name": "LA FUENTE PEREDA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/100625/square_34397965676d386c7565.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 215209,
+      "name": "SDC ASTANDER ASTILLERO",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/112/square_626a3568337770617030.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1385868,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 12,
+    "urlStreaming": null,
+    "status": "PENDING",
+    "date": null,
+    "time": null,
+    "localTeam": {
+      "id": 212129,
+      "name": "BATHCO BM. TORRELAVEGA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/117/square_73726e3132697065736b.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 201273,
+      "name": "UNIVERSIDAD DE LEóN ADEMAR",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/126/square_70636d736b6d31387577.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1385867,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 12,
+    "urlStreaming": null,
+    "status": "PENDING",
+    "date": null,
+    "time": null,
+    "localTeam": {
+      "id": 209500,
+      "name": "AUTO-CENTER PRINCIPADO",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/2898/square_35723432687275366a39.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 214998,
+      "name": "REAL GRUPO DE CULTURA COVADONGA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/70/square_646e366b316534346e76.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1385882,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 13,
+    "urlStreaming": null,
+    "status": "PENDING",
+    "date": null,
+    "time": null,
+    "localTeam": {
+      "id": 214998,
+      "name": "REAL GRUPO DE CULTURA COVADONGA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/70/square_646e366b316534346e76.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 209246,
+      "name": "ROYAL PREMIUM GIJON",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/488/square_32383967706436617972.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1385881,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 13,
+    "urlStreaming": null,
+    "status": "PENDING",
+    "date": null,
+    "time": null,
+    "localTeam": {
+      "id": 218784,
+      "name": "UNIóN FINANCIERA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/439/square_7868636d337739673532.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 212098,
+      "name": "CLUB BALONMANO SORIA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/139/square_6a68756a757030356e76.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1385880,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 13,
+    "urlStreaming": null,
+    "status": "PENDING",
+    "date": null,
+    "time": null,
+    "localTeam": {
+      "id": 209685,
+      "name": "CLUB BALONMANO CAMARGO",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/115/square_633062667072386c3368.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 203934,
+      "name": "BM. SANTOÑA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/767/square_64727237756f70706669.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1385879,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 13,
+    "urlStreaming": null,
+    "status": "PENDING",
+    "date": null,
+    "time": null,
+    "localTeam": {
+      "id": 201150,
+      "name": "HORIZONTE ATLETICA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/69/square_6d6b7235397562793961.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 218714,
+      "name": "BALONMANO CAJA RURAL ZAMORA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/437/square_766f6d6d376d6972346c.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1385878,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 13,
+    "urlStreaming": null,
+    "status": "PENDING",
+    "date": null,
+    "time": null,
+    "localTeam": {
+      "id": 209286,
+      "name": "EZEQUIEL 4VALLES LA ROBLA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/2896/square_6675636c6a6d30346366.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 209180,
+      "name": "CONGESA XXI BALONMANO CIUDAD DE SALAMANCA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/135/square_366a6b36366f3834316a.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1385877,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 13,
+    "urlStreaming": null,
+    "status": "PENDING",
+    "date": null,
+    "time": null,
+    "localTeam": {
+      "id": 215209,
+      "name": "SDC ASTANDER ASTILLERO",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/112/square_626a3568337770617030.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 215350,
+      "name": "RECOLETAS ARROYO CABERO EDIFICACIONES",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/807/square_6d686d673264306d316f.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1385876,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 13,
+    "urlStreaming": null,
+    "status": "PENDING",
+    "date": null,
+    "time": null,
+    "localTeam": {
+      "id": 201273,
+      "name": "UNIVERSIDAD DE LEóN ADEMAR",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/126/square_70636d736b6d31387577.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 204021,
+      "name": "LA FUENTE PEREDA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/100625/square_34397965676d386c7565.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1385875,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 13,
+    "urlStreaming": null,
+    "status": "PENDING",
+    "date": null,
+    "time": null,
+    "localTeam": {
+      "id": 209500,
+      "name": "AUTO-CENTER PRINCIPADO",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/2898/square_35723432687275366a39.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 212129,
+      "name": "BATHCO BM. TORRELAVEGA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/117/square_73726e3132697065736b.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1385890,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 14,
+    "urlStreaming": null,
+    "status": "PENDING",
+    "date": null,
+    "time": null,
+    "localTeam": {
+      "id": 209246,
+      "name": "ROYAL PREMIUM GIJON",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/488/square_32383967706436617972.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 218784,
+      "name": "UNIóN FINANCIERA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/439/square_7868636d337739673532.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1385889,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 14,
+    "urlStreaming": "https://www.youtube.com/live/CJUT_FmhBPY?si=vXCTkwrDNShukGir",
+    "status": "PENDING",
+    "date": null,
+    "time": null,
+    "localTeam": {
+      "id": 212098,
+      "name": "CLUB BALONMANO SORIA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/139/square_6a68756a757030356e76.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 209685,
+      "name": "CLUB BALONMANO CAMARGO",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/115/square_633062667072386c3368.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1385888,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 14,
+    "urlStreaming": null,
+    "status": "PENDING",
+    "date": null,
+    "time": null,
+    "localTeam": {
+      "id": 203934,
+      "name": "BM. SANTOÑA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/767/square_64727237756f70706669.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 201150,
+      "name": "HORIZONTE ATLETICA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/69/square_6d6b7235397562793961.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1385887,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 14,
+    "urlStreaming": null,
+    "status": "PENDING",
+    "date": null,
+    "time": null,
+    "localTeam": {
+      "id": 218714,
+      "name": "BALONMANO CAJA RURAL ZAMORA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/437/square_766f6d6d376d6972346c.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 209286,
+      "name": "EZEQUIEL 4VALLES LA ROBLA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/2896/square_6675636c6a6d30346366.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1385886,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 14,
+    "urlStreaming": null,
+    "status": "PENDING",
+    "date": null,
+    "time": null,
+    "localTeam": {
+      "id": 209180,
+      "name": "CONGESA XXI BALONMANO CIUDAD DE SALAMANCA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/135/square_366a6b36366f3834316a.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 215209,
+      "name": "SDC ASTANDER ASTILLERO",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/112/square_626a3568337770617030.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1385885,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 14,
+    "urlStreaming": null,
+    "status": "PENDING",
+    "date": null,
+    "time": null,
+    "localTeam": {
+      "id": 215350,
+      "name": "RECOLETAS ARROYO CABERO EDIFICACIONES",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/807/square_6d686d673264306d316f.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 201273,
+      "name": "UNIVERSIDAD DE LEóN ADEMAR",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/126/square_70636d736b6d31387577.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1385884,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 14,
+    "urlStreaming": null,
+    "status": "PENDING",
+    "date": null,
+    "time": null,
+    "localTeam": {
+      "id": 204021,
+      "name": "LA FUENTE PEREDA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/100625/square_34397965676d386c7565.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 209500,
+      "name": "AUTO-CENTER PRINCIPADO",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/2898/square_35723432687275366a39.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1385883,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 14,
+    "urlStreaming": null,
+    "status": "PENDING",
+    "date": null,
+    "time": null,
+    "localTeam": {
+      "id": 214998,
+      "name": "REAL GRUPO DE CULTURA COVADONGA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/70/square_646e366b316534346e76.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 212129,
+      "name": "BATHCO BM. TORRELAVEGA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/117/square_73726e3132697065736b.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1385898,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 15,
+    "urlStreaming": null,
+    "status": "PENDING",
+    "date": null,
+    "time": null,
+    "localTeam": {
+      "id": 218784,
+      "name": "UNIóN FINANCIERA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/439/square_7868636d337739673532.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 214998,
+      "name": "REAL GRUPO DE CULTURA COVADONGA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/70/square_646e366b316534346e76.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1385897,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 15,
+    "urlStreaming": null,
+    "status": "PENDING",
+    "date": null,
+    "time": null,
+    "localTeam": {
+      "id": 209685,
+      "name": "CLUB BALONMANO CAMARGO",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/115/square_633062667072386c3368.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 209246,
+      "name": "ROYAL PREMIUM GIJON",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/488/square_32383967706436617972.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1385896,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 15,
+    "urlStreaming": null,
+    "status": "PENDING",
+    "date": null,
+    "time": null,
+    "localTeam": {
+      "id": 201150,
+      "name": "HORIZONTE ATLETICA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/69/square_6d6b7235397562793961.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 212098,
+      "name": "CLUB BALONMANO SORIA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/139/square_6a68756a757030356e76.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1385895,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 15,
+    "urlStreaming": null,
+    "status": "PENDING",
+    "date": null,
+    "time": null,
+    "localTeam": {
+      "id": 209286,
+      "name": "EZEQUIEL 4VALLES LA ROBLA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/2896/square_6675636c6a6d30346366.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 203934,
+      "name": "BM. SANTOÑA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/767/square_64727237756f70706669.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1385894,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 15,
+    "urlStreaming": null,
+    "status": "PENDING",
+    "date": null,
+    "time": null,
+    "localTeam": {
+      "id": 215209,
+      "name": "SDC ASTANDER ASTILLERO",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/112/square_626a3568337770617030.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 218714,
+      "name": "BALONMANO CAJA RURAL ZAMORA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/437/square_766f6d6d376d6972346c.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1385893,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 15,
+    "urlStreaming": null,
+    "status": "PENDING",
+    "date": null,
+    "time": null,
+    "localTeam": {
+      "id": 201273,
+      "name": "UNIVERSIDAD DE LEóN ADEMAR",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/126/square_70636d736b6d31387577.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 209180,
+      "name": "CONGESA XXI BALONMANO CIUDAD DE SALAMANCA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/135/square_366a6b36366f3834316a.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1385892,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 15,
+    "urlStreaming": null,
+    "status": "PENDING",
+    "date": null,
+    "time": null,
+    "localTeam": {
+      "id": 209500,
+      "name": "AUTO-CENTER PRINCIPADO",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/2898/square_35723432687275366a39.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 215350,
+      "name": "RECOLETAS ARROYO CABERO EDIFICACIONES",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/807/square_6d686d673264306d316f.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1385891,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 15,
+    "urlStreaming": null,
+    "status": "PENDING",
+    "date": null,
+    "time": null,
+    "localTeam": {
+      "id": 212129,
+      "name": "BATHCO BM. TORRELAVEGA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/117/square_73726e3132697065736b.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 204021,
+      "name": "LA FUENTE PEREDA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/100625/square_34397965676d386c7565.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1385906,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 16,
+    "urlStreaming": null,
+    "status": "PENDING",
+    "date": null,
+    "time": null,
+    "localTeam": {
+      "id": 204021,
+      "name": "LA FUENTE PEREDA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/100625/square_34397965676d386c7565.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 214998,
+      "name": "REAL GRUPO DE CULTURA COVADONGA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/70/square_646e366b316534346e76.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1385905,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 16,
+    "urlStreaming": null,
+    "status": "PENDING",
+    "date": null,
+    "time": null,
+    "localTeam": {
+      "id": 212129,
+      "name": "BATHCO BM. TORRELAVEGA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/117/square_73726e3132697065736b.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 215350,
+      "name": "RECOLETAS ARROYO CABERO EDIFICACIONES",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/807/square_6d686d673264306d316f.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1385904,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 16,
+    "urlStreaming": null,
+    "status": "PENDING",
+    "date": null,
+    "time": null,
+    "localTeam": {
+      "id": 209500,
+      "name": "AUTO-CENTER PRINCIPADO",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/2898/square_35723432687275366a39.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 209180,
+      "name": "CONGESA XXI BALONMANO CIUDAD DE SALAMANCA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/135/square_366a6b36366f3834316a.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1385903,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 16,
+    "urlStreaming": null,
+    "status": "PENDING",
+    "date": null,
+    "time": null,
+    "localTeam": {
+      "id": 201273,
+      "name": "UNIVERSIDAD DE LEóN ADEMAR",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/126/square_70636d736b6d31387577.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 218714,
+      "name": "BALONMANO CAJA RURAL ZAMORA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/437/square_766f6d6d376d6972346c.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1385902,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 16,
+    "urlStreaming": null,
+    "status": "PENDING",
+    "date": null,
+    "time": null,
+    "localTeam": {
+      "id": 215209,
+      "name": "SDC ASTANDER ASTILLERO",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/112/square_626a3568337770617030.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 203934,
+      "name": "BM. SANTOÑA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/767/square_64727237756f70706669.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1385901,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 16,
+    "urlStreaming": null,
+    "status": "PENDING",
+    "date": null,
+    "time": null,
+    "localTeam": {
+      "id": 209286,
+      "name": "EZEQUIEL 4VALLES LA ROBLA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/2896/square_6675636c6a6d30346366.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 212098,
+      "name": "CLUB BALONMANO SORIA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/139/square_6a68756a757030356e76.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1385900,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 16,
+    "urlStreaming": null,
+    "status": "PENDING",
+    "date": null,
+    "time": null,
+    "localTeam": {
+      "id": 201150,
+      "name": "HORIZONTE ATLETICA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/69/square_6d6b7235397562793961.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 209246,
+      "name": "ROYAL PREMIUM GIJON",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/488/square_32383967706436617972.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1385899,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 16,
+    "urlStreaming": null,
+    "status": "PENDING",
+    "date": null,
+    "time": null,
+    "localTeam": {
+      "id": 209685,
+      "name": "CLUB BALONMANO CAMARGO",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/115/square_633062667072386c3368.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 218784,
+      "name": "UNIóN FINANCIERA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/439/square_7868636d337739673532.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1385914,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 17,
+    "urlStreaming": null,
+    "status": "PENDING",
+    "date": null,
+    "time": null,
+    "localTeam": {
+      "id": 215350,
+      "name": "RECOLETAS ARROYO CABERO EDIFICACIONES",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/807/square_6d686d673264306d316f.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 204021,
+      "name": "LA FUENTE PEREDA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/100625/square_34397965676d386c7565.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1385913,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 17,
+    "urlStreaming": null,
+    "status": "PENDING",
+    "date": null,
+    "time": null,
+    "localTeam": {
+      "id": 209180,
+      "name": "CONGESA XXI BALONMANO CIUDAD DE SALAMANCA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/135/square_366a6b36366f3834316a.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 212129,
+      "name": "BATHCO BM. TORRELAVEGA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/117/square_73726e3132697065736b.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1385912,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 17,
+    "urlStreaming": null,
+    "status": "PENDING",
+    "date": null,
+    "time": null,
+    "localTeam": {
+      "id": 218714,
+      "name": "BALONMANO CAJA RURAL ZAMORA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/437/square_766f6d6d376d6972346c.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 209500,
+      "name": "AUTO-CENTER PRINCIPADO",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/2898/square_35723432687275366a39.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1385911,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 17,
+    "urlStreaming": null,
+    "status": "PENDING",
+    "date": null,
+    "time": null,
+    "localTeam": {
+      "id": 203934,
+      "name": "BM. SANTOÑA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/767/square_64727237756f70706669.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 201273,
+      "name": "UNIVERSIDAD DE LEóN ADEMAR",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/126/square_70636d736b6d31387577.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1385910,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 17,
+    "urlStreaming": "https://www.youtube.com/live/w6YZeIk9Xfc?si=6aHvJDTxVM9EhH68",
+    "status": "PENDING",
+    "date": null,
+    "time": null,
+    "localTeam": {
+      "id": 212098,
+      "name": "CLUB BALONMANO SORIA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/139/square_6a68756a757030356e76.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 215209,
+      "name": "SDC ASTANDER ASTILLERO",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/112/square_626a3568337770617030.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1385909,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 17,
+    "urlStreaming": null,
+    "status": "PENDING",
+    "date": null,
+    "time": null,
+    "localTeam": {
+      "id": 209246,
+      "name": "ROYAL PREMIUM GIJON",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/488/square_32383967706436617972.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 209286,
+      "name": "EZEQUIEL 4VALLES LA ROBLA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/2896/square_6675636c6a6d30346366.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1385908,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 17,
+    "urlStreaming": null,
+    "status": "PENDING",
+    "date": null,
+    "time": null,
+    "localTeam": {
+      "id": 218784,
+      "name": "UNIóN FINANCIERA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/439/square_7868636d337739673532.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 201150,
+      "name": "HORIZONTE ATLETICA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/69/square_6d6b7235397562793961.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1385907,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 17,
+    "urlStreaming": null,
+    "status": "PENDING",
+    "date": null,
+    "time": null,
+    "localTeam": {
+      "id": 214998,
+      "name": "REAL GRUPO DE CULTURA COVADONGA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/70/square_646e366b316534346e76.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 209685,
+      "name": "CLUB BALONMANO CAMARGO",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/115/square_633062667072386c3368.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1385922,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 18,
+    "urlStreaming": null,
+    "status": "PENDING",
+    "date": null,
+    "time": null,
+    "localTeam": {
+      "id": 215350,
+      "name": "RECOLETAS ARROYO CABERO EDIFICACIONES",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/807/square_6d686d673264306d316f.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 214998,
+      "name": "REAL GRUPO DE CULTURA COVADONGA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/70/square_646e366b316534346e76.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1385921,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 18,
+    "urlStreaming": null,
+    "status": "PENDING",
+    "date": null,
+    "time": null,
+    "localTeam": {
+      "id": 204021,
+      "name": "LA FUENTE PEREDA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/100625/square_34397965676d386c7565.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 209180,
+      "name": "CONGESA XXI BALONMANO CIUDAD DE SALAMANCA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/135/square_366a6b36366f3834316a.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1385920,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 18,
+    "urlStreaming": null,
+    "status": "PENDING",
+    "date": null,
+    "time": null,
+    "localTeam": {
+      "id": 212129,
+      "name": "BATHCO BM. TORRELAVEGA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/117/square_73726e3132697065736b.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 218714,
+      "name": "BALONMANO CAJA RURAL ZAMORA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/437/square_766f6d6d376d6972346c.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1385919,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 18,
+    "urlStreaming": null,
+    "status": "PENDING",
+    "date": null,
+    "time": null,
+    "localTeam": {
+      "id": 209500,
+      "name": "AUTO-CENTER PRINCIPADO",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/2898/square_35723432687275366a39.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 203934,
+      "name": "BM. SANTOÑA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/767/square_64727237756f70706669.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1385918,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 18,
+    "urlStreaming": null,
+    "status": "PENDING",
+    "date": null,
+    "time": null,
+    "localTeam": {
+      "id": 201273,
+      "name": "UNIVERSIDAD DE LEóN ADEMAR",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/126/square_70636d736b6d31387577.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 212098,
+      "name": "CLUB BALONMANO SORIA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/139/square_6a68756a757030356e76.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1385917,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 18,
+    "urlStreaming": null,
+    "status": "PENDING",
+    "date": null,
+    "time": null,
+    "localTeam": {
+      "id": 215209,
+      "name": "SDC ASTANDER ASTILLERO",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/112/square_626a3568337770617030.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 209246,
+      "name": "ROYAL PREMIUM GIJON",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/488/square_32383967706436617972.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1385916,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 18,
+    "urlStreaming": null,
+    "status": "PENDING",
+    "date": null,
+    "time": null,
+    "localTeam": {
+      "id": 209286,
+      "name": "EZEQUIEL 4VALLES LA ROBLA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/2896/square_6675636c6a6d30346366.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 218784,
+      "name": "UNIóN FINANCIERA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/439/square_7868636d337739673532.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1385915,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 18,
+    "urlStreaming": null,
+    "status": "PENDING",
+    "date": null,
+    "time": null,
+    "localTeam": {
+      "id": 201150,
+      "name": "HORIZONTE ATLETICA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/69/square_6d6b7235397562793961.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 209685,
+      "name": "CLUB BALONMANO CAMARGO",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/115/square_633062667072386c3368.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1385930,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 19,
+    "urlStreaming": null,
+    "status": "PENDING",
+    "date": null,
+    "time": null,
+    "localTeam": {
+      "id": 209180,
+      "name": "CONGESA XXI BALONMANO CIUDAD DE SALAMANCA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/135/square_366a6b36366f3834316a.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 215350,
+      "name": "RECOLETAS ARROYO CABERO EDIFICACIONES",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/807/square_6d686d673264306d316f.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1385929,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 19,
+    "urlStreaming": null,
+    "status": "PENDING",
+    "date": null,
+    "time": null,
+    "localTeam": {
+      "id": 218714,
+      "name": "BALONMANO CAJA RURAL ZAMORA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/437/square_766f6d6d376d6972346c.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 204021,
+      "name": "LA FUENTE PEREDA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/100625/square_34397965676d386c7565.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1385928,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 19,
+    "urlStreaming": null,
+    "status": "PENDING",
+    "date": null,
+    "time": null,
+    "localTeam": {
+      "id": 203934,
+      "name": "BM. SANTOÑA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/767/square_64727237756f70706669.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 212129,
+      "name": "BATHCO BM. TORRELAVEGA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/117/square_73726e3132697065736b.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1385927,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 19,
+    "urlStreaming": "https://www.youtube.com/live/oRYj4IzpQiY?si=vdPz_3QwTWA-W6Kp",
+    "status": "PENDING",
+    "date": null,
+    "time": null,
+    "localTeam": {
+      "id": 212098,
+      "name": "CLUB BALONMANO SORIA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/139/square_6a68756a757030356e76.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 209500,
+      "name": "AUTO-CENTER PRINCIPADO",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/2898/square_35723432687275366a39.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1385926,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 19,
+    "urlStreaming": null,
+    "status": "PENDING",
+    "date": null,
+    "time": null,
+    "localTeam": {
+      "id": 209246,
+      "name": "ROYAL PREMIUM GIJON",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/488/square_32383967706436617972.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 201273,
+      "name": "UNIVERSIDAD DE LEóN ADEMAR",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/126/square_70636d736b6d31387577.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1385925,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 19,
+    "urlStreaming": null,
+    "status": "PENDING",
+    "date": null,
+    "time": null,
+    "localTeam": {
+      "id": 218784,
+      "name": "UNIóN FINANCIERA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/439/square_7868636d337739673532.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 215209,
+      "name": "SDC ASTANDER ASTILLERO",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/112/square_626a3568337770617030.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1385924,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 19,
+    "urlStreaming": null,
+    "status": "PENDING",
+    "date": null,
+    "time": null,
+    "localTeam": {
+      "id": 209685,
+      "name": "CLUB BALONMANO CAMARGO",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/115/square_633062667072386c3368.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 209286,
+      "name": "EZEQUIEL 4VALLES LA ROBLA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/2896/square_6675636c6a6d30346366.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1385923,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 19,
+    "urlStreaming": null,
+    "status": "PENDING",
+    "date": null,
+    "time": null,
+    "localTeam": {
+      "id": 214998,
+      "name": "REAL GRUPO DE CULTURA COVADONGA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/70/square_646e366b316534346e76.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 201150,
+      "name": "HORIZONTE ATLETICA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/69/square_6d6b7235397562793961.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1385938,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 20,
+    "urlStreaming": null,
+    "status": "PENDING",
+    "date": null,
+    "time": null,
+    "localTeam": {
+      "id": 209180,
+      "name": "CONGESA XXI BALONMANO CIUDAD DE SALAMANCA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/135/square_366a6b36366f3834316a.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 214998,
+      "name": "REAL GRUPO DE CULTURA COVADONGA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/70/square_646e366b316534346e76.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1385937,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 20,
+    "urlStreaming": null,
+    "status": "PENDING",
+    "date": null,
+    "time": null,
+    "localTeam": {
+      "id": 215350,
+      "name": "RECOLETAS ARROYO CABERO EDIFICACIONES",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/807/square_6d686d673264306d316f.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 218714,
+      "name": "BALONMANO CAJA RURAL ZAMORA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/437/square_766f6d6d376d6972346c.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1385936,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 20,
+    "urlStreaming": null,
+    "status": "PENDING",
+    "date": null,
+    "time": null,
+    "localTeam": {
+      "id": 204021,
+      "name": "LA FUENTE PEREDA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/100625/square_34397965676d386c7565.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 203934,
+      "name": "BM. SANTOÑA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/767/square_64727237756f70706669.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1385935,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 20,
+    "urlStreaming": null,
+    "status": "PENDING",
+    "date": null,
+    "time": null,
+    "localTeam": {
+      "id": 212129,
+      "name": "BATHCO BM. TORRELAVEGA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/117/square_73726e3132697065736b.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 212098,
+      "name": "CLUB BALONMANO SORIA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/139/square_6a68756a757030356e76.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1385934,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 20,
+    "urlStreaming": null,
+    "status": "PENDING",
+    "date": null,
+    "time": null,
+    "localTeam": {
+      "id": 209500,
+      "name": "AUTO-CENTER PRINCIPADO",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/2898/square_35723432687275366a39.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 209246,
+      "name": "ROYAL PREMIUM GIJON",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/488/square_32383967706436617972.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1385933,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 20,
+    "urlStreaming": null,
+    "status": "PENDING",
+    "date": null,
+    "time": null,
+    "localTeam": {
+      "id": 201273,
+      "name": "UNIVERSIDAD DE LEóN ADEMAR",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/126/square_70636d736b6d31387577.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 218784,
+      "name": "UNIóN FINANCIERA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/439/square_7868636d337739673532.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1385932,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 20,
+    "urlStreaming": null,
+    "status": "PENDING",
+    "date": null,
+    "time": null,
+    "localTeam": {
+      "id": 215209,
+      "name": "SDC ASTANDER ASTILLERO",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/112/square_626a3568337770617030.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 209685,
+      "name": "CLUB BALONMANO CAMARGO",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/115/square_633062667072386c3368.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1385931,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 20,
+    "urlStreaming": null,
+    "status": "PENDING",
+    "date": null,
+    "time": null,
+    "localTeam": {
+      "id": 209286,
+      "name": "EZEQUIEL 4VALLES LA ROBLA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/2896/square_6675636c6a6d30346366.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 201150,
+      "name": "HORIZONTE ATLETICA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/69/square_6d6b7235397562793961.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1385946,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 21,
+    "urlStreaming": null,
+    "status": "PENDING",
+    "date": null,
+    "time": null,
+    "localTeam": {
+      "id": 218714,
+      "name": "BALONMANO CAJA RURAL ZAMORA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/437/square_766f6d6d376d6972346c.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 209180,
+      "name": "CONGESA XXI BALONMANO CIUDAD DE SALAMANCA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/135/square_366a6b36366f3834316a.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1385945,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 21,
+    "urlStreaming": null,
+    "status": "PENDING",
+    "date": null,
+    "time": null,
+    "localTeam": {
+      "id": 203934,
+      "name": "BM. SANTOÑA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/767/square_64727237756f70706669.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 215350,
+      "name": "RECOLETAS ARROYO CABERO EDIFICACIONES",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/807/square_6d686d673264306d316f.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1385944,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 21,
+    "urlStreaming": "https://www.youtube.com/live/Csoj58lx-Wo?si=5x2_UFXpdybAE-sk",
+    "status": "PENDING",
+    "date": null,
+    "time": null,
+    "localTeam": {
+      "id": 212098,
+      "name": "CLUB BALONMANO SORIA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/139/square_6a68756a757030356e76.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 204021,
+      "name": "LA FUENTE PEREDA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/100625/square_34397965676d386c7565.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1385943,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 21,
+    "urlStreaming": null,
+    "status": "PENDING",
+    "date": null,
+    "time": null,
+    "localTeam": {
+      "id": 209246,
+      "name": "ROYAL PREMIUM GIJON",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/488/square_32383967706436617972.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 212129,
+      "name": "BATHCO BM. TORRELAVEGA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/117/square_73726e3132697065736b.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1385942,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 21,
+    "urlStreaming": null,
+    "status": "PENDING",
+    "date": null,
+    "time": null,
+    "localTeam": {
+      "id": 218784,
+      "name": "UNIóN FINANCIERA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/439/square_7868636d337739673532.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 209500,
+      "name": "AUTO-CENTER PRINCIPADO",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/2898/square_35723432687275366a39.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1385941,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 21,
+    "urlStreaming": null,
+    "status": "PENDING",
+    "date": null,
+    "time": null,
+    "localTeam": {
+      "id": 209685,
+      "name": "CLUB BALONMANO CAMARGO",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/115/square_633062667072386c3368.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 201273,
+      "name": "UNIVERSIDAD DE LEóN ADEMAR",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/126/square_70636d736b6d31387577.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1385940,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 21,
+    "urlStreaming": null,
+    "status": "PENDING",
+    "date": null,
+    "time": null,
+    "localTeam": {
+      "id": 201150,
+      "name": "HORIZONTE ATLETICA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/69/square_6d6b7235397562793961.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 215209,
+      "name": "SDC ASTANDER ASTILLERO",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/112/square_626a3568337770617030.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1385939,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 21,
+    "urlStreaming": null,
+    "status": "PENDING",
+    "date": null,
+    "time": null,
+    "localTeam": {
+      "id": 214998,
+      "name": "REAL GRUPO DE CULTURA COVADONGA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/70/square_646e366b316534346e76.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 209286,
+      "name": "EZEQUIEL 4VALLES LA ROBLA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/2896/square_6675636c6a6d30346366.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1385954,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 22,
+    "urlStreaming": null,
+    "status": "PENDING",
+    "date": null,
+    "time": null,
+    "localTeam": {
+      "id": 218714,
+      "name": "BALONMANO CAJA RURAL ZAMORA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/437/square_766f6d6d376d6972346c.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 214998,
+      "name": "REAL GRUPO DE CULTURA COVADONGA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/70/square_646e366b316534346e76.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1385953,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 22,
+    "urlStreaming": null,
+    "status": "PENDING",
+    "date": null,
+    "time": null,
+    "localTeam": {
+      "id": 209180,
+      "name": "CONGESA XXI BALONMANO CIUDAD DE SALAMANCA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/135/square_366a6b36366f3834316a.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 203934,
+      "name": "BM. SANTOÑA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/767/square_64727237756f70706669.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1385952,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 22,
+    "urlStreaming": null,
+    "status": "PENDING",
+    "date": null,
+    "time": null,
+    "localTeam": {
+      "id": 215350,
+      "name": "RECOLETAS ARROYO CABERO EDIFICACIONES",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/807/square_6d686d673264306d316f.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 212098,
+      "name": "CLUB BALONMANO SORIA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/139/square_6a68756a757030356e76.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1385951,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 22,
+    "urlStreaming": null,
+    "status": "PENDING",
+    "date": null,
+    "time": null,
+    "localTeam": {
+      "id": 204021,
+      "name": "LA FUENTE PEREDA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/100625/square_34397965676d386c7565.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 209246,
+      "name": "ROYAL PREMIUM GIJON",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/488/square_32383967706436617972.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1385950,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 22,
+    "urlStreaming": null,
+    "status": "PENDING",
+    "date": null,
+    "time": null,
+    "localTeam": {
+      "id": 212129,
+      "name": "BATHCO BM. TORRELAVEGA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/117/square_73726e3132697065736b.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 218784,
+      "name": "UNIóN FINANCIERA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/439/square_7868636d337739673532.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1385949,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 22,
+    "urlStreaming": null,
+    "status": "PENDING",
+    "date": null,
+    "time": null,
+    "localTeam": {
+      "id": 209500,
+      "name": "AUTO-CENTER PRINCIPADO",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/2898/square_35723432687275366a39.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 209685,
+      "name": "CLUB BALONMANO CAMARGO",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/115/square_633062667072386c3368.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1385948,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 22,
+    "urlStreaming": null,
+    "status": "PENDING",
+    "date": null,
+    "time": null,
+    "localTeam": {
+      "id": 201273,
+      "name": "UNIVERSIDAD DE LEóN ADEMAR",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/126/square_70636d736b6d31387577.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 201150,
+      "name": "HORIZONTE ATLETICA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/69/square_6d6b7235397562793961.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1385947,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 22,
+    "urlStreaming": null,
+    "status": "PENDING",
+    "date": null,
+    "time": null,
+    "localTeam": {
+      "id": 215209,
+      "name": "SDC ASTANDER ASTILLERO",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/112/square_626a3568337770617030.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 209286,
+      "name": "EZEQUIEL 4VALLES LA ROBLA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/2896/square_6675636c6a6d30346366.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1385962,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 23,
+    "urlStreaming": null,
+    "status": "PENDING",
+    "date": null,
+    "time": null,
+    "localTeam": {
+      "id": 203934,
+      "name": "BM. SANTOÑA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/767/square_64727237756f70706669.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 218714,
+      "name": "BALONMANO CAJA RURAL ZAMORA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/437/square_766f6d6d376d6972346c.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1385961,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 23,
+    "urlStreaming": "https://www.youtube.com/live/yaoGDXDnmrY?si=8bHRy3B_Rr2ADBL5",
+    "status": "PENDING",
+    "date": null,
+    "time": null,
+    "localTeam": {
+      "id": 212098,
+      "name": "CLUB BALONMANO SORIA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/139/square_6a68756a757030356e76.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 209180,
+      "name": "CONGESA XXI BALONMANO CIUDAD DE SALAMANCA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/135/square_366a6b36366f3834316a.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1385960,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 23,
+    "urlStreaming": null,
+    "status": "PENDING",
+    "date": null,
+    "time": null,
+    "localTeam": {
+      "id": 209246,
+      "name": "ROYAL PREMIUM GIJON",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/488/square_32383967706436617972.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 215350,
+      "name": "RECOLETAS ARROYO CABERO EDIFICACIONES",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/807/square_6d686d673264306d316f.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1385959,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 23,
+    "urlStreaming": null,
+    "status": "PENDING",
+    "date": null,
+    "time": null,
+    "localTeam": {
+      "id": 218784,
+      "name": "UNIóN FINANCIERA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/439/square_7868636d337739673532.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 204021,
+      "name": "LA FUENTE PEREDA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/100625/square_34397965676d386c7565.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1385958,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 23,
+    "urlStreaming": null,
+    "status": "PENDING",
+    "date": null,
+    "time": null,
+    "localTeam": {
+      "id": 209685,
+      "name": "CLUB BALONMANO CAMARGO",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/115/square_633062667072386c3368.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 212129,
+      "name": "BATHCO BM. TORRELAVEGA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/117/square_73726e3132697065736b.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1385957,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 23,
+    "urlStreaming": null,
+    "status": "PENDING",
+    "date": null,
+    "time": null,
+    "localTeam": {
+      "id": 201150,
+      "name": "HORIZONTE ATLETICA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/69/square_6d6b7235397562793961.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 209500,
+      "name": "AUTO-CENTER PRINCIPADO",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/2898/square_35723432687275366a39.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1385956,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 23,
+    "urlStreaming": null,
+    "status": "PENDING",
+    "date": null,
+    "time": null,
+    "localTeam": {
+      "id": 209286,
+      "name": "EZEQUIEL 4VALLES LA ROBLA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/2896/square_6675636c6a6d30346366.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 201273,
+      "name": "UNIVERSIDAD DE LEóN ADEMAR",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/126/square_70636d736b6d31387577.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1385955,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 23,
+    "urlStreaming": null,
+    "status": "PENDING",
+    "date": null,
+    "time": null,
+    "localTeam": {
+      "id": 214998,
+      "name": "REAL GRUPO DE CULTURA COVADONGA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/70/square_646e366b316534346e76.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 215209,
+      "name": "SDC ASTANDER ASTILLERO",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/112/square_626a3568337770617030.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1385970,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 24,
+    "urlStreaming": null,
+    "status": "PENDING",
+    "date": null,
+    "time": null,
+    "localTeam": {
+      "id": 203934,
+      "name": "BM. SANTOÑA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/767/square_64727237756f70706669.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 214998,
+      "name": "REAL GRUPO DE CULTURA COVADONGA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/70/square_646e366b316534346e76.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1385969,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 24,
+    "urlStreaming": null,
+    "status": "PENDING",
+    "date": null,
+    "time": null,
+    "localTeam": {
+      "id": 218714,
+      "name": "BALONMANO CAJA RURAL ZAMORA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/437/square_766f6d6d376d6972346c.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 212098,
+      "name": "CLUB BALONMANO SORIA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/139/square_6a68756a757030356e76.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1385968,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 24,
+    "urlStreaming": null,
+    "status": "PENDING",
+    "date": null,
+    "time": null,
+    "localTeam": {
+      "id": 209180,
+      "name": "CONGESA XXI BALONMANO CIUDAD DE SALAMANCA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/135/square_366a6b36366f3834316a.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 209246,
+      "name": "ROYAL PREMIUM GIJON",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/488/square_32383967706436617972.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1385967,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 24,
+    "urlStreaming": null,
+    "status": "PENDING",
+    "date": null,
+    "time": null,
+    "localTeam": {
+      "id": 215350,
+      "name": "RECOLETAS ARROYO CABERO EDIFICACIONES",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/807/square_6d686d673264306d316f.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 218784,
+      "name": "UNIóN FINANCIERA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/439/square_7868636d337739673532.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1385966,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 24,
+    "urlStreaming": null,
+    "status": "PENDING",
+    "date": null,
+    "time": null,
+    "localTeam": {
+      "id": 204021,
+      "name": "LA FUENTE PEREDA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/100625/square_34397965676d386c7565.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 209685,
+      "name": "CLUB BALONMANO CAMARGO",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/115/square_633062667072386c3368.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1385965,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 24,
+    "urlStreaming": null,
+    "status": "PENDING",
+    "date": null,
+    "time": null,
+    "localTeam": {
+      "id": 212129,
+      "name": "BATHCO BM. TORRELAVEGA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/117/square_73726e3132697065736b.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 201150,
+      "name": "HORIZONTE ATLETICA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/69/square_6d6b7235397562793961.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1385964,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 24,
+    "urlStreaming": null,
+    "status": "PENDING",
+    "date": null,
+    "time": null,
+    "localTeam": {
+      "id": 209500,
+      "name": "AUTO-CENTER PRINCIPADO",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/2898/square_35723432687275366a39.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 209286,
+      "name": "EZEQUIEL 4VALLES LA ROBLA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/2896/square_6675636c6a6d30346366.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1385963,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 24,
+    "urlStreaming": null,
+    "status": "PENDING",
+    "date": null,
+    "time": null,
+    "localTeam": {
+      "id": 201273,
+      "name": "UNIVERSIDAD DE LEóN ADEMAR",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/126/square_70636d736b6d31387577.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 215209,
+      "name": "SDC ASTANDER ASTILLERO",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/112/square_626a3568337770617030.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1385978,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 25,
+    "urlStreaming": "https://www.youtube.com/live/iFj6OvDiyWk?si=pVzsomWe3_xYZhEB",
+    "status": "PENDING",
+    "date": null,
+    "time": null,
+    "localTeam": {
+      "id": 212098,
+      "name": "CLUB BALONMANO SORIA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/139/square_6a68756a757030356e76.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 203934,
+      "name": "BM. SANTOÑA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/767/square_64727237756f70706669.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1385977,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 25,
+    "urlStreaming": null,
+    "status": "PENDING",
+    "date": null,
+    "time": null,
+    "localTeam": {
+      "id": 209246,
+      "name": "ROYAL PREMIUM GIJON",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/488/square_32383967706436617972.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 218714,
+      "name": "BALONMANO CAJA RURAL ZAMORA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/437/square_766f6d6d376d6972346c.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1385976,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 25,
+    "urlStreaming": null,
+    "status": "PENDING",
+    "date": null,
+    "time": null,
+    "localTeam": {
+      "id": 218784,
+      "name": "UNIóN FINANCIERA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/439/square_7868636d337739673532.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 209180,
+      "name": "CONGESA XXI BALONMANO CIUDAD DE SALAMANCA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/135/square_366a6b36366f3834316a.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1385975,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 25,
+    "urlStreaming": null,
+    "status": "PENDING",
+    "date": null,
+    "time": null,
+    "localTeam": {
+      "id": 209685,
+      "name": "CLUB BALONMANO CAMARGO",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/115/square_633062667072386c3368.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 215350,
+      "name": "RECOLETAS ARROYO CABERO EDIFICACIONES",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/807/square_6d686d673264306d316f.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1385974,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 25,
+    "urlStreaming": null,
+    "status": "PENDING",
+    "date": null,
+    "time": null,
+    "localTeam": {
+      "id": 201150,
+      "name": "HORIZONTE ATLETICA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/69/square_6d6b7235397562793961.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 204021,
+      "name": "LA FUENTE PEREDA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/100625/square_34397965676d386c7565.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1385973,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 25,
+    "urlStreaming": null,
+    "status": "PENDING",
+    "date": null,
+    "time": null,
+    "localTeam": {
+      "id": 209286,
+      "name": "EZEQUIEL 4VALLES LA ROBLA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/2896/square_6675636c6a6d30346366.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 212129,
+      "name": "BATHCO BM. TORRELAVEGA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/117/square_73726e3132697065736b.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1385972,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 25,
+    "urlStreaming": null,
+    "status": "PENDING",
+    "date": null,
+    "time": null,
+    "localTeam": {
+      "id": 215209,
+      "name": "SDC ASTANDER ASTILLERO",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/112/square_626a3568337770617030.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 209500,
+      "name": "AUTO-CENTER PRINCIPADO",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/2898/square_35723432687275366a39.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1385971,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 25,
+    "urlStreaming": null,
+    "status": "PENDING",
+    "date": null,
+    "time": null,
+    "localTeam": {
+      "id": 214998,
+      "name": "REAL GRUPO DE CULTURA COVADONGA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/70/square_646e366b316534346e76.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 201273,
+      "name": "UNIVERSIDAD DE LEóN ADEMAR",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/126/square_70636d736b6d31387577.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1385986,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 26,
+    "urlStreaming": "https://www.youtube.com/live/oUyPOwBWGXU?si=5h0HZS62LcBngcQI",
+    "status": "PENDING",
+    "date": null,
+    "time": null,
+    "localTeam": {
+      "id": 212098,
+      "name": "CLUB BALONMANO SORIA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/139/square_6a68756a757030356e76.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 214998,
+      "name": "REAL GRUPO DE CULTURA COVADONGA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/70/square_646e366b316534346e76.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1385985,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 26,
+    "urlStreaming": null,
+    "status": "PENDING",
+    "date": null,
+    "time": null,
+    "localTeam": {
+      "id": 203934,
+      "name": "BM. SANTOÑA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/767/square_64727237756f70706669.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 209246,
+      "name": "ROYAL PREMIUM GIJON",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/488/square_32383967706436617972.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1385984,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 26,
+    "urlStreaming": null,
+    "status": "PENDING",
+    "date": null,
+    "time": null,
+    "localTeam": {
+      "id": 218714,
+      "name": "BALONMANO CAJA RURAL ZAMORA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/437/square_766f6d6d376d6972346c.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 218784,
+      "name": "UNIóN FINANCIERA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/439/square_7868636d337739673532.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1385983,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 26,
+    "urlStreaming": null,
+    "status": "PENDING",
+    "date": null,
+    "time": null,
+    "localTeam": {
+      "id": 209180,
+      "name": "CONGESA XXI BALONMANO CIUDAD DE SALAMANCA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/135/square_366a6b36366f3834316a.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 209685,
+      "name": "CLUB BALONMANO CAMARGO",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/115/square_633062667072386c3368.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1385982,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 26,
+    "urlStreaming": null,
+    "status": "PENDING",
+    "date": null,
+    "time": null,
+    "localTeam": {
+      "id": 215350,
+      "name": "RECOLETAS ARROYO CABERO EDIFICACIONES",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/807/square_6d686d673264306d316f.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 201150,
+      "name": "HORIZONTE ATLETICA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/69/square_6d6b7235397562793961.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1385981,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 26,
+    "urlStreaming": null,
+    "status": "PENDING",
+    "date": null,
+    "time": null,
+    "localTeam": {
+      "id": 204021,
+      "name": "LA FUENTE PEREDA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/100625/square_34397965676d386c7565.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 209286,
+      "name": "EZEQUIEL 4VALLES LA ROBLA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/2896/square_6675636c6a6d30346366.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1385980,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 26,
+    "urlStreaming": null,
+    "status": "PENDING",
+    "date": null,
+    "time": null,
+    "localTeam": {
+      "id": 212129,
+      "name": "BATHCO BM. TORRELAVEGA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/117/square_73726e3132697065736b.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 215209,
+      "name": "SDC ASTANDER ASTILLERO",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/112/square_626a3568337770617030.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1385979,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 26,
+    "urlStreaming": null,
+    "status": "PENDING",
+    "date": null,
+    "time": null,
+    "localTeam": {
+      "id": 209500,
+      "name": "AUTO-CENTER PRINCIPADO",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/2898/square_35723432687275366a39.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 201273,
+      "name": "UNIVERSIDAD DE LEóN ADEMAR",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/126/square_70636d736b6d31387577.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1385994,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 27,
+    "urlStreaming": null,
+    "status": "PENDING",
+    "date": null,
+    "time": null,
+    "localTeam": {
+      "id": 209246,
+      "name": "ROYAL PREMIUM GIJON",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/488/square_32383967706436617972.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 212098,
+      "name": "CLUB BALONMANO SORIA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/139/square_6a68756a757030356e76.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1385993,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 27,
+    "urlStreaming": null,
+    "status": "PENDING",
+    "date": null,
+    "time": null,
+    "localTeam": {
+      "id": 218784,
+      "name": "UNIóN FINANCIERA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/439/square_7868636d337739673532.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 203934,
+      "name": "BM. SANTOÑA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/767/square_64727237756f70706669.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1385992,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 27,
+    "urlStreaming": null,
+    "status": "PENDING",
+    "date": null,
+    "time": null,
+    "localTeam": {
+      "id": 209685,
+      "name": "CLUB BALONMANO CAMARGO",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/115/square_633062667072386c3368.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 218714,
+      "name": "BALONMANO CAJA RURAL ZAMORA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/437/square_766f6d6d376d6972346c.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1385991,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 27,
+    "urlStreaming": null,
+    "status": "PENDING",
+    "date": null,
+    "time": null,
+    "localTeam": {
+      "id": 201150,
+      "name": "HORIZONTE ATLETICA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/69/square_6d6b7235397562793961.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 209180,
+      "name": "CONGESA XXI BALONMANO CIUDAD DE SALAMANCA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/135/square_366a6b36366f3834316a.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1385990,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 27,
+    "urlStreaming": null,
+    "status": "PENDING",
+    "date": null,
+    "time": null,
+    "localTeam": {
+      "id": 209286,
+      "name": "EZEQUIEL 4VALLES LA ROBLA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/2896/square_6675636c6a6d30346366.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 215350,
+      "name": "RECOLETAS ARROYO CABERO EDIFICACIONES",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/807/square_6d686d673264306d316f.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1385989,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 27,
+    "urlStreaming": null,
+    "status": "PENDING",
+    "date": null,
+    "time": null,
+    "localTeam": {
+      "id": 215209,
+      "name": "SDC ASTANDER ASTILLERO",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/112/square_626a3568337770617030.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 204021,
+      "name": "LA FUENTE PEREDA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/100625/square_34397965676d386c7565.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1385988,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 27,
+    "urlStreaming": null,
+    "status": "PENDING",
+    "date": null,
+    "time": null,
+    "localTeam": {
+      "id": 201273,
+      "name": "UNIVERSIDAD DE LEóN ADEMAR",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/126/square_70636d736b6d31387577.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 212129,
+      "name": "BATHCO BM. TORRELAVEGA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/117/square_73726e3132697065736b.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1385987,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 27,
+    "urlStreaming": null,
+    "status": "PENDING",
+    "date": null,
+    "time": null,
+    "localTeam": {
+      "id": 214998,
+      "name": "REAL GRUPO DE CULTURA COVADONGA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/70/square_646e366b316534346e76.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 209500,
+      "name": "AUTO-CENTER PRINCIPADO",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/2898/square_35723432687275366a39.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1386002,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 28,
+    "urlStreaming": null,
+    "status": "PENDING",
+    "date": null,
+    "time": null,
+    "localTeam": {
+      "id": 209246,
+      "name": "ROYAL PREMIUM GIJON",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/488/square_32383967706436617972.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 214998,
+      "name": "REAL GRUPO DE CULTURA COVADONGA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/70/square_646e366b316534346e76.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1386001,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 28,
+    "urlStreaming": "https://www.youtube.com/live/NMOWIf86ZHQ?si=643ifqLvDglD44Mb",
+    "status": "PENDING",
+    "date": null,
+    "time": null,
+    "localTeam": {
+      "id": 212098,
+      "name": "CLUB BALONMANO SORIA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/139/square_6a68756a757030356e76.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 218784,
+      "name": "UNIóN FINANCIERA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/439/square_7868636d337739673532.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1386000,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 28,
+    "urlStreaming": null,
+    "status": "PENDING",
+    "date": null,
+    "time": null,
+    "localTeam": {
+      "id": 203934,
+      "name": "BM. SANTOÑA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/767/square_64727237756f70706669.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 209685,
+      "name": "CLUB BALONMANO CAMARGO",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/115/square_633062667072386c3368.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1385999,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 28,
+    "urlStreaming": null,
+    "status": "PENDING",
+    "date": null,
+    "time": null,
+    "localTeam": {
+      "id": 218714,
+      "name": "BALONMANO CAJA RURAL ZAMORA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/437/square_766f6d6d376d6972346c.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 201150,
+      "name": "HORIZONTE ATLETICA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/69/square_6d6b7235397562793961.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1385998,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 28,
+    "urlStreaming": null,
+    "status": "PENDING",
+    "date": null,
+    "time": null,
+    "localTeam": {
+      "id": 209180,
+      "name": "CONGESA XXI BALONMANO CIUDAD DE SALAMANCA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/135/square_366a6b36366f3834316a.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 209286,
+      "name": "EZEQUIEL 4VALLES LA ROBLA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/2896/square_6675636c6a6d30346366.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1385997,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 28,
+    "urlStreaming": null,
+    "status": "PENDING",
+    "date": null,
+    "time": null,
+    "localTeam": {
+      "id": 215350,
+      "name": "RECOLETAS ARROYO CABERO EDIFICACIONES",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/807/square_6d686d673264306d316f.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 215209,
+      "name": "SDC ASTANDER ASTILLERO",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/112/square_626a3568337770617030.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1385996,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 28,
+    "urlStreaming": null,
+    "status": "PENDING",
+    "date": null,
+    "time": null,
+    "localTeam": {
+      "id": 204021,
+      "name": "LA FUENTE PEREDA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/100625/square_34397965676d386c7565.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 201273,
+      "name": "UNIVERSIDAD DE LEóN ADEMAR",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/126/square_70636d736b6d31387577.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1385995,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 28,
+    "urlStreaming": null,
+    "status": "PENDING",
+    "date": null,
+    "time": null,
+    "localTeam": {
+      "id": 212129,
+      "name": "BATHCO BM. TORRELAVEGA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/117/square_73726e3132697065736b.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 209500,
+      "name": "AUTO-CENTER PRINCIPADO",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/2898/square_35723432687275366a39.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1386010,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 29,
+    "urlStreaming": null,
+    "status": "PENDING",
+    "date": null,
+    "time": null,
+    "localTeam": {
+      "id": 218784,
+      "name": "UNIóN FINANCIERA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/439/square_7868636d337739673532.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 209246,
+      "name": "ROYAL PREMIUM GIJON",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/488/square_32383967706436617972.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1386009,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 29,
+    "urlStreaming": null,
+    "status": "PENDING",
+    "date": null,
+    "time": null,
+    "localTeam": {
+      "id": 209685,
+      "name": "CLUB BALONMANO CAMARGO",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/115/square_633062667072386c3368.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 212098,
+      "name": "CLUB BALONMANO SORIA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/139/square_6a68756a757030356e76.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1386008,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 29,
+    "urlStreaming": null,
+    "status": "PENDING",
+    "date": null,
+    "time": null,
+    "localTeam": {
+      "id": 201150,
+      "name": "HORIZONTE ATLETICA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/69/square_6d6b7235397562793961.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 203934,
+      "name": "BM. SANTOÑA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/767/square_64727237756f70706669.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1386007,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 29,
+    "urlStreaming": null,
+    "status": "PENDING",
+    "date": null,
+    "time": null,
+    "localTeam": {
+      "id": 209286,
+      "name": "EZEQUIEL 4VALLES LA ROBLA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/2896/square_6675636c6a6d30346366.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 218714,
+      "name": "BALONMANO CAJA RURAL ZAMORA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/437/square_766f6d6d376d6972346c.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1386006,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 29,
+    "urlStreaming": null,
+    "status": "PENDING",
+    "date": null,
+    "time": null,
+    "localTeam": {
+      "id": 215209,
+      "name": "SDC ASTANDER ASTILLERO",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/112/square_626a3568337770617030.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 209180,
+      "name": "CONGESA XXI BALONMANO CIUDAD DE SALAMANCA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/135/square_366a6b36366f3834316a.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1386005,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 29,
+    "urlStreaming": null,
+    "status": "PENDING",
+    "date": null,
+    "time": null,
+    "localTeam": {
+      "id": 201273,
+      "name": "UNIVERSIDAD DE LEóN ADEMAR",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/126/square_70636d736b6d31387577.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 215350,
+      "name": "RECOLETAS ARROYO CABERO EDIFICACIONES",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/807/square_6d686d673264306d316f.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1386004,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 29,
+    "urlStreaming": null,
+    "status": "PENDING",
+    "date": null,
+    "time": null,
+    "localTeam": {
+      "id": 209500,
+      "name": "AUTO-CENTER PRINCIPADO",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/2898/square_35723432687275366a39.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 204021,
+      "name": "LA FUENTE PEREDA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/100625/square_34397965676d386c7565.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1386003,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 29,
+    "urlStreaming": null,
+    "status": "PENDING",
+    "date": null,
+    "time": null,
+    "localTeam": {
+      "id": 212129,
+      "name": "BATHCO BM. TORRELAVEGA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/117/square_73726e3132697065736b.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 214998,
+      "name": "REAL GRUPO DE CULTURA COVADONGA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/70/square_646e366b316534346e76.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1386018,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 30,
+    "urlStreaming": null,
+    "status": "PENDING",
+    "date": null,
+    "time": null,
+    "localTeam": {
+      "id": 214998,
+      "name": "REAL GRUPO DE CULTURA COVADONGA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/70/square_646e366b316534346e76.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 218784,
+      "name": "UNIóN FINANCIERA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/439/square_7868636d337739673532.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1386017,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 30,
+    "urlStreaming": null,
+    "status": "PENDING",
+    "date": null,
+    "time": null,
+    "localTeam": {
+      "id": 209246,
+      "name": "ROYAL PREMIUM GIJON",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/488/square_32383967706436617972.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 209685,
+      "name": "CLUB BALONMANO CAMARGO",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/115/square_633062667072386c3368.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1386016,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 30,
+    "urlStreaming": "https://www.youtube.com/live/4kqzPkkk0eg?si=TuphB7TrrsZ4SGIT",
+    "status": "PENDING",
+    "date": null,
+    "time": null,
+    "localTeam": {
+      "id": 212098,
+      "name": "CLUB BALONMANO SORIA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/139/square_6a68756a757030356e76.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 201150,
+      "name": "HORIZONTE ATLETICA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/69/square_6d6b7235397562793961.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1386015,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 30,
+    "urlStreaming": null,
+    "status": "PENDING",
+    "date": null,
+    "time": null,
+    "localTeam": {
+      "id": 203934,
+      "name": "BM. SANTOÑA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/767/square_64727237756f70706669.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 209286,
+      "name": "EZEQUIEL 4VALLES LA ROBLA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/2896/square_6675636c6a6d30346366.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1386014,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 30,
+    "urlStreaming": null,
+    "status": "PENDING",
+    "date": null,
+    "time": null,
+    "localTeam": {
+      "id": 218714,
+      "name": "BALONMANO CAJA RURAL ZAMORA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/437/square_766f6d6d376d6972346c.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 215209,
+      "name": "SDC ASTANDER ASTILLERO",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/112/square_626a3568337770617030.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1386013,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 30,
+    "urlStreaming": null,
+    "status": "PENDING",
+    "date": null,
+    "time": null,
+    "localTeam": {
+      "id": 209180,
+      "name": "CONGESA XXI BALONMANO CIUDAD DE SALAMANCA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/135/square_366a6b36366f3834316a.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 201273,
+      "name": "UNIVERSIDAD DE LEóN ADEMAR",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/126/square_70636d736b6d31387577.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1386012,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 30,
+    "urlStreaming": null,
+    "status": "PENDING",
+    "date": null,
+    "time": null,
+    "localTeam": {
+      "id": 215350,
+      "name": "RECOLETAS ARROYO CABERO EDIFICACIONES",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/807/square_6d686d673264306d316f.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 209500,
+      "name": "AUTO-CENTER PRINCIPADO",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/2898/square_35723432687275366a39.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  },
+  {
+    "id": 1386011,
+    "groupId": null,
+    "stadiumId": null,
+    "uploadedReport": null,
+    "week": 30,
+    "urlStreaming": null,
+    "status": "PENDING",
+    "date": null,
+    "time": null,
+    "localTeam": {
+      "id": 204021,
+      "name": "LA FUENTE PEREDA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/100625/square_34397965676d386c7565.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    },
+    "visitorTeam": {
+      "id": 212129,
+      "name": "BATHCO BM. TORRELAVEGA",
+      "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/117/square_73726e3132697065736b.jpg",
+      "score": 0,
+      "position": null,
+      "responsibleId": null,
+      "category": null
+    }
+  }
+]

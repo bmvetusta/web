@@ -1,7 +1,6 @@
 import type { Redis } from '@upstash/redis';
 import type { z } from 'zod';
 import { ExpiredDataAsError } from './expired-data-as-error';
-import { fetchSignal } from './get-data-by-fetch';
 
 export type RedisStoredObject<T> = {
   data: T;
@@ -34,7 +33,7 @@ export async function getDataFromRedisWithFallbackData<T extends z.ZodType = z.Z
       if (!isRedisStoredObjectExpiredData(data, cacheTTL, now)) {
         // Not expired data
         console.debug('Not expired data');
-        fetchSignal.abort();
+        // fetchSignal.abort();
         return data;
       }
 

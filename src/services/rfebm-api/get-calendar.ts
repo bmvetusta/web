@@ -1,4 +1,4 @@
-import { responseCalendarSchema } from '../../schema/calendar/response';
+import { responseCalendarSchema } from '@schemas/calendar/response';
 import { rfebmAPIFetch } from './rfebm-fetch';
 
 export async function rfebmAPIGetCalendar(groupId?: string | number) {
@@ -10,7 +10,7 @@ export async function rfebmAPIGetCalendar(groupId?: string | number) {
   const body = new URLSearchParams();
   body.append('id_grupo', groupId.toString());
 
-  console.log('Fetching the calendar for the group', { groupId });
+  // console.log('Fetching the calendar for the group', { groupId });
   return rfebmAPIFetch(
     pathname,
     responseCalendarSchema,

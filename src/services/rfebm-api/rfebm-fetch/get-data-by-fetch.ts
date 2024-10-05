@@ -1,8 +1,5 @@
-import { FETCH_TIMEOUT } from 'astro:env/server';
 import { ZodError, type z } from 'zod';
-import { getRFEBMAPIHeaders } from '../base-href';
-
-export const fetchSignal = new AbortController();
+import { getRFEBMAPIHeaders } from '../get-fetch-headers';
 
 export async function getDataByFetch<T extends z.ZodType = z.ZodType>(
   url: URL,
@@ -13,35 +10,26 @@ export async function getDataByFetch<T extends z.ZodType = z.ZodType>(
     method: 'POST',
     body,
     headers: getRFEBMAPIHeaders(),
-    // signal: AbortSignal.timeout(FETCH_TIMEOUT),
-    signal: fetchSignal.signal,
   };
 
   console.time('Fetching the data');
 
-  const timeoutId = setTimeout(() => fetchSignal.abort(), FETCH_TIMEOUT);
-
-  console.log('Fetching the data', { init });
+  // console.log('Fetching the data', { init });
   return fetch(url, init)
-    .then(async (res) => {
-      const text = await res.text().catch(() => {
-        console.error('Error while converting to text the response');
-        return null;
-      });
-      console.log('Fetching response', {
-        status: text,
-      });
-      console.timeLog('Fetching the data');
-
-      const response = JSON.parse(text || 'null');
+    .then((res) => res.json())
+    .then((response) => {
+      console.timeEnd('Fetching the data');
+      // console.log('Fetching response', {
+      //   status: response.status,
+      // });
 
       if (response.status === 'OK') {
         const data = schema.safeParse(response);
 
         if (data.success && data.data) {
-          console.log('Data fetched & parsed correctly', {
-            data: JSON.stringify(Object.keys(data.data)),
-          });
+          // console.log('Data fetched & parsed correctly', {
+          //   data: JSON.stringify(Object.keys(data.data)),
+          // });
           return data.data as T;
         }
 
@@ -73,10 +61,8 @@ export async function getDataByFetch<T extends z.ZodType = z.ZodType>(
       // throw new Error(`Unknown error while fetching "${url.href}"`);
       return null;
     })
-    .catch(() => null)
-    .finally(() => {
-      clearTimeout(timeoutId);
-      console.log('Fetching the data finished');
-      console.timeEnd('Fetching the data');
+    .catch((e) => {
+      console.error('Error while fetching the data', e);
+      return null;
     });
 }
