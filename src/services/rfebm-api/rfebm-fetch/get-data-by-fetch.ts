@@ -1,5 +1,10 @@
+import { PROXY_URL } from 'astro:env/server';
+import { ProxyAgent, setGlobalDispatcher } from 'node:undici';
 import { ZodError, type z } from 'zod';
 import { getRFEBMAPIHeaders } from '../base-href';
+
+const proxyAgent = new ProxyAgent(PROXY_URL);
+setGlobalDispatcher(proxyAgent);
 
 export const fetchSignal = new AbortController();
 
