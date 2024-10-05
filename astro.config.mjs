@@ -74,6 +74,16 @@ export default defineConfig({
         access: 'secret',
         optional: true,
       }),
+      PROXY_USER: envField.string({
+        context: 'server',
+        access: 'secret',
+        optional: true,
+      }),
+      PROXY_PASSWORD: envField.string({
+        context: 'server',
+        access: 'secret',
+        optional: true,
+      }),
     },
   },
   integrations: [react()],
