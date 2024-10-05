@@ -5,8 +5,8 @@ import SocialNetwork from './SocialNetwork.astro';
 import SafariYoutubeVideo from './youtube/SafariYoutubeVideo.astro';
 import YoutubeVideo from './youtube/YoutubeVideo.astro';
 import { getYoutubeVideoIdFromURL } from 'src/services/get-youtube-video-id-from-url';
-import { rfebmAPIGetCalendar } from 'src/services/rfebm-api/get-calendar';
-import { PRIMERA_GROUP_ID } from 'astro:env/server';
+// import { rfebmAPIGetCalendar } from 'src/services/rfebm-api/get-calendar';
+// import { PRIMERA_GROUP_ID } from 'astro:env/server';
 
 export const partial = true;
 let youtubeVideoId, match, isLive;
@@ -19,7 +19,8 @@ if (isChannelLive) {
 
 if (!isChannelLive) {
   const today = new Date();
-  const [dayString, monthString, yearString, _, currentHourString] = today
+  // const [dayString, monthString, yearString, _, currentHourString] = today
+  const [, monthString, , , currentHourString] = today
     .toLocaleTimeString('es-ES', {
       timeZone: 'Europe/Madrid',
       hour12: false,
@@ -29,7 +30,7 @@ if (!isChannelLive) {
       hour: '2-digit',
     })
     .split(/[, \/]/);
-  const sqlCurrentDateString = `${yearString}-${monthString}-${dayString}`;
+  // const sqlCurrentDateString = `${yearString}-${monthString}-${dayString}`;
   // const day = +dayString;
   const month = +monthString;
   const currentHour = +currentHourString;
@@ -76,7 +77,7 @@ if (!isChannelLive) {
   }
 }
 
-console.log({ match: JSON.stringify(match), youtubeVideoId, isLive });
+// console.log({ match: JSON.stringify(match), youtubeVideoId, isLive });
 
 if (!youtubeVideoId && !match) {
   return '';
