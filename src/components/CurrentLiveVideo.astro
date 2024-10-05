@@ -81,14 +81,17 @@ if (!youtubeVideoId && !match) {
 const ua = Astro.request.headers.get('User-Agent');
 const isSafari = ua?.includes('AppleWebKit') && !ua?.includes('Chrome');
 
+const activeMatch = match && ['PENDING', 'PLAYING'].includes(match.status);
 const text =
-  match && !isLive
-    ? `¡GAMEDAY! Partido a las ${match.time}`
+  match && activeMatch && !isLive
+    ? `Partido a las ${match.time}`
     : '¡Estamos jugando! Puedes ver el partido en directo';
 
 const title =
   match && !isLive ? `Hoy se juega a las ${match.time}` : `¡Estamos jugango en directo!`;
 ---
+
+{activeMatch ? <h1>GAMEDAY</h1> : ''}
 
 <SocialNetwork
   icon='yt'
@@ -123,6 +126,12 @@ const title =
 }
 
 <style>
+  h1 {
+    color: tomato;
+    font-size: 2.5rem;
+    text-align: center;
+  }
+
   article {
     border-radius: 1rem;
     padding: 1rem;
