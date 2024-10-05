@@ -1,11 +1,14 @@
 ---
 import { PRIMERA_TEAM_ID, YOUTUBE_CHANNEL } from 'astro:env/server';
-import { isYoutubeChannelLive } from '../services/is-yotube-channel-live';
+import { isYoutubeChannelLive } from 'src/services/is-yotube-channel-live';
 import SocialNetwork from './SocialNetwork.astro';
 import SafariYoutubeVideo from './youtube/SafariYoutubeVideo.astro';
 import YoutubeVideo from './youtube/YoutubeVideo.astro';
 import { getYoutubeVideoIdFromURL } from 'src/services/get-youtube-video-id-from-url';
-import { getCollection } from 'astro:content';
+import calendarData from 'src/content/calendar/data.json' with { type: 'json' };
+import type { responseCalendarSchema } from 'src/schema/calendar/response';
+
+const calendar = (calendarData ?? []) as typeof responseCalendarSchema._output;
 
 const today = new Date();
 const currentTime = today.toLocaleTimeString('es-ES', {
@@ -17,7 +20,11 @@ const currentTime = today.toLocaleTimeString('es-ES', {
 export const partial = true;
 let youtubeVideoId, match, isLive;
 
-function isProbablyEndMatch(startTime: string, now: string) {
+function isProbablyEndMatch(now: string, startTime?: string | null) {
+  if (!startTime) {
+    return true; // Means ended
+  }
+
   const [startHour, startMinute] = startTime.split(':').map(Number);
   const [currentHour, currentMinute] = now.split(':').map(Number);
 
@@ -57,12 +64,11 @@ if (!isChannelLive) {
   if (month <= 6 || month >= 8) {
     // Only in July there are no matchs for sure
     if (currentHour >= 10 && currentHour <= 23) {
-      const matches = await getCollection('calendar').then((data) => data.at(0)?.data);
-
-      match = matches?.find(
-        (match: any) =>
+      match = calendar?.find(
+        (match) =>
           match.date &&
           match.date === sqlCurrentDateString &&
+          !isProbablyEndMatch(currentTime, match.time) &&
           (match.localTeam.id === PRIMERA_TEAM_ID || match.visitorTeam.id === PRIMERA_TEAM_ID)
       );
 
@@ -82,11 +88,7 @@ if (!isChannelLive) {
   }
 }
 
-if (
-  (!youtubeVideoId && !match) ||
-  isProbablyEndMatch(match.time, currentTime) ||
-  (match && !youtubeVideoId)
-) {
+if (!youtubeVideoId && !match) {
   return '';
 }
 
@@ -111,16 +113,20 @@ const title =
       </header>
       <main>
         <p>
-          {match.localTeam.name} - {match.visitorTeam.name}
+          {match!.localTeam.name} - {match!.visitorTeam.name}
         </p>
-        <SocialNetwork
-          icon='yt'
-          href={match!.urlStreaming!}
-          text={text}
-          alt='Logo de Youtube: partido en directo'
-          title={title}
-          style='--link-color: var(--live-color-hex, tomato); --link-alpha-color: 0.9;'
-        />
+        {match!.urlStreaming ? (
+          <SocialNetwork
+            icon='yt'
+            href={match!.urlStreaming}
+            text={text}
+            alt='Logo de Youtube: partido en directo'
+            title={title}
+            style='--link-color: var(--live-color-hex, red); --link-alpha-color: 0.9;'
+          />
+        ) : (
+          <p>No hay enlace para la retransmisión.</p>
+        )}
       </main>
     </section>
   ) : (
@@ -153,7 +159,7 @@ const title =
 
 <style>
   section#match h1 {
-    color: red;
+    color: var(--live-color-hex, red);
     font-size: 2.5rem;
     text-align: center;
   }
