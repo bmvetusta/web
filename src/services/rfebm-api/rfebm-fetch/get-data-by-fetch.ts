@@ -1,4 +1,3 @@
-import { FETCH_TIMEOUT } from 'astro:env/server';
 import { ZodError, type z } from 'zod';
 import { getRFEBMAPIHeaders } from '../base-href';
 
@@ -13,23 +12,28 @@ export async function getDataByFetch<T extends z.ZodType = z.ZodType>(
     method: 'POST',
     body,
     headers: getRFEBMAPIHeaders(),
-    signal: AbortSignal.timeout(FETCH_TIMEOUT),
+    // signal: AbortSignal.timeout(FETCH_TIMEOUT),
     // signal: fetchSignal.signal,
   };
 
+  console.time('Fetching the data');
+
   // const timeoutId = setTimeout(() => fetchSignal.abort(), FETCH_TIMEOUT);
 
-  // console.debug('Fetching the data', { init });
+  console.log('Fetching the data', { init });
   return fetch(url, init)
     .then((res) => res.json())
     .then(async (response: any) => {
-      // console.debug('Fetching response', { status: response?.status });
+      console.log('Fetching response', { status: response?.status });
+      console.timeLog('Fetching the data');
 
       if (response.status === 'OK') {
         const data = schema.safeParse(response);
 
         if (data.success && data.data) {
-          // console.debug('Data fetched & parsed correctly');
+          console.log('Data fetched & parsed correctly', {
+            data: JSON.stringify(Object.keys(data.data)),
+          });
           return data.data as T;
         }
 
@@ -61,7 +65,10 @@ export async function getDataByFetch<T extends z.ZodType = z.ZodType>(
       // throw new Error(`Unknown error while fetching "${url.href}"`);
       return null;
     })
-    .catch(() => null);
+    .catch(() => null)
+    .finally(() => {
+      console.timeEnd('Fetching the data');
+    });
   // .finally(() => {
   //   clearTimeout(timeoutId);
   // });

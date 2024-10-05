@@ -46,6 +46,8 @@ if (!isChannelLive) {
       // Get data
       const weekData = await rfebmAPIGetCalendar(PRIMERA_GROUP_ID);
 
+      console.log({ weekDataElements: weekData?.length });
+
       if (weekData) {
         match = weekData.find(
           (m) =>
@@ -71,7 +73,9 @@ if (!isChannelLive) {
   }
 }
 
-if (!youtubeVideoId) {
+console.log({ match: JSON.stringify(match), youtubeVideoId, isLive });
+
+if (!youtubeVideoId && !match) {
   return '';
 }
 const ua = Astro.request.headers.get('User-Agent');
@@ -96,7 +100,7 @@ const title =
 />
 
 {
-  isLive ? (
+  isLive && youtubeVideoId ? (
     <>
       <article class='live'>
         <header>
