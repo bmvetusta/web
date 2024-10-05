@@ -1,11 +1,12 @@
 import { PROXY_URL } from 'astro:env/server';
-import { ProxyAgent, setGlobalDispatcher } from 'undici';
+import { fetch, ProxyAgent, type RequestInit } from 'undici';
 import { ZodError, type z } from 'zod';
 import { getRFEBMAPIHeaders } from '../base-href';
 
+let proxyAgent: ProxyAgent | null = null;
+
 if (PROXY_URL) {
-  const proxyAgent = new ProxyAgent(PROXY_URL);
-  setGlobalDispatcher(proxyAgent);
+  proxyAgent = new ProxyAgent({ uri: PROXY_URL });
 }
 
 export const fetchSignal = new AbortController();
@@ -19,9 +20,14 @@ export async function getDataByFetch<T extends z.ZodType = z.ZodType>(
     method: 'POST',
     body,
     headers: getRFEBMAPIHeaders(),
+    mode: 'no-cors',
     // signal: AbortSignal.timeout(FETCH_TIMEOUT),
     // signal: fetchSignal.signal,
   };
+
+  if (proxyAgent) {
+    init.dispatcher = proxyAgent;
+  }
 
   console.time('Fetching the data');
 
