@@ -1,16 +1,33 @@
 ---
-// import { PRIMERA_TEAM_ID, YOUTUBE_CHANNEL } from 'astro:env/server';
-import { YOUTUBE_CHANNEL } from 'astro:env/server';
+import { PRIMERA_TEAM_ID, YOUTUBE_CHANNEL } from 'astro:env/server';
 import { isYoutubeChannelLive } from '../services/is-yotube-channel-live';
 import SocialNetwork from './SocialNetwork.astro';
 import SafariYoutubeVideo from './youtube/SafariYoutubeVideo.astro';
 import YoutubeVideo from './youtube/YoutubeVideo.astro';
 import { getYoutubeVideoIdFromURL } from 'src/services/get-youtube-video-id-from-url';
-// import { rfebmAPIGetCalendar } from 'src/services/rfebm-api/get-calendar';
-// import { PRIMERA_GROUP_ID } from 'astro:env/server';
+import { getCollection } from 'astro:content';
 
+const today = new Date();
+const currentTime = today.toLocaleTimeString('es-ES', {
+  timeZone: 'Europe/Madrid',
+  hour12: false,
+  hour: '2-digit',
+  minute: '2-digit',
+});
 export const partial = true;
 let youtubeVideoId, match, isLive;
+
+function isProbablyEndMatch(startTime: string, now: string) {
+  const [startHour, startMinute] = startTime.split(':').map(Number);
+  const [currentHour, currentMinute] = now.split(':').map(Number);
+
+  const probablyEndHour = startHour + 2;
+
+  return (
+    currentHour > probablyEndHour ||
+    (currentHour === probablyEndHour && currentMinute >= startMinute)
+  );
+}
 
 const isChannelLive = await isYoutubeChannelLive(YOUTUBE_CHANNEL);
 
@@ -19,9 +36,8 @@ if (isChannelLive) {
 }
 
 if (!isChannelLive) {
-  const today = new Date();
-  const [, monthString, , , currentHourString] = today
-    // const [dayString, monthString, yearString, _, currentHourString] = today
+  // const [, monthString, , , currentHourString] = today
+  const [dayString, monthString, yearString, _, currentHourString] = today
     .toLocaleTimeString('es-ES', {
       timeZone: 'Europe/Madrid',
       hour12: false,
@@ -30,8 +46,8 @@ if (!isChannelLive) {
       year: 'numeric',
       hour: '2-digit',
     })
-    .split(/[, \/]/);
-  // const sqlCurrentDateString = `${yearString}-${monthString}-${dayString}`;
+    .split(/[, \/:]/);
+  const sqlCurrentDateString = `${yearString}-${monthString}-${dayString}`;
   // const day = +dayString;
   const month = +monthString;
   const currentHour = +currentHourString;
@@ -41,19 +57,14 @@ if (!isChannelLive) {
   if (month <= 6 || month >= 8) {
     // Only in July there are no matchs for sure
     if (currentHour >= 10 && currentHour <= 23) {
-      // Get data
-      // const weekData = await rfebmAPIGetCalendar(PRIMERA_GROUP_ID);
+      const matches = await getCollection('calendar').then((data) => data.at(0)?.data);
 
-      // console.log({ weekDataElements: weekData?.length });
-
-      // if (weekData) {
-      // match = weekData.find(
-      //   (m) =>
-      //     ['PENDING', 'PLAYING'].includes(m.status) &&
-      //     m.date === sqlCurrentDateString &&
-      //     (m.localTeam.id === PRIMERA_TEAM_ID || m.visitorTeam.id === PRIMERA_TEAM_ID)
-      // );
-      match = {} as any;
+      match = matches?.find(
+        (match: any) =>
+          match.date &&
+          match.date === sqlCurrentDateString &&
+          (match.localTeam.id === PRIMERA_TEAM_ID || match.visitorTeam.id === PRIMERA_TEAM_ID)
+      );
 
       if (match && match.urlStreaming) {
         // GAME DAY
@@ -67,16 +78,18 @@ if (!isChannelLive) {
           youtubeVideoId = getYoutubeVideoIdFromURL(match.urlStreaming);
         }
       }
-      // }
     }
   }
 }
 
-// console.log({ match: JSON.stringify(match), youtubeVideoId, isLive });
-
-if (!youtubeVideoId && !match) {
+if (
+  (!youtubeVideoId && !match) ||
+  isProbablyEndMatch(match.time, currentTime) ||
+  (match && !youtubeVideoId)
+) {
   return '';
 }
+
 const ua = Astro.request.headers.get('User-Agent');
 const isSafari = ua?.includes('AppleWebKit') && !ua?.includes('Chrome');
 
