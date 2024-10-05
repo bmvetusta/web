@@ -22,10 +22,17 @@ export async function getDataByFetch<T extends z.ZodType = z.ZodType>(
 
   console.log('Fetching the data', { init });
   return fetch(url, init)
-    .then((res) => res.json())
-    .then(async (response: any) => {
-      console.log('Fetching response', { status: response?.status });
+    .then(async (res) => {
+      const text = await res.text().catch(() => {
+        console.error('Error while converting to text the response');
+        return null;
+      });
+      console.log('Fetching response', {
+        status: text,
+      });
       console.timeLog('Fetching the data');
+
+      const response = JSON.parse(text || 'null');
 
       if (response.status === 'OK') {
         const data = schema.safeParse(response);
@@ -67,6 +74,7 @@ export async function getDataByFetch<T extends z.ZodType = z.ZodType>(
     })
     .catch(() => null)
     .finally(() => {
+      console.log('Fetching the data finished');
       console.timeEnd('Fetching the data');
     });
   // .finally(() => {
