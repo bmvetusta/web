@@ -44,31 +44,34 @@ if (!isChannelLive) {
     // Only in July there are no matchs for sure
     if (currentHour >= 10 && currentHour <= 23) {
       // Get data
-      const weekData = await rfebmAPIGetCalendar(PRIMERA_GROUP_ID);
+      // const weekData = await rfebmAPIGetCalendar(PRIMERA_GROUP_ID);
 
-      console.log({ weekDataElements: weekData?.length });
+      // console.log({ weekDataElements: weekData?.length });
 
-      if (weekData) {
-        match = weekData.find(
-          (m) =>
-            ['PENDING', 'PLAYING'].includes(m.status) &&
-            m.date === sqlCurrentDateString &&
-            (m.localTeam.id === PRIMERA_TEAM_ID || m.visitorTeam.id === PRIMERA_TEAM_ID)
-        );
+      // if (weekData) {
+      // match = weekData.find(
+      //   (m) =>
+      //     ['PENDING', 'PLAYING'].includes(m.status) &&
+      //     m.date === sqlCurrentDateString &&
+      //     (m.localTeam.id === PRIMERA_TEAM_ID || m.visitorTeam.id === PRIMERA_TEAM_ID)
+      // );
+      match = JSON.parse(
+        '{"id":1385799,"groupId":null,"stadiumId":null,"uploadedReport":null,"week":3,"urlStreaming":"https://www.youtube.com/live/dzyPGjuukao?si=bLIZZSqobU3Wh5kS","status":"PENDING","date":"2024-10-05","time":"18:30","localTeam":{"id":203934,"name":"BM. SANTOÑA","shieldUrl":"http://balonmano.isquad.es/images/afiliacion_clubs/767/square_64727237756f70706669.jpg","score":0,"position":null,"responsibleId":null,"category":null},"visitorTeam":{"id":209500,"name":"AUTO-CENTER PRINCIPADO","shieldUrl":"http://balonmano.isquad.es/images/afiliacion_clubs/2898/square_35723432687275366a39.jpg","score":0,"position":null,"responsibleId":null,"category":null}}'
+      );
 
-        if (match && match.urlStreaming) {
-          // GAME DAY
-          isLive = await isYoutubeChannelLive(match.urlStreaming);
+      if (match && match.urlStreaming) {
+        // GAME DAY
+        isLive = await isYoutubeChannelLive(match.urlStreaming);
 
-          if (isLive && isLive !== true) {
-            youtubeVideoId = isLive;
-          }
+        if (isLive && isLive !== true) {
+          youtubeVideoId = isLive;
+        }
 
-          if (!isLive) {
-            youtubeVideoId = getYoutubeVideoIdFromURL(match.urlStreaming);
-          }
+        if (!isLive) {
+          youtubeVideoId = getYoutubeVideoIdFromURL(match.urlStreaming);
         }
       }
+      // }
     }
   }
 }
