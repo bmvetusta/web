@@ -4,8 +4,8 @@ import { RFEBM_API_BASE_HREF } from 'astro:env/server';
 import type { z } from 'zod';
 import { clientUpstash } from '../../upstash/client';
 import { ExpiredDataAsError } from './expired-data-as-error';
-import { getDataByFetch } from './get-data-by-fetch';
 import { getDataFromRedisWithFallbackData } from './get-data-from-redis-with-fallback-data';
+import { requestRFEBMAPIData } from './request-rfebm-api-data';
 
 // export const fetchEmitter = new EventEmitter();
 // export const fetchEventError = 'error:fetch:rfebm';
@@ -51,7 +51,7 @@ export async function rfebmAPIFetch<T extends z.ZodType = z.ZodType>(
 
     return Promise.allSettled([
       getDataFromRedisWithFallbackData(redisKey, cacheTTL, now, redis),
-      getDataByFetch(url, schema, body),
+      requestRFEBMAPIData(url, schema, body),
     ]).then(([redisResolved, fetchResolved]) => {
       // All rejected but with expired data
       if (
@@ -95,5 +95,5 @@ export async function rfebmAPIFetch<T extends z.ZodType = z.ZodType>(
     });
   }
 
-  return getDataByFetch<T>(url, schema, body);
+  return requestRFEBMAPIData<T>(url, schema, body);
 }

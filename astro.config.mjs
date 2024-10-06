@@ -69,11 +69,11 @@ export default defineConfig({
       //   optional: false,
       //   default: 9_000,
       // }),
-      // PROXY_URL: envField.string({
-      //   context: 'server',
-      //   access: 'secret',
-      //   optional: true,
-      // }),
+      PROXY_URL: envField.string({
+        context: 'server',
+        access: 'secret',
+        optional: true,
+      }),
       // PROXY_USER: envField.string({
       //   context: 'server',
       //   access: 'secret',
