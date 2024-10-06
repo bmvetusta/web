@@ -8,11 +8,6 @@ export async function requestRFEBMAPIData<T extends z.ZodType = z.ZodType>(
   body?: URLSearchParams
 ): Promise<z.output<T> | null> {
   const headers = getRFEBMAPIHeaders();
-  const init: RequestInit = {
-    method: 'POST',
-    body,
-    headers: getRFEBMAPIHeaders(),
-  };
 
   return requestWithOptionalProxy(
     url,
