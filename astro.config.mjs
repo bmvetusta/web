@@ -23,6 +23,12 @@ export default defineConfig({
       cssMinify: 'lightningcss',
     },
   },
+  server: {
+    headers: {
+      'Content-Security-Policy':
+        "upgrade-insecure-requests; script-src 'self' static.cloudflareinsights.com; connect-src 'self';media-src 'self' https:;img-src 'self' data: blob: https:;default-src 'none';base-uri 'self';frame-ancestors 'none';style-src 'self' 'unsafe-inline';font-src 'self';manifest-src 'self';",
+    },
+  },
   env: {
     schema: {
       RFEBM_USER_AGENT: envField.string({
