@@ -46,6 +46,22 @@
         {
           "key": "Content-Security-Policy",
           "value": "upgrade-insecure-requests; script-src 'self' https://*.cloudflareinsights.com; connect-src 'self' https://*.cloudflareinsights.com; media-src 'self' https:; img-src 'self' data: blob: https:; object-src 'self'; default-src 'none'; base-uri 'self'; frame-ancestors 'none'; font-src 'self' https://fonts.bunny.net; style-src 'self' https://fonts.bunny.net 'unsafe-inline'; manifest-src 'self';"
+        },
+        {
+          "key": "Access-Control-Allow-Origin",
+          "value": "https://balonmanovetusta.com"
+        },
+        {
+          "key": "Access-Control-Allow-Methods",
+          "value": "GET, POST, OPTIONS"
+        },
+        {
+          "key": "Access-Control-Allow-Headers",
+          "value": "Content-Type, Authorization"
+        },
+        {
+          "key": "Access-Control-Allow-Credentials",
+          "value": "true"
         }
       ]
     }
