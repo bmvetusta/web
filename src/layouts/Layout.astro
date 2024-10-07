@@ -22,7 +22,11 @@ const description = Astro.props.description ?? defaultDescription;
 const twitterDescription =
   Astro.props.twitterDescription ?? Astro.props.description ?? defaultTwitterDescription;
 const type = Astro.props.type ?? 'website';
-const ogImage = Astro.props.ogImage ?? advertMemberImage; // { src, width, height}
+
+const ogImage = new URL(Astro.site!.href);
+ogImage.pathname = Astro.props.ogImage?.src ?? advertMemberImage.src; // { src, width, height}
+
+const { width: ogWidth, height: ogHeight } = Astro.props.ogImage ?? advertMemberImage;
 const ogImageAlt =
   Astro.props.ogImageAlt ??
   'Club Balonmano Vetusta. Abonate y ven a disfrutar del balonmano de Primera Nacional con nosotros.';
@@ -49,12 +53,12 @@ const ogImageAlt =
     />
     <meta property='og:image:alt' content={ogImageAlt} />
     <meta property='og:image:locale' content='es-ES' />
-    <meta property={`og:image`} content={ogImage.src} />
+    <meta property={`og:image`} content={ogImage.href} />
     <meta property={`og:image:type`} content={type} />
-    <meta property={`og:image:width`} content={ogImage.width.toString()} />
-    <meta property={`og:image:height`} content={ogImage.height.toString()} />
+    <meta property={`og:image:width`} content={ogWidth.toString()} />
+    <meta property={`og:image:height`} content={ogHeight.toString()} />
 
-    <link rel='image_src' href={ogImage.src} />
+    <link rel='image_src' href={ogImage.href} />
 
     <meta name='viewport' content='width=device-width, initial-scale=1' />
 
