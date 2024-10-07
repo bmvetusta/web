@@ -25,6 +25,7 @@ export default defineConfig({
   },
   server: {
     headers: {
+      'Cache-Control': 'public, max-age=300, stale-while-revalidate=120',
       'Access-Control-Allow-Origin': 'https://balonmanovetusta.com',
       'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
       'Access-Control-Allow-Headers': 'Content-Type, Authorization',
