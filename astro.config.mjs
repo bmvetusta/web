@@ -26,7 +26,7 @@ export default defineConfig({
   server: {
     headers: {
       'Content-Security-Policy':
-        "upgrade-insecure-requests; script-src 'self' *.cloudflareinsights.com; connect-src 'self' *.cloudflareinsights.com; media-src 'self' https:; img-src 'self' data: blob: https:; default-src 'none'; base-uri 'self'; frame-ancestors 'none'; font-src 'self' fonts.bunny.net; style-src 'self' fonts.bunny.net 'unsafe-inline'; manifest-src 'self';",
+        "upgrade-insecure-requests; script-src 'self' https://*.cloudflareinsights.com; connect-src 'self' https://*.cloudflareinsights.com; media-src 'self' https:; img-src 'self' data: blob: https:; object-src 'self'; default-src 'none'; base-uri 'self'; frame-ancestors 'none'; font-src 'self' https://fonts.bunny.net; style-src 'self' https://fonts.bunny.net 'unsafe-inline'; manifest-src 'self';",
     },
   },
   env: {
