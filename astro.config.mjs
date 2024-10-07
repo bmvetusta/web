@@ -7,6 +7,22 @@ import { site } from './.meta/site-url.mjs';
 // https://astro.build/config
 export default defineConfig({
   site: site.href,
+  integrations: [react()],
+  build: {
+    inlineStylesheets: 'always',
+  },
+  compressHTML: true,
+  output: 'static',
+  adapter: vercel({
+    webAnalytics: { enabled: true },
+    imageService: true,
+    devImageService: 'sharp',
+  }),
+  vite: {
+    build: {
+      cssMinify: 'lightningcss',
+    },
+  },
   env: {
     schema: {
       RFEBM_USER_AGENT: envField.string({
@@ -86,11 +102,4 @@ export default defineConfig({
       // }),
     },
   },
-  integrations: [react()],
-  output: 'static',
-  adapter: vercel({
-    webAnalytics: { enabled: true },
-    imageService: true,
-    devImageService: 'sharp',
-  }),
 });
