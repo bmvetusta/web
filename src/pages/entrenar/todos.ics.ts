@@ -5,18 +5,17 @@ export async function GET() {
   const ics = trainings.map((placeToTrain) => generateTrainingICS(placeToTrain)).join('\n\n');
 
   if (ics) {
-    const filename = `todos.ics`;
+    // const filename = `todos.ics`;
 
-    return new Response(ics, {
-      headers: {
-        'Content-Description': 'File Transfer',
-        'Content-Type': 'application/octet-stream',
-        'Content-Disposition': `attachment; filename=${filename}`,
-      },
-    });
+    return new Response(
+      ics
+      //   {
+      //   headers: {
+      //     'Content-Description': 'File Transfer',
+      //     'Content-Type': 'application/octet-stream',
+      //     'Content-Disposition': `attachment; filename=${filename}`,
+      //   },
+      // }
+    );
   }
-
-  return new Response('', {
-    status: 204,
-  });
 }

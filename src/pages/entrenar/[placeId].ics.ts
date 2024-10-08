@@ -15,21 +15,20 @@ export async function GET({ params: { placeId } }: APIContext<{ placeId: string 
     const ics = generateTrainingICS(placeToTrain);
 
     if (ics) {
-      const filename = `entrenamientos-${placeToTrain.id}.ics`;
+      // const filename = `entrenamientos-${placeToTrain.id}.ics`;
 
-      return new Response(ics, {
-        headers: {
-          'Content-Description': 'File Transfer',
-          'Content-Type': 'application/octet-stream',
-          'Content-Disposition': `attachment; filename=${filename}`,
-        },
-      });
+      return new Response(
+        ics
+        //    {
+        //   headers: {
+        //     'Content-Description': 'File Transfer',
+        //     'Content-Type': 'application/octet-stream',
+        //     'Content-Disposition': `attachment; filename=${filename}`,
+        //   },
+        // }
+      );
     }
   }
-
-  return new Response('', {
-    status: 204,
-  });
 }
 
 export function getStaticPaths() {
