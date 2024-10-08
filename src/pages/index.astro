@@ -10,60 +10,59 @@ export const prerender = true;
 const canonicalUrl = Astro.url.href;
 ---
 
-<style>
-  div#more {
-    display: none;
-  }
-
-  @media (max-height: 720px) {
+<Layout canonicalUrl={canonicalUrl}>
+  <style slot='head'>
     div#more {
-      position: absolute;
-      object-fit: contain;
-      bottom: 0;
-      right: 1rem;
+      display: none;
+    }
+
+    @media (max-height: 720px) {
+      div#more {
+        position: absolute;
+        object-fit: contain;
+        bottom: 0;
+        right: 1rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      div#more span {
+        opacity: 0.8;
+        color: whitesmoke;
+      }
+
+      div#more img {
+        max-width: 64px;
+        max-height: 64px;
+        transform: rotate(90deg);
+        opacity: 0.3;
+      }
+    }
+
+    div.container,
+    article,
+    article > main {
+      direction: ltr;
       display: flex;
       flex-direction: column;
+      place-items: center;
       align-items: center;
+      width: 100%;
+    }
+    article > main {
+      gap: 1rem;
     }
 
-    div#more span {
-      opacity: 0.8;
-      color: whitesmoke;
+    article {
+      gap: 0.5rem;
     }
 
-    div#more img {
-      max-width: 64px;
-      max-height: 64px;
-      transform: rotate(90deg);
-      opacity: 0.3;
+    div.container {
+      margin: 1.5rem auto;
+      gap: 1.5rem;
     }
-  }
-
-  div.container,
-  article,
-  article > main {
-    direction: ltr;
-    display: flex;
-    flex-direction: column;
-    place-items: center;
-    align-items: center;
-    width: 100%;
-  }
-  article > main {
-    gap: 1rem;
-  }
-
-  article {
-    gap: 0.5rem;
-  }
-
-  div.container {
-    margin: 1.5rem auto;
-    gap: 1.5rem;
-  }
-</style>
-
-<Layout canonicalUrl={canonicalUrl}>
+  </style>
   <CurrentLiveVideo server:defer />
   <div class='container'>
     <article id='abonate'>
