@@ -1,5 +1,5 @@
 import { responsePreviousSchema } from 'src/schema/previous/response';
-import { rfebmAPIFetch } from './rfebm-fetch';
+import { rfebmApiFetch } from './core';
 
 export async function rfebmAPIGetPreviousData(matchId?: string | number) {
   if (!matchId) {
@@ -11,7 +11,7 @@ export async function rfebmAPIGetPreviousData(matchId?: string | number) {
   const body = new URLSearchParams();
   body.append('id_partido', matchId.toString());
 
-  return rfebmAPIFetch(
+  return rfebmApiFetch(
     pathname,
     responsePreviousSchema,
     body

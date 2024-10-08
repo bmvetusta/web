@@ -1,5 +1,5 @@
-import { getCurrentSeasonId } from './rfebm-api/get-current-season-id';
 import { rfebmAPIGetTeam } from './rfebm-api/get-team';
+import { getCurrentSeasonId } from './rfebm-api/lib/get-current-season-id';
 
 export async function getTeamCurrentOrNextMatch(
   teamId: string | number,

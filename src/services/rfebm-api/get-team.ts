@@ -1,6 +1,6 @@
 import { responseTeamSchema } from 'src/schema/team/response';
-import { getCurrentSeasonId } from './get-current-season-id';
-import { rfebmAPIFetch } from './rfebm-fetch';
+import { rfebmApiFetch } from './core';
+import { getCurrentSeasonId } from './lib/get-current-season-id';
 
 export async function rfebmAPIGetTeam(
   teamId?: string | number,
@@ -17,7 +17,7 @@ export async function rfebmAPIGetTeam(
   body.append('id_temporada', seasonId.toString());
   body.append('id_ambito', ambitoId.toString());
 
-  return rfebmAPIFetch(
+  return rfebmApiFetch(
     pathname,
     responseTeamSchema,
     body

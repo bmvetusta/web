@@ -1,7 +1,7 @@
 import { responseCalendarSchema } from '@schemas/calendar/response';
-import { rfebmAPIFetch } from './rfebm-fetch';
+import { rfebmApiFetch } from './core';
 
-export async function rfebmAPIGetCalendar(groupId?: string | number) {
+export async function rfebmApiGetCalendar(groupId?: string | number) {
   if (!groupId) {
     return null;
   }
@@ -11,11 +11,5 @@ export async function rfebmAPIGetCalendar(groupId?: string | number) {
   body.append('id_grupo', groupId.toString());
 
   // console.log('Fetching the calendar for the group', { groupId });
-  return rfebmAPIFetch(
-    pathname,
-    responseCalendarSchema,
-    body
-    // ,86400,
-    // true
-  );
+  return rfebmApiFetch(pathname, responseCalendarSchema, body, 86400, true);
 }

@@ -5,10 +5,22 @@ import SocialNetwork from './SocialNetwork.astro';
 import SafariYoutubeVideo from './youtube/SafariYoutubeVideo.astro';
 import YoutubeVideo from './youtube/YoutubeVideo.astro';
 import { getYoutubeVideoIdFromURL } from 'src/services/get-youtube-video-id-from-url';
-import calendarData from 'src/content/calendar/data.json' with { type: 'json' };
+import veryFallbackCalendarData from 'src/content/calendar/data.json' with { type: 'json' };
 import type { responseCalendarSchema } from 'src/schema/calendar/response';
+import { rfebmApiGetCalendar } from 'src/services/rfebm-api/get-calendar';
+import { PRIMERA_GROUP_ID } from 'astro:env/server';
 
-const calendar = (calendarData ?? []) as typeof responseCalendarSchema._output;
+async function getCalendarData() {
+  const data = await rfebmApiGetCalendar(PRIMERA_GROUP_ID);
+
+  if (!data) {
+    return (veryFallbackCalendarData ?? []) as typeof responseCalendarSchema._output;
+  }
+
+  return data;
+}
+
+const calendar = await getCalendarData();
 
 const today = new Date();
 const currentTime = today.toLocaleTimeString('es-ES', {

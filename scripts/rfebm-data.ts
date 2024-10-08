@@ -1,7 +1,7 @@
 #!/usr/bin/env bun
 import { mkdir } from 'node:fs/promises';
 import { dirname, join } from 'node:path';
-import { rfebmAPIGetCalendar } from 'src/services/rfebm-api/get-calendar';
+import { rfebmApiGetCalendar } from 'src/services/rfebm-api/get-calendar';
 import { rfebmAPIGetTeam } from 'src/services/rfebm-api/get-team';
 import { rfebmAPIGetWeeks } from 'src/services/rfebm-api/get-weeks';
 
@@ -16,7 +16,7 @@ const rootPath = Bun.fileURLToPath(rootPathURL);
 // Calendar
 const calendarCollectionPath = join(rootPath, 'src', 'content', 'calendar', 'data.json');
 await mkdir(dirname(calendarCollectionPath), { recursive: true });
-const calendarData = await rfebmAPIGetCalendar(PRIMERA_GROUP_ID);
+const calendarData = await rfebmApiGetCalendar(PRIMERA_GROUP_ID);
 if (calendarData) {
   Bun.write(calendarCollectionPath, JSON.stringify(calendarData, null, 2));
   console.log('Calendar data saved to', calendarCollectionPath);

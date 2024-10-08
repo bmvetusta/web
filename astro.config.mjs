@@ -81,21 +81,16 @@ export default defineConfig({
       //   optional: true,
       //   default: 'UCIL4QnwwTj0h4zFH57K-u9A',
       // }),
-      REDIS_REST_URL: envField.string({
+      REDIS_URL: envField.string({
         context: 'server',
-        access: 'public',
-        optional: false,
-      }),
-      REDIS_REST_TOKEN: envField.string({
-        context: 'server',
-        access: 'public',
-        optional: false,
+        access: 'secret',
+        optional: true,
       }),
       REDIS_TIMEOUT: envField.number({
         context: 'server',
         access: 'public',
-        optional: false,
-        default: 9_000,
+        optional: true,
+        default: 3_000,
       }),
       // FETCH_TIMEOUT: envField.number({
       //   context: 'server',

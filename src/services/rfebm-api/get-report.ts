@@ -1,5 +1,5 @@
 import { z } from 'zod';
-import { rfebmAPIFetch } from './rfebm-fetch';
+import { rfebmApiFetch } from './core';
 
 export async function rfebmAPIGetOfficialReport(
   groupId?: string | number,
@@ -14,5 +14,5 @@ export async function rfebmAPIGetOfficialReport(
   body.append('id_grupo', groupId.toString());
   body.append('id_partido', matchId.toString());
 
-  return rfebmAPIFetch(pathname, z.any(), body); // TODO: Define schema for this endpoint
+  return rfebmApiFetch(pathname, z.any(), body); // TODO: Define schema for this endpoint
 }

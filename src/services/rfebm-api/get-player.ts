@@ -1,5 +1,5 @@
 import { z } from 'zod';
-import { rfebmAPIFetch } from './rfebm-fetch';
+import { rfebmApiFetch } from './core';
 
 export async function rfebmAPIGetOfficialReport(playerId?: string | number) {
   if (!playerId) {
@@ -10,5 +10,5 @@ export async function rfebmAPIGetOfficialReport(playerId?: string | number) {
   const body = new URLSearchParams();
   body.append('id_jugador', playerId.toString());
 
-  return rfebmAPIFetch(pathname, z.any(), body); // TODO: Define schema for this request
+  return rfebmApiFetch(pathname, z.any(), body); // TODO: Define schema for this request
 }

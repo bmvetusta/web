@@ -1,6 +1,6 @@
 const DEFAULT_USER_AGENT = `6&"7*/5*&,?"->(1483>%1*!("%* 0''>8.38-"?",("2#,!$(1>:64?"?,#?*='")*2" =.70IOS`;
 
-export function getRFEBMAPIHeaders() {
+export function getRequestRFEBMApiHeaders() {
   const headers = {
     'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8',
     'Connection': 'keep-alive',

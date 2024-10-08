@@ -1,13 +1,13 @@
 import { requestWithOptionalProxy } from 'src/lib/request-with-optional-proxy';
 import { type z } from 'zod';
-import { getRFEBMAPIHeaders } from '../get-fetch-headers';
+import { getRequestRFEBMApiHeaders } from './get-headers';
 
-export async function requestRFEBMAPIData<T extends z.ZodType = z.ZodType>(
+export async function requestRFEBMApiData<T extends z.ZodType = z.ZodType>(
   url: URL,
   schema: T,
   body?: URLSearchParams
 ): Promise<z.output<T> | null> {
-  const headers = getRFEBMAPIHeaders();
+  const headers = getRequestRFEBMApiHeaders();
 
   return requestWithOptionalProxy(
     url,

@@ -1,5 +1,5 @@
 import { responseWeeksSchema } from '../../schema/weeks/response';
-import { rfebmAPIFetch } from './rfebm-fetch';
+import { rfebmApiFetch } from './core';
 
 export async function rfebmAPIGetWeeks(groupId?: string | number) {
   if (!groupId) {
@@ -10,7 +10,7 @@ export async function rfebmAPIGetWeeks(groupId?: string | number) {
   const body = new URLSearchParams();
   body.append('id_grupo', groupId.toString());
 
-  const responseData = rfebmAPIFetch(
+  const responseData = rfebmApiFetch(
     pathname,
     responseWeeksSchema,
     body

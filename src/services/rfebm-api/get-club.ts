@@ -1,7 +1,7 @@
 import { z } from 'zod';
-import { rfebmAPIFetch } from './rfebm-fetch';
+import { rfebmApiFetch } from './core';
 
-export async function rfebmAPIGetClub(clubId: string | number, ambitoId: string | number = 13) {
+export async function rfebmApiGetClub(clubId: string | number, ambitoId: string | number = 13) {
   if (!clubId) {
     return null;
   }
@@ -11,5 +11,5 @@ export async function rfebmAPIGetClub(clubId: string | number, ambitoId: string 
   body.append('idClub', clubId.toString());
   body.append('id_ambito', ambitoId.toString());
 
-  return rfebmAPIFetch(pathname, z.any(), body); // TODO: Create a schema for the response
+  return rfebmApiFetch(pathname, z.any(), body); // TODO: Create a schema for the response
 }
