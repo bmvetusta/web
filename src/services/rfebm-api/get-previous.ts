@@ -1,7 +1,12 @@
 import { responsePreviousSchema } from 'src/schema/previous/response';
 import { rfebmApiFetch } from './core';
+import { DAY_IN_SECS } from './lib/secs';
 
-export async function rfebmAPIGetPreviousData(matchId?: string | number) {
+export async function rfebmAPIGetPreviousData(
+  matchId?: string | number,
+  cacheTTL: number = DAY_IN_SECS,
+  cacheAsFallback = true
+) {
   if (!matchId) {
     console.error('No matchId for previous data');
     return null;
@@ -11,10 +16,5 @@ export async function rfebmAPIGetPreviousData(matchId?: string | number) {
   const body = new URLSearchParams();
   body.append('id_partido', matchId.toString());
 
-  return rfebmApiFetch(
-    pathname,
-    responsePreviousSchema,
-    body
-    // , 86400, true
-  );
+  return rfebmApiFetch(pathname, responsePreviousSchema, body, cacheTTL, cacheAsFallback);
 }

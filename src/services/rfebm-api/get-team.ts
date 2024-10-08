@@ -1,11 +1,14 @@
 import { responseTeamSchema } from 'src/schema/team/response';
 import { rfebmApiFetch } from './core';
 import { getCurrentSeasonId } from './lib/get-current-season-id';
+import { HOUR_IN_SECS } from './lib/secs';
 
 export async function rfebmAPIGetTeam(
   teamId?: string | number,
   seasonId: string | number = getCurrentSeasonId(),
-  ambitoId: string | number = 1
+  ambitoId: string | number = 1,
+  cacheTTL = HOUR_IN_SECS,
+  cacheAsFallback = true
 ) {
   if (!teamId) {
     return null;
@@ -17,10 +20,5 @@ export async function rfebmAPIGetTeam(
   body.append('id_temporada', seasonId.toString());
   body.append('id_ambito', ambitoId.toString());
 
-  return rfebmApiFetch(
-    pathname,
-    responseTeamSchema,
-    body
-    // , 43200, true
-  );
+  return rfebmApiFetch(pathname, responseTeamSchema, body, cacheTTL, cacheAsFallback);
 }

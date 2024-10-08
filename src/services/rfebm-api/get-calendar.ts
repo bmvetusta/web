@@ -1,7 +1,12 @@
 import { responseCalendarSchema } from '@schemas/calendar/response';
 import { rfebmApiFetch } from './core';
+import { HOUR_IN_SECS } from './lib/secs';
 
-export async function rfebmApiGetCalendar(groupId?: string | number) {
+export async function rfebmApiGetCalendar(
+  groupId?: string | number,
+  cacheTTL = HOUR_IN_SECS,
+  cacheAsFallback = false
+) {
   if (!groupId) {
     return null;
   }
@@ -11,5 +16,5 @@ export async function rfebmApiGetCalendar(groupId?: string | number) {
   body.append('id_grupo', groupId.toString());
 
   // console.log('Fetching the calendar for the group', { groupId });
-  return rfebmApiFetch(pathname, responseCalendarSchema, body, 86400, true);
+  return rfebmApiFetch(pathname, responseCalendarSchema, body, cacheTTL, cacheAsFallback);
 }

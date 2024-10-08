@@ -1,7 +1,12 @@
 import { responseWeeksSchema } from '../../schema/weeks/response';
 import { rfebmApiFetch } from './core';
+import { HOUR_IN_SECS } from './lib/secs';
 
-export async function rfebmAPIGetWeeks(groupId?: string | number) {
+export async function rfebmAPIGetWeeks(
+  groupId?: string | number,
+  cacheTTL = HOUR_IN_SECS,
+  cacheAsFallback = true
+) {
   if (!groupId) {
     return null;
   }
@@ -13,8 +18,9 @@ export async function rfebmAPIGetWeeks(groupId?: string | number) {
   const responseData = rfebmApiFetch(
     pathname,
     responseWeeksSchema,
-    body
-    // , 86400, true
+    body,
+    cacheTTL,
+    cacheAsFallback
   );
 
   return responseData;
