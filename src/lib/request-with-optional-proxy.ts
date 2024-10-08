@@ -1,5 +1,6 @@
 import { Agent } from 'agent-base';
 import { type RequestOptions, request } from 'https';
+import type { InputSchemaType } from 'types';
 import { z } from 'zod';
 
 async function proxyAgentByURL(inputUrl: string | URL): Promise<Agent | undefined> {
@@ -29,9 +30,7 @@ async function proxyAgentByURL(inputUrl: string | URL): Promise<Agent | undefine
   return undefined;
 }
 
-export async function requestWithOptionalProxy<
-  T extends z.ZodType | z.ZodEffects<z.ZodType> = z.ZodAny,
->(
+export async function requestWithOptionalProxy<T extends InputSchemaType>(
   url: string | URL,
   schema: T = z.any() as unknown as T,
   proxyUrl?: string | URL,

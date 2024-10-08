@@ -1,11 +1,16 @@
 import { clientUpstash } from 'src/services/upstash/client';
 import type { z } from 'zod';
+import type { ApiFetcherFactory, InputSchemaType } from '../../../../types';
 import { getSetDataFromToRedis } from './get-set-data-from-to-redis';
 import { requestRFEBMApiData } from './request-rfebm-api-data';
 
 const DEFAULT_RFEBM_API_BASE_HREF = 'https://balonmano.isquad.es';
 const RFEBM_API_BASE_HREF = process.env.RFEBM_API_BASE_HREF ?? DEFAULT_RFEBM_API_BASE_HREF;
 const REDIS_URL = process.env.REDIS_URL;
+
+const defaultFetcher: ApiFetcherFactory =
+  (url: URL, schema: InputSchemaType, body?: URLSearchParams) => () =>
+    requestRFEBMApiData<typeof schema>(url, schema, body);
 
 // Cache & fallback scenarios:
 // 1. If cacheTTL <= 0 & cacheAsFallback === false, the redis cache it is not used and
@@ -21,12 +26,13 @@ const REDIS_URL = process.env.REDIS_URL;
 //
 // Important cached values are updated every time a value is well fetched from rfebm if
 // cacheTTL > 0. This means cacheTTL = 0 will only retrieve fetched result
-export async function rfebmApiFetch<T extends z.ZodType = z.ZodType>(
+export async function rfebmApiFetch<T extends InputSchemaType>(
   pathname: string,
   schema: T,
   body?: URLSearchParams,
   cacheTTL = 0, // In secs
-  cacheAsFallback = false
+  cacheAsFallback = false,
+  apiFetcher: ApiFetcherFactory<T> = defaultFetcher
   // shouldPrintErrorsToConsole = false,
   // shouldEmitErrorsIfFetchFail = true
 ): Promise<z.output<T> | null> {
@@ -38,7 +44,12 @@ export async function rfebmApiFetch<T extends z.ZodType = z.ZodType>(
 
   const redis = clientUpstash()!;
 
-  return getSetDataFromToRedis<T>(url.href, cacheTTL, cacheAsFallback, Date.now(), redis, () =>
-    requestRFEBMApiData<T>(url, schema, body)
+  return getSetDataFromToRedis(
+    url.href,
+    cacheTTL,
+    cacheAsFallback,
+    Date.now(),
+    redis,
+    apiFetcher(url, schema, body)
   ).then((data) => data ?? null);
 }

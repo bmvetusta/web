@@ -1,22 +1,22 @@
 import type Redis from 'ioredis';
 import type { z } from 'zod';
+import type { ApiFetcherFactory, InputSchemaType, RedisStoredObject } from '../../../../types';
 import { ExpiredDataAsError } from './expired-data-as-error';
 import { isRedisStoredObjectExpiredData } from './is-redis-stored-object-expired-data';
-import type { RedisStoredObject } from './types';
 
-export async function getSetDataFromToRedis<T extends z.ZodType = z.ZodType>(
+export async function getSetDataFromToRedis<T extends InputSchemaType>(
   redisKey: string | URL,
   cacheTTL: number,
   cacheAsFallback: boolean,
   now: number,
   redis: Redis,
-  setter: () => Promise<z.output<T> | null>
+  setter: ReturnType<ApiFetcherFactory<T>>
 ): Promise<z.output<T> | null> {
   return redis
     .get(redisKey.toString())
     .then((response) => {
-      const data: RedisStoredObject<z.output<T>> | null = response
-        ? (JSON.parse(response) as RedisStoredObject<z.output<T>>)
+      const data: RedisStoredObject<T> | null = response
+        ? (JSON.parse(response) as RedisStoredObject<T>)
         : null;
       // console.debug('Response from redis ok');
       let isExpired = true;
@@ -53,7 +53,7 @@ export async function getSetDataFromToRedis<T extends z.ZodType = z.ZodType>(
             return null;
           }
 
-          const data: RedisStoredObject<z.output<T>> = {
+          const data: RedisStoredObject<T> = {
             data: fetchedData,
             createdAt: now,
             isFallback: cacheAsFallback,

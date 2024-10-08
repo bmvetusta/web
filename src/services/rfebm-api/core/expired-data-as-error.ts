@@ -1,4 +1,4 @@
-import type { RedisStoredObject } from './types';
+import type { RedisStoredObject } from '../../../../types';
 
 // This is used to retrieve fallback data from Redis if the data is expired
 // In case it is fallback data, it throws this error so the data can be retrieved

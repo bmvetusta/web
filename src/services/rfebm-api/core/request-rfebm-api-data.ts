@@ -2,7 +2,7 @@ import { requestWithOptionalProxy } from 'src/lib/request-with-optional-proxy';
 import { type z } from 'zod';
 import { getRequestRFEBMApiHeaders } from './get-headers';
 
-export async function requestRFEBMApiData<T extends z.ZodType = z.ZodType>(
+export async function requestRFEBMApiData<T extends z.ZodType | z.ZodEffects<z.ZodType> = z.ZodAny>(
   url: URL,
   schema: T,
   body?: URLSearchParams
