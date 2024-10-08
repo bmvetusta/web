@@ -12,7 +12,7 @@ const headers = {
   'Access-Control-Allow-Credentials': 'true',
 };
 
-if (!import.meta.env.DEV) {
+if (import.meta.env.PROD) {
   headers['Access-Control-Allow-Origin'] = site.href;
   // @ts-ignore
   headers['Content-Security-Policy'] =
@@ -39,15 +39,7 @@ export default defineConfig({
     },
   },
   server: {
-    headers: {
-      'Cache-Control': 'public, max-age=300, stale-while-revalidate=120',
-      'Access-Control-Allow-Origin': 'https://balonmanovetusta.com',
-      'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
-      'Access-Control-Allow-Headers': 'Content-Type, Authorization',
-      'Access-Control-Allow-Credentials': 'true',
-      'Content-Security-Policy':
-        "upgrade-insecure-requests; script-src 'self' *.cloudflareinsights.com; connect-src 'self' *.cloudflareinsights.com; media-src 'self' https:; img-src 'self' data: blob: https:; object-src 'self'; default-src 'none'; base-uri 'self'; frame-ancestors 'none'; font-src 'self' https://fonts.bunny.net; style-src 'self' https://fonts.bunny.net 'unsafe-inline'; manifest-src 'self';",
-    },
+    headers,
   },
   env: {
     schema: {
