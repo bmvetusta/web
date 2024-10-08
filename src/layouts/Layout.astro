@@ -1,7 +1,9 @@
 ---
-import advertMemberImage from '@assets/images/abonate2425.png';
 import '@assets/styles/global.css';
 import SpeedInsights from '@vercel/speed-insights/astro';
+
+// const ogImageResource = await import('@assets/images/abonate2425.png').then((mod) => mod.default);
+const ogImageResource = await import('@assets/images/escudo-grande.png').then((mod) => mod.default);
 
 interface Props {
   title?: string;
@@ -24,9 +26,9 @@ const twitterDescription =
 const type = Astro.props.type ?? 'website';
 
 const ogImage = new URL(Astro.site!.href);
-ogImage.pathname = Astro.props.ogImage?.src ?? advertMemberImage.src; // { src, width, height}
+ogImage.pathname = Astro.props.ogImage?.src ?? ogImageResource.src;
 
-const { width: ogWidth, height: ogHeight } = Astro.props.ogImage ?? advertMemberImage;
+const { width: ogWidth, height: ogHeight } = Astro.props.ogImage ?? ogImageResource;
 const ogImageAlt =
   Astro.props.ogImageAlt ??
   'Club Balonmano Vetusta. Abonate y ven a disfrutar del balonmano de Primera Nacional con nosotros.';
