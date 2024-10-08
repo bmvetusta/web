@@ -1,4 +1,3 @@
-import { REDIS_URL } from 'astro:env/server';
 import { clientUpstash } from 'src/services/upstash/client';
 import type { z } from 'zod';
 import { getSetDataFromToRedis } from './get-set-data-from-to-redis';
@@ -6,6 +5,7 @@ import { requestRFEBMApiData } from './request-rfebm-api-data';
 
 const DEFAULT_RFEBM_API_BASE_HREF = 'https://balonmano.isquad.es';
 const RFEBM_API_BASE_HREF = process.env.RFEBM_API_BASE_HREF ?? DEFAULT_RFEBM_API_BASE_HREF;
+const REDIS_URL = process.env.REDIS_URL;
 
 // Cache & fallback scenarios:
 // 1. If cacheTTL <= 0 & cacheAsFallback === false, the redis cache it is not used and

@@ -1,6 +1,6 @@
-import { REDIS_URL } from 'astro:env/server';
 import Redis from 'ioredis';
 
+const REDIS_URL = process.env.REDIS_URL;
 let client: Redis | undefined;
 
 export function clientUpstash() {

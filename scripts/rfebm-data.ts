@@ -39,3 +39,5 @@ if (teamData) {
   await Bun.write(teamCollectionPath, JSON.stringify(teamData, null, 2));
   console.log('Team data saved to', teamCollectionPath);
 }
+
+process.exit(0);

@@ -128,10 +128,10 @@
       "id": 1385802,
       "groupId": 1023856,
       "stadiumId": 1000121,
-      "uploadedReport": false,
+      "uploadedReport": true,
       "week": 3,
       "urlStreaming": "https://youtu.be/43MMHmU1G_w",
-      "status": "PENDING",
+      "status": "ENDED",
       "date": "2024-10-05",
       "time": "20:00",
       "localTeam": {
@@ -140,7 +140,7 @@
         "shieldUrl": "https://www.rfebm.com/competiciones/images/escudos/sinescudo.jpg",
         "score": null,
         "position": null,
-        "responsibleId": 0,
+        "responsibleId": 492,
         "category": "Primera Nacional"
       },
       "visitorTeam": {
@@ -149,7 +149,7 @@
         "shieldUrl": "https://www.rfebm.com/competiciones/images/escudos/sinescudo.jpg",
         "score": null,
         "position": null,
-        "responsibleId": 0,
+        "responsibleId": 1001574,
         "category": "Primera Nacional"
       }
     },
@@ -157,10 +157,10 @@
       "id": 1385801,
       "groupId": 1023856,
       "stadiumId": 1000005,
-      "uploadedReport": false,
+      "uploadedReport": true,
       "week": 3,
       "urlStreaming": "https://www.youtube.com/live/TbldXSNh99k",
-      "status": "PENDING",
+      "status": "ENDED",
       "date": "2024-10-05",
       "time": "19:45",
       "localTeam": {
@@ -169,7 +169,7 @@
         "shieldUrl": "https://www.rfebm.com/competiciones/images/escudos/sinescudo.jpg",
         "score": null,
         "position": null,
-        "responsibleId": 0,
+        "responsibleId": 1058653,
         "category": "Primera Nacional"
       },
       "visitorTeam": {
@@ -178,7 +178,7 @@
         "shieldUrl": "https://www.rfebm.com/competiciones/images/escudos/sinescudo.jpg",
         "score": null,
         "position": null,
-        "responsibleId": 0,
+        "responsibleId": 1042557,
         "category": "Primera Nacional"
       }
     },
@@ -186,10 +186,10 @@
       "id": 1385800,
       "groupId": 1023856,
       "stadiumId": 1000000,
-      "uploadedReport": false,
+      "uploadedReport": true,
       "week": 3,
       "urlStreaming": "https://www.youtube.com/watch?v=52s_mYdrtBA",
-      "status": "PENDING",
+      "status": "ENDED",
       "date": "2024-10-06",
       "time": "12:30",
       "localTeam": {
@@ -198,7 +198,7 @@
         "shieldUrl": "https://www.rfebm.com/competiciones/images/escudos/sinescudo.jpg",
         "score": null,
         "position": null,
-        "responsibleId": 0,
+        "responsibleId": 1156352,
         "category": "Primera Nacional"
       },
       "visitorTeam": {
@@ -207,7 +207,7 @@
         "shieldUrl": "https://www.rfebm.com/competiciones/images/escudos/sinescudo.jpg",
         "score": null,
         "position": null,
-        "responsibleId": 0,
+        "responsibleId": 1040510,
         "category": "Primera Nacional"
       }
     },
@@ -215,10 +215,10 @@
       "id": 1385799,
       "groupId": 1023856,
       "stadiumId": 1000166,
-      "uploadedReport": false,
+      "uploadedReport": true,
       "week": 3,
       "urlStreaming": "https://www.youtube.com/live/dzyPGjuukao?si=bLIZZSqobU3Wh5kS",
-      "status": "PENDING",
+      "status": "ENDED",
       "date": "2024-10-05",
       "time": "18:30",
       "localTeam": {
@@ -227,7 +227,7 @@
         "shieldUrl": "https://www.rfebm.com/competiciones/images/escudos/sinescudo.jpg",
         "score": null,
         "position": null,
-        "responsibleId": 0,
+        "responsibleId": 1121,
         "category": "Primera Nacional"
       },
       "visitorTeam": {
@@ -236,7 +236,7 @@
         "shieldUrl": "https://www.rfebm.com/competiciones/images/escudos/sinescudo.jpg",
         "score": null,
         "position": null,
-        "responsibleId": 0,
+        "responsibleId": 1111733,
         "category": "Primera Nacional"
       }
     },
@@ -244,10 +244,10 @@
       "id": 1385798,
       "groupId": 1023856,
       "stadiumId": 1000055,
-      "uploadedReport": false,
+      "uploadedReport": true,
       "week": 3,
       "urlStreaming": "https://www.youtube.com/live/sSseWTPfcWc?si=B6p54AzLXqhazvRC",
-      "status": "PENDING",
+      "status": "ENDED",
       "date": "2024-10-05",
       "time": "18:00",
       "localTeam": {
@@ -256,7 +256,7 @@
         "shieldUrl": "https://www.rfebm.com/competiciones/images/escudos/sinescudo.jpg",
         "score": null,
         "position": null,
-        "responsibleId": 0,
+        "responsibleId": 1054086,
         "category": "Primera Nacional"
       },
       "visitorTeam": {
@@ -265,7 +265,7 @@
         "shieldUrl": "https://www.rfebm.com/competiciones/images/escudos/sinescudo.jpg",
         "score": null,
         "position": null,
-        "responsibleId": 0,
+        "responsibleId": 41939,
         "category": "Primera Nacional"
       }
     },
@@ -273,10 +273,10 @@
       "id": 1385797,
       "groupId": 1023856,
       "stadiumId": 1000110,
-      "uploadedReport": false,
+      "uploadedReport": true,
       "week": 3,
       "urlStreaming": "https://www.youtube.com/live/PnRv6gGSZbM",
-      "status": "PENDING",
+      "status": "ENDED",
       "date": "2024-10-05",
       "time": "17:00",
       "localTeam": {
@@ -302,10 +302,10 @@
       "id": 1385796,
       "groupId": 1023856,
       "stadiumId": 1000068,
-      "uploadedReport": false,
+      "uploadedReport": true,
       "week": 3,
       "urlStreaming": "https://www.youtube.com/live/b_xURhl3OUU",
-      "status": "PENDING",
+      "status": "ENDED",
       "date": "2024-10-05",
       "time": "18:30",
       "localTeam": {
@@ -314,7 +314,7 @@
         "shieldUrl": "https://www.rfebm.com/competiciones/images/escudos/sinescudo.jpg",
         "score": null,
         "position": null,
-        "responsibleId": 0,
+        "responsibleId": 1055404,
         "category": "Primera Nacional"
       },
       "visitorTeam": {
@@ -323,7 +323,7 @@
         "shieldUrl": "https://www.rfebm.com/competiciones/images/escudos/sinescudo.jpg",
         "score": null,
         "position": null,
-        "responsibleId": 0,
+        "responsibleId": 1002696,
         "category": "Primera Nacional"
       }
     },
@@ -331,10 +331,10 @@
       "id": 1385795,
       "groupId": 1023856,
       "stadiumId": 1000481,
-      "uploadedReport": false,
+      "uploadedReport": true,
       "week": 3,
       "urlStreaming": "https://youtube.com/live/t4D2mLM43dw",
-      "status": "PLAYING",
+      "status": "ENDED",
       "date": "2024-10-05",
       "time": "16:30",
       "localTeam": {
