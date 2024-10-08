@@ -31,8 +31,8 @@ export async function GET({ site, params }: APIContext<{ week: number }>) {
     // const prePath = isVercel ? '../../../../public' : '../../../..';
 
     const fontPaths = [
-      '/assets/fonts/alumni/AlumniSans-Bold.ttf',
-      '/assets/fonts/alumni/AlumniSans-BoldItalic.ttf',
+      '/assets/fonts/alumni/ttf/AlumniSans-Bold.ttf',
+      '/assets/fonts/alumni/ttf/AlumniSans-BoldItalic.ttf',
     ];
     const fonts = await getFontOptionsFromFontPaths(...fontPaths);
 

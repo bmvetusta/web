@@ -2,7 +2,7 @@
 // import { readdir } from 'node:fs/promises';
 import { join } from 'node:path';
 
-const { pathname: fontsPath } = new URL('../public/assets/fonts/alumni', import.meta.url);
+const { pathname: fontsPath } = new URL('../public/assets/fonts/alumni/ttf', import.meta.url);
 
 // const files = await readdir(fontsPath);
 

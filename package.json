@@ -46,7 +46,8 @@
     "lightningcss": "1.27.0",
     "lint-staged": "15.2.10",
     "prettier": "3.3.3",
-    "prettier-plugin-astro": "0.14.1"
+    "prettier-plugin-astro": "0.14.1",
+    "ttf2woff2": "6.0.1"
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx,astro}": "bun lint"
