@@ -154,7 +154,7 @@ export default defineConfig({
       SEND_NOTIFICATION_OK_STATUS: envField.boolean({
         context: 'server',
         access: 'public',
-        optional: true,
+        optional: false,
         default: false,
       }),
     },
