@@ -85,6 +85,11 @@ export default defineConfig({
         access: 'public',
         optional: false,
       }),
+      CLUB_AMBITO_ID: envField.number({
+        context: 'server',
+        access: 'public',
+        optional: false,
+      }),
 
       // Youtube
       YOUTUBE_CHANNEL: envField.string({

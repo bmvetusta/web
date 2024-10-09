@@ -1,10 +1,12 @@
 import type { APIContext } from 'astro';
-import { CLUB_ID, PRIMERA_GROUP_ID, PRIMERA_TEAM_ID } from 'astro:env/server';
+import { CLUB_AMBITO_ID, CLUB_ID, PRIMERA_GROUP_ID, PRIMERA_TEAM_ID } from 'astro:env/server';
 import { sendNotificationPushover } from 'src/services/pushover/send-notification';
 import { rfebmApiGetCalendar } from 'src/services/rfebm-api/get-calendar';
 import { rfebmApiGetClub } from 'src/services/rfebm-api/get-club';
 import { rfebmAPIGetInitialData } from 'src/services/rfebm-api/get-initial-data';
 import { rfebmAPIGetTeam } from 'src/services/rfebm-api/get-team';
+import { getCurrentSeasonId } from 'src/services/rfebm-api/lib/get-current-season-id';
+import { WEEK_IN_SECS } from 'src/services/rfebm-api/lib/secs';
 
 export const prerender = false;
 
@@ -20,13 +22,16 @@ export async function GET({ request }: APIContext) {
     return new Response('Unauthorized', { status: 401 });
   }
 
-  const revalidateResult = await Promise.allSettled([
-    rfebmApiGetCalendar(PRIMERA_GROUP_ID),
-    rfebmAPIGetTeam(PRIMERA_TEAM_ID),
-    rfebmApiGetClub(CLUB_ID),
-    rfebmAPIGetInitialData(),
+  // Next array order is important
+  const promises = [
+    rfebmApiGetCalendar(PRIMERA_GROUP_ID, 86400, true),
+    rfebmAPIGetTeam(PRIMERA_TEAM_ID, getCurrentSeasonId(), 1, 86400, true),
+    rfebmApiGetClub(CLUB_ID, CLUB_AMBITO_ID, 86400, true),
+    rfebmAPIGetInitialData(WEEK_IN_SECS, true),
     fetchIsWorking(),
-  ]).then((results) => {
+  ];
+
+  const revalidateResult = await Promise.allSettled(promises).then((results) => {
     const calendar = results[0].status === 'fulfilled' && results[0].value !== null;
     const team = results[1].status === 'fulfilled' && results[1].value !== null;
     const club = results[2].status === 'fulfilled' && results[2].value !== null;
