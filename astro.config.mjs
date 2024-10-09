@@ -43,6 +43,15 @@ export default defineConfig({
   },
   env: {
     schema: {
+      // App
+      RFEBM_APP_ID: envField.number({
+        context: 'server',
+        access: 'secret',
+        optional: true,
+        default: 1244686472,
+      }),
+
+      // Api
       RFEBM_USER_AGENT: envField.string({
         context: 'server',
         access: 'secret',
@@ -54,6 +63,8 @@ export default defineConfig({
         access: 'public',
         optional: false,
       }),
+
+      // Custom club data to request api
       PRIMERA_GROUP_ID: envField.number({
         context: 'server',
         access: 'public',
@@ -69,6 +80,13 @@ export default defineConfig({
         access: 'public',
         optional: false,
       }),
+      CLUB_ID: envField.number({
+        context: 'server',
+        access: 'public',
+        optional: false,
+      }),
+
+      // Youtube
       YOUTUBE_CHANNEL: envField.string({
         context: 'server',
         access: 'public',
@@ -81,38 +99,64 @@ export default defineConfig({
       //   optional: true,
       //   default: 'UCIL4QnwwTj0h4zFH57K-u9A',
       // }),
+
+      // Redis stuff
       REDIS_URL: envField.string({
         context: 'server',
         access: 'secret',
         optional: true,
       }),
-      REDIS_TIMEOUT: envField.number({
+      REDIS_COMMAND_TIMEOUT: envField.number({
         context: 'server',
         access: 'public',
         optional: true,
-        default: 3_000,
+        default: 2, // seconds
       }),
-      // FETCH_TIMEOUT: envField.number({
-      //   context: 'server',
-      //   access: 'public',
-      //   optional: false,
-      //   default: 9_000,
-      // }),
+      REDIS_CONNECT_TIMEOUT: envField.number({
+        context: 'server',
+        access: 'public',
+        optional: true,
+        default: 3, // seconds
+      }),
+      REDIS_MAX_RETRIES_PER_REQUEST: envField.number({
+        context: 'server',
+        access: 'public',
+        optional: true,
+        default: 3, // seconds
+      }),
+
+      // Request stuff
+      FETCH_TIMEOUT: envField.number({
+        context: 'server',
+        access: 'public',
+        optional: false,
+        default: 5, // seconds
+      }),
       PROXY_URL: envField.string({
         context: 'server',
         access: 'secret',
         optional: true,
       }),
-      // PROXY_USER: envField.string({
-      //   context: 'server',
-      //   access: 'secret',
-      //   optional: true,
-      // }),
-      // PROXY_PASSWORD: envField.string({
-      //   context: 'server',
-      //   access: 'secret',
-      //   optional: true,
-      // }),
+
+      // Pushover
+      PUSHOVER_API_TOKEN: envField.string({
+        context: 'server',
+        access: 'secret',
+        optional: true,
+      }),
+      PUSHOVER_USER_KEY: envField.string({
+        context: 'server',
+        access: 'secret',
+        optional: true,
+      }),
+
+      // Notifications
+      SEND_NOTIFICATION_OK_STATUS: envField.boolean({
+        context: 'server',
+        access: 'public',
+        optional: true,
+        default: false,
+      }),
     },
   },
 });

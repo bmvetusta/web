@@ -2,7 +2,7 @@ import { z } from 'zod';
 import { rfebmApiFetch } from './core';
 import { DAY_IN_SECS } from './lib/secs';
 
-export async function rfebmAPIGetOfficialReport(
+export async function rfebmAPIGetPlayer(
   playerId?: string | number,
   cacheTTL = DAY_IN_SECS,
   cacheAsFallback = true

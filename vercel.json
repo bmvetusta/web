@@ -71,5 +71,15 @@
       "source": "/proxy/:match*",
       "destination": "/:match*"
     }
+  ],
+  "crons": [
+    {
+      "path": "/cron/check",
+      "schedule": "0 8 * * *"
+    },
+    {
+      "path": "/cron/renovate",
+      "schedule": "0 9 * * *"
+    }
   ]
 }

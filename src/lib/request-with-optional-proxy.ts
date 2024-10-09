@@ -30,11 +30,25 @@ async function proxyAgentByURL(inputUrl: string | URL): Promise<Agent | undefine
   return undefined;
 }
 
+function getTimeout(): number {
+  const timeoutString =
+    process.env.REQUEST_TIMEOUT ?? process.env.FETCH_TIMEOUT ?? process.env.TIMEOUT ?? '5';
+  try {
+    return parseInt(timeoutString, 10) * 1000;
+  } catch (e) {}
+
+  return 5000;
+}
+
+const timeout = getTimeout();
+
 export async function requestWithOptionalProxy<T extends InputSchemaType>(
   url: string | URL,
   schema: T = z.any() as unknown as T,
   proxyUrl?: string | URL,
-  options: RequestOptions = {},
+  options: RequestOptions = {
+    timeout,
+  },
   body?: BodyInit
 ): Promise<z.output<T> | null> {
   if (proxyUrl) {
