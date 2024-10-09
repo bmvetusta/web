@@ -3,7 +3,7 @@ import '@assets/styles/global.css';
 import SpeedInsights from '@vercel/speed-insights/astro';
 
 // const ogImageResource = await import('@assets/images/abonate2425.png').then((mod) => mod.default);
-const ogImageResource = await import('@assets/images/escudo-grande.png').then((mod) => mod.default);
+const ogImageResource = { src: '/apple-touch-icon.png', width: 512, height: 512 };
 
 interface Props {
   title?: string;
@@ -25,8 +25,7 @@ const twitterDescription =
   Astro.props.twitterDescription ?? Astro.props.description ?? defaultTwitterDescription;
 const type = Astro.props.type ?? 'website';
 
-const ogImage = new URL(Astro.site!.href);
-ogImage.pathname = Astro.props.ogImage?.src ?? ogImageResource.src;
+const ogImage = new URL(Astro.props.ogImage?.src ?? ogImageResource.src, Astro.site!.href);
 
 const { width: ogWidth, height: ogHeight } = Astro.props.ogImage ?? ogImageResource;
 const ogImageAlt =
