@@ -1,8 +1,10 @@
 import type Redis from 'ioredis';
 import type { z } from 'zod';
-import type { ApiFetcherFactory, InputSchemaType, RedisStoredObject } from '../../../../types';
-import { ExpiredDataAsError } from './expired-data-as-error';
-import { isRedisStoredObjectExpiredData } from './is-redis-stored-object-expired-data';
+import type { ApiFetcherFactory, InputSchemaType, RedisStoredObject } from '../../../types';
+import { ExpiredDataAsError } from '../rfebm-api/core/expired-data-as-error';
+import { isRedisStoredObjectExpiredData } from '../rfebm-api/core/is-redis-stored-object-expired-data';
+import { getJSONTypedRedisData } from './get-json-typed-redis-data';
+import { setJSONTypedRedisData } from './set-json-typed-redis-data';
 
 export async function getSetDataFromToRedis<T extends InputSchemaType>(
   redisKey: string | URL,
@@ -10,14 +12,23 @@ export async function getSetDataFromToRedis<T extends InputSchemaType>(
   cacheAsFallback: boolean,
   now: number,
   redis: Redis,
-  setter: ReturnType<ApiFetcherFactory<T>>
+  setter: ReturnType<ApiFetcherFactory<T>>,
+  forceRevalidate = false
 ): Promise<z.output<T> | null> {
-  return redis
-    .get(redisKey.toString())
-    .then((response) => {
-      const data: RedisStoredObject<T> | null = response
-        ? (JSON.parse(response) as RedisStoredObject<T>)
-        : null;
+  if (forceRevalidate) {
+    return setJSONTypedRedisData(setter(), redis, redisKey.toString(), cacheAsFallback).then(
+      (data: T | null) => {
+        if (data !== null) {
+          return data;
+        }
+
+        return redis.get;
+      }
+    );
+  }
+
+  return getJSONTypedRedisData<T>(redisKey.toString(), redis)
+    .then((data) => {
       // console.debug('Response from redis ok');
       let isExpired = true;
       if (data) {

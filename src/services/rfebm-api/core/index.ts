@@ -1,7 +1,7 @@
 import { clientUpstash } from 'src/services/upstash/client';
 import type { z } from 'zod';
 import type { ApiFetcherFactory, InputSchemaType } from '../../../../types';
-import { getSetDataFromToRedis } from './get-set-data-from-to-redis';
+import { getSetDataFromToRedis } from '../../upstash/get-set-data-from-to-redis';
 import { requestRFEBMApiData } from './request-rfebm-api-data';
 
 const DEFAULT_RFEBM_API_BASE_HREF = 'https://balonmano.isquad.es';
