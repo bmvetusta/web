@@ -5,7 +5,7 @@ import { HOUR_IN_SECS } from './lib/secs';
 export async function rfebmApiGetCalendar(
   groupId?: string | number,
   cacheTTL = HOUR_IN_SECS,
-  cacheAsFallback = false
+  cacheAsFallback = true
 ) {
   if (!groupId) {
     return null;
