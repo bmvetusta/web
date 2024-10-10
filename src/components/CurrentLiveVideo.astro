@@ -10,10 +10,6 @@ import type { responseCalendarSchema } from 'src/schema/calendar/response';
 import { rfebmApiGetCalendar } from 'src/services/rfebm-api/get-calendar';
 import { PRIMERA_GROUP_ID } from 'astro:env/server';
 
-if (Astro.locals && (Astro.locals as any)?.flags && !(Astro.locals as any).flags?.liveMatch) {
-  return '';
-}
-
 async function getCalendarData() {
   const data = await rfebmApiGetCalendar(PRIMERA_GROUP_ID);
 
