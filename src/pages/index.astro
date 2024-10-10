@@ -161,7 +161,6 @@ const canonicalUrl = Astro.url.href;
         // }
 
         if (isIntersecting.length > 0) {
-          console.log(isIntersecting);
           const mostVisible = isIntersecting.sort((a, b) => b.ratio - a.ratio).at(0)!;
           changeToUrl(`/#${mostVisible.id}`);
         }
