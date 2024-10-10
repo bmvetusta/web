@@ -10,7 +10,8 @@
       "@pages/*": ["src/pages/*"],
       "@styles/*": ["src/assets/styles/*"],
       "@assets/*": ["src/assets/*"],
-      "@public/*": ["public/*"]
+      "@public/*": ["public/*"],
+      "@well-known/*": ["src/pages/.well-known/*"]
     },
     "jsx": "react-jsx",
     "jsxImportSource": "react",

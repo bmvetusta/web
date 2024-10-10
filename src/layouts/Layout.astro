@@ -69,6 +69,20 @@ const ogImageAlt =
 
     <meta name='generator' content={Astro.generator} />
     <link href='/assets/fonts/alumni/font.css' rel='stylesheet' />
+
+    {
+      import.meta.env.DEV ? (
+        <script
+          is:inline
+          src='https://vercel.live/_next-live/feedback/feedback.js'
+          data-explicit-opt-in='true'
+          data-owner-id='team_SWV2WCFVpror0AEYlrVWSXNP'
+          data-project-id='prj_lBjgsJUTi19egFHcFtPzXGdYYT87'
+          data-branch='main'
+        />
+      ) : null
+    }
+
     <SpeedInsights />
     <slot name='head' />
   </head>
