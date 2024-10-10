@@ -62,6 +62,17 @@ const canonicalUrl = Astro.url.href;
       margin: 1.5rem auto;
       gap: 1.5rem;
     }
+
+    header {
+      display: flex;
+      flex-direction: row;
+      gap: 0.5rem;
+      align-items: center;
+    }
+
+    header a[href^='#'] {
+      text-decoration: none;
+    }
   </style>
   <CurrentLiveVideo server:defer />
   <div class='container'>
@@ -78,8 +89,9 @@ const canonicalUrl = Astro.url.href;
       </main>
     </article>
 
-    <article id='redes'>
+    <article id='redes-sociales'>
       <header>
+        <a href='#redes-sociales' title='Redes sociales del club'>🔗</a>
         <h2>Redes Sociales</h2>
       </header>
       <main>
@@ -111,6 +123,7 @@ const canonicalUrl = Astro.url.href;
 
     <article id='entrena'>
       <header>
+        <a href='#entrena' title='Calendario y sitios donde entrenar con nosotros en Oviedo'>🔗</a>
         <h2>¿Dónde entrenar con nostros?</h2>
       </header>
       <main>
@@ -124,3 +137,38 @@ const canonicalUrl = Astro.url.href;
   <img id='more' aria-hidden='true' src='/assets/images/arrow-right.svg' alt='Más contenido' />
   <span>Ver más</span>
 </div>
+
+<script>
+  function changeToUrl(url: string) {
+    window.history.replaceState(null, '', url);
+  }
+  const elementsWithId = Array.from(document.querySelectorAll('[id]:not(#more)'));
+  elementsWithId.forEach((element) => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const isIntersecting: { id: string; ratio: number }[] = [];
+
+        entries.forEach((entry) => {
+          const id = entry.target.getAttribute('id')!;
+          const ratio = entry.intersectionRatio;
+          if (id && ratio > 0.3) {
+            isIntersecting.push({ id, ratio });
+          }
+        });
+
+        // if (isIntersecting.length === 0) {
+        //   changeToUrl('/');
+        // }
+
+        if (isIntersecting.length > 0) {
+          console.log(isIntersecting);
+          const mostVisible = isIntersecting.sort((a, b) => b.ratio - a.ratio).at(0)!;
+          changeToUrl(`/#${mostVisible.id}`);
+        }
+      },
+      { threshold: 0.3 }
+    );
+
+    observer.observe(element);
+  });
+</script>
