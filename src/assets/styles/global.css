@@ -65,6 +65,13 @@ h6 {
 
 p {
   opacity: var(--primary-text-alpha, 0.8);
+  text-wrap: balance;
+}
+
+@supports (text-wrap: pretty) {
+  p {
+    text-wrap: pretty;
+  }
 }
 
 a,
