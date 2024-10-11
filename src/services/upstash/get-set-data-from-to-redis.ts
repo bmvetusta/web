@@ -71,7 +71,7 @@ export async function getSetDataFromToRedis<T extends InputSchemaType>(
           };
 
           return redis.set(redisKey.toString(), JSON.stringify(data)).then(() => {
-            if (cacheTTL > 0) {
+            if (cacheTTL > 0 && !cacheAsFallback) {
               return redis
                 .expire(redisKey.toString(), cacheTTL)
                 .then(() => fetchedData)
