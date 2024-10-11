@@ -75,11 +75,11 @@
   "crons": [
     {
       "path": "/cron/check",
-      "schedule": "0 8 * * *"
+      "schedule": "0 4 * * *"
     },
     {
       "path": "/cron/renovate",
-      "schedule": "0 9 * * *"
+      "schedule": "0 6 * * *"
     }
   ]
 }
