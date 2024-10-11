@@ -1,9 +1,41 @@
 ---
-import { PRIMERA_GROUP_ID, PRIMERA_TEAM_ID } from 'astro:env/server';
+import { PRIMERA_GROUP_ID, PRIMERA_TEAM_ID, YOUTUBE_CHANNEL } from 'astro:env/server';
 import veryFallbackCalendarData from 'src/content/calendar/data.json' with { type: 'json' };
 import type { responseCalendarSchema } from 'src/schema/calendar/response';
+import { getYoutubeVideoIdFromURL } from 'src/services/get-youtube-video-id-from-url';
 import { isYoutubeChannelLive } from 'src/services/is-yotube-channel-live';
 import { rfebmApiGetCalendar } from 'src/services/rfebm-api/get-calendar';
+import YoutubeLiveVideo from './YoutubeLiveVideo.astro';
+
+export const partial = true;
+
+const today = new Date();
+const currentFullTime = today.toLocaleTimeString('es-ES', {
+  timeZone: 'Europe/Madrid',
+  hour12: false,
+  hour: '2-digit',
+  minute: '2-digit',
+});
+
+function getProbablyMatchStatus(matchDate?: string | null, matchTime?: string | null) {
+  if (!matchDate || !matchTime) {
+    return 'PENDING';
+  }
+
+  const [matchHour, matchMinute] = matchTime.split(':').map(Number);
+  const gameDate = new Date(Date.parse(`${matchDate}T${matchTime}:00`));
+  const estimatedEndTime = new Date(Date.parse(`${matchDate}T${matchHour + 2}:${matchMinute}:00`));
+
+  if (today < gameDate) {
+    return 'PENDING';
+  }
+
+  if (today >= gameDate && today < estimatedEndTime) {
+    return 'PLAYING';
+  }
+
+  return 'ENDED';
+}
 
 async function getTeamMatches() {
   const data = await rfebmApiGetCalendar(PRIMERA_GROUP_ID)
@@ -26,14 +58,45 @@ const match =
   teamMatches.find((match) => ['PENDING', 'PLAYING'].includes(match.status)) ??
   teamMatches.findLast((match) => match.status === 'ENDED');
 
-if (!match) {
+const isOwnChannelLive = await isYoutubeChannelLive(YOUTUBE_CHANNEL);
+
+if (!match && !isOwnChannelLive) {
   return;
 }
 
-const isPlaying = match?.status === 'PLAYING';
-const isEnded = match?.status === 'ENDED';
-const isPending = match?.status === 'PENDING';
+const probablyMatchStatus = getProbablyMatchStatus(match?.date, match?.time);
 
-const isLiveVideoId =
-  (isPlaying || isEnded) && match.urlStreaming ? isYoutubeChannelLive(match.urlStreaming) : null;
+const isPlaying = match?.status === 'PLAYING' || probablyMatchStatus === 'PLAYING';
+const isEnded = match?.status === 'ENDED' || probablyMatchStatus === 'ENDED';
+const isPending = match?.status === 'PENDING' || probablyMatchStatus === 'PENDING';
+const isProbablyLiveVideo = isPlaying && match?.urlStreaming && (isPlaying || isPending);
+const isLiveVideo = isProbablyLiveVideo ? await isYoutubeChannelLive(match.urlStreaming!) : false;
+const youtubeVideoId =
+  typeof isLiveVideo === 'string'
+    ? isLiveVideo
+    : isLiveVideo && match?.urlStreaming
+      ? getYoutubeVideoIdFromURL(match.urlStreaming)
+      : '';
+
+const isTodayMatch = match?.date === today.toISOString().split('T')[0];
 ---
+
+{
+  isLiveVideo ? (
+    <YoutubeLiveVideo
+      isLiveVideo={!!isLiveVideo}
+      youtubeVideoId={youtubeVideoId ?? YOUTUBE_CHANNEL}
+    />
+  ) : (
+    ''
+  )
+}
+
+
+{isTodayMatch ? (<>
+<h2>GAMEDAY</h2>
+{}
+</>) : ''}
+
+
+{isPending ? <></> : ''}
