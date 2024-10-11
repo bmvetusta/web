@@ -18,7 +18,11 @@ async function fetchIsWorking() {
 }
 
 export async function GET({ request }: APIContext) {
-  if (request.headers.get('authorization') !== process.env.CRON_SECRET) {
+  if (
+    !process.env.CRON_SECRET ||
+    request.headers.get('authorization')?.includes(process.env.CRON_SECRET) // `Bearer ${process.env.CRON_SECRET}`
+  ) {
+    console.error('Unauthorized call to check cronjob');
     return new Response('Unauthorized', { status: 401 });
   }
 
