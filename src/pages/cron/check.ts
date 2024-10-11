@@ -40,11 +40,13 @@ async function checkProxy() {
 
 export async function GET({ request }: APIContext) {
   if (request.headers.get('authorization') !== process.env.CRON_SECRET) {
+    console.error('Unauthorized call to check cronjob');
     return new Response('Unauthorized', { status: 401 });
   }
 
   const message = await Promise.allSettled([appHasChangedVersion(), checkProxy()])
     .then(async (results) => {
+      console.log('Results', results);
       let text = '';
       if (results[0].status === 'fulfilled' && results[0].value) {
         text += 'Ha cambiado la versión de la app de RFEBM\n';
@@ -65,6 +67,7 @@ export async function GET({ request }: APIContext) {
       return 'Ocurrió algún error desconocido comprobando el proxy y la versión de la app';
     });
 
+  console.log('Message', message);
   if (message.length > 0) {
     const notification = await sendNotificationPushover({ message });
     if (!notification) {
