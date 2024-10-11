@@ -14,3 +14,7 @@ export type RedisStoredObject<T extends InputSchemaType> = {
   createdAt: number;
   isFallback: boolean;
 };
+
+export type CacheCondition<T extends z.ZodType | z.ZodEffects<z.ZodType> = z.ZodTypeAny> = (
+  data: z.output<T>
+) => boolean;

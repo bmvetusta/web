@@ -1,0 +1,64 @@
+{
+  "status": "OK",
+  "acta": {
+    "estado": "pendiente",
+    "jugadores": [],
+    "goles": [],
+    "amonestaciones": [],
+    "eventos": [],
+    "sustituciones": [],
+    "minutos_jugados": 60,
+    "minutos_parte": 30,
+    "numero_partes": 2,
+    "urlActaPartido": "https://balonmano.isquad.es/acta_completa_pdf.php?id_partido=1385803",
+    "estadisticasPartido": [],
+    "resultado": null,
+    "resultado_local": "",
+    "resultado_visitante": "",
+    "resultado_local_penaltis": null,
+    "resultado_visitante_penaltis": null,
+    "tipo_partido": 1,
+    "sets": [
+      {
+        "id": "1",
+        "nombre": "Set1",
+        "resultado_local": null,
+        "resultado_visitante": null,
+        "tiebreak_local": null,
+        "tiebreak_visitante": null
+      },
+      {
+        "id": "2",
+        "nombre": "Set2",
+        "resultado_local": null,
+        "resultado_visitante": null,
+        "tiebreak_local": null,
+        "tiebreak_visitante": null
+      },
+      {
+        "id": "3",
+        "nombre": "set3",
+        "resultado_local": null,
+        "resultado_visitante": null,
+        "tiebreak_local": null,
+        "tiebreak_visitante": null
+      },
+      {
+        "id": "4",
+        "nombre": "Set4",
+        "resultado_local": null,
+        "resultado_visitante": null,
+        "tiebreak_local": null,
+        "tiebreak_visitante": null
+      },
+      {
+        "id": "5",
+        "nombre": "Set5",
+        "resultado_local": null,
+        "resultado_visitante": null,
+        "tiebreak_local": null,
+        "tiebreak_visitante": null
+      }
+    ]
+  }
+}

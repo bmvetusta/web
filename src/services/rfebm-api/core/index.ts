@@ -33,8 +33,6 @@ export async function rfebmApiFetch<T extends InputSchemaType>(
   cacheTTL = 0, // In secs
   cacheAsFallback = false,
   apiFetcher: ApiFetcherFactory<T> = defaultFetcher
-  // shouldPrintErrorsToConsole = false,
-  // shouldEmitErrorsIfFetchFail = true
 ): Promise<z.output<T> | null> {
   const url = new URL(pathname, RFEBM_API_BASE_HREF);
 

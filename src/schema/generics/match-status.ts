@@ -14,16 +14,16 @@ export const transformableMatchStatusSchema = z
   .default('unknown')
   // .enum(['Finalizado', 'Pendiente', 'en progreso', 'Finalizado por exclusion', 'Suspendido'])
   .transform((v) => {
-    switch (v) {
-      case 'Finalizado':
+    switch (v.toLocaleLowerCase('es-ES')) {
+      case 'finalizado':
         return 'ENDED';
-      case 'Finalizado por exclusion':
+      case 'finalizado por exclusion':
         return 'ENDED BY SUSPENSIONS';
       case 'en progreso':
         return 'PLAYING';
-      case 'Pendiente':
+      case 'pendiente':
         return 'PENDING';
-      case 'Suspendido':
+      case 'suspendido':
         return 'SUSPENDED';
       default:
         return 'UNKNOWN';

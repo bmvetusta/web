@@ -1,0 +1,39 @@
+---
+import { PRIMERA_GROUP_ID, PRIMERA_TEAM_ID } from 'astro:env/server';
+import veryFallbackCalendarData from 'src/content/calendar/data.json' with { type: 'json' };
+import type { responseCalendarSchema } from 'src/schema/calendar/response';
+import { isYoutubeChannelLive } from 'src/services/is-yotube-channel-live';
+import { rfebmApiGetCalendar } from 'src/services/rfebm-api/get-calendar';
+
+async function getTeamMatches() {
+  const data = await rfebmApiGetCalendar(PRIMERA_GROUP_ID)
+    .then((data) => {
+      if (!data) {
+        throw new Error('No data available');
+      }
+
+      return data;
+    })
+    .catch(() => veryFallbackCalendarData as typeof responseCalendarSchema._output);
+
+  return data.filter(
+    (match) => match.localTeam.id === PRIMERA_TEAM_ID || match.visitorTeam.id === PRIMERA_TEAM_ID
+  );
+}
+
+const teamMatches = await getTeamMatches();
+const match =
+  teamMatches.find((match) => ['PENDING', 'PLAYING'].includes(match.status)) ??
+  teamMatches.findLast((match) => match.status === 'ENDED');
+
+if (!match) {
+  return;
+}
+
+const isPlaying = match?.status === 'PLAYING';
+const isEnded = match?.status === 'ENDED';
+const isPending = match?.status === 'PENDING';
+
+const isLiveVideoId =
+  (isPlaying || isEnded) && match.urlStreaming ? isYoutubeChannelLive(match.urlStreaming) : null;
+---
