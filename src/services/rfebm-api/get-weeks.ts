@@ -5,7 +5,9 @@ import { HOUR_IN_SECS } from './lib/secs';
 export async function rfebmAPIGetWeeks(
   groupId?: string | number,
   cacheTTL = HOUR_IN_SECS,
-  cacheAsFallback = true
+  cacheAsFallback = true,
+  forceRevalidate = false,
+  forceCachedDataIfTruthy = false
 ) {
   if (!groupId) {
     return null;
@@ -20,7 +22,9 @@ export async function rfebmAPIGetWeeks(
     responseWeeksSchema,
     body,
     cacheTTL,
-    cacheAsFallback
+    cacheAsFallback,
+    forceRevalidate,
+    forceCachedDataIfTruthy
   );
 
   return responseData;

@@ -6,7 +6,9 @@ export async function rfebmApiGetClub(
   clubId: string | number,
   ambitoId: string | number = 13,
   cacheTTL = DAY_IN_SECS,
-  cacheAsFallback = true
+  cacheAsFallback = true,
+  forceRevalidate = false,
+  forceCachedDataIfTruthy = false
 ) {
   if (!clubId) {
     return null;
@@ -17,5 +19,13 @@ export async function rfebmApiGetClub(
   body.append('idClub', clubId.toString());
   body.append('id_ambito', ambitoId.toString());
 
-  return rfebmApiFetch(pathname, z.any(), body, cacheTTL, cacheAsFallback); // TODO: Create a schema for the response
+  return rfebmApiFetch(
+    pathname,
+    z.any(),
+    body,
+    cacheTTL,
+    cacheAsFallback,
+    forceRevalidate,
+    forceCachedDataIfTruthy
+  ); // TODO: Create a schema for the response
 }

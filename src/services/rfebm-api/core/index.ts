@@ -32,6 +32,8 @@ export async function rfebmApiFetch<T extends InputSchemaType>(
   body?: URLSearchParams,
   cacheTTL = 0, // In secs
   cacheAsFallback = false,
+  forceRevalidate = false,
+  forceCachedDataIfTruthy = false,
   apiFetcher: ApiFetcherFactory<T> = defaultFetcher
 ): Promise<z.output<T> | null> {
   const url = new URL(pathname, RFEBM_API_BASE_HREF);
@@ -48,6 +50,8 @@ export async function rfebmApiFetch<T extends InputSchemaType>(
     cacheAsFallback,
     Date.now(),
     redis,
+    forceRevalidate,
+    forceCachedDataIfTruthy,
     apiFetcher(url, schema, body)
   ).then((data) => data ?? null);
 }

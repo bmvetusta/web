@@ -6,7 +6,9 @@ export async function rfebmAPIGetOfficialReport(
   groupId?: string | number,
   matchId?: string | number,
   cacheTTL = MINUTE_IN_SECS,
-  cacheAsFallback = true
+  cacheAsFallback = true,
+  forceRevalidate = false,
+  forceCachedDataIfTruthy = false
 ) {
   if (!groupId || !matchId) {
     return null;
@@ -17,5 +19,13 @@ export async function rfebmAPIGetOfficialReport(
   body.append('id_grupo', groupId.toString());
   body.append('id_partido', matchId.toString());
 
-  return rfebmApiFetch(pathname, responseOfficialReportSchema, body, cacheTTL, cacheAsFallback);
+  return rfebmApiFetch(
+    pathname,
+    responseOfficialReportSchema,
+    body,
+    cacheTTL,
+    cacheAsFallback,
+    forceRevalidate,
+    forceCachedDataIfTruthy
+  );
 }

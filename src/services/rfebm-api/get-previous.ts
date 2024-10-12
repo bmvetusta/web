@@ -5,7 +5,9 @@ import { DAY_IN_SECS } from './lib/secs';
 export async function rfebmAPIGetPreviousData(
   matchId?: string | number,
   cacheTTL: number = DAY_IN_SECS,
-  cacheAsFallback = true
+  cacheAsFallback = true,
+  forceRevalidate = false,
+  forceCachedDataIfTruthy = false
 ) {
   if (!matchId) {
     console.error('No matchId for previous data');
@@ -16,5 +18,13 @@ export async function rfebmAPIGetPreviousData(
   const body = new URLSearchParams();
   body.append('id_partido', matchId.toString());
 
-  return rfebmApiFetch(pathname, responsePreviousSchema, body, cacheTTL, cacheAsFallback);
+  return rfebmApiFetch(
+    pathname,
+    responsePreviousSchema,
+    body,
+    cacheTTL,
+    cacheAsFallback,
+    forceRevalidate,
+    forceCachedDataIfTruthy
+  );
 }
