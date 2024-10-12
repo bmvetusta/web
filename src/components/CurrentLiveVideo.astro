@@ -1,14 +1,13 @@
 ---
-import { PRIMERA_TEAM_ID, YOUTUBE_CHANNEL } from 'astro:env/server';
+import { PRIMERA_GROUP_ID, PRIMERA_TEAM_ID, YOUTUBE_CHANNEL } from 'astro:env/server';
+import veryFallbackCalendarData from 'src/content/calendar/data.json' with { type: 'json' };
+import type { responseCalendarSchema } from 'src/schema/calendar/response';
+import { getYoutubeVideoIdFromURL } from 'src/services/get-youtube-video-id-from-url';
 import { isYoutubeChannelLive } from 'src/services/is-yotube-channel-live';
+import { rfebmApiGetCalendar } from 'src/services/rfebm-api/get-calendar';
 import SocialNetwork from './SocialNetwork.astro';
 import SafariYoutubeVideo from './youtube/SafariYoutubeVideo.astro';
 import YoutubeVideo from './youtube/YoutubeVideo.astro';
-import { getYoutubeVideoIdFromURL } from 'src/services/get-youtube-video-id-from-url';
-import veryFallbackCalendarData from 'src/content/calendar/data.json' with { type: 'json' };
-import type { responseCalendarSchema } from 'src/schema/calendar/response';
-import { rfebmApiGetCalendar } from 'src/services/rfebm-api/get-calendar';
-import { PRIMERA_GROUP_ID } from 'astro:env/server';
 
 async function getCalendarData() {
   const data = await rfebmApiGetCalendar(PRIMERA_GROUP_ID);
@@ -135,6 +134,7 @@ const title =
             alt='Logo de Youtube: partido en directo'
             title={title}
             style='--link-color: var(--live-color-hex, red); --link-alpha-color: 0.9;'
+            loading='eager'
           />
         ) : (
           <p>No hay enlace para la retransmisión.</p>
@@ -254,7 +254,9 @@ const title =
 <script type='module' is:inline>
   const live = document.querySelector('article.live');
   const btn = document.querySelector('article.live button');
-  btn.addEventListener('click', () => {
-    live.style.display = 'none';
+  btn?.addEventListener('click', () => {
+    if (live) {
+      live.style.display = 'none';
+    }
   });
 </script>

@@ -74,7 +74,10 @@ const canonicalUrl = Astro.url.href;
       text-decoration: none;
     }
   </style>
-  <CurrentLiveVideo server:defer />
+  <span id='loading'></span>
+  <CurrentLiveVideo server:defer>
+    <span slot='fallback' id='loading'></span>
+  </CurrentLiveVideo>
   <div class='container'>
     <article id='abonate'>
       <main>
@@ -85,6 +88,7 @@ const canonicalUrl = Astro.url.href;
           text='¡Hazte socio y ven a vernos!'
           alt='Escudo del club balonmano vetusta'
           title='Enlace al formulario para hacerse socio del club'
+          loading='eager'
         />
       </main>
     </article>
@@ -101,6 +105,7 @@ const canonicalUrl = Astro.url.href;
           text='¡Suscribete para ver nuestros partidos!'
           alt='Logo de Youtube'
           title='Suscribete a nuestro canal de Youtube'
+          loading='lazy'
         />
 
         <SocialNetwork
@@ -109,6 +114,7 @@ const canonicalUrl = Astro.url.href;
           text='@BM_Vetusta'
           alt='Logo de X (Twitter)'
           title='Enlace a la cuenta en X (Twitter) del club'
+          loading='lazy'
         />
 
         <SocialNetwork
@@ -117,6 +123,7 @@ const canonicalUrl = Astro.url.href;
           text='@balonmanovetusta'
           alt='Logo de Instagram'
           title='Enlace a la cuenta en Instagram del club'
+          loading='lazy'
         />
       </main>
     </article>
