@@ -1,0 +1,43 @@
+---
+import type { matchSchema } from 'src/schema/generics/match';
+import EndedMatchInfo from './EndedMatchInfo.astro';
+import PendingMatch from './PendingMatch.astro';
+import PlayingMatchInfo from './PlayingMatchInfo.astro';
+
+interface Props {
+  initialMatchData: typeof matchSchema._output;
+  probablyMatchStatus: typeof matchSchema._output.status;
+  isTodayMatch: boolean;
+}
+
+const { initialMatchData: match, probablyMatchStatus, isTodayMatch } = Astro.props as Props;
+
+const isEnded =
+  probablyMatchStatus === 'ENDED' ||
+  match.status.startsWith('ENDED') ||
+  match.status === 'SUSPENDED';
+const isPlaying = probablyMatchStatus === 'PLAYING';
+const isPending = probablyMatchStatus === 'PENDING';
+---
+
+{
+  isPending ? (
+    <>
+      <PendingMatch isTodayMatch={isTodayMatch} match={match} />
+    </>
+  ) : (
+    ''
+  )
+}
+
+{
+  isEnded ? (
+    <>
+      <EndedMatchInfo match={match} />
+    </>
+  ) : (
+    ''
+  )
+}
+
+{isPlaying ? <PlayingMatchInfo match={match} /> : ''}

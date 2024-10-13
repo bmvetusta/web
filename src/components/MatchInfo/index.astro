@@ -5,17 +5,10 @@ import type { responseCalendarSchema } from 'src/schema/calendar/response';
 import { getYoutubeVideoIdFromURL } from 'src/services/get-youtube-video-id-from-url';
 import { isYoutubeChannelLive } from 'src/services/is-yotube-channel-live';
 import { rfebmApiGetCalendar } from 'src/services/rfebm-api/get-calendar';
+import MatchInformation from './MatchInformation.astro';
 import YoutubeLiveVideo from './YoutubeLiveVideo.astro';
 
-export const partial = true;
-
 const today = new Date();
-const currentFullTime = today.toLocaleTimeString('es-ES', {
-  timeZone: 'Europe/Madrid',
-  hour12: false,
-  hour: '2-digit',
-  minute: '2-digit',
-});
 
 function getProbablyMatchStatus(matchDate?: string | null, matchTime?: string | null) {
   if (!matchDate || !matchTime) {
@@ -67,16 +60,21 @@ if (!match && !isOwnChannelLive) {
 const probablyMatchStatus = getProbablyMatchStatus(match?.date, match?.time);
 
 const isPlaying = match?.status === 'PLAYING' || probablyMatchStatus === 'PLAYING';
-const isEnded = match?.status === 'ENDED' || probablyMatchStatus === 'ENDED';
 const isPending = match?.status === 'PENDING' || probablyMatchStatus === 'PENDING';
 const isProbablyLiveVideo = isPlaying && match?.urlStreaming && (isPlaying || isPending);
-const isLiveVideo = isProbablyLiveVideo ? await isYoutubeChannelLive(match.urlStreaming!) : false;
-const youtubeVideoId =
-  typeof isLiveVideo === 'string'
-    ? isLiveVideo
-    : isLiveVideo && match?.urlStreaming
-      ? getYoutubeVideoIdFromURL(match.urlStreaming)
-      : '';
+
+let isLiveVideo: string | boolean = false,
+  youtubeVideoId: string | null = null;
+
+if (isProbablyLiveVideo) {
+  isLiveVideo = await isYoutubeChannelLive(match.urlStreaming!); // match.urlStreaming is checked on isProbablyLiveVideo
+  youtubeVideoId = getYoutubeVideoIdFromURL(match.urlStreaming!) ?? null;
+}
+
+if (!match && !isLiveVideo) {
+  isLiveVideo = await isYoutubeChannelLive(YOUTUBE_CHANNEL);
+  youtubeVideoId = isLiveVideo && typeof isLiveVideo === 'string' ? isLiveVideo : null;
+}
 
 const isTodayMatch = match?.date === today.toISOString().split('T')[0];
 ---
@@ -92,11 +90,14 @@ const isTodayMatch = match?.date === today.toISOString().split('T')[0];
   )
 }
 
-
-{isTodayMatch ? (<>
-<h2>GAMEDAY</h2>
-{}
-</>) : ''}
-
-
-{isPending ? <></> : ''}
+{
+  match ? (
+    <MatchInformation
+      initialMatchData={match}
+      probablyMatchStatus={probablyMatchStatus}
+      isTodayMatch={isTodayMatch}
+    />
+  ) : (
+    ''
+  )
+}

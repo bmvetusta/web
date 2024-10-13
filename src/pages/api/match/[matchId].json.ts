@@ -33,7 +33,7 @@ export async function GET({ params }: APIContext<{ matchId: number }>) {
   return new Response(JSON.stringify(match), {
     headers: {
       'Content-Type': 'application/json',
-      'Cache-Control': 'public, max-age=30',
+      'Cache-Control': 'public, max-age=15',
     },
   });
 }

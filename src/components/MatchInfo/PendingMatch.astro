@@ -1,0 +1,83 @@
+---
+import type { matchSchema } from 'src/schema/generics/match';
+import SocialNetwork from '../SocialNetwork.astro';
+
+interface Props {
+  match: typeof matchSchema._output;
+  isTodayMatch: boolean;
+}
+
+const { match, isTodayMatch } = Astro.props as Props;
+---
+
+<article>
+  <header>
+    {isTodayMatch ? <h2>GAMEDAY</h2> : <h2>Próximo partido</h2>}
+  </header>
+  <main>
+    <h3>{match.localTeam.name} - {match.visitorTeam.name}</h3>
+    {
+      match.date && match.time ? (
+        <p>
+          {match.date} - {match.time}
+        </p>
+      ) : (
+        // TODO: Stadium but needs schema also
+        ''
+      )
+    }
+
+    {
+      match.urlStreaming ? (
+        <SocialNetwork
+          icon='yt'
+          href={match.urlStreaming}
+          text={`Enlace al directo`}
+          alt='Logo de Youtube: partido en directo'
+          title='Enlace para ver el partido en directo'
+          style='--link-color: var(--live-color-hex, red); --link-alpha-color: 0.9;'
+        />
+      ) : (
+        ''
+      )
+    }
+  </main>
+</article>
+
+<style>
+  article {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    opacity: 0.7;
+  }
+
+  h2 {
+    font-size: 2rem;
+    font-weight: 700;
+  }
+
+  h3 {
+    color: var(--color-primary);
+    font-size: 1.5rem;
+    font-weight: 500;
+  }
+
+  main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  main p,
+  main a {
+    display: flex;
+    flex-direction: row;
+    font-size: 1.25rem;
+    text-align: center;
+    font-weight: 700;
+    justify-content: center;
+  }
+</style>

@@ -1,11 +1,8 @@
 ---
-import { PRIMERA_TEAM_ID, YOUTUBE_CHANNEL } from 'astro:env/server';
+import { YOUTUBE_CHANNEL } from 'astro:env/server';
 import { isYoutubeChannelLive } from 'src/services/is-yotube-channel-live';
-import { getYoutubeVideoIdFromURL } from 'src/services/get-youtube-video-id-from-url';
-import SocialNetwork from '../SocialNetwork.astro';
 import SafariYoutubeVideo from '../youtube/SafariYoutubeVideo.astro';
 import YoutubeVideo from '../youtube/YoutubeVideo.astro';
-import type { matchSchema } from 'src/schema/generics/match';
 
 interface Props {
   youtubeVideoId: string;
@@ -36,12 +33,22 @@ interface Props {
 //   );
 // }
 
-// const isChannelLive = await isYoutubeChannelLive(YOUTUBE_CHANNEL);
+const { isLiveVideo, youtubeVideoId: inputVideoId = null } = Astro.props as Props;
 
-const { isLiveVideo: isLive, youtubeUrl = null, youtubeVideoId = '' } = Astro.props as Props;
+const isChannelLive = !isLiveVideo ? await isYoutubeChannelLive(YOUTUBE_CHANNEL) : false;
+const youtubeVideoId = isChannelLive ? isChannelLive : inputVideoId;
+const youtubeUrl =
+  !isChannelLive && isLiveVideo
+    ? `https://youtube.com/watch?v=${youtubeVideoId}`
+    : `https://youtube.com/${YOUTUBE_CHANNEL}/live`;
 
 const ua = Astro.request.headers.get('User-Agent');
 const isSafari = ua?.includes('AppleWebKit') && !ua?.includes('Chrome');
+const isLive = isLiveVideo || isChannelLive;
+
+if (typeof youtubeVideoId !== 'string' || youtubeVideoId.length === 0) {
+  console.error(`No youtube video id provided for ${inputVideoId}`);
+}
 ---
 
 {
@@ -66,9 +73,7 @@ const isSafari = ua?.includes('AppleWebKit') && !ua?.includes('Chrome');
             <>
               <p>
                 No podemos incrustar la emisión en directo.{' '}
-                <a href={Astro.props.youtubeUrl ?? `https://youtube.com/${YOUTUBE_CHANNEL}/live`}>
-                  Usa este enlace para ver la emisión en directo
-                </a>
+                <a href={youtubeUrl}>Usa este enlace para ver la emisión en directo</a>
               </p>
             </>
           )}

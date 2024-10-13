@@ -204,6 +204,6 @@ export const eventOfficialReportSchema = z
     player: {
       teamId: e.idEquipo,
       playerId: e.idJugador,
-      playerName: e.nombre,
+      playerName: e.nombreJugador,
     },
   }));
