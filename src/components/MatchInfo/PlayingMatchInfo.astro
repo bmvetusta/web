@@ -1,0 +1,86 @@
+---
+import { PRIMERA_GROUP_ID } from 'astro:env/server';
+import type { matchSchema } from 'src/schema/generics/match';
+import { rfebmAPIGetOfficialReport } from 'src/services/rfebm-api/get-report';
+
+interface Props {
+  match: typeof matchSchema._output;
+}
+
+const { match: initialMatchData } = Astro.props as Props;
+
+initialMatchData.groupId ??= PRIMERA_GROUP_ID;
+const match = await rfebmAPIGetOfficialReport(
+  initialMatchData.groupId,
+  initialMatchData.id,
+  60,
+  true,
+  false,
+  false
+);
+
+if (!match) {
+  return;
+}
+
+// TODO: Realtime updates of the result?
+---
+
+<article>
+  <header>
+    <h2>Jugando</h2>
+  </header>
+  <main>
+    <div class='local'>
+      <img
+        src={initialMatchData.localTeam.shieldUrl}
+        alt={`Escudo del equipo local: ${initialMatchData.localTeam.name}`}
+        width='64'
+        height='64'
+      />
+      <p>{(match.localResult ?? 0).toString().padStart(2, '0')}</p>
+    </div>
+    <div class='separator'>
+      <p>-</p>
+    </div>
+    <div class='visitor'>
+      <p>{(match.visitorResult ?? 0).toString().padStart(2, '0')}</p>
+      <img
+        src={initialMatchData.visitorTeam.shieldUrl}
+        alt={`Escudo del equipo visitante: ${initialMatchData.visitorTeam.name}`}
+        width='64'
+        height='64'
+      />
+    </div>
+  </main>
+</article>
+<small>El resultado no se actualiza automaticamente</small>
+
+<style>
+  h2 {
+    color: var(--live-color, rgb(var(--live-color-rgb, 255, 0, 222)));
+  }
+  article {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    margin: 1rem auto;
+  }
+
+  main,
+  div {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 2.25rem;
+  }
+
+  small {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    opacity: 0.6;
+    text-transform: capitalize;
+  }
+</style>

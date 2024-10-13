@@ -1,13 +1,15 @@
 ---
-import { PRIMERA_GROUP_ID, PRIMERA_TEAM_ID, YOUTUBE_CHANNEL } from 'astro:env/server';
+// TODO: Preserved as fast fallback in case it fails next weekend :)
+import { PRIMERA_TEAM_ID, YOUTUBE_CHANNEL } from 'astro:env/server';
+import { isYoutubeChannelLive } from 'src/services/is-yotube-channel-live';
+import { getYoutubeVideoIdFromURL } from 'src/services/get-youtube-video-id-from-url';
 import veryFallbackCalendarData from 'src/content/calendar/data.json' with { type: 'json' };
 import type { responseCalendarSchema } from 'src/schema/calendar/response';
-import { getYoutubeVideoIdFromURL } from 'src/services/get-youtube-video-id-from-url';
-import { isYoutubeChannelLive } from 'src/services/is-yotube-channel-live';
 import { rfebmApiGetCalendar } from 'src/services/rfebm-api/get-calendar';
-import SocialNetwork from './SocialNetwork.astro';
-import SafariYoutubeVideo from './youtube/SafariYoutubeVideo.astro';
-import YoutubeVideo from './youtube/YoutubeVideo.astro';
+import { PRIMERA_GROUP_ID } from 'astro:env/server';
+import SocialNetwork from '../SocialNetwork.astro';
+import SafariYoutubeVideo from '../youtube/SafariYoutubeVideo.astro';
+import YoutubeVideo from '../youtube/YoutubeVideo.astro';
 
 async function getCalendarData() {
   const data = await rfebmApiGetCalendar(PRIMERA_GROUP_ID);

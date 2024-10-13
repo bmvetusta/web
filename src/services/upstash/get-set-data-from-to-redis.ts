@@ -12,8 +12,9 @@ export async function getSetDataFromToRedis<T extends InputSchemaType>(
   cacheAsFallback: boolean,
   now: number,
   redis: Redis,
-  setter: ReturnType<ApiFetcherFactory<T>>,
-  forceRevalidate = false
+  forceCachedDataIfTruthy: boolean = false,
+  forceRevalidate = false,
+  setter: ReturnType<ApiFetcherFactory<T>>
 ): Promise<z.output<T> | null> {
   if (forceRevalidate) {
     return setJSONTypedRedisData(setter(), redis, redisKey.toString(), cacheAsFallback).then(
@@ -29,6 +30,10 @@ export async function getSetDataFromToRedis<T extends InputSchemaType>(
 
   return getJSONTypedRedisData<T>(redisKey.toString(), redis)
     .then((data) => {
+      if (forceCachedDataIfTruthy && data && data.data) {
+        return data.data;
+      }
+
       // console.debug('Response from redis ok');
       let isExpired = true;
       if (data) {
@@ -71,7 +76,7 @@ export async function getSetDataFromToRedis<T extends InputSchemaType>(
           };
 
           return redis.set(redisKey.toString(), JSON.stringify(data)).then(() => {
-            if (cacheTTL > 0 && !cacheAsFallback) {
+            if (!cacheAsFallback && cacheTTL > 0 && cacheTTL < Number.MAX_SAFE_INTEGER) {
               return redis
                 .expire(redisKey.toString(), cacheTTL)
                 .then(() => fetchedData)

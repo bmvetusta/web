@@ -5,6 +5,7 @@
 
   --live-color-hex: #ff00de;
   --live-color-rgb: 255, 0, 222;
+  --live-color: rgb(var(--live-color-rgb));
 
   --primary-text-color-rgb: 255, 255, 255;
   --primary-text-alpha: 0.8;

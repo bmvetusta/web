@@ -2,7 +2,7 @@
 import MemberPoster from '@components/MemberPoster.astro';
 import SocialNetwork from '@components/SocialNetwork.astro';
 import TrainingPlaceList from '@components/TrainingPlace/TrainingPlaceList.astro';
-import CurrentLiveVideo from 'src/components/CurrentLiveVideo.astro';
+import MatchInfo from '@components/MatchInfo/index.astro';
 import Layout from 'src/layouts/Layout.astro';
 
 export const prerender = true;
@@ -74,10 +74,7 @@ const canonicalUrl = Astro.url.href;
       text-decoration: none;
     }
   </style>
-  <span id='loading'></span>
-  <CurrentLiveVideo server:defer>
-    <span slot='fallback' id='loading'></span>
-  </CurrentLiveVideo>
+  <MatchInfo server:defer />
   <div class='container'>
     <article id='abonate'>
       <main>

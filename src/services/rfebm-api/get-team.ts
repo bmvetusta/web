@@ -8,7 +8,9 @@ export async function rfebmAPIGetTeam(
   seasonId: string | number = getCurrentSeasonId(),
   ambitoId: string | number = 1,
   cacheTTL = HOUR_IN_SECS,
-  cacheAsFallback = true
+  cacheAsFallback = true,
+  forceRevalidate = false,
+  forceCachedDataIfTruthy = false
 ) {
   if (!teamId) {
     return null;
@@ -20,5 +22,13 @@ export async function rfebmAPIGetTeam(
   body.append('id_temporada', seasonId.toString());
   body.append('id_ambito', ambitoId.toString());
 
-  return rfebmApiFetch(pathname, responseTeamSchema, body, cacheTTL, cacheAsFallback);
+  return rfebmApiFetch(
+    pathname,
+    responseTeamSchema,
+    body,
+    cacheTTL,
+    cacheAsFallback,
+    forceRevalidate,
+    forceCachedDataIfTruthy
+  );
 }
