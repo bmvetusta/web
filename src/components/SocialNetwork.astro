@@ -1,14 +1,17 @@
 ---
+import { Image } from 'astro:assets';
+
 interface Props {
   icon: string;
   alt: string;
   href: string;
   text: string;
   title: string;
+  loading: 'lazy' | 'eager';
   [key: string]: string;
 }
 
-const { icon, alt, title, href, text, ...props } = Astro.props;
+const { icon, alt, title, href, text, loading = 'lazy', ...anchorProps } = Astro.props;
 
 let src = `/assets/images/${icon}.svg`;
 
@@ -99,7 +102,7 @@ if (icon === 'vetusta') {
   }
 </style>
 
-<a href={href} title={title} {...props}>
-  <img src={src} alt={alt} aria-hidden='true' width='32' height='32' />
+<a href={href} title={title} {...anchorProps}>
+  <Image src={src} alt={alt} width='32' height='32' loading={loading} />
   <p>{text}</p>
 </a>

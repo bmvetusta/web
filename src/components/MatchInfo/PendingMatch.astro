@@ -36,6 +36,7 @@ const { match, isTodayMatch } = Astro.props as Props;
           alt='Logo de Youtube: partido en directo'
           title='Enlace para ver el partido en directo'
           style='--link-color: var(--live-color-hex, red); --link-alpha-color: 0.9;'
+          loading='lazy'
         />
       ) : (
         ''

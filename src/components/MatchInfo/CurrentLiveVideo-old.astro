@@ -76,7 +76,7 @@ if (!isChannelLive) {
 
   if (month <= 6 || month >= 8) {
     // Only in July there are no matchs for sure
-    if (currentHour >= 10 && currentHour <= 23) {
+    if (currentHour <= 23) {
       match = calendar?.find(
         (match) =>
           match.date &&
@@ -136,6 +136,7 @@ const title =
             alt='Logo de Youtube: partido en directo'
             title={title}
             style='--link-color: var(--live-color-hex, red); --link-alpha-color: 0.9;'
+            loading='eager'
           />
         ) : (
           <p>No hay enlace para la retransmisión.</p>
@@ -255,7 +256,9 @@ const title =
 <script type='module' is:inline>
   const live = document.querySelector('article.live');
   const btn = document.querySelector('article.live button');
-  btn.addEventListener('click', () => {
-    live.style.display = 'none';
+  btn?.addEventListener('click', () => {
+    if (live) {
+      live.style.display = 'none';
+    }
   });
 </script>
