@@ -4,6 +4,8 @@ import { z } from 'astro:schema';
 import { rfebmAPIGetOfficialReport } from 'src/services/rfebm-api/get-report';
 import { clientUpstash } from 'src/services/upstash/client';
 
+export const prerender = false;
+
 const paramsSchema = z.object({ matchId: z.coerce.number().min(0) }).transform((p) => p.matchId);
 
 export async function GET({ params }: APIContext<{ matchId: number }>) {
