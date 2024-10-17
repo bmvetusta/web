@@ -19,7 +19,7 @@ const { match, isTodayMatch } = Astro.props as Props;
     {
       match.date && match.time ? (
         <p>
-          {match.date} - {match.time}
+          {match.date.split('-').reverse().join('/')} - {match.time}
         </p>
       ) : (
         // TODO: Stadium but needs schema also
