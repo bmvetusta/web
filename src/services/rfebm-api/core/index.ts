@@ -37,6 +37,11 @@ export async function rfebmApiFetch<T extends InputSchemaType>(
   apiFetcher: ApiFetcherFactory<T> = defaultFetcher
 ): Promise<z.output<T> | null> {
   const url = new URL(pathname, RFEBM_API_BASE_HREF);
+  const redisKey = new URL(url.href);
+
+  if (body) {
+    redisKey.search = body.toString();
+  }
 
   if (!REDIS_URL || (cacheTTL <= 0 && cacheAsFallback === false)) {
     return requestRFEBMApiData<T>(url, schema, body);
@@ -45,7 +50,7 @@ export async function rfebmApiFetch<T extends InputSchemaType>(
   const redis = clientUpstash()!;
 
   return getSetDataFromToRedis(
-    url.href,
+    redisKey.href,
     cacheTTL,
     cacheAsFallback,
     Date.now(),
@@ -53,5 +58,5 @@ export async function rfebmApiFetch<T extends InputSchemaType>(
     forceRevalidate,
     forceCachedDataIfTruthy,
     apiFetcher(url, schema, body)
-  ).then((data) => data ?? null);
+  ).then((data) => data);
 }
