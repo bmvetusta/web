@@ -3,6 +3,7 @@ import { YOUTUBE_CHANNEL } from 'astro:env/server';
 import { isYoutubeChannelLive } from 'src/services/is-yotube-channel-live';
 import SafariYoutubeVideo from '../youtube/SafariYoutubeVideo.astro';
 import YoutubeVideo from '../youtube/YoutubeVideo.astro';
+import SocialNetwork from '../SocialNetwork.astro';
 
 interface Props {
   youtubeVideoId: string;
@@ -85,6 +86,18 @@ if (typeof youtubeVideoId !== 'string' || youtubeVideoId.length === 0) {
   )
 }
 
+<div class='streaming'>
+  <SocialNetwork
+    icon='yt'
+    href={youtubeUrl}
+    text={`Enlace al directo`}
+    alt='Logo de Youtube: partido en directo'
+    title='Enlace para ver el partido en directo'
+    style='--link-color: var(--live-color-hex, red); --link-alpha-color: 0.9;'
+    loading='lazy'
+  />
+</div>
+
 <style>
   article {
     border-radius: 1rem;
@@ -140,6 +153,11 @@ if (typeof youtubeVideoId !== 'string' || youtubeVideoId.length === 0) {
     border: none;
     position: relative;
     top: -0.5rem;
+  }
+
+  div.streaming > a {
+    display: flex;
+    justify-content: center;
   }
 </style>
 

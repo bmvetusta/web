@@ -84,10 +84,11 @@ const isTodayMatch = match?.date === today.toISOString().split('T')[0];
 ---
 
 {
-  isLiveVideo ? (
-    <YoutubeLiveVideo
-      isLiveVideo={!!isLiveVideo}
-      youtubeVideoId={youtubeVideoId ?? YOUTUBE_CHANNEL}
+  match ? (
+    <MatchInformation
+      initialMatchData={match}
+      probablyMatchStatus={probablyMatchStatus}
+      isTodayMatch={isTodayMatch}
     />
   ) : (
     ''
@@ -95,11 +96,10 @@ const isTodayMatch = match?.date === today.toISOString().split('T')[0];
 }
 
 {
-  match ? (
-    <MatchInformation
-      initialMatchData={match}
-      probablyMatchStatus={probablyMatchStatus}
-      isTodayMatch={isTodayMatch}
+  isLiveVideo ? (
+    <YoutubeLiveVideo
+      isLiveVideo={!!isLiveVideo}
+      youtubeVideoId={youtubeVideoId ?? YOUTUBE_CHANNEL}
     />
   ) : (
     ''
