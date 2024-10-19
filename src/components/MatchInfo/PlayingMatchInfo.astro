@@ -1,13 +1,17 @@
 ---
 import { PRIMERA_GROUP_ID } from 'astro:env/server';
 import type { matchSchema } from 'src/schema/generics/match';
+import { isYoutubeChannelLive } from 'src/services/is-yotube-channel-live';
 import { rfebmAPIGetOfficialReport } from 'src/services/rfebm-api/get-report';
+import SocialNetwork from '../SocialNetwork.astro';
+import YoutubeLiveVideo from './YoutubeLiveVideo.astro';
 
 interface Props {
   match: typeof matchSchema._output;
+  urlStreaming?: string;
 }
 
-const { match: initialMatchData } = Astro.props as Props;
+const { match: initialMatchData, urlStreaming = null } = Astro.props as Props;
 
 initialMatchData.groupId ??= PRIMERA_GROUP_ID;
 const match = await rfebmAPIGetOfficialReport(
@@ -23,14 +27,26 @@ if (!match) {
   return;
 }
 
-const lastAction = match.events.at(-1);
+const lastAction = match.events
+  .sort(
+    (a, b) =>
+      Number(`${b.part.startsWith('P') ? 1 : 2}${b.min}${b.sec}`) -
+      Number(`${a.part.startsWith('P') ? 1 : 2}${a.min}${a.sec}`)
+  )
+  .at(0);
 let separator = '';
 
 if (lastAction && match.status === 'PLAYING') {
+  if (lastAction.part.startsWith('S')) {
+    lastAction.min += 30;
+  }
   separator = `${lastAction.min.toString().padStart(2, '0')}:${lastAction.sec.toString().padStart(2, '0')}`;
 }
 
 const title = match.status === 'ENDED' ? 'Finalizado' : 'Jugando';
+
+const isLiveVideo = urlStreaming ? await isYoutubeChannelLive(urlStreaming) : false;
+const videoId = isLiveVideo;
 
 // TODO: Realtime updates of the result?
 ---
@@ -65,6 +81,29 @@ const title = match.status === 'ENDED' ? 'Finalizado' : 'Jugando';
 </article>
 <small>El resultado no se actualiza automaticamente</small>
 
+{
+  urlStreaming ? (
+    <>
+      <SocialNetwork
+        icon='yt'
+        href={urlStreaming}
+        text={`Enlace al directo`}
+        alt='Logo de Youtube: partido en directo'
+        title='Enlace para ver el partido en directo'
+        style='--link-color: var(--live-color-hex, red); --link-alpha-color: 0.9;'
+        loading='lazy'
+      />
+      {isLiveVideo && typeof videoId === 'string' ? (
+        <YoutubeLiveVideo isLiveVideo={!!isLiveVideo} youtubeVideoId={videoId} server:defer />
+      ) : (
+        ''
+      )}
+    </>
+  ) : (
+    ''
+  )
+}
+
 <style>
   h2 {
     color: var(--live-color, rgb(var(--live-color-rgb, 255, 0, 222)));
@@ -91,5 +130,10 @@ const title = match.status === 'ENDED' ? 'Finalizado' : 'Jugando';
     justify-content: center;
     opacity: 0.6;
     text-transform: capitalize;
+  }
+  a[href^='https://www.youtube.com/live'], a[href^='https://www.youtube.com/watch']
+  {
+    display: flex;
+    justify-content: center;
   }
 </style>

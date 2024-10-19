@@ -1,12 +1,14 @@
 ---
 import type { matchSchema } from 'src/schema/generics/match';
+import SocialNetwork from '../SocialNetwork.astro';
 
 interface Props {
   match: typeof matchSchema._output;
   isTodayMatch: boolean;
+  urlStreaming?: string;
 }
 
-const { match, isTodayMatch } = Astro.props as Props;
+const { match, isTodayMatch, urlStreaming = null } = Astro.props as Props;
 ---
 
 <article>
@@ -22,6 +24,21 @@ const { match, isTodayMatch } = Astro.props as Props;
         </p>
       ) : (
         // TODO: Stadium but needs schema also
+        ''
+      )
+    }
+    {
+      urlStreaming ? (
+        <SocialNetwork
+          icon='yt'
+          href={urlStreaming}
+          text={`Enlace al directo`}
+          alt='Logo de Youtube: partido en directo'
+          title='Enlace para ver el partido en directo'
+          style='--link-color: var(--live-color-hex, red); --link-alpha-color: 0.9;'
+          loading='lazy'
+        />
+      ) : (
         ''
       )
     }
@@ -61,6 +78,11 @@ const { match, isTodayMatch } = Astro.props as Props;
     font-size: 1.25rem;
     text-align: center;
     font-weight: 700;
+    justify-content: center;
+  }
+  a[href^='https://www.youtube.com/live'], a[href^='https://www.youtube.com/watch']
+  {
+    display: flex;
     justify-content: center;
   }
 </style>

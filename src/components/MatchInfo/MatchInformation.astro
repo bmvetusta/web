@@ -1,6 +1,5 @@
 ---
 import type { matchSchema } from 'src/schema/generics/match';
-import SocialNetwork from '../SocialNetwork.astro';
 import EndedMatchInfo from './EndedMatchInfo.astro';
 import PendingMatch from './PendingMatch.astro';
 import PlayingMatchInfo from './PlayingMatchInfo.astro';
@@ -14,30 +13,17 @@ interface Props {
 const { initialMatchData: match, probablyMatchStatus, isTodayMatch } = Astro.props as Props;
 
 const isEnded =
-  probablyMatchStatus === 'ENDED' ||
   match.status.startsWith('ENDED') ||
-  match.status === 'SUSPENDED';
-const isPlaying = probablyMatchStatus === 'PLAYING';
-const isPending = probablyMatchStatus === 'PENDING';
+  match.status === 'SUSPENDED' ||
+  probablyMatchStatus === 'ENDED';
+const isPlaying = match.status === 'PLAYING' || (!isEnded && probablyMatchStatus === 'PLAYING');
+const isPending = !isEnded && !isPlaying;
 ---
 
 {
   isPending ? (
     <>
-      <PendingMatch isTodayMatch={isTodayMatch} match={match} />
-      {match.urlStreaming ? (
-        <SocialNetwork
-          icon='yt'
-          href={match.urlStreaming}
-          text={`Enlace al directo`}
-          alt='Logo de Youtube: partido en directo'
-          title='Enlace para ver el partido en directo'
-          style='--link-color: var(--live-color-hex, red); --link-alpha-color: 0.9;'
-          loading='lazy'
-        />
-      ) : (
-        ''
-      )}
+      <PendingMatch isTodayMatch={isTodayMatch} match={match} server:defer />
     </>
   ) : (
     ''
@@ -47,7 +33,7 @@ const isPending = probablyMatchStatus === 'PENDING';
 {
   isEnded ? (
     <>
-      <EndedMatchInfo match={match} />
+      <EndedMatchInfo match={match} server:defer />
     </>
   ) : (
     ''
@@ -57,30 +43,9 @@ const isPending = probablyMatchStatus === 'PENDING';
 {
   isPlaying ? (
     <>
-      <PlayingMatchInfo match={match} />
-      {match.urlStreaming ? (
-        <SocialNetwork
-          icon='yt'
-          href={match.urlStreaming}
-          text={`Enlace al directo`}
-          alt='Logo de Youtube: partido en directo'
-          title='Enlace para ver el partido en directo'
-          style='--link-color: var(--live-color-hex, red); --link-alpha-color: 0.9;'
-          loading='lazy'
-        />
-      ) : (
-        ''
-      )}
+      <PlayingMatchInfo match={match} server:defer />
     </>
   ) : (
     ''
   )
 }
-
-<style>
-  a[href^='https://www.youtube.com/live'], a[href^='https://www.youtube.com/watch']
-  {
-    display: flex;
-    justify-content: center;
-  }
-</style>
