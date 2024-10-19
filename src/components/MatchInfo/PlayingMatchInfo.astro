@@ -1,7 +1,6 @@
 ---
 import { PRIMERA_GROUP_ID } from 'astro:env/server';
 import type { matchSchema } from 'src/schema/generics/match';
-import { isYoutubeChannelLive } from 'src/services/is-yotube-channel-live';
 import { rfebmAPIGetOfficialReport } from 'src/services/rfebm-api/get-report';
 
 interface Props {
@@ -42,9 +41,6 @@ if (lastAction && match.status === 'PLAYING') {
 }
 
 const title = match.status === 'ENDED' ? 'Finalizado' : 'Jugando';
-
-const isLiveVideo = urlStreaming ? await isYoutubeChannelLive(urlStreaming) : false;
-const videoId = isLiveVideo;
 
 // TODO: Realtime updates of the result?
 ---
