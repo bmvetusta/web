@@ -14,7 +14,7 @@ export async function isYoutubeChannelLive(channel: string): Promise<boolean | s
     headers: {
       'Accept-Language': 'es;q=0.7',
     },
-    signal: AbortSignal.timeout(3000),
+    signal: AbortSignal.timeout(10_000),
   })
     .then((res) => res.text())
     .catch(() => '');
