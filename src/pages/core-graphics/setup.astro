@@ -1,0 +1,91 @@
+---
+import Layout from '@layouts/Layout.astro';
+import { AUTH_SECRET_TOKEN } from 'astro:env/server';
+
+export const prerender = false;
+const cookieName = '__authKey';
+let isPost = false;
+
+if (Astro.request.method === 'POST' && !Astro.cookies.get(cookieName)) {
+  isPost = true;
+  const data = await Astro.request.formData();
+  const authKey = data.get('authKey');
+  if (authKey === AUTH_SECRET_TOKEN) {
+    Astro.cookies.set(cookieName, authKey, {
+      expires: new Date(Date.now() + 31_536_000_000), // 1 year
+      httpOnly: true,
+      secure: true,
+      sameSite: 'strict',
+    });
+  }
+}
+
+const authKey = Astro.cookies.get(cookieName)?.value;
+const isAuth = authKey === AUTH_SECRET_TOKEN;
+---
+
+<Layout title='Setup auth key'>
+  <h2>Setup auth key</h2>
+  <form method='post' enctype='application/x-www-form-urlencoded' action='#'>
+    <fieldset>
+      <input
+        type='text'
+        name='authKey'
+        id='authKey'
+        placeholder='Auth Key'
+        minlength='8'
+        disabled={!isAuth}
+      />
+      <input type='submit' disabled={isAuth} value='Setup' />
+    </fieldset>
+    {isPost && !isAuth ? <p class='error'>Invalid authKey</p> : ''}
+  </form>
+  {
+    isAuth ? (
+      <>
+        <p class='success'>You already have a valid authKey</p>
+      </>
+    ) : (
+      ''
+    )
+  }
+  <style>
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    fieldset {
+      display: flex;
+      flex-direction: row;
+      gap: 1rem;
+      border: none;
+      outline: none;
+    }
+    input[type='submit'] {
+      padding: 0.5rem 1rem;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 0.25rem;
+      cursor: pointer;
+    }
+    input[type='submit']:disabled {
+      background-color: #ccc;
+      cursor: not-allowed;
+    }
+    form > p.error {
+      font-size: 1.5rem;
+      color: red;
+    }
+    h2 {
+      margin: 1rem auto;
+      font-size: 2rem;
+    }
+    p.success {
+      margin: 1rem auto;
+      color: greenyellow;
+      font-size: 1.5rem;
+    }
+  </style>
+</Layout>
