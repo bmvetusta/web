@@ -14,7 +14,9 @@ export async function isYoutubeChannelLive(channel: string): Promise<boolean | s
     headers: {
       'Accept-Language': 'es;q=0.7',
     },
-  }).then((res) => res.text());
+  })
+    .then((res) => res.text())
+    .catch(() => '');
   const isLive = data.includes('usuarios viéndolo ahora');
 
   if (isLive) {
