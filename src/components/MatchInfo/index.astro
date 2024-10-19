@@ -17,8 +17,17 @@ function getProbablyMatchStatus(matchDate?: string | null, matchTime?: string | 
 
   const [matchHour, matchMinute] = matchTime.split(':').map(Number);
   const gameDate = new Date(Date.parse(`${matchDate}T${matchTime}:00`));
-  const estimatedEndTime = new Date(Date.parse(`${matchDate}T${matchHour + 2}:${matchMinute}:00`));
+  const estimatedEndTime = new Date(
+    Date.parse(
+      `${matchDate}T${(matchHour + 2).toString().padStart(2, '0')}:${matchMinute.toString().padStart(2, '0')}:00`
+    )
+  );
 
+  console.log({
+    gameDate,
+    estimatedEndTime,
+    estimatedEnd: `${matchDate}T${matchHour + 2}:${matchMinute}:00`,
+  });
   if (today < gameDate) {
     return 'PENDING';
   }
