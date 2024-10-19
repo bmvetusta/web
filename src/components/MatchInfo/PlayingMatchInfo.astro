@@ -23,6 +23,13 @@ if (!match) {
   return;
 }
 
+const lastAction = match.events.at(-1);
+let separator = '';
+
+if (lastAction) {
+  separator = `${lastAction.min.toString().padStart(2, '0')}:${lastAction.sec.toString().padStart(2, '0')}`;
+}
+
 // TODO: Realtime updates of the result?
 ---
 
@@ -41,7 +48,7 @@ if (!match) {
       <p>{(match.localResult ?? 0).toString().padStart(2, '0')}</p>
     </div>
     <div class='separator'>
-      <p>-</p>
+      <p>{separator}</p>
     </div>
     <div class='visitor'>
       <p>{(match.visitorResult ?? 0).toString().padStart(2, '0')}</p>

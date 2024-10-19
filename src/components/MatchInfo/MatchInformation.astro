@@ -1,5 +1,6 @@
 ---
 import type { matchSchema } from 'src/schema/generics/match';
+import SocialNetwork from '../SocialNetwork.astro';
 import EndedMatchInfo from './EndedMatchInfo.astro';
 import PendingMatch from './PendingMatch.astro';
 import PlayingMatchInfo from './PlayingMatchInfo.astro';
@@ -24,6 +25,19 @@ const isPending = probablyMatchStatus === 'PENDING';
   isPending ? (
     <>
       <PendingMatch isTodayMatch={isTodayMatch} match={match} />
+      {match.urlStreaming ? (
+        <SocialNetwork
+          icon='yt'
+          href={match.urlStreaming}
+          text={`Enlace al directo`}
+          alt='Logo de Youtube: partido en directo'
+          title='Enlace para ver el partido en directo'
+          style='--link-color: var(--live-color-hex, red); --link-alpha-color: 0.9;'
+          loading='lazy'
+        />
+      ) : (
+        ''
+      )}
     </>
   ) : (
     ''
@@ -40,4 +54,33 @@ const isPending = probablyMatchStatus === 'PENDING';
   )
 }
 
-{isPlaying ? <PlayingMatchInfo match={match} /> : ''}
+{
+  isPlaying ? (
+    <>
+      <PlayingMatchInfo match={match} />
+      {match.urlStreaming ? (
+        <SocialNetwork
+          icon='yt'
+          href={match.urlStreaming}
+          text={`Enlace al directo`}
+          alt='Logo de Youtube: partido en directo'
+          title='Enlace para ver el partido en directo'
+          style='--link-color: var(--live-color-hex, red); --link-alpha-color: 0.9;'
+          loading='lazy'
+        />
+      ) : (
+        ''
+      )}
+    </>
+  ) : (
+    ''
+  )
+}
+
+<style>
+  a[href^='https://www.youtube.com/live'], a[href^='https://www.youtube.com/watch']
+  {
+    display: flex;
+    justify-content: center;
+  }
+</style>

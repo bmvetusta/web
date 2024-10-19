@@ -23,11 +23,6 @@ function getProbablyMatchStatus(matchDate?: string | null, matchTime?: string | 
     )
   );
 
-  console.log({
-    gameDate,
-    estimatedEndTime,
-    estimatedEnd: `${matchDate}T${matchHour + 2}:${matchMinute}:00`,
-  });
   if (today < gameDate) {
     return 'PENDING';
   }
