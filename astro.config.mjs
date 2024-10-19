@@ -162,6 +162,25 @@ export default defineConfig({
         optional: false,
         default: false,
       }),
+
+      // Ably
+      ABLY_API_KEY: envField.string({
+        context: 'server',
+        access: 'secret',
+        optional: true,
+      }),
+      PUBLIC_ABLY_API_KEY: envField.string({
+        context: 'client',
+        access: 'public',
+        optional: true,
+      }),
+
+      // A key to interact with private apis
+      AUTH_SECRET_TOKEN: envField.string({
+        context: 'server',
+        access: 'secret',
+        optional: true,
+      }),
     },
   },
 });
