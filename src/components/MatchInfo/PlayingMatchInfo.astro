@@ -5,10 +5,9 @@ import { rfebmAPIGetOfficialReport } from 'src/services/rfebm-api/get-report';
 
 interface Props {
   match: typeof matchSchema._output;
-  urlStreaming?: string;
 }
 
-const { match: initialMatchData, urlStreaming = null } = Astro.props as Props;
+const { match: initialMatchData } = Astro.props as Props;
 
 initialMatchData.groupId ??= PRIMERA_GROUP_ID;
 const match = await rfebmAPIGetOfficialReport(
