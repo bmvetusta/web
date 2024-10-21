@@ -11,17 +11,28 @@ if (!isAuth) {
 }
 ---
 
-<div id='stopwatch'>
-  <span id='part'>1</span>
-  <div id='time'>
-    <span id='minutes'>00</span>
-    <span id='seconds'>00</span>
-  </div>
+<span id='part'>1T</span>
+<div id='time'>
+  <span id='minutes'>00</span>
+  <span id='seconds'>00</span>
 </div>
 
 <style slot='head'>
-  #minutes::after {
-    content: ' :';
+  span#minutes::after {
+    content: ':';
+  }
+  span#seconds {
+    margin-left: 0;
+  }
+  div#time {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+    background-color: black;
+    color: white;
+    padding: 3px 5px;
+    border-radius: 5px;
   }
 </style>
 
@@ -36,7 +47,6 @@ if (!isAuth) {
   if ($part && $minutes && $seconds) {
     ablyStopwatchReceiver({
       onTick: (timerMessage) => {
-        console.log('onTick', timerMessage);
         const {
           elapsed: { minutes, seconds },
           name,
@@ -53,8 +63,8 @@ if (!isAuth) {
           timerMessage.action === TimerMessageAction.START
         ) {
           $part.textContent = timerMessage.name;
-          $minutes.textContent = '00';
-          $seconds.textContent = '00';
+          $minutes.textContent ??= '00';
+          $seconds.textContent ??= '00';
         }
       },
     });

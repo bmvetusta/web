@@ -93,7 +93,6 @@ export const prerender = false;
       }, 3_000);
     },
     onSuccess: (timerMessage) => {
-      console.log('Timer message', timerMessage);
       window.currentTimerName = timerMessage.name;
 
       if (
@@ -140,7 +139,6 @@ export const prerender = false;
     }
 
     const offset = minutes * 60_000 + seconds * 1_000;
-    console.log('Setting offset', { offset, minutes, seconds });
     const response = await actions.ably.stopwatch.setOffset({
       name: window.currentTimerName,
       payload: offset,
@@ -175,7 +173,6 @@ export const prerender = false;
     }
 
     const offsetMs = minutes * 60_000 + seconds * 1_000;
-    console.log('Adding offset', { offsetMs });
     actions.ably.stopwatch.addOffset({
       name: window.currentTimerName,
       payload: offsetMs,

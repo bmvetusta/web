@@ -1,4 +1,6 @@
 ---
+import rfebmShield from '@assets/images/rfebm-shield.png';
+import { Image } from 'astro:assets';
 import { AUTH_SECRET_TOKEN } from 'astro:env/server';
 import CoreGraphics from 'src/layouts/CoreGraphics.astro';
 import { authCoreGraphicsCookieName } from 'src/services/core-graphics/constants';
@@ -14,5 +16,51 @@ if (!isAuth) {
 ---
 
 <CoreGraphics>
-  <LiveStopwatch />
+  <div class='time-container'>
+    <span class='rfebm-shield'
+      ><Image src={rfebmShield.src} width={24} height={24} alt='Escudo RFEBM' />
+      <p>1N. Grupo B</p></span
+    >
+    <div class='stopwatch'>
+      <LiveStopwatch />
+    </div>
+  </div>
 </CoreGraphics>
+
+<style>
+  div.time-container {
+    position: absolute;
+    top: 50px;
+    left: 50px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+
+    background-color: var(--vetusta-yellow);
+    border-radius: 5px;
+    width: fit-content;
+    padding: 4px 7px;
+  }
+
+  span.rfebm-shield {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 5px;
+  }
+
+  span.rfebm-shield p {
+    font-size: 18px;
+  }
+
+  div.stopwatch {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    letter-spacing: 5px;
+  }
+</style>
