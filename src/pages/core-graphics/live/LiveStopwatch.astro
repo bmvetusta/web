@@ -1,0 +1,62 @@
+---
+import { AUTH_SECRET_TOKEN } from 'astro:env/server';
+import { authCoreGraphicsCookieName } from 'src/services/core-graphics/constants';
+
+export const prerender = false;
+export const partial = true;
+
+const isAuth = Astro.cookies.get(authCoreGraphicsCookieName)?.value === AUTH_SECRET_TOKEN;
+if (!isAuth) {
+  return Astro.redirect('/core-graphics/setup');
+}
+---
+
+<div id='stopwatch'>
+  <span id='part'>1</span>
+  <div id='time'>
+    <span id='minutes'>00</span>
+    <span id='seconds'>00</span>
+  </div>
+</div>
+
+<style slot='head'>
+  #minutes::after {
+    content: ' :';
+  }
+</style>
+
+<script>
+  import { TimerMessageAction } from 'src/lib/stopwatch-worker';
+  import { ablyStopwatchReceiver } from 'src/services/ably/ably-stopwatch-receiver';
+  const $ = (selector: string) => document.querySelector(selector);
+  const $part = $('span#part');
+  const $minutes = $('span#minutes');
+  const $seconds = $('span#seconds');
+
+  if ($part && $minutes && $seconds) {
+    ablyStopwatchReceiver({
+      onTick: (timerMessage) => {
+        console.log('onTick', timerMessage);
+        const {
+          elapsed: { minutes, seconds },
+          name,
+        } = timerMessage.payload;
+        $('span#part')!.textContent = name;
+        $('span#minutes')!.textContent = minutes.toString().padStart(2, '0') ?? '00';
+        $('span#seconds')!.textContent = seconds.toString().padStart(2, '0') ?? '00';
+      },
+      onSuccess: (timerMessage) => {
+        console.log('Timer message', timerMessage);
+        if (
+          timerMessage.action === TimerMessageAction.CREATE_SET ||
+          timerMessage.action === TimerMessageAction.RESUME ||
+          timerMessage.action === TimerMessageAction.START
+        ) {
+          $part.textContent = timerMessage.name;
+          $minutes.textContent = '00';
+          $seconds.textContent = '00';
+        }
+      },
+    });
+  }
+</script>

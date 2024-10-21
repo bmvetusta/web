@@ -15,6 +15,7 @@ export const setOffset = defineAction({
   accept: 'json',
   input: input,
   handler: async (payload, context: ActionAPIContext) => {
+    console.debug('setOffset action called with', payload);
     isAuth(context); // Throws if not authorized
 
     const message: Message = {

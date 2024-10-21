@@ -80,6 +80,7 @@ type TickMessage = {
 type ErrorMessage = {
   ok: false;
   action: Exclude<TimerMessageAction, TimerMessageAction.TICK>;
+  name: TimerName;
   type: 'error';
   error: string;
   timerOptions?: CreateTimerOptions;
@@ -96,6 +97,7 @@ type SuccessMessage = {
   >;
   type: 'success';
   success: string;
+  name: TimerName;
   timerOptions: CreateTimerOptions;
 };
 
@@ -371,6 +373,7 @@ function timerMillisecondsWorker(self: WorkerGlobalScope) {
         action: TimerMessageAction.CREATE_SET,
         type: 'error',
         error: `Backwards Timer "${name}" requires a limit`,
+        name,
         timerOptions: {
           offsetMs,
           limitMs,
@@ -405,6 +408,7 @@ function timerMillisecondsWorker(self: WorkerGlobalScope) {
         action: TimerMessageAction.CREATE_SET,
         type: 'error',
         error: 'OffsetMs can not be greater than limitMs',
+        name,
         timerOptions: {
           offsetMs,
           limitMs,
@@ -421,6 +425,7 @@ function timerMillisecondsWorker(self: WorkerGlobalScope) {
       ok: true,
       action: TimerMessageAction.CREATE_SET,
       type: 'success',
+      name,
       success: `Timer "${name}" created or new options applied`,
       timerOptions: {
         offsetMs,
@@ -440,6 +445,7 @@ function timerMillisecondsWorker(self: WorkerGlobalScope) {
         ok: false,
         action: TimerMessageAction.RESUME,
         type: 'error',
+        name,
         error: `Timer "${name}" does not exist`,
       };
     }
@@ -469,6 +475,7 @@ function timerMillisecondsWorker(self: WorkerGlobalScope) {
       ok: true,
       action: TimerMessageAction.RESUME,
       type: 'success',
+      name,
       success: `Timer "${name}" resumed`,
       timerOptions: {
         offsetMs,
@@ -488,6 +495,7 @@ function timerMillisecondsWorker(self: WorkerGlobalScope) {
         ok: false,
         action: TimerMessageAction.PAUSE,
         type: 'error',
+        name,
         error: `Timer "${name}" does not exist`,
       };
     }
@@ -512,6 +520,7 @@ function timerMillisecondsWorker(self: WorkerGlobalScope) {
         ok: true,
         action: TimerMessageAction.PAUSE,
         type: 'success',
+        name,
         success: `Timer "${name}" stopped`,
         timerOptions: {
           offsetMs,
@@ -538,6 +547,7 @@ function timerMillisecondsWorker(self: WorkerGlobalScope) {
       ok: true,
       action: TimerMessageAction.PAUSE,
       type: 'success',
+      name,
       success: `Timer "${name}" already stopped`,
       timerOptions: {
         offsetMs,
@@ -557,6 +567,7 @@ function timerMillisecondsWorker(self: WorkerGlobalScope) {
         ok: false,
         action: TimerMessageAction.RESET,
         type: 'error',
+        name,
         error: `Timer "${name}" does not exist`,
       };
     }
@@ -582,6 +593,7 @@ function timerMillisecondsWorker(self: WorkerGlobalScope) {
         ok: true,
         action: TimerMessageAction.RESET,
         type: 'success',
+        name,
         success: `Timer "${name}" reset`,
         timerOptions: {
           offsetMs,
@@ -605,6 +617,7 @@ function timerMillisecondsWorker(self: WorkerGlobalScope) {
       ok: true,
       action: TimerMessageAction.RESET,
       type: 'success',
+      name,
       success: `Timer "${name}" reset`,
       timerOptions: {
         offsetMs,
@@ -636,6 +649,7 @@ function timerMillisecondsWorker(self: WorkerGlobalScope) {
       ok: true,
       action: TimerMessageAction.START,
       type: 'success',
+      name,
       success: `Timer "${name}" started`,
       timerOptions: {
         offsetMs: timersStore[name].offsetMs,
@@ -675,6 +689,7 @@ function timerMillisecondsWorker(self: WorkerGlobalScope) {
       ok: true,
       action: TimerMessageAction.STOP,
       type: 'success',
+      name,
       success: `Timer "${name}" stopped`,
       timerOptions: {
         offsetMs,
@@ -694,12 +709,23 @@ function timerMillisecondsWorker(self: WorkerGlobalScope) {
         ok: false,
         action: TimerMessageAction.SET_OFFSET,
         type: 'error',
+        name,
         error: `Timer "${name}" does not exist`,
       };
     }
 
-    const oldOffset = timersStore[name].offsetMs;
-    timersStore[name].offsetMs = offsetMs;
+    const isRunning = timersStore[name].start > 0;
+
+    const oldOffset = timersStore[name].offsetMs; // To use later to retrieve the message
+    timersStore[name].offsetMs = offsetMs + timersStore[name].intervalTimeMs;
+    timersStore[name].start = Date.now();
+    timersStore[name].lastCalculatedElapsedMs = 0;
+
+    if (!isRunning) {
+      timersStore[name].start = Date.now();
+      intervalCallback(name)(); // Recalculate elapsed time
+      timersStore[name].start = 0; // Stop the timer
+    }
 
     const {
       limitMs,
@@ -713,6 +739,7 @@ function timerMillisecondsWorker(self: WorkerGlobalScope) {
       ok: true,
       action: TimerMessageAction.SET_OFFSET,
       type: 'success',
+      name,
       success: `Timer "${name}" offset set from "${oldOffset}" to "${offsetMs}". Changes will happen on next tick`,
       timerOptions: {
         offsetMs,
@@ -726,22 +753,56 @@ function timerMillisecondsWorker(self: WorkerGlobalScope) {
     };
   }
 
-  function addOffset(name: TimerName, offset: number): Message {
+  function addOffset(name: TimerName, offsetMs: number): Message {
     if (!timersStore[name]) {
       return {
         ok: false,
         action: TimerMessageAction.ADD_OFFSET,
         type: 'error',
+        name,
         error: `Timer "${name}" does not exist`,
       };
     }
 
+    const isRunning = timersStore[name].start > 0;
     const oldOffset = timersStore[name].offsetMs;
-    timersStore[name].offsetMs += offset;
-    const newOffset = timersStore[name].offsetMs;
+    const newOffset = +oldOffset + offsetMs;
+
+    // Fail in case elapsed - newOffset is negative
+    // for reset should use reset option
+    const probablyElapseIfStopped = timersStore[name].lastCalculatedElapsedMs + newOffset;
+    const probablyElapse = isRunning
+      ? Date.now() - timersStore[name].start + newOffset + timersStore[name].intervalTimeMs
+      : probablyElapseIfStopped;
+    if (probablyElapse < 0) {
+      return {
+        ok: false,
+        action: TimerMessageAction.ADD_OFFSET,
+        type: 'error',
+        name,
+        error: `Timer "${name}" total offset can not be negative`,
+        timerOptions: {
+          offsetMs: oldOffset,
+          limitMs: timersStore[name].limitMs,
+          backwards: timersStore[name].backwards,
+          relativeTimers: timersStore[name].relativeTimers,
+          relativeTimersLimitInMs: timersStore[name].relativeTimersLimitInMs,
+          backwardsRelativeTimers: timersStore[name].backwardsRelativeTimers,
+          intervalTimeMs: timersStore[name].intervalTimeMs,
+        },
+      };
+    }
+
+    timersStore[name].offsetMs = newOffset;
+
+    if (!isRunning) {
+      timersStore[name].start = Date.now();
+      intervalCallback(name)(); // Recalculate elapsed time
+      timersStore[name].start = 0; // Stop the timer
+    }
 
     const {
-      offsetMs,
+      offsetMs: storedOffset,
       limitMs,
       backwards,
       relativeTimers,
@@ -753,9 +814,10 @@ function timerMillisecondsWorker(self: WorkerGlobalScope) {
       ok: true,
       action: TimerMessageAction.ADD_OFFSET,
       type: 'success',
+      name,
       success: `Timer "${name}" offset has changed from "${oldOffset}" to "${newOffset}". Changes will happen on next tick`,
       timerOptions: {
-        offsetMs,
+        offsetMs: storedOffset,
         limitMs,
         backwards,
         relativeTimers,
@@ -776,6 +838,7 @@ function timerMillisecondsWorker(self: WorkerGlobalScope) {
         ok: false,
         action: TimerMessageAction.ADD_RELATIVE_TIMERS,
         type: 'error',
+        name,
         error: `Timer "${name}" does not exist`,
       };
     }
@@ -796,6 +859,7 @@ function timerMillisecondsWorker(self: WorkerGlobalScope) {
         ok: false,
         action: TimerMessageAction.ADD_RELATIVE_TIMERS,
         type: 'error',
+        name,
         error: `Team index "${index}" is not a number`,
         timerOptions: {
           offsetMs,
@@ -828,6 +892,7 @@ function timerMillisecondsWorker(self: WorkerGlobalScope) {
       ok: true,
       action: TimerMessageAction.ADD_RELATIVE_TIMERS,
       type: 'success',
+      name,
       success: `Timer "${name}" added ${relativeTimers.length} timers to ${index}`,
       timerOptions: {
         offsetMs,
@@ -851,6 +916,7 @@ function timerMillisecondsWorker(self: WorkerGlobalScope) {
         ok: false,
         action: TimerMessageAction.REMOVE_RELATIVE_TIMERS,
         type: 'error',
+        name,
         error: `Timer "${name}" does not exist`,
       };
     }
@@ -871,6 +937,7 @@ function timerMillisecondsWorker(self: WorkerGlobalScope) {
         ok: false,
         action: TimerMessageAction.REMOVE_RELATIVE_TIMERS,
         type: 'error',
+        name,
         error: `Team index "${index}" is not a number`,
         timerOptions: {
           offsetMs,
@@ -898,6 +965,7 @@ function timerMillisecondsWorker(self: WorkerGlobalScope) {
         ok: false,
         action: TimerMessageAction.REMOVE_RELATIVE_TIMERS,
         type: 'error',
+        name,
         error: `Team "${index}" does not exist`,
         timerOptions: {
           offsetMs,
@@ -929,6 +997,7 @@ function timerMillisecondsWorker(self: WorkerGlobalScope) {
       ok: true,
       action: TimerMessageAction.REMOVE_RELATIVE_TIMERS,
       type: 'success',
+      name,
       success: `Timer "${name}" removed ${timersIds.length} timers from ${index}`,
       timerOptions: {
         offsetMs,

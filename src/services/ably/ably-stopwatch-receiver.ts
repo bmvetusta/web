@@ -1,61 +1,34 @@
----
-import { AUTH_SECRET_TOKEN } from 'astro:env/server';
-import { authCoreGraphicsCookieName } from 'src/services/core-graphics/constants';
+import Ably from 'ably';
+import { actions } from 'astro:actions';
+import {
+  TimerAction,
+  TimerWorker,
+  type CreateTimerOptions,
+  type ErrorCallback,
+  type RelativeTime,
+  type RelativeTimeId,
+  type SuccessCallback,
+  type TickCallback,
+} from 'src/lib/stopwatch-worker';
 
-export const prerender = false;
-export const partial = true;
+import { ablyClientIdKey, liveGraphicsStopwatchChannelName } from 'src/services/ably/constants';
 
-const isAuth = Astro.cookies.get(authCoreGraphicsCookieName)?.value === AUTH_SECRET_TOKEN;
-if (!isAuth) {
-  return Astro.redirect('/core-graphics/setup');
-}
----
-
-<div id='stopwatch'>
-  <span id='part'>1</span>
-  <div id='time'>
-    <span id='minutes'>00</span>
-    <span id='seconds'>00</span>
-  </div>
-</div>
-
-<style slot='head'>
-  #minutes::after {
-    content: ' :';
-  }
-</style>
-
-<script>
-  import Ably from 'ably';
-  import { actions } from 'astro:actions';
-  import {
-    TimerAction,
-    TimerWorker,
-    type CreateTimerOptions,
-    type RelativeTime,
-    type RelativeTimeId,
-  } from 'src/lib/stopwatch-worker';
-  import { ablyClientIdKey, liveGraphicsStopwatchChannelName } from 'src/services/ably/constants';
-
-  const $ = (selector: string) => document.querySelector(selector);
+export function ablyStopwatchReceiver({
+  onTick,
+  onError,
+  onSuccess,
+  onLimitReached,
+}: {
+  onTick: TickCallback;
+  onError?: ErrorCallback;
+  onSuccess?: SuccessCallback;
+  onLimitReached?: TickCallback;
+}) {
   const timer = TimerWorker({
-    onTick: (timerMessage) => {
-      console.log('onTick', timerMessage);
-      const {
-        elapsed: { minutes, seconds },
-        name,
-      } = timerMessage.payload;
-      $('span#part')!.textContent = name;
-      $('span#minutes')!.textContent = minutes.toString().padStart(2, '0') ?? '00';
-      $('span#seconds')!.textContent = seconds.toString().padStart(2, '0') ?? '00';
-    },
-    // onLimitReached(m) {
-    //   $('p#time')!.textContent = m.payload.elapsed.seconds.toString() ?? '0';
-    // },
-    // onSuccess: (timerMessage) => {
-    // TODO: Report timer to endpoint (so it can be sync with the panel) when:
-    //  - resume/pause/reset/reach limit/stop/get relative timers
-    // },
+    onTick,
+    onError,
+    onSuccess,
+    onLimitReached,
   });
 
   const realtime = new Ably.Realtime({
@@ -136,8 +109,8 @@ if (!isAuth) {
         break;
       }
       case TimerAction.ADD_OFFSET: {
-        const timerName = message.data.name as string;
-        const payload = message.data.payload as number;
+        const timerName = message.data.payload.name as string;
+        const payload = message.data.payload.payload as number;
         if (!timerName) {
           return;
         }
@@ -145,8 +118,8 @@ if (!isAuth) {
         break;
       }
       case TimerAction.SET_OFFSET: {
-        const timerName = message.data.name as string;
-        const payload = message.data.payload as number;
+        const timerName = message.data.payload.name as string;
+        const payload = message.data.payload.payload as number;
         if (!timerName) {
           return;
         }
@@ -183,4 +156,4 @@ if (!isAuth) {
       }
     }
   });
-</script>
+}

@@ -2,7 +2,7 @@
 import { AUTH_SECRET_TOKEN } from 'astro:env/server';
 import CoreGraphics from 'src/layouts/CoreGraphics.astro';
 import { authCoreGraphicsCookieName } from 'src/services/core-graphics/constants';
-import Stopwatch from './Stopwatch.astro';
+import LiveStopwatch from './LiveStopwatch.astro';
 
 export const prerender = false;
 // export const partial = true;
@@ -14,5 +14,5 @@ if (!isAuth) {
 ---
 
 <CoreGraphics>
-  <Stopwatch />
+  <LiveStopwatch />
 </CoreGraphics>

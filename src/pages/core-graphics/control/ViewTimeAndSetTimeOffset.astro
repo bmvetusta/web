@@ -1,0 +1,258 @@
+---
+export const partial = true;
+export const prerender = false;
+---
+
+<section>
+  <h2>Time Controls</h2>
+  <p id='notification'></p>
+  <form action='#' id='timer-controls'>
+    <fieldset>
+      <legend>Timer Controls</legend>
+      <button id='start-1st'>Start 1st</button>
+      <button id='pause-1st'>Pause 1st</button>
+      <button id='resume-1st'>Resume 1st</button>
+      <button id='reset-1st'>Reset 1st</button>
+    </fieldset>
+    <fieldset>
+      <button id='start-2nd'>Start 2nd</button>
+      <button id='pause-2nd'>Pause 2nd</button>
+      <button id='resume-2nd'>Resume 2nd</button>
+      <button id='reset-2nd'>Reset 2nd</button>
+    </fieldset>
+  </form>
+
+  <form action='#' id='set-offset'>
+    <fieldset>
+      <legend>Set Time Offset</legend>
+      <label for='minutes'>Minutes:</label>
+      <input type='number' name='minutes' min='0' max='90' value='0' />
+      <label for='seconds'>Seconds:</label>
+      <input type='number' name='seconds' min='0' max='59' value='0' />
+      <input type='submit' value='Set Offset' />
+      <small></small>
+    </fieldset>
+
+    <fieldset>
+      <legend>Add Time Offset</legend>
+      <label for='minutes'>Minutes:</label>
+      <input type='number' name='addMinutes' min='-90' max='90' value='0' />
+      <label for='seconds'>Seconds:</label>
+      <input type='number' name='addSeconds' min='-300' max='300' value='2' />
+      <button id='add-offset'>Add Offset</button>
+    </fieldset>
+  </form>
+</section>
+
+<style>
+  p#notification {
+    width: 100%;
+    height: 2rem;
+  }
+</style>
+
+<script>
+  import { actions } from 'astro:actions';
+  import { TimerAction, TimerMessageAction } from 'src/lib/stopwatch-worker';
+  import { ablyStopwatchReceiver } from 'src/services/ably/ably-stopwatch-receiver';
+
+  declare global {
+    interface Window {
+      currentTimerName: string | null;
+      isCurrentTimerRunning: boolean;
+    }
+  }
+
+  const $ = (selector: string) => document.querySelector(selector);
+  const setMinutesElement = $('form#set-offset input[name="minutes"]') as HTMLInputElement;
+  const setSecondsElement = $('form#set-offset input[name="seconds"]') as HTMLInputElement;
+  const formSetOffsetElement = $('form#set-offset') as HTMLFormElement;
+  const addOffsetBtn = $('button#add-offset') as HTMLButtonElement;
+  window.currentTimerName = null;
+  window.isCurrentTimerRunning = false;
+
+  ablyStopwatchReceiver({
+    onTick: (timerMessage) => {
+      if (!timerMessage.ok) {
+        console.error('Error receiving timer message', timerMessage);
+      }
+      const {
+        elapsed: { minutes, seconds },
+      } = timerMessage.payload;
+
+      window.isCurrentTimerRunning = true;
+      setMinutesElement.value = minutes.toString();
+      setSecondsElement.value = seconds.toString();
+    },
+    onError: (error) => {
+      console.error('Error receiving timer message', error);
+      window.currentTimerName = error.name;
+      $('p#notification')!.textContent = `Timer Error (${error.action}): ${error.error}`;
+      setTimeout(() => {
+        $('p#notification')!.textContent = '';
+      }, 3_000);
+    },
+    onSuccess: (timerMessage) => {
+      console.log('Timer message', timerMessage);
+      window.currentTimerName = timerMessage.name;
+
+      if (
+        timerMessage.action === TimerMessageAction.PAUSE ||
+        timerMessage.action === TimerMessageAction.STOP ||
+        (timerMessage.action === TimerMessageAction.DELETE_TIMER &&
+          timerMessage.name === window.currentTimerName)
+      ) {
+        window.isCurrentTimerRunning = false;
+      }
+
+      if (
+        timerMessage.action === TimerMessageAction.START ||
+        timerMessage.action === TimerMessageAction.RESUME
+      ) {
+        window.isCurrentTimerRunning = true;
+      }
+
+      $('p#notification')!.textContent = `Timer ${timerMessage.name} ${timerMessage.action} OK`;
+      setTimeout(() => {
+        $('p#notification')!.textContent = '';
+      }, 3_000);
+    },
+    onLimitReached: (timerMessage) => {
+      window.isCurrentTimerRunning = false;
+      $('p#notification')!.textContent = `Timer ${timerMessage.payload.name} reached limit`;
+      setTimeout(() => {
+        $('p#notification')!.textContent = '';
+      }, 3_000);
+    },
+  });
+
+  formSetOffsetElement?.addEventListener('submit', async (event: SubmitEvent) => {
+    event.preventDefault();
+    const minutes = Number(setMinutesElement?.valueAsNumber ?? 0);
+    const seconds = Number(setSecondsElement?.valueAsNumber ?? 0);
+    if (isNaN(minutes) || isNaN(seconds) || !window.currentTimerName) {
+      console.error('Invalid minutes or seconds', {
+        minutes,
+        seconds,
+        currentTimerName: window.currentTimerName,
+      });
+      return;
+    }
+
+    const offset = minutes * 60_000 + seconds * 1_000;
+    console.log('Setting offset', { offset, minutes, seconds });
+    const response = await actions.ably.stopwatch.setOffset({
+      name: window.currentTimerName,
+      payload: offset,
+    });
+
+    if (response.data) {
+      formSetOffsetElement.querySelector('small')!.textContent = 'Offset set';
+    }
+
+    if (response.error) {
+      formSetOffsetElement.querySelector('small')!.textContent = 'Error setting offset';
+    }
+
+    setTimeout(() => {
+      formSetOffsetElement.querySelector('small')!.textContent = '';
+    }, 3_000);
+  });
+
+  addOffsetBtn?.addEventListener('click', (event) => {
+    event.preventDefault();
+    const addMinutesElement = $('form#set-offset input[name="addMinutes"]') as HTMLInputElement;
+    const addSecondsElement = $('form#set-offset input[name="addSeconds"]') as HTMLInputElement;
+    const minutes = Number(addMinutesElement?.valueAsNumber ?? 0);
+    const seconds = Number(addSecondsElement?.valueAsNumber ?? 0);
+    if (isNaN(minutes) || isNaN(seconds) || !window.currentTimerName) {
+      console.error('Invalid minutes or seconds', {
+        minutes,
+        seconds,
+        currentTimerName: window.currentTimerName,
+      });
+      return;
+    }
+
+    const offsetMs = minutes * 60_000 + seconds * 1_000;
+    console.log('Adding offset', { offsetMs });
+    actions.ably.stopwatch.addOffset({
+      name: window.currentTimerName,
+      payload: offsetMs,
+    });
+  });
+
+  const partTimer = {
+    first: '1T',
+    second: '2T',
+  };
+
+  await actions.ably.stopwatch.createOrSet({
+    name: partTimer.second,
+    payload: {
+      limitMs: 60 * 60_000,
+      offsetMs: 30 * 60_000,
+    },
+  });
+
+  await actions.ably.stopwatch.createOrSet({
+    name: partTimer.first,
+    payload: {
+      limitMs: 30 * 60_000,
+    },
+  });
+
+  $('#start-1st')?.addEventListener('click', async () => {
+    await actions.ably.stopwatch.start({
+      name: partTimer.first,
+      payload: {
+        limitMs: 30 * 60_000,
+      },
+    });
+  });
+  $('#pause-1st')?.addEventListener('click', async () => {
+    await actions.ably.stopwatch.actionToTimerName({
+      action: TimerAction.PAUSE,
+      name: partTimer.first,
+    });
+  });
+  $('#resume-1st')?.addEventListener('click', async () => {
+    await actions.ably.stopwatch.actionToTimerName({
+      action: TimerAction.RESUME,
+      name: partTimer.first,
+    });
+  });
+  $('#reset-1st')?.addEventListener('click', async () => {
+    await actions.ably.stopwatch.actionToTimerName({
+      action: TimerAction.RESET,
+      name: partTimer.first,
+    });
+  });
+  $('#start-2nd')?.addEventListener('click', async () => {
+    await actions.ably.stopwatch.start({
+      name: partTimer.second,
+      payload: {
+        limitMs: 60 * 60_000,
+        offsetMs: 30 * 60_000,
+      },
+    });
+  });
+  $('#pause-2nd')?.addEventListener('click', async () => {
+    await actions.ably.stopwatch.actionToTimerName({
+      action: TimerAction.PAUSE,
+      name: partTimer.second,
+    });
+  });
+  $('#resume-2nd')?.addEventListener('click', async () => {
+    await actions.ably.stopwatch.actionToTimerName({
+      action: TimerAction.RESUME,
+      name: partTimer.second,
+    });
+  });
+  $('#reset-2nd')?.addEventListener('click', async () => {
+    await actions.ably.stopwatch.actionToTimerName({
+      action: TimerAction.RESET,
+      name: partTimer.second,
+    });
+  });
+</script>
