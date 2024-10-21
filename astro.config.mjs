@@ -22,7 +22,12 @@ if (import.meta.env.PROD) {
 // https://astro.build/config
 export default defineConfig({
   site: site.href,
-  integrations: [react()],
+  integrations: [
+    react({
+      include: ['**/react/*'],
+      experimentalReactChildren: true,
+    }),
+  ],
   build: {
     inlineStylesheets: 'always',
   },
