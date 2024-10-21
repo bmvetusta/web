@@ -2,7 +2,7 @@
   "id": 209500,
   "federationId": 28,
   "name": "AUTO-CENTER PRINCIPADO",
-  "shieldImageUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/2898/square_35723432687275366a39.jpg",
+  "shieldImageUrl": "https://balonmano.isquad.es/images/afiliacion_clubs/2898/square_35723432687275366a39.jpg",
   "phone": "608 86 55 54",
   "shirtRgb": "#f7f900/#000000",
   "pantsRgb": "#000000",
@@ -95,7 +95,7 @@
       "localTeam": {
         "id": 209500,
         "name": "AUTO-CENTER PRINCIPADO",
-        "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/2898/square_35723432687275366a39.jpg",
+        "shieldUrl": "https://balonmano.isquad.es/images/afiliacion_clubs/2898/square_35723432687275366a39.jpg",
         "score": 31,
         "position": 1,
         "responsibleId": null,
@@ -104,7 +104,7 @@
       "visitorTeam": {
         "id": 214998,
         "name": "REAL GRUPO DE CULTURA COVADONGA",
-        "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/70/square_646e366b316534346e76.jpg",
+        "shieldUrl": "https://balonmano.isquad.es/images/afiliacion_clubs/70/square_646e366b316534346e76.jpg",
         "score": 22,
         "position": 2,
         "responsibleId": null,
@@ -125,7 +125,7 @@
       "localTeam": {
         "id": 209246,
         "name": "ROYAL PREMIUM GIJON",
-        "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/488/square_32383967706436617972.jpg",
+        "shieldUrl": "https://balonmano.isquad.es/images/afiliacion_clubs/488/square_32383967706436617972.jpg",
         "score": 20,
         "position": 3,
         "responsibleId": null,
@@ -134,7 +134,7 @@
       "visitorTeam": {
         "id": 209500,
         "name": "AUTO-CENTER PRINCIPADO",
-        "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/2898/square_35723432687275366a39.jpg",
+        "shieldUrl": "https://balonmano.isquad.es/images/afiliacion_clubs/2898/square_35723432687275366a39.jpg",
         "score": 29,
         "position": 1,
         "responsibleId": null,
@@ -155,7 +155,7 @@
       "localTeam": {
         "id": 209500,
         "name": "AUTO-CENTER PRINCIPADO",
-        "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/2898/square_35723432687275366a39.jpg",
+        "shieldUrl": "https://balonmano.isquad.es/images/afiliacion_clubs/2898/square_35723432687275366a39.jpg",
         "score": 24,
         "position": 0,
         "responsibleId": null,
@@ -164,7 +164,7 @@
       "visitorTeam": {
         "id": 212088,
         "name": "BALONMANO BARAKALDO",
-        "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/241/square_6e70336a3867636e6264.jpg",
+        "shieldUrl": "https://balonmano.isquad.es/images/afiliacion_clubs/241/square_6e70336a3867636e6264.jpg",
         "score": 15,
         "position": 0,
         "responsibleId": null,
@@ -185,7 +185,7 @@
       "localTeam": {
         "id": 209500,
         "name": "AUTO-CENTER PRINCIPADO",
-        "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/2898/square_35723432687275366a39.jpg",
+        "shieldUrl": "https://balonmano.isquad.es/images/afiliacion_clubs/2898/square_35723432687275366a39.jpg",
         "score": 25,
         "position": 0,
         "responsibleId": null,
@@ -194,7 +194,7 @@
       "visitorTeam": {
         "id": 201330,
         "name": "CALVO XIRIA",
-        "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/260/square_76786a66626c326a6838.jpg",
+        "shieldUrl": "https://balonmano.isquad.es/images/afiliacion_clubs/260/square_76786a66626c326a6838.jpg",
         "score": 26,
         "position": 0,
         "responsibleId": null,
@@ -215,7 +215,7 @@
       "localTeam": {
         "id": 201150,
         "name": "HORIZONTE ATLETICA",
-        "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/69/square_6d6b7235397562793961.jpg",
+        "shieldUrl": "https://balonmano.isquad.es/images/afiliacion_clubs/69/square_6d6b7235397562793961.jpg",
         "score": 25,
         "position": 0,
         "responsibleId": null,
@@ -224,7 +224,7 @@
       "visitorTeam": {
         "id": 209500,
         "name": "AUTO-CENTER PRINCIPADO",
-        "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/2898/square_35723432687275366a39.jpg",
+        "shieldUrl": "https://balonmano.isquad.es/images/afiliacion_clubs/2898/square_35723432687275366a39.jpg",
         "score": 27,
         "position": 0,
         "responsibleId": null,
@@ -245,7 +245,7 @@
       "localTeam": {
         "id": 218784,
         "name": "UNIÓN FINANCIERA",
-        "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/439/square_7868636d337739673532.jpg",
+        "shieldUrl": "https://balonmano.isquad.es/images/afiliacion_clubs/439/square_7868636d337739673532.jpg",
         "score": 28,
         "position": 0,
         "responsibleId": null,
@@ -254,7 +254,7 @@
       "visitorTeam": {
         "id": 209500,
         "name": "AUTO-CENTER PRINCIPADO",
-        "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/2898/square_35723432687275366a39.jpg",
+        "shieldUrl": "https://balonmano.isquad.es/images/afiliacion_clubs/2898/square_35723432687275366a39.jpg",
         "score": 22,
         "position": 0,
         "responsibleId": null,
@@ -275,7 +275,7 @@
       "localTeam": {
         "id": 209180,
         "name": "CONGESA XXI BALONMANO CIUDAD DE SALAMANCA",
-        "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/135/square_366a6b36366f3834316a.jpg",
+        "shieldUrl": "https://balonmano.isquad.es/images/afiliacion_clubs/135/square_366a6b36366f3834316a.jpg",
         "score": 31,
         "position": 7,
         "responsibleId": null,
@@ -284,7 +284,7 @@
       "visitorTeam": {
         "id": 209500,
         "name": "AUTO-CENTER PRINCIPADO",
-        "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/2898/square_35723432687275366a39.jpg",
+        "shieldUrl": "https://balonmano.isquad.es/images/afiliacion_clubs/2898/square_35723432687275366a39.jpg",
         "score": 28,
         "position": 10,
         "responsibleId": null,
@@ -305,7 +305,7 @@
       "localTeam": {
         "id": 209500,
         "name": "AUTO-CENTER PRINCIPADO",
-        "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/2898/square_35723432687275366a39.jpg",
+        "shieldUrl": "https://balonmano.isquad.es/images/afiliacion_clubs/2898/square_35723432687275366a39.jpg",
         "score": 30,
         "position": 14,
         "responsibleId": null,
@@ -314,7 +314,7 @@
       "visitorTeam": {
         "id": 218714,
         "name": "BALONMANO CAJA RURAL ZAMORA",
-        "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/437/square_766f6d6d376d6972346c.jpg",
+        "shieldUrl": "https://balonmano.isquad.es/images/afiliacion_clubs/437/square_766f6d6d376d6972346c.jpg",
         "score": 32,
         "position": 4,
         "responsibleId": null,
@@ -335,7 +335,7 @@
       "localTeam": {
         "id": 203934,
         "name": "BM. SANTOÑA",
-        "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/767/square_64727237756f70706669.jpg",
+        "shieldUrl": "https://balonmano.isquad.es/images/afiliacion_clubs/767/square_64727237756f70706669.jpg",
         "score": 27,
         "position": 14,
         "responsibleId": null,
@@ -344,7 +344,7 @@
       "visitorTeam": {
         "id": 209500,
         "name": "AUTO-CENTER PRINCIPADO",
-        "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/2898/square_35723432687275366a39.jpg",
+        "shieldUrl": "https://balonmano.isquad.es/images/afiliacion_clubs/2898/square_35723432687275366a39.jpg",
         "score": 30,
         "position": 9,
         "responsibleId": null,
@@ -355,28 +355,28 @@
       "id": 1385807,
       "groupId": 1023856,
       "stadiumId": null,
-      "uploadedReport": false,
+      "uploadedReport": true,
       "competitionName": "PRIMERA DIVISIÓN MASCULINA - LIGA REGULAR - GRUPO B",
       "week": 4,
       "urlStreaming": null,
-      "status": "PENDING",
+      "status": "ENDED",
       "date": "2024-10-12",
       "time": "17:30",
       "localTeam": {
         "id": 209500,
         "name": "AUTO-CENTER PRINCIPADO",
-        "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/2898/square_35723432687275366a39.jpg",
-        "score": null,
-        "position": 9,
+        "shieldUrl": "https://balonmano.isquad.es/images/afiliacion_clubs/2898/square_35723432687275366a39.jpg",
+        "score": 27,
+        "position": 10,
         "responsibleId": null,
         "category": null
       },
       "visitorTeam": {
         "id": 212098,
         "name": "CLUB BALONMANO SORIA",
-        "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/139/square_6a68756a757030356e76.jpg",
-        "score": null,
-        "position": 1,
+        "shieldUrl": "https://balonmano.isquad.es/images/afiliacion_clubs/139/square_6a68756a757030356e76.jpg",
+        "score": 27,
+        "position": 3,
         "responsibleId": null,
         "category": null
       }
@@ -385,18 +385,18 @@
       "id": 1385814,
       "groupId": 1023856,
       "stadiumId": null,
-      "uploadedReport": false,
+      "uploadedReport": true,
       "competitionName": "PRIMERA DIVISIÓN MASCULINA - LIGA REGULAR - GRUPO B",
       "week": 5,
       "urlStreaming": null,
-      "status": "PENDING",
+      "status": "ENDED",
       "date": "2024-10-19",
       "time": "17:00",
       "localTeam": {
         "id": 209246,
         "name": "ROYAL PREMIUM GIJON",
-        "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/488/square_32383967706436617972.jpg",
-        "score": null,
+        "shieldUrl": "https://balonmano.isquad.es/images/afiliacion_clubs/488/square_32383967706436617972.jpg",
+        "score": 24,
         "position": 4,
         "responsibleId": null,
         "category": null
@@ -404,9 +404,9 @@
       "visitorTeam": {
         "id": 209500,
         "name": "AUTO-CENTER PRINCIPADO",
-        "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/2898/square_35723432687275366a39.jpg",
-        "score": null,
-        "position": 9,
+        "shieldUrl": "https://balonmano.isquad.es/images/afiliacion_clubs/2898/square_35723432687275366a39.jpg",
+        "score": 19,
+        "position": 11,
         "responsibleId": null,
         "category": null
       }
@@ -425,18 +425,18 @@
       "localTeam": {
         "id": 209500,
         "name": "AUTO-CENTER PRINCIPADO",
-        "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/2898/square_35723432687275366a39.jpg",
+        "shieldUrl": "https://balonmano.isquad.es/images/afiliacion_clubs/2898/square_35723432687275366a39.jpg",
         "score": null,
-        "position": 9,
+        "position": 11,
         "responsibleId": null,
         "category": null
       },
       "visitorTeam": {
         "id": 218784,
         "name": "UNIÓN FINANCIERA",
-        "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/439/square_7868636d337739673532.jpg",
+        "shieldUrl": "https://balonmano.isquad.es/images/afiliacion_clubs/439/square_7868636d337739673532.jpg",
         "score": null,
-        "position": 2,
+        "position": 1,
         "responsibleId": null,
         "category": null
       }
@@ -455,18 +455,18 @@
       "localTeam": {
         "id": 209685,
         "name": "CLUB BALONMANO CAMARGO",
-        "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/115/square_633062667072386c3368.jpg",
+        "shieldUrl": "https://balonmano.isquad.es/images/afiliacion_clubs/115/square_633062667072386c3368.jpg",
         "score": null,
-        "position": 13,
+        "position": 9,
         "responsibleId": null,
         "category": null
       },
       "visitorTeam": {
         "id": 209500,
         "name": "AUTO-CENTER PRINCIPADO",
-        "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/2898/square_35723432687275366a39.jpg",
+        "shieldUrl": "https://balonmano.isquad.es/images/afiliacion_clubs/2898/square_35723432687275366a39.jpg",
         "score": null,
-        "position": 9,
+        "position": 11,
         "responsibleId": null,
         "category": null
       }
@@ -485,18 +485,18 @@
       "localTeam": {
         "id": 209500,
         "name": "AUTO-CENTER PRINCIPADO",
-        "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/2898/square_35723432687275366a39.jpg",
+        "shieldUrl": "https://balonmano.isquad.es/images/afiliacion_clubs/2898/square_35723432687275366a39.jpg",
         "score": null,
-        "position": 9,
+        "position": 11,
         "responsibleId": null,
         "category": null
       },
       "visitorTeam": {
         "id": 201150,
         "name": "HORIZONTE ATLETICA",
-        "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/69/square_6d6b7235397562793961.jpg",
+        "shieldUrl": "https://balonmano.isquad.es/images/afiliacion_clubs/69/square_6d6b7235397562793961.jpg",
         "score": null,
-        "position": 6,
+        "position": 5,
         "responsibleId": null,
         "category": null
       }
@@ -515,7 +515,7 @@
       "localTeam": {
         "id": 209286,
         "name": "EZEQUIEL 4VALLES LA ROBLA",
-        "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/2896/square_6675636c6a6d30346366.jpg",
+        "shieldUrl": "https://balonmano.isquad.es/images/afiliacion_clubs/2896/square_6675636c6a6d30346366.jpg",
         "score": null,
         "position": 16,
         "responsibleId": null,
@@ -524,9 +524,9 @@
       "visitorTeam": {
         "id": 209500,
         "name": "AUTO-CENTER PRINCIPADO",
-        "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/2898/square_35723432687275366a39.jpg",
+        "shieldUrl": "https://balonmano.isquad.es/images/afiliacion_clubs/2898/square_35723432687275366a39.jpg",
         "score": null,
-        "position": 9,
+        "position": 11,
         "responsibleId": null,
         "category": null
       }
@@ -540,23 +540,23 @@
       "week": 10,
       "urlStreaming": null,
       "status": "PENDING",
-      "date": null,
-      "time": null,
+      "date": "2024-11-23",
+      "time": "18:00",
       "localTeam": {
         "id": 209500,
         "name": "AUTO-CENTER PRINCIPADO",
-        "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/2898/square_35723432687275366a39.jpg",
+        "shieldUrl": "https://balonmano.isquad.es/images/afiliacion_clubs/2898/square_35723432687275366a39.jpg",
         "score": null,
-        "position": 9,
+        "position": 11,
         "responsibleId": null,
         "category": null
       },
       "visitorTeam": {
         "id": 215209,
         "name": "SDC ASTANDER ASTILLERO",
-        "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/112/square_626a3568337770617030.jpg",
+        "shieldUrl": "https://balonmano.isquad.es/images/afiliacion_clubs/112/square_626a3568337770617030.jpg",
         "score": null,
-        "position": 15,
+        "position": 14,
         "responsibleId": null,
         "category": null
       }
@@ -570,12 +570,12 @@
       "week": 11,
       "urlStreaming": null,
       "status": "PENDING",
-      "date": null,
-      "time": null,
+      "date": "2024-12-01",
+      "time": "12:00",
       "localTeam": {
         "id": 201273,
         "name": "UNIVERSIDAD DE LEÓN ADEMAR",
-        "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/126/square_70636d736b6d31387577.jpg",
+        "shieldUrl": "https://balonmano.isquad.es/images/afiliacion_clubs/126/square_70636d736b6d31387577.jpg",
         "score": null,
         "position": 12,
         "responsibleId": null,
@@ -584,9 +584,9 @@
       "visitorTeam": {
         "id": 209500,
         "name": "AUTO-CENTER PRINCIPADO",
-        "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/2898/square_35723432687275366a39.jpg",
+        "shieldUrl": "https://balonmano.isquad.es/images/afiliacion_clubs/2898/square_35723432687275366a39.jpg",
         "score": null,
-        "position": 9,
+        "position": 11,
         "responsibleId": null,
         "category": null
       }
@@ -605,16 +605,16 @@
       "localTeam": {
         "id": 209500,
         "name": "AUTO-CENTER PRINCIPADO",
-        "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/2898/square_35723432687275366a39.jpg",
+        "shieldUrl": "https://balonmano.isquad.es/images/afiliacion_clubs/2898/square_35723432687275366a39.jpg",
         "score": null,
-        "position": 9,
+        "position": 11,
         "responsibleId": null,
         "category": null
       },
       "visitorTeam": {
         "id": 214998,
         "name": "REAL GRUPO DE CULTURA COVADONGA",
-        "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/70/square_646e366b316534346e76.jpg",
+        "shieldUrl": "https://balonmano.isquad.es/images/afiliacion_clubs/70/square_646e366b316534346e76.jpg",
         "score": null,
         "position": 8,
         "responsibleId": null,
@@ -635,18 +635,18 @@
       "localTeam": {
         "id": 209500,
         "name": "AUTO-CENTER PRINCIPADO",
-        "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/2898/square_35723432687275366a39.jpg",
+        "shieldUrl": "https://balonmano.isquad.es/images/afiliacion_clubs/2898/square_35723432687275366a39.jpg",
         "score": null,
-        "position": 9,
+        "position": 11,
         "responsibleId": null,
         "category": null
       },
       "visitorTeam": {
         "id": 212129,
         "name": "BATHCO BM. TORRELAVEGA",
-        "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/117/square_73726e3132697065736b.jpg",
+        "shieldUrl": "https://balonmano.isquad.es/images/afiliacion_clubs/117/square_73726e3132697065736b.jpg",
         "score": null,
-        "position": 5,
+        "position": 6,
         "responsibleId": null,
         "category": null
       }
@@ -665,7 +665,7 @@
       "localTeam": {
         "id": 204021,
         "name": "LA FUENTE PEREDA",
-        "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/100625/square_34397965676d386c7565.jpg",
+        "shieldUrl": "https://balonmano.isquad.es/images/afiliacion_clubs/100625/square_34397965676d386c7565.jpg",
         "score": null,
         "position": 10,
         "responsibleId": null,
@@ -674,9 +674,9 @@
       "visitorTeam": {
         "id": 209500,
         "name": "AUTO-CENTER PRINCIPADO",
-        "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/2898/square_35723432687275366a39.jpg",
+        "shieldUrl": "https://balonmano.isquad.es/images/afiliacion_clubs/2898/square_35723432687275366a39.jpg",
         "score": null,
-        "position": 9,
+        "position": 11,
         "responsibleId": null,
         "category": null
       }
@@ -695,18 +695,18 @@
       "localTeam": {
         "id": 209500,
         "name": "AUTO-CENTER PRINCIPADO",
-        "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/2898/square_35723432687275366a39.jpg",
+        "shieldUrl": "https://balonmano.isquad.es/images/afiliacion_clubs/2898/square_35723432687275366a39.jpg",
         "score": null,
-        "position": 9,
+        "position": 11,
         "responsibleId": null,
         "category": null
       },
       "visitorTeam": {
         "id": 215350,
         "name": "RECOLETAS ARROYO CABERO EDIFICACIONES",
-        "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/807/square_6d686d673264306d316f.jpg",
+        "shieldUrl": "https://balonmano.isquad.es/images/afiliacion_clubs/807/square_6d686d673264306d316f.jpg",
         "score": null,
-        "position": 11,
+        "position": 13,
         "responsibleId": null,
         "category": null
       }
@@ -725,16 +725,16 @@
       "localTeam": {
         "id": 209500,
         "name": "AUTO-CENTER PRINCIPADO",
-        "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/2898/square_35723432687275366a39.jpg",
+        "shieldUrl": "https://balonmano.isquad.es/images/afiliacion_clubs/2898/square_35723432687275366a39.jpg",
         "score": null,
-        "position": 9,
+        "position": 11,
         "responsibleId": null,
         "category": null
       },
       "visitorTeam": {
         "id": 209180,
         "name": "CONGESA XXI BALONMANO CIUDAD DE SALAMANCA",
-        "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/135/square_366a6b36366f3834316a.jpg",
+        "shieldUrl": "https://balonmano.isquad.es/images/afiliacion_clubs/135/square_366a6b36366f3834316a.jpg",
         "score": null,
         "position": 7,
         "responsibleId": null,
@@ -755,18 +755,18 @@
       "localTeam": {
         "id": 218714,
         "name": "BALONMANO CAJA RURAL ZAMORA",
-        "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/437/square_766f6d6d376d6972346c.jpg",
+        "shieldUrl": "https://balonmano.isquad.es/images/afiliacion_clubs/437/square_766f6d6d376d6972346c.jpg",
         "score": null,
-        "position": 3,
+        "position": 2,
         "responsibleId": null,
         "category": null
       },
       "visitorTeam": {
         "id": 209500,
         "name": "AUTO-CENTER PRINCIPADO",
-        "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/2898/square_35723432687275366a39.jpg",
+        "shieldUrl": "https://balonmano.isquad.es/images/afiliacion_clubs/2898/square_35723432687275366a39.jpg",
         "score": null,
-        "position": 9,
+        "position": 11,
         "responsibleId": null,
         "category": null
       }
@@ -785,18 +785,18 @@
       "localTeam": {
         "id": 209500,
         "name": "AUTO-CENTER PRINCIPADO",
-        "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/2898/square_35723432687275366a39.jpg",
+        "shieldUrl": "https://balonmano.isquad.es/images/afiliacion_clubs/2898/square_35723432687275366a39.jpg",
         "score": null,
-        "position": 9,
+        "position": 11,
         "responsibleId": null,
         "category": null
       },
       "visitorTeam": {
         "id": 203934,
         "name": "BM. SANTOÑA",
-        "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/767/square_64727237756f70706669.jpg",
+        "shieldUrl": "https://balonmano.isquad.es/images/afiliacion_clubs/767/square_64727237756f70706669.jpg",
         "score": null,
-        "position": 14,
+        "position": 15,
         "responsibleId": null,
         "category": null
       }
@@ -815,18 +815,18 @@
       "localTeam": {
         "id": 212098,
         "name": "CLUB BALONMANO SORIA",
-        "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/139/square_6a68756a757030356e76.jpg",
+        "shieldUrl": "https://balonmano.isquad.es/images/afiliacion_clubs/139/square_6a68756a757030356e76.jpg",
         "score": null,
-        "position": 1,
+        "position": 3,
         "responsibleId": null,
         "category": null
       },
       "visitorTeam": {
         "id": 209500,
         "name": "AUTO-CENTER PRINCIPADO",
-        "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/2898/square_35723432687275366a39.jpg",
+        "shieldUrl": "https://balonmano.isquad.es/images/afiliacion_clubs/2898/square_35723432687275366a39.jpg",
         "score": null,
-        "position": 9,
+        "position": 11,
         "responsibleId": null,
         "category": null
       }
@@ -845,16 +845,16 @@
       "localTeam": {
         "id": 209500,
         "name": "AUTO-CENTER PRINCIPADO",
-        "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/2898/square_35723432687275366a39.jpg",
+        "shieldUrl": "https://balonmano.isquad.es/images/afiliacion_clubs/2898/square_35723432687275366a39.jpg",
         "score": null,
-        "position": 9,
+        "position": 11,
         "responsibleId": null,
         "category": null
       },
       "visitorTeam": {
         "id": 209246,
         "name": "ROYAL PREMIUM GIJON",
-        "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/488/square_32383967706436617972.jpg",
+        "shieldUrl": "https://balonmano.isquad.es/images/afiliacion_clubs/488/square_32383967706436617972.jpg",
         "score": null,
         "position": 4,
         "responsibleId": null,
@@ -875,18 +875,18 @@
       "localTeam": {
         "id": 218784,
         "name": "UNIÓN FINANCIERA",
-        "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/439/square_7868636d337739673532.jpg",
+        "shieldUrl": "https://balonmano.isquad.es/images/afiliacion_clubs/439/square_7868636d337739673532.jpg",
         "score": null,
-        "position": 2,
+        "position": 1,
         "responsibleId": null,
         "category": null
       },
       "visitorTeam": {
         "id": 209500,
         "name": "AUTO-CENTER PRINCIPADO",
-        "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/2898/square_35723432687275366a39.jpg",
+        "shieldUrl": "https://balonmano.isquad.es/images/afiliacion_clubs/2898/square_35723432687275366a39.jpg",
         "score": null,
-        "position": 9,
+        "position": 11,
         "responsibleId": null,
         "category": null
       }
@@ -905,18 +905,18 @@
       "localTeam": {
         "id": 209500,
         "name": "AUTO-CENTER PRINCIPADO",
-        "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/2898/square_35723432687275366a39.jpg",
+        "shieldUrl": "https://balonmano.isquad.es/images/afiliacion_clubs/2898/square_35723432687275366a39.jpg",
         "score": null,
-        "position": 9,
+        "position": 11,
         "responsibleId": null,
         "category": null
       },
       "visitorTeam": {
         "id": 209685,
         "name": "CLUB BALONMANO CAMARGO",
-        "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/115/square_633062667072386c3368.jpg",
+        "shieldUrl": "https://balonmano.isquad.es/images/afiliacion_clubs/115/square_633062667072386c3368.jpg",
         "score": null,
-        "position": 13,
+        "position": 9,
         "responsibleId": null,
         "category": null
       }
@@ -935,18 +935,18 @@
       "localTeam": {
         "id": 201150,
         "name": "HORIZONTE ATLETICA",
-        "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/69/square_6d6b7235397562793961.jpg",
+        "shieldUrl": "https://balonmano.isquad.es/images/afiliacion_clubs/69/square_6d6b7235397562793961.jpg",
         "score": null,
-        "position": 6,
+        "position": 5,
         "responsibleId": null,
         "category": null
       },
       "visitorTeam": {
         "id": 209500,
         "name": "AUTO-CENTER PRINCIPADO",
-        "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/2898/square_35723432687275366a39.jpg",
+        "shieldUrl": "https://balonmano.isquad.es/images/afiliacion_clubs/2898/square_35723432687275366a39.jpg",
         "score": null,
-        "position": 9,
+        "position": 11,
         "responsibleId": null,
         "category": null
       }
@@ -965,16 +965,16 @@
       "localTeam": {
         "id": 209500,
         "name": "AUTO-CENTER PRINCIPADO",
-        "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/2898/square_35723432687275366a39.jpg",
+        "shieldUrl": "https://balonmano.isquad.es/images/afiliacion_clubs/2898/square_35723432687275366a39.jpg",
         "score": null,
-        "position": 9,
+        "position": 11,
         "responsibleId": null,
         "category": null
       },
       "visitorTeam": {
         "id": 209286,
         "name": "EZEQUIEL 4VALLES LA ROBLA",
-        "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/2896/square_6675636c6a6d30346366.jpg",
+        "shieldUrl": "https://balonmano.isquad.es/images/afiliacion_clubs/2896/square_6675636c6a6d30346366.jpg",
         "score": null,
         "position": 16,
         "responsibleId": null,
@@ -995,18 +995,18 @@
       "localTeam": {
         "id": 215209,
         "name": "SDC ASTANDER ASTILLERO",
-        "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/112/square_626a3568337770617030.jpg",
+        "shieldUrl": "https://balonmano.isquad.es/images/afiliacion_clubs/112/square_626a3568337770617030.jpg",
         "score": null,
-        "position": 15,
+        "position": 14,
         "responsibleId": null,
         "category": null
       },
       "visitorTeam": {
         "id": 209500,
         "name": "AUTO-CENTER PRINCIPADO",
-        "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/2898/square_35723432687275366a39.jpg",
+        "shieldUrl": "https://balonmano.isquad.es/images/afiliacion_clubs/2898/square_35723432687275366a39.jpg",
         "score": null,
-        "position": 12,
+        "position": 11,
         "responsibleId": null,
         "category": null
       }
@@ -1025,18 +1025,18 @@
       "localTeam": {
         "id": 209500,
         "name": "AUTO-CENTER PRINCIPADO",
-        "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/2898/square_35723432687275366a39.jpg",
+        "shieldUrl": "https://balonmano.isquad.es/images/afiliacion_clubs/2898/square_35723432687275366a39.jpg",
         "score": null,
-        "position": 12,
+        "position": 11,
         "responsibleId": null,
         "category": null
       },
       "visitorTeam": {
         "id": 201273,
         "name": "UNIVERSIDAD DE LEÓN ADEMAR",
-        "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/126/square_70636d736b6d31387577.jpg",
+        "shieldUrl": "https://balonmano.isquad.es/images/afiliacion_clubs/126/square_70636d736b6d31387577.jpg",
         "score": null,
-        "position": 13,
+        "position": 12,
         "responsibleId": null,
         "category": null
       }
@@ -1055,18 +1055,18 @@
       "localTeam": {
         "id": 214998,
         "name": "REAL GRUPO DE CULTURA COVADONGA",
-        "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/70/square_646e366b316534346e76.jpg",
+        "shieldUrl": "https://balonmano.isquad.es/images/afiliacion_clubs/70/square_646e366b316534346e76.jpg",
         "score": null,
-        "position": 8,
+        "position": 9,
         "responsibleId": null,
         "category": null
       },
       "visitorTeam": {
         "id": 209500,
         "name": "AUTO-CENTER PRINCIPADO",
-        "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/2898/square_35723432687275366a39.jpg",
+        "shieldUrl": "https://balonmano.isquad.es/images/afiliacion_clubs/2898/square_35723432687275366a39.jpg",
         "score": null,
-        "position": 12,
+        "position": 11,
         "responsibleId": null,
         "category": null
       }
@@ -1085,18 +1085,18 @@
       "localTeam": {
         "id": 212129,
         "name": "BATHCO BM. TORRELAVEGA",
-        "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/117/square_73726e3132697065736b.jpg",
+        "shieldUrl": "https://balonmano.isquad.es/images/afiliacion_clubs/117/square_73726e3132697065736b.jpg",
         "score": null,
-        "position": 4,
+        "position": 6,
         "responsibleId": null,
         "category": null
       },
       "visitorTeam": {
         "id": 209500,
         "name": "AUTO-CENTER PRINCIPADO",
-        "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/2898/square_35723432687275366a39.jpg",
+        "shieldUrl": "https://balonmano.isquad.es/images/afiliacion_clubs/2898/square_35723432687275366a39.jpg",
         "score": null,
-        "position": 12,
+        "position": 11,
         "responsibleId": null,
         "category": null
       }
@@ -1115,16 +1115,16 @@
       "localTeam": {
         "id": 209500,
         "name": "AUTO-CENTER PRINCIPADO",
-        "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/2898/square_35723432687275366a39.jpg",
+        "shieldUrl": "https://balonmano.isquad.es/images/afiliacion_clubs/2898/square_35723432687275366a39.jpg",
         "score": null,
-        "position": 12,
+        "position": 11,
         "responsibleId": null,
         "category": null
       },
       "visitorTeam": {
         "id": 204021,
         "name": "LA FUENTE PEREDA",
-        "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/100625/square_34397965676d386c7565.jpg",
+        "shieldUrl": "https://balonmano.isquad.es/images/afiliacion_clubs/100625/square_34397965676d386c7565.jpg",
         "score": null,
         "position": 10,
         "responsibleId": null,
@@ -1145,18 +1145,18 @@
       "localTeam": {
         "id": 215350,
         "name": "RECOLETAS ARROYO CABERO EDIFICACIONES",
-        "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/807/square_6d686d673264306d316f.jpg",
+        "shieldUrl": "https://balonmano.isquad.es/images/afiliacion_clubs/807/square_6d686d673264306d316f.jpg",
         "score": null,
-        "position": 11,
+        "position": 13,
         "responsibleId": null,
         "category": null
       },
       "visitorTeam": {
         "id": 209500,
         "name": "AUTO-CENTER PRINCIPADO",
-        "shieldUrl": "http://balonmano.isquad.es/images/afiliacion_clubs/2898/square_35723432687275366a39.jpg",
+        "shieldUrl": "https://balonmano.isquad.es/images/afiliacion_clubs/2898/square_35723432687275366a39.jpg",
         "score": null,
-        "position": 12,
+        "position": 11,
         "responsibleId": null,
         "category": null
       }
@@ -1187,17 +1187,6 @@
     },
     {
       "week": 2,
-      "position": 1,
-      "points": 2,
-      "wins": 1,
-      "draw": 0,
-      "lost": 0,
-      "groupId": 1024586,
-      "goals": 31,
-      "goalsAgainst": 22
-    },
-    {
-      "week": 2,
       "position": 14,
       "points": 0,
       "wins": 0,
@@ -1208,15 +1197,15 @@
       "goalsAgainst": 63
     },
     {
-      "week": 3,
-      "position": 9,
+      "week": 2,
+      "position": 1,
       "points": 2,
       "wins": 1,
       "draw": 0,
-      "lost": 2,
-      "groupId": 1023856,
-      "goals": 88,
-      "goalsAgainst": 90
+      "lost": 0,
+      "groupId": 1024586,
+      "goals": 31,
+      "goalsAgainst": 22
     },
     {
       "week": 3,
@@ -1230,7 +1219,7 @@
       "goalsAgainst": 42
     },
     {
-      "week": 4,
+      "week": 3,
       "position": 9,
       "points": 2,
       "wins": 1,
@@ -1239,292 +1228,303 @@
       "groupId": 1023856,
       "goals": 88,
       "goalsAgainst": 90
+    },
+    {
+      "week": 4,
+      "position": 10,
+      "points": 3,
+      "wins": 1,
+      "draw": 1,
+      "lost": 2,
+      "groupId": 1023856,
+      "goals": 115,
+      "goalsAgainst": 117
     },
     {
       "week": 5,
-      "position": 9,
-      "points": 2,
+      "position": 11,
+      "points": 3,
       "wins": 1,
-      "draw": 0,
-      "lost": 2,
+      "draw": 1,
+      "lost": 3,
       "groupId": 1023856,
-      "goals": 88,
-      "goalsAgainst": 90
+      "goals": 134,
+      "goalsAgainst": 141
     },
     {
       "week": 6,
-      "position": 9,
-      "points": 2,
+      "position": 11,
+      "points": 3,
       "wins": 1,
-      "draw": 0,
-      "lost": 2,
+      "draw": 1,
+      "lost": 3,
       "groupId": 1023856,
-      "goals": 88,
-      "goalsAgainst": 90
+      "goals": 134,
+      "goalsAgainst": 141
     },
     {
       "week": 7,
-      "position": 9,
-      "points": 2,
+      "position": 11,
+      "points": 3,
       "wins": 1,
-      "draw": 0,
-      "lost": 2,
+      "draw": 1,
+      "lost": 3,
       "groupId": 1023856,
-      "goals": 88,
-      "goalsAgainst": 90
+      "goals": 134,
+      "goalsAgainst": 141
     },
     {
       "week": 8,
-      "position": 9,
-      "points": 2,
+      "position": 11,
+      "points": 3,
       "wins": 1,
-      "draw": 0,
-      "lost": 2,
+      "draw": 1,
+      "lost": 3,
       "groupId": 1023856,
-      "goals": 88,
-      "goalsAgainst": 90
+      "goals": 134,
+      "goalsAgainst": 141
     },
     {
       "week": 9,
-      "position": 9,
-      "points": 2,
+      "position": 11,
+      "points": 3,
       "wins": 1,
-      "draw": 0,
-      "lost": 2,
+      "draw": 1,
+      "lost": 3,
       "groupId": 1023856,
-      "goals": 88,
-      "goalsAgainst": 90
+      "goals": 134,
+      "goalsAgainst": 141
     },
     {
       "week": 10,
-      "position": 9,
-      "points": 2,
+      "position": 11,
+      "points": 3,
       "wins": 1,
-      "draw": 0,
-      "lost": 2,
+      "draw": 1,
+      "lost": 3,
       "groupId": 1023856,
-      "goals": 88,
-      "goalsAgainst": 90
+      "goals": 134,
+      "goalsAgainst": 141
     },
     {
       "week": 11,
-      "position": 9,
-      "points": 2,
+      "position": 11,
+      "points": 3,
       "wins": 1,
-      "draw": 0,
-      "lost": 2,
+      "draw": 1,
+      "lost": 3,
       "groupId": 1023856,
-      "goals": 88,
-      "goalsAgainst": 90
+      "goals": 134,
+      "goalsAgainst": 141
     },
     {
       "week": 12,
-      "position": 9,
-      "points": 2,
+      "position": 11,
+      "points": 3,
       "wins": 1,
-      "draw": 0,
-      "lost": 2,
+      "draw": 1,
+      "lost": 3,
       "groupId": 1023856,
-      "goals": 88,
-      "goalsAgainst": 90
+      "goals": 134,
+      "goalsAgainst": 141
     },
     {
       "week": 13,
-      "position": 9,
-      "points": 2,
+      "position": 11,
+      "points": 3,
       "wins": 1,
-      "draw": 0,
-      "lost": 2,
+      "draw": 1,
+      "lost": 3,
       "groupId": 1023856,
-      "goals": 88,
-      "goalsAgainst": 90
+      "goals": 134,
+      "goalsAgainst": 141
     },
     {
       "week": 14,
-      "position": 9,
-      "points": 2,
+      "position": 11,
+      "points": 3,
       "wins": 1,
-      "draw": 0,
-      "lost": 2,
+      "draw": 1,
+      "lost": 3,
       "groupId": 1023856,
-      "goals": 88,
-      "goalsAgainst": 90
+      "goals": 134,
+      "goalsAgainst": 141
     },
     {
       "week": 15,
-      "position": 9,
-      "points": 2,
+      "position": 11,
+      "points": 3,
       "wins": 1,
-      "draw": 0,
-      "lost": 2,
+      "draw": 1,
+      "lost": 3,
       "groupId": 1023856,
-      "goals": 88,
-      "goalsAgainst": 90
+      "goals": 134,
+      "goalsAgainst": 141
     },
     {
       "week": 16,
-      "position": 9,
-      "points": 2,
+      "position": 11,
+      "points": 3,
       "wins": 1,
-      "draw": 0,
-      "lost": 2,
+      "draw": 1,
+      "lost": 3,
       "groupId": 1023856,
-      "goals": 88,
-      "goalsAgainst": 90
+      "goals": 134,
+      "goalsAgainst": 141
     },
     {
       "week": 17,
-      "position": 9,
-      "points": 2,
+      "position": 11,
+      "points": 3,
       "wins": 1,
-      "draw": 0,
-      "lost": 2,
+      "draw": 1,
+      "lost": 3,
       "groupId": 1023856,
-      "goals": 88,
-      "goalsAgainst": 90
+      "goals": 134,
+      "goalsAgainst": 141
     },
     {
       "week": 18,
-      "position": 9,
-      "points": 2,
+      "position": 11,
+      "points": 3,
       "wins": 1,
-      "draw": 0,
-      "lost": 2,
+      "draw": 1,
+      "lost": 3,
       "groupId": 1023856,
-      "goals": 88,
-      "goalsAgainst": 90
+      "goals": 134,
+      "goalsAgainst": 141
     },
     {
       "week": 19,
-      "position": 9,
-      "points": 2,
+      "position": 11,
+      "points": 3,
       "wins": 1,
-      "draw": 0,
-      "lost": 2,
+      "draw": 1,
+      "lost": 3,
       "groupId": 1023856,
-      "goals": 88,
-      "goalsAgainst": 90
+      "goals": 134,
+      "goalsAgainst": 141
     },
     {
       "week": 20,
-      "position": 9,
-      "points": 2,
+      "position": 11,
+      "points": 3,
       "wins": 1,
-      "draw": 0,
-      "lost": 2,
+      "draw": 1,
+      "lost": 3,
       "groupId": 1023856,
-      "goals": 88,
-      "goalsAgainst": 90
+      "goals": 134,
+      "goalsAgainst": 141
     },
     {
       "week": 21,
-      "position": 9,
-      "points": 2,
+      "position": 11,
+      "points": 3,
       "wins": 1,
-      "draw": 0,
-      "lost": 2,
+      "draw": 1,
+      "lost": 3,
       "groupId": 1023856,
-      "goals": 88,
-      "goalsAgainst": 90
+      "goals": 134,
+      "goalsAgainst": 141
     },
     {
       "week": 22,
-      "position": 9,
-      "points": 2,
+      "position": 11,
+      "points": 3,
       "wins": 1,
-      "draw": 0,
-      "lost": 2,
+      "draw": 1,
+      "lost": 3,
       "groupId": 1023856,
-      "goals": 88,
-      "goalsAgainst": 90
+      "goals": 134,
+      "goalsAgainst": 141
     },
     {
       "week": 23,
-      "position": 9,
-      "points": 2,
+      "position": 11,
+      "points": 3,
       "wins": 1,
-      "draw": 0,
-      "lost": 2,
+      "draw": 1,
+      "lost": 3,
       "groupId": 1023856,
-      "goals": 88,
-      "goalsAgainst": 90
+      "goals": 134,
+      "goalsAgainst": 141
     },
     {
       "week": 24,
-      "position": 9,
-      "points": 2,
+      "position": 11,
+      "points": 3,
       "wins": 1,
-      "draw": 0,
-      "lost": 2,
+      "draw": 1,
+      "lost": 3,
       "groupId": 1023856,
-      "goals": 88,
-      "goalsAgainst": 90
+      "goals": 134,
+      "goalsAgainst": 141
     },
     {
       "week": 25,
-      "position": 12,
-      "points": 2,
+      "position": 11,
+      "points": 3,
       "wins": 1,
-      "draw": 0,
-      "lost": 2,
+      "draw": 1,
+      "lost": 3,
       "groupId": 1023856,
-      "goals": 88,
-      "goalsAgainst": 90
+      "goals": 134,
+      "goalsAgainst": 141
     },
     {
       "week": 26,
-      "position": 12,
-      "points": 2,
+      "position": 11,
+      "points": 3,
       "wins": 1,
-      "draw": 0,
-      "lost": 2,
+      "draw": 1,
+      "lost": 3,
       "groupId": 1023856,
-      "goals": 88,
-      "goalsAgainst": 90
+      "goals": 134,
+      "goalsAgainst": 141
     },
     {
       "week": 27,
-      "position": 12,
-      "points": 2,
+      "position": 11,
+      "points": 3,
       "wins": 1,
-      "draw": 0,
-      "lost": 2,
+      "draw": 1,
+      "lost": 3,
       "groupId": 1023856,
-      "goals": 88,
-      "goalsAgainst": 90
+      "goals": 134,
+      "goalsAgainst": 141
     },
     {
       "week": 28,
-      "position": 12,
-      "points": 2,
+      "position": 11,
+      "points": 3,
       "wins": 1,
-      "draw": 0,
-      "lost": 2,
+      "draw": 1,
+      "lost": 3,
       "groupId": 1023856,
-      "goals": 88,
-      "goalsAgainst": 90
+      "goals": 134,
+      "goalsAgainst": 141
     },
     {
       "week": 29,
-      "position": 12,
-      "points": 2,
+      "position": 11,
+      "points": 3,
       "wins": 1,
-      "draw": 0,
-      "lost": 2,
+      "draw": 1,
+      "lost": 3,
       "groupId": 1023856,
-      "goals": 88,
-      "goalsAgainst": 90
+      "goals": 134,
+      "goalsAgainst": 141
     },
     {
       "week": 30,
-      "position": 12,
-      "points": 2,
+      "position": 11,
+      "points": 3,
       "wins": 1,
-      "draw": 0,
-      "lost": 2,
+      "draw": 1,
+      "lost": 3,
       "groupId": 1023856,
-      "goals": 88,
-      "goalsAgainst": 90
+      "goals": 134,
+      "goalsAgainst": 141
     }
   ],
   "seasons": [
