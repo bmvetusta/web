@@ -25,6 +25,5 @@ export const removeRelativeTimers = defineAction({
 
     const ably = getAblyRestClient();
     await ably.channels.get(liveGraphicsStopwatchChannelName).publish(message);
-    return true;
   },
 });
