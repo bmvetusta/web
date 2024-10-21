@@ -5,9 +5,10 @@ import SocialNetwork from '../SocialNetwork.astro';
 interface Props {
   match: typeof matchSchema._output;
   isTodayMatch: boolean;
+  urlStreaming?: string;
 }
 
-const { match, isTodayMatch } = Astro.props as Props;
+const { match, isTodayMatch, urlStreaming = null } = Astro.props as Props;
 ---
 
 <article>
@@ -26,12 +27,11 @@ const { match, isTodayMatch } = Astro.props as Props;
         ''
       )
     }
-
     {
-      match.urlStreaming ? (
+      urlStreaming ? (
         <SocialNetwork
           icon='yt'
-          href={match.urlStreaming}
+          href={urlStreaming}
           text={`Enlace al directo`}
           alt='Logo de Youtube: partido en directo'
           title='Enlace para ver el partido en directo'
@@ -72,13 +72,17 @@ const { match, isTodayMatch } = Astro.props as Props;
     gap: 0.5rem;
   }
 
-  main p,
-  main a {
+  main p {
     display: flex;
     flex-direction: row;
     font-size: 1.25rem;
     text-align: center;
     font-weight: 700;
+    justify-content: center;
+  }
+  a[href^='https://www.youtube.com/live'], a[href^='https://www.youtube.com/watch']
+  {
+    display: flex;
     justify-content: center;
   }
 </style>

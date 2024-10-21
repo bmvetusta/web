@@ -23,12 +23,30 @@ if (!match) {
   return;
 }
 
+const lastAction = match.events
+  .sort(
+    (a, b) =>
+      Number(`${b.part.startsWith('P') ? 1 : 2}${b.min}${b.sec}`) -
+      Number(`${a.part.startsWith('P') ? 1 : 2}${a.min}${a.sec}`)
+  )
+  .at(0);
+let separator = '';
+
+if (lastAction && match.status === 'PLAYING') {
+  if (lastAction.part.startsWith('S')) {
+    lastAction.min += 30;
+  }
+  separator = `${lastAction.min.toString().padStart(2, '0')}:${lastAction.sec.toString().padStart(2, '0')}`;
+}
+
+const title = match.status === 'ENDED' ? 'Finalizado' : 'Jugando';
+
 // TODO: Realtime updates of the result?
 ---
 
 <article>
   <header>
-    <h2>Jugando</h2>
+    <h2>{title}</h2>
   </header>
   <main>
     <div class='local'>
@@ -41,7 +59,7 @@ if (!match) {
       <p>{(match.localResult ?? 0).toString().padStart(2, '0')}</p>
     </div>
     <div class='separator'>
-      <p>-</p>
+      <p>{separator}</p>
     </div>
     <div class='visitor'>
       <p>{(match.visitorResult ?? 0).toString().padStart(2, '0')}</p>

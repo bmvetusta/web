@@ -74,7 +74,30 @@ const canonicalUrl = Astro.url.href;
       text-decoration: none;
     }
   </style>
-  <MatchInfo server:defer />
+  <MatchInfo server:defer>
+    <article slot='fallback'>
+      <svg
+        xmlns='http://www.w3.org/2000/svg'
+        width='320'
+        height='116'
+        viewBox='0 0 500 200'
+        fill='none'
+        style='margin: 0 auto;'
+      >
+        <rect x='162.671875' y='3.5' width='154.65625' height='32' fill='rgba(227, 227, 227, 0.8)'
+        ></rect>
+        <rect x='74.53125' y='57.5' width='330.921875' height='24' fill='rgba(227, 227, 227, 0.8)'
+        ></rect>
+        <rect x='294.3984375' y='94' width='97.96875' height='20' fill='rgba(227, 227, 227, 0.8)'
+        ></rect>
+        <rect x='253.4453125' y='124' width='16' height='48' fill='rgba(227, 227, 227, 0.8)' rx='8'
+        ></rect>
+        <rect x='159.421875' y='132' width='32' height='32' fill='rgba(227, 227, 227, 0.8)'></rect>
+        <rect x='311.15625' y='138' width='80.53125' height='20' fill='rgba(227, 227, 227, 0.8)'
+        ></rect>
+      </svg>
+    </article>
+  </MatchInfo>
   <div class='container'>
     <article id='abonate'>
       <main>

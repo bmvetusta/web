@@ -13,17 +13,17 @@ interface Props {
 const { initialMatchData: match, probablyMatchStatus, isTodayMatch } = Astro.props as Props;
 
 const isEnded =
-  probablyMatchStatus === 'ENDED' ||
   match.status.startsWith('ENDED') ||
-  match.status === 'SUSPENDED';
-const isPlaying = probablyMatchStatus === 'PLAYING';
-const isPending = probablyMatchStatus === 'PENDING';
+  match.status === 'SUSPENDED' ||
+  probablyMatchStatus === 'ENDED';
+const isPlaying = match.status === 'PLAYING' || (!isEnded && probablyMatchStatus === 'PLAYING');
+const isPending = !isEnded && !isPlaying;
 ---
 
 {
   isPending ? (
     <>
-      <PendingMatch isTodayMatch={isTodayMatch} match={match} />
+      <PendingMatch isTodayMatch={isTodayMatch} match={match} server:defer />
     </>
   ) : (
     ''
@@ -33,11 +33,19 @@ const isPending = probablyMatchStatus === 'PENDING';
 {
   isEnded ? (
     <>
-      <EndedMatchInfo match={match} />
+      <EndedMatchInfo match={match} server:defer />
     </>
   ) : (
     ''
   )
 }
 
-{isPlaying ? <PlayingMatchInfo match={match} /> : ''}
+{
+  isPlaying ? (
+    <>
+      <PlayingMatchInfo match={match} server:defer />
+    </>
+  ) : (
+    ''
+  )
+}

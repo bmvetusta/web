@@ -17,7 +17,11 @@ function getProbablyMatchStatus(matchDate?: string | null, matchTime?: string | 
 
   const [matchHour, matchMinute] = matchTime.split(':').map(Number);
   const gameDate = new Date(Date.parse(`${matchDate}T${matchTime}:00`));
-  const estimatedEndTime = new Date(Date.parse(`${matchDate}T${matchHour + 2}:${matchMinute}:00`));
+  const estimatedEndTime = new Date(
+    Date.parse(
+      `${matchDate}T${(matchHour + 2).toString().padStart(2, '0')}:${matchMinute.toString().padStart(2, '0')}:00`
+    )
+  );
 
   if (today < gameDate) {
     return 'PENDING';
@@ -80,10 +84,11 @@ const isTodayMatch = match?.date === today.toISOString().split('T')[0];
 ---
 
 {
-  isLiveVideo ? (
-    <YoutubeLiveVideo
-      isLiveVideo={!!isLiveVideo}
-      youtubeVideoId={youtubeVideoId ?? YOUTUBE_CHANNEL}
+  match ? (
+    <MatchInformation
+      initialMatchData={match}
+      probablyMatchStatus={probablyMatchStatus}
+      isTodayMatch={isTodayMatch}
     />
   ) : (
     ''
@@ -91,11 +96,10 @@ const isTodayMatch = match?.date === today.toISOString().split('T')[0];
 }
 
 {
-  match ? (
-    <MatchInformation
-      initialMatchData={match}
-      probablyMatchStatus={probablyMatchStatus}
-      isTodayMatch={isTodayMatch}
+  isLiveVideo ? (
+    <YoutubeLiveVideo
+      isLiveVideo={!!isLiveVideo}
+      youtubeVideoId={youtubeVideoId ?? YOUTUBE_CHANNEL}
     />
   ) : (
     ''
