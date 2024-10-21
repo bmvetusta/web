@@ -37,7 +37,9 @@ if (!isAuth) {
       }}
     />
     <span class='result'>
-      <Score team={ScoreboardTeam.HOME} client:only='react' />
+      <Score team={ScoreboardTeam.HOME} client:only='react'>
+        <span slot='fallback'>00</span>
+      </Score>
     </span>
   </div>
 
@@ -55,7 +57,7 @@ if (!isAuth) {
       }}
     />
     <span class='result'>
-      <Score team={ScoreboardTeam.AWAY} client:only='react' />
+      <Score team={ScoreboardTeam.AWAY} client:only='react'> <span slot='fallback'>00</span></Score>
     </span>
   </div>
 </CoreGraphics>
