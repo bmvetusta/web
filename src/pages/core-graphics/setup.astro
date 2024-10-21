@@ -1,27 +1,45 @@
 ---
 import Layout from '@layouts/Layout.astro';
 import { AUTH_SECRET_TOKEN } from 'astro:env/server';
+import { authCoreGraphicsCookieName } from 'src/services/core-graphics/constants';
 
 export const prerender = false;
-const cookieName = '__authKey';
-let isPost = false;
 
-if (Astro.request.method === 'POST' && !Astro.cookies.get(cookieName)) {
-  isPost = true;
+let isSettingUp = false;
+
+let authKey: string | null = Astro.cookies.get(authCoreGraphicsCookieName)?.value ?? null;
+
+if (!authKey && Astro.request.method === 'POST') {
+  isSettingUp = true;
   const data = await Astro.request.formData();
-  const authKey = data.get('authKey');
-  if (authKey === AUTH_SECRET_TOKEN) {
-    Astro.cookies.set(cookieName, authKey, {
-      expires: new Date(Date.now() + 31_536_000_000), // 1 year
-      httpOnly: true,
-      secure: true,
-      sameSite: 'strict',
-    });
-  }
+  authKey = data.get('authKey')?.toString() ?? null;
 }
 
-const authKey = Astro.cookies.get(cookieName)?.value;
+if (
+  !isSettingUp &&
+  !authKey &&
+  Astro.request.method === 'GET' &&
+  Astro.url.searchParams.has('authKey')
+) {
+  isSettingUp = true;
+  authKey = Astro.url.searchParams.get('authKey');
+}
+
 const isAuth = authKey === AUTH_SECRET_TOKEN;
+
+if (authKey && isSettingUp && isAuth) {
+  Astro.cookies.set(authCoreGraphicsCookieName, authKey, {
+    expires: new Date(Date.now() + 31_536_000_000), // 1 year
+    httpOnly: true,
+    secure: true,
+    sameSite: 'strict',
+    path: '/',
+  });
+}
+
+// if (isAuth) {
+//   return Astro.redirect('/core-graphics/stopwatch'); // TODO Change this
+// }
 ---
 
 <Layout title='Setup auth key'>
@@ -34,11 +52,11 @@ const isAuth = authKey === AUTH_SECRET_TOKEN;
         id='authKey'
         placeholder='Auth Key'
         minlength='8'
-        disabled={!isAuth}
+        disabled={!!isAuth}
       />
       <input type='submit' disabled={isAuth} value='Setup' />
     </fieldset>
-    {isPost && !isAuth ? <p class='error'>Invalid authKey</p> : ''}
+    {isSettingUp && !isAuth ? <p class='error'>Invalid authKey</p> : ''}
   </form>
   {
     isAuth ? (
@@ -49,6 +67,36 @@ const isAuth = authKey === AUTH_SECRET_TOKEN;
       ''
     )
   }
+
+  <form action='#ablyClientId' method='get' id='setAblyClientId'>
+    <fieldset>
+      <label for='ablyClientId'>Define un id para Ably (sincronizacion en vivo de datos)</label>
+      <input type='text' id='ablyClientId' placeholder='Ably Client Id' value='' />
+    </fieldset>
+    <input type='submit' value='Set Ably Client Id' />
+    <span id='ably-message'></span>
+  </form>
+  <script>
+    import { ablyClientIdKey } from 'src/services/ably/constants';
+
+    const form = document.getElementById('setAblyClientId') as HTMLFormElement;
+    form?.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      const ablyClientId =
+        (form?.elements.namedItem('ablyClientId') as HTMLInputElement)?.value ?? null;
+      if (ablyClientId) {
+        localStorage.setItem(ablyClientIdKey, ablyClientId);
+        document.getElementById('ably-message')!.textContent = 'Ably Client Id set';
+      }
+    });
+
+    window.addEventListener('load', () => {
+      const ablyClientId = localStorage.getItem(ablyClientIdKey);
+      if (ablyClientId) {
+        (document.getElementById('ablyClientId') as HTMLInputElement)!.value = ablyClientId;
+      }
+    });
+  </script>
   <style>
     form {
       display: flex;

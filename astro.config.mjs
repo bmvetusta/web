@@ -169,9 +169,14 @@ export default defineConfig({
         access: 'secret',
         optional: true,
       }),
-      PUBLIC_ABLY_API_KEY: envField.string({
-        context: 'client',
-        access: 'public',
+      ABLY_READONLY_API_KEY: envField.string({
+        context: 'server',
+        access: 'secret',
+        optional: true,
+      }),
+      ABLY_VALID_CLIENT_ID: envField.string({
+        context: 'server',
+        access: 'secret',
         optional: true,
       }),
 

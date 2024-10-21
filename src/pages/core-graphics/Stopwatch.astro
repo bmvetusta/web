@@ -1,0 +1,186 @@
+---
+import { AUTH_SECRET_TOKEN } from 'astro:env/server';
+import { authCoreGraphicsCookieName } from 'src/services/core-graphics/constants';
+
+export const prerender = false;
+export const partial = true;
+
+const isAuth = Astro.cookies.get(authCoreGraphicsCookieName)?.value === AUTH_SECRET_TOKEN;
+if (!isAuth) {
+  return Astro.redirect('/core-graphics/setup');
+}
+---
+
+<div id='stopwatch'>
+  <span id='part'>1</span>
+  <div id='time'>
+    <span id='minutes'>00</span>
+    <span id='seconds'>00</span>
+  </div>
+</div>
+
+<style slot='head'>
+  #minutes::after {
+    content: ' :';
+  }
+</style>
+
+<script>
+  import Ably from 'ably';
+  import { actions } from 'astro:actions';
+  import {
+    TimerAction,
+    TimerWorker,
+    type CreateTimerOptions,
+    type RelativeTime,
+    type RelativeTimeId,
+  } from 'src/lib/stopwatch-worker';
+  import { ablyClientIdKey, liveGraphicsStopwatchChannelName } from 'src/services/ably/constants';
+
+  const $ = (selector: string) => document.querySelector(selector);
+  const timer = TimerWorker({
+    onTick: (timerMessage) => {
+      console.log('onTick', timerMessage);
+      const {
+        elapsed: { minutes, seconds },
+        name,
+      } = timerMessage.payload;
+      $('span#part')!.textContent = name;
+      $('span#minutes')!.textContent = minutes.toString().padStart(2, '0') ?? '00';
+      $('span#seconds')!.textContent = seconds.toString().padStart(2, '0') ?? '00';
+    },
+    // onLimitReached(m) {
+    //   $('p#time')!.textContent = m.payload.elapsed.seconds.toString() ?? '0';
+    // },
+    // onSuccess: (timerMessage) => {
+    // TODO: Report timer to endpoint (so it can be sync with the panel) when:
+    //  - resume/pause/reset/reach limit/stop/get relative timers
+    // },
+  });
+
+  const realtime = new Ably.Realtime({
+    authCallback: async (tokenParams, callback) => {
+      const url = new URL(window.location.href);
+      const ablyClientId =
+        url.searchParams.get(ablyClientIdKey) ?? localStorage.getItem(ablyClientIdKey);
+      try {
+        if (ablyClientId) {
+          tokenParams.clientId = ablyClientId;
+        }
+        const token = await actions.ably.refreshLiveGraphicsToken.orThrow(tokenParams as any);
+        callback(null, token);
+      } catch (error) {
+        callback(`Error while retrieving the token for ClientId: "${tokenParams?.clientId}"`, null);
+      }
+    },
+  });
+
+  realtime.channels.get(liveGraphicsStopwatchChannelName).subscribe((message) => {
+    switch (message.name as TimerAction) {
+      case TimerAction.DELETE_TIMER: {
+        const timerName = message.data.name as string;
+        if (!timerName) {
+          return;
+        }
+        timer.deleteTimer(timerName);
+        break;
+      }
+      case TimerAction.CREATE_SET: {
+        const timerName = message.data.name as string;
+        const timerOptions = (message.data?.payload ?? {}) as CreateTimerOptions;
+        if (!timerName) {
+          return;
+        }
+        timer.createOrSet(timerName, timerOptions);
+        break;
+      }
+      case TimerAction.PAUSE: {
+        const timerName = message.data.name as string;
+        if (!timerName) {
+          return;
+        }
+        timer.pause(timerName);
+        break;
+      }
+      case TimerAction.RESUME: {
+        const timerName = message.data.name as string;
+        if (!timerName) {
+          return;
+        }
+        timer.resume(timerName);
+        break;
+      }
+      case TimerAction.START: {
+        const timerName = message.data.name as string;
+        const timerOptions = (message.data?.payload ?? {}) as CreateTimerOptions;
+        if (!timerName) {
+          return;
+        }
+        timer.start(timerName, timerOptions);
+        break;
+      }
+      case TimerAction.STOP: {
+        const timerName = message.data.name as string;
+        if (!timerName) {
+          return;
+        }
+        timer.stop(timerName);
+        break;
+      }
+      case TimerAction.RESET: {
+        const timerName = message.data.name as string;
+        if (!timerName) {
+          return;
+        }
+        timer.reset(timerName);
+        break;
+      }
+      case TimerAction.ADD_OFFSET: {
+        const timerName = message.data.name as string;
+        const payload = message.data.payload as number;
+        if (!timerName) {
+          return;
+        }
+        timer.addOffset(timerName, payload);
+        break;
+      }
+      case TimerAction.SET_OFFSET: {
+        const timerName = message.data.name as string;
+        const payload = message.data.payload as number;
+        if (!timerName) {
+          return;
+        }
+        timer.setOffset(timerName, payload);
+        break;
+      }
+      case TimerAction.ADD_RELATIVE_TIMERS: {
+        const timerName = message.data.name as string;
+        const relatimeTimerIdx = message.data.index as number;
+        const relativeTimer = message.data.payload as RelativeTime[];
+        if (!timerName) {
+          return;
+        }
+        timer.addRelativeTimers(timerName, relatimeTimerIdx, relativeTimer);
+        break;
+      }
+      case TimerAction.REMOVE_RELATIVE_TIMERS: {
+        const timerName = message.data.name as string;
+        const relatimeTimerIdx = message.data.index as number;
+        const relativeTimerIds = message.data.payload as RelativeTimeId[];
+        if (!timerName) {
+          return;
+        }
+        timer.removeRelativeTimers(timerName, relatimeTimerIdx, relativeTimerIds);
+        break;
+      }
+      case TimerAction.GET_RELATIVE_TIMERS: {
+        const timerName = message.data.name as string;
+        if (!timerName) {
+          return;
+        }
+        timer.getRelativeTimers(timerName);
+        break;
+      }
+    }
+  });
+</script>
