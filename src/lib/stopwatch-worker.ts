@@ -381,7 +381,7 @@ function timerMillisecondsWorker(self: WorkerGlobalScope) {
           relativeTimers,
           relativeTimersLimitInMs,
           backwardsRelativeTimers,
-          intervalTimeMs,
+          intervalTimeMs, // Default 250ms which is the maximum recomended. It is also recomended to use values that are multiple of 1000ms
         },
       };
     }
@@ -397,7 +397,7 @@ function timerMillisecondsWorker(self: WorkerGlobalScope) {
       lastCalculatedElapsedMs: timersStore[name]?.lastCalculatedElapsedMs ?? 0,
       backwardsRelativeTimers:
         timersStore[name]?.backwardsRelativeTimers ?? backwardsRelativeTimers ?? true,
-      intervalTimeMs: timersStore[name]?.intervalTimeMs ?? intervalTimeMs ?? 200,
+      intervalTimeMs: timersStore[name]?.intervalTimeMs ?? intervalTimeMs ?? 250,
       interval: timersStore[name]?.interval ?? null,
     };
 
