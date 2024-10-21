@@ -4,7 +4,6 @@ import { AUTH_SECRET_TOKEN } from 'astro:env/server';
 import { authCoreGraphicsCookieName } from 'src/services/core-graphics/constants';
 import rfebmShield from '@assets/images/rfebm-shield.png';
 
-export const prerender = false;
 export const partial = true;
 
 const isAuth = Astro.cookies.get(authCoreGraphicsCookieName)?.value === AUTH_SECRET_TOKEN;
@@ -29,6 +28,10 @@ if (!isAuth) {
 </div>
 
 <style slot='head'>
+  :root {
+    --shield-title-font-size: 16px;
+    --time-font-size: 48px;
+  }
   div.stopwatch {
     display: flex;
     flex-direction: column;
@@ -37,13 +40,13 @@ if (!isAuth) {
     gap: 0;
 
     background-color: var(--vetusta-yellow);
-    border-radius: 5px;
+    border-radius: 15px;
     width: fit-content;
-    padding: 4px 7px;
+    padding: 10px 10px;
   }
 
   span.rfebm-shield {
-    font-size: 16px;
+    font-size: var(--shield-title-font-size, 16px);
     line-height: 100%;
     margin: 0;
     padding: 0;
@@ -82,7 +85,7 @@ if (!isAuth) {
     color: white;
     padding: 5px 8px;
     border-radius: 10px;
-    font-size: 48px;
+    font-size: var(--time-font-size, 48px);
   }
 </style>
 
@@ -106,7 +109,6 @@ if (!isAuth) {
         $('span#seconds')!.textContent = seconds.toString().padStart(2, '0') ?? '00';
       },
       onSuccess: (timerMessage) => {
-        console.log('Timer message', timerMessage);
         if (
           timerMessage.action === TimerMessageAction.CREATE_SET ||
           timerMessage.action === TimerMessageAction.RESUME ||
