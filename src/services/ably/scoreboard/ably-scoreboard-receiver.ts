@@ -1,18 +1,9 @@
 import type { Message } from 'ably';
 import Ably from 'ably';
 import { actions } from 'astro:actions';
-import { ablyClientIdKey, liveGraphicsScoresChannelName } from './constants';
-type ReceivedScoreMessage = Message & { data: { team: 'HOME' | 'AWAY'; payload: number } };
+import { ablyClientIdKey, liveGraphicsScoresChannelName } from '../constants';
+import { ScoreboardAction } from './constants';
 export type ScoreMessage = { team: 'HOME' | 'AWAY'; payload: number };
-
-export enum ScoreboardTeam {
-  HOME = 'HOME',
-  AWAY = 'AWAY',
-}
-
-export enum ScoreboardAction {
-  SET_SCORE = 'SCORE_SET',
-}
 
 export function ablyScoreboardReceiver({
   onUpdate,
@@ -38,11 +29,15 @@ export function ablyScoreboardReceiver({
 
   realtime.channels.get(liveGraphicsScoresChannelName).subscribe((message: Message) => {
     if (message.name === ScoreboardAction.SET_SCORE) {
-      const receivedMessage = message.data as ReceivedScoreMessage;
+      console.log('Received message:', message.data);
       onUpdate({
-        team: receivedMessage.data.team,
-        payload: receivedMessage.data.payload,
+        team: message.data.team,
+        payload: message.data.payload,
       });
     }
   });
+
+  return () => {
+    realtime.close();
+  };
 }

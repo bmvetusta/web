@@ -4,8 +4,10 @@ import bbxoviedo from '@assets/images/rivals/bbxoviedo.jpg';
 import { Image } from 'astro:assets';
 import { AUTH_SECRET_TOKEN } from 'astro:env/server';
 import CoreGraphics from 'src/layouts/CoreGraphics.astro';
+import { ScoreboardTeam } from 'src/services/ably/scoreboard/constants';
 import { authCoreGraphicsCookieName } from 'src/services/core-graphics/constants';
 import LiveStopwatch from './LiveStopwatch.astro';
+import { Score } from './react/_Score';
 
 export const prerender = false;
 // export const partial = true;
@@ -17,6 +19,10 @@ if (!isAuth) {
 ---
 
 <CoreGraphics>
+  <div id='time-container'>
+    <LiveStopwatch />
+  </div>
+
   <div id='local-scoreboard'>
     <Image
       src={vetustaShield.src}
@@ -30,11 +36,11 @@ if (!isAuth) {
         border: '5px solid var(--vetusta-yellow)',
       }}
     />
-    <span class='result'>00</span>
+    <span class='result'>
+      <Score team={ScoreboardTeam.HOME} client:only='react' />
+    </span>
   </div>
-  <div id='time-container'>
-    <LiveStopwatch />
-  </div>
+
   <div id='visitor-scoreboard'>
     <Image
       src={bbxoviedo.src}
@@ -48,7 +54,9 @@ if (!isAuth) {
         border: '5px solid var(--vetusta-yellow)',
       }}
     />
-    <span class='result'>00</span>
+    <span class='result'>
+      <Score team={ScoreboardTeam.AWAY} client:only='react' />
+    </span>
   </div>
 </CoreGraphics>
 
@@ -56,7 +64,7 @@ if (!isAuth) {
   :root {
     --scoreboard-team-top: 40px;
     --scoreboard-team-translate: 220px;
-    --scoreboard-score-font-size: 72px;
+    --scoreboard-score-font-size: 64px;
   }
   div#time-container {
     position: absolute;

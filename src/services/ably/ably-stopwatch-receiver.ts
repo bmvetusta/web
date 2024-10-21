@@ -156,4 +156,8 @@ export function ablyStopwatchReceiver({
       }
     }
   });
+
+  window.addEventListener('beforeunload', () => {
+    realtime.close();
+  });
 }

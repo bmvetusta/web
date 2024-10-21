@@ -1,8 +1,8 @@
 import type { Message } from 'ably';
 import { defineAction, type ActionAPIContext } from 'astro:actions';
 import { z } from 'astro:schema';
-import { ScoreboardAction } from 'src/services/ably/ably-scoreboard-receiver';
 import { liveGraphicsScoresChannelName } from 'src/services/ably/constants';
+import { ScoreboardAction } from 'src/services/ably/scoreboard/constants';
 import { getAblyRestClient } from 'src/services/ably/server/rest-client';
 import { isAuth } from '../_is-auth';
 
@@ -13,7 +13,7 @@ const input = z.object({
   payload: z.coerce.number(),
 });
 
-export const addOffset = defineAction({
+export const setScore = defineAction({
   accept: 'json',
   input: input,
   handler: async (payload, context: ActionAPIContext) => {
@@ -24,6 +24,10 @@ export const addOffset = defineAction({
       data: payload,
     };
     const ably = getAblyRestClient();
-    await ably.channels.get(liveGraphicsScoresChannelName).publish(message);
+    try {
+      await ably.channels.get(liveGraphicsScoresChannelName).publish(message);
+    } catch (error) {
+      throw new Error(`Failed to publish message to Ably: ${error}`);
+    }
   },
 });

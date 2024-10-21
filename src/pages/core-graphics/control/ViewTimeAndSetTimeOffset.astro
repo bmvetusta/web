@@ -5,7 +5,6 @@ export const prerender = false;
 
 <section>
   <h2>Time Controls</h2>
-  <p id='notification'></p>
   <form action='#' id='timer-controls'>
     <fieldset>
       <legend>Timer Controls</legend>
@@ -44,13 +43,6 @@ export const prerender = false;
   </form>
 </section>
 
-<style>
-  p#notification {
-    width: 100%;
-    height: 2rem;
-  }
-</style>
-
 <script>
   import { actions } from 'astro:actions';
   import { TimerAction, TimerMessageAction } from 'src/lib/stopwatch-worker';
@@ -87,10 +79,13 @@ export const prerender = false;
     onError: (error) => {
       console.error('Error receiving timer message', error);
       window.currentTimerName = error.name;
-      $('p#notification')!.textContent = `Timer Error (${error.action}): ${error.error}`;
-      setTimeout(() => {
-        $('p#notification')!.textContent = '';
-      }, 3_000);
+      const notification = $('p#notification');
+      if (notification) {
+        notification.textContent = `Timer Error (${error.action}): ${error.error}`;
+        setTimeout(() => {
+          notification.textContent = '';
+        }, 3_000);
+      }
     },
     onSuccess: (timerMessage) => {
       window.currentTimerName = timerMessage.name;
@@ -111,17 +106,24 @@ export const prerender = false;
         window.isCurrentTimerRunning = true;
       }
 
-      $('p#notification')!.textContent = `Timer ${timerMessage.name} ${timerMessage.action} OK`;
-      setTimeout(() => {
-        $('p#notification')!.textContent = '';
-      }, 3_000);
+      const notification = $('p#notification');
+      if (notification) {
+        $('p#notification')!.textContent = `Timer ${timerMessage.name} ${timerMessage.action} OK`;
+        setTimeout(() => {
+          $('p#notification')!.textContent = '';
+        }, 3_000);
+      }
     },
     onLimitReached: (timerMessage) => {
       window.isCurrentTimerRunning = false;
-      $('p#notification')!.textContent = `Timer ${timerMessage.payload.name} reached limit`;
-      setTimeout(() => {
-        $('p#notification')!.textContent = '';
-      }, 3_000);
+
+      const notification = $('p#notification');
+      if (notification) {
+        $('p#notification')!.textContent = `Timer ${timerMessage.payload.name} reached limit`;
+        setTimeout(() => {
+          $('p#notification')!.textContent = '';
+        }, 3_000);
+      }
     },
   });
 
@@ -144,17 +146,20 @@ export const prerender = false;
       payload: offset,
     });
 
-    if (response.data) {
-      formSetOffsetElement.querySelector('small')!.textContent = 'Offset set';
-    }
+    const notification = $('p#notification');
+    if (notification) {
+      if (response.data) {
+        notification.textContent = 'Offset set';
+      }
 
-    if (response.error) {
-      formSetOffsetElement.querySelector('small')!.textContent = 'Error setting offset';
-    }
+      if (response.error) {
+        notification.textContent = 'Error setting offset';
+      }
 
-    setTimeout(() => {
-      formSetOffsetElement.querySelector('small')!.textContent = '';
-    }, 3_000);
+      setTimeout(() => {
+        notification.textContent = '';
+      }, 3_000);
+    }
   });
 
   addOffsetBtn?.addEventListener('click', (event) => {
@@ -179,25 +184,31 @@ export const prerender = false;
     });
   });
 
-  const partTimer = {
-    first: '1T',
-    second: '2T',
-  };
-
-  await actions.ably.stopwatch.createOrSet({
-    name: partTimer.second,
-    payload: {
+  const timers = [
+    {
+      name: '1T',
+      limitMs: 30 * 60_000,
+    },
+    {
+      name: '2T',
       limitMs: 60 * 60_000,
       offsetMs: 30 * 60_000,
     },
+  ];
+
+  timers.forEach(async (timer) => {
+    await actions.ably.stopwatch.createOrSet({
+      name: timer.name,
+      payload: timer,
+    });
   });
 
-  await actions.ably.stopwatch.createOrSet({
-    name: partTimer.first,
-    payload: {
-      limitMs: 30 * 60_000,
-    },
-  });
+  window.currentTimerName = timers[0].name;
+
+  const partTimer = {
+    first: timers.at(0)?.name ?? '1T',
+    second: timers.at(1)?.name ?? '2T',
+  };
 
   $('#start-1st')?.addEventListener('click', async () => {
     await actions.ably.stopwatch.start({

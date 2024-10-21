@@ -2,6 +2,7 @@
 import { AUTH_SECRET_TOKEN } from 'astro:env/server';
 import Layout from 'src/layouts/Layout.astro';
 import { authCoreGraphicsCookieName } from 'src/services/core-graphics/constants';
+import ScoresControl from './ScoresControl.astro';
 import ViewTimeAndSetTimeOffset from './ViewTimeAndSetTimeOffset.astro';
 
 export const prerender = false;
@@ -15,65 +16,50 @@ if (!isAuth) {
 
 <Layout title='Control core graphics'>
   <h1>Control the core graphics</h1>
+  <p id='notification'></p>
 
   <ViewTimeAndSetTimeOffset />
 
   <section>
     <h2>Score controls</h2>
 
-    <form action='#' id='local'>
-      <legend>Local</legend>
-      <fieldset>
-        <label for='score'>Score:</label>
-        <input type='number' id='score' name='score' min='0' max='99' value='0' />
-        <button id='local-set-score'>Set Score</button>
-      </fieldset>
+    <ScoresControl />
+  </section>
 
-      <fieldset>
-        <button id='add-local-goal'>Add Local Goal</button>
-        <button id='remove-local-goal'>Remove Local Goal</button>
-      </fieldset>
-    </form>
-
-    <form action='#' id='visitor'>
-      <legend>Visitor</legend>
-      <fieldset>
-        <label for='score'>Score:</label>
-        <input type='number' id='score' name='score' min='0' max='99' value='0' />
-        <button id='visitor-set-score'>Set Score</button>
-      </fieldset>
-
-      <fieldset>
-        <button id='add-visitor-goal'>Add Visitor Goal</button>
-        <button id='remove-visitor-goal'>Remove Visitor Goal</button>
-      </fieldset>
-    </form>
+  <section>
+    <h2>Advertising</h2>
 
     <form action='#' id='advertising'>
       <button id='toggle'>Toggle Advertising</button>
     </form>
-
-    <style is:global>
-      section,
-      form {
-        display: flex;
-        gap: 1rem;
-        flex-direction: column;
-      }
-
-      fieldset {
-        display: flex;
-        gap: 2rem;
-        flex-direction: row;
-        margin: 0.5rem 0;
-        padding: 0.5rem;
-        align-items: center;
-        justify-content: center;
-      }
-
-      section {
-        margin-top: 2rem;
-      }
-    </style>
   </section>
+  <style>
+    p#notification {
+      width: 100%;
+      height: 2rem;
+    }
+  </style>
+
+  <style is:global>
+    section,
+    form {
+      display: flex;
+      gap: 1rem;
+      flex-direction: column;
+    }
+
+    fieldset {
+      display: flex;
+      gap: 2rem;
+      flex-direction: row;
+      margin: 0.5rem 0;
+      padding: 0.5rem;
+      align-items: center;
+      justify-content: center;
+    }
+
+    section {
+      margin-top: 2rem;
+    }
+  </style>
 </Layout>

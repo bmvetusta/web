@@ -1,4 +1,5 @@
 import { refreshLiveGraphicsToken } from './ably/refresh-live-graphics-token';
+import { setScore } from './ably/scores/set-score';
 import { actionToTimerName } from './ably/stopwatch/action-to-timer-name';
 import { addOffset } from './ably/stopwatch/add-offset';
 import { addRelativeTimers } from './ably/stopwatch/add-relative-timers';
@@ -18,6 +19,9 @@ export const server = {
       addOffset,
       addRelativeTimers,
       removeRelativeTimers,
+    },
+    score: {
+      setScore,
     },
   },
 };
