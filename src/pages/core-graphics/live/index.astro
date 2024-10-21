@@ -1,5 +1,6 @@
 ---
-import rfebmShield from '@assets/images/rfebm-shield.png';
+import vetustaShield from '@assets/images/big-shield.png';
+import bbxoviedo from '@assets/images/rivals/bbxoviedo.jpg';
 import { Image } from 'astro:assets';
 import { AUTH_SECRET_TOKEN } from 'astro:env/server';
 import CoreGraphics from 'src/layouts/CoreGraphics.astro';
@@ -16,51 +17,110 @@ if (!isAuth) {
 ---
 
 <CoreGraphics>
-  <div class='time-container'>
-    <span class='rfebm-shield'
-      ><Image src={rfebmShield.src} width={24} height={24} alt='Escudo RFEBM' />
-      <p>1N. Grupo B</p></span
-    >
-    <div class='stopwatch'>
-      <LiveStopwatch />
-    </div>
+  <div id='local-scoreboard'>
+    <Image
+      src={vetustaShield.src}
+      width={128}
+      height={128}
+      alt='Escudo Balonmano Vetusta'
+      densities={[2, 1]}
+      loading='eager'
+      style={{
+        borderRadius: '50%',
+        border: '5px solid var(--vetusta-yellow)',
+      }}
+    />
+    <span class='result'>00</span>
+  </div>
+  <div id='time-container'>
+    <LiveStopwatch />
+  </div>
+  <div id='visitor-scoreboard'>
+    <Image
+      src={bbxoviedo.src}
+      width={128}
+      height={128}
+      alt='Escudo Balonmano Vetusta'
+      densities={[2, 1]}
+      loading='eager'
+      style={{
+        borderRadius: '50%',
+        border: '5px solid var(--vetusta-yellow)',
+      }}
+    />
+    <span class='result'>00</span>
   </div>
 </CoreGraphics>
 
 <style>
-  div.time-container {
+  :root {
+    --scoreboard-team-top: 40px;
+    --scoreboard-team-translate: 220px;
+    --scoreboard-score-font-size: 72px;
+  }
+  div#time-container {
     position: absolute;
     top: 50px;
-    left: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 0;
+  }
+
+  /* Local */
+  div#local-scoreboard {
+    position: absolute;
+    top: var(--scoreboard-team-top);
+    left: calc(50% - var(--scoreboard-team-translate));
+    transform: translateX(-50%);
 
     display: flex;
-    flex-direction: column;
+    flex-direction: row-reverse;
+    justify-content: flex-start;
     align-items: center;
-    justify-content: center;
-    gap: 5px;
-
+  }
+  div#local-scoreboard img {
+    z-index: 1;
+  }
+  div#local-scoreboard span.result {
+    padding-right: 32px;
+    padding-left: 16px;
     background-color: var(--vetusta-yellow);
-    border-radius: 5px;
-    width: fit-content;
-    padding: 4px 7px;
+    color: black;
+    font-size: var(--scoreboard-score-font-size);
+    position: relative;
+    right: -20px;
+    border-top-left-radius: 30%;
+    border-bottom-left-radius: 30%;
+    z-index: -1;
   }
 
-  span.rfebm-shield {
+  /* Visitor */
+
+  div#visitor-scoreboard {
+    position: absolute;
+    top: var(--scoreboard-team-top);
+    left: calc(50% + var(--scoreboard-team-translate));
+    transform: translateX(-50%);
+
     display: flex;
     flex-direction: row;
+    justify-content: flex-start;
     align-items: center;
-    gap: 5px;
   }
 
-  span.rfebm-shield p {
-    font-size: 18px;
+  div#visitor-scoreboard img {
+    z-index: 1;
   }
-
-  div.stopwatch {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 10px;
-    letter-spacing: 5px;
+  div#visitor-scoreboard span.result {
+    padding-left: 32px;
+    padding-right: 16px;
+    background-color: var(--vetusta-yellow);
+    color: black;
+    font-size: var(--scoreboard-score-font-size);
+    position: relative;
+    left: -20px;
+    border-top-right-radius: 30%;
+    border-bottom-right-radius: 30%;
+    z-index: -1;
   }
 </style>
