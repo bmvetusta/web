@@ -23,7 +23,12 @@ const isPending = !isEnded && !isPlaying;
 {
   isPending ? (
     <>
-      <PendingMatch isTodayMatch={isTodayMatch} match={match} server:defer />
+      <PendingMatch
+        isTodayMatch={isTodayMatch}
+        match={match}
+        urlStreaming={match.urlStreaming}
+        server:defer
+      />
     </>
   ) : (
     ''
