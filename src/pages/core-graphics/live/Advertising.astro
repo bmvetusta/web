@@ -26,6 +26,7 @@ export const partial = true;
   const banners = ['1.png', '2.png', '3.png', '4.png', '5.png', '6.png'];
   const totalBanners = banners.length;
   const bannerImage = document.getElementById('banner') as HTMLImageElement;
+  const defaultTickTime = 30_000;
 
   if (bannerImage) {
     const ticker: ReturnType<typeof tickWorker> = tickWorker((tick) => {
@@ -37,12 +38,12 @@ export const partial = true;
     });
 
     // Start by default with 30 secs
-    ticker.start(30_000);
+    ticker.start(defaultTickTime);
 
     const realtime = ablyAuthTokenRealtime();
     realtime.channels.get(liveGraphicsAdvertisingChannelName).subscribe((message) => {
       if (message.name === 'START') {
-        const tickInterval = (message.data as number) || 3_000;
+        const tickInterval = (message.data.duration as number) || defaultTickTime;
         bannerImage.style.display = 'block';
         ticker.start(tickInterval);
       }

@@ -29,9 +29,47 @@ if (!isAuth) {
     <h2>Advertising</h2>
 
     <form action='#' id='advertising'>
-      <button id='toggle'>Toggle Advertising</button>
+      <fieldset>
+        <label for='advertisingTime'>Time to show the advertising in secs</label>
+        <input type='number' id='advertisingTime' name='time' value='30' />
+        <label for='advertisingEnabled'>Enable advertising</label>
+        <input type='checkbox' id='advertisingEnabled' name='advertisingEnabled' checked />
+      </fieldset>
     </form>
   </section>
+
+  <script>
+    import { actions } from 'astro:actions';
+
+    const advertisingForm = document.querySelector('form#advertising') as HTMLFormElement;
+    const notification = document.querySelector('p#notification') as HTMLParagraphElement;
+    const timeInput = advertisingForm?.querySelector('input#advertisingTime') as HTMLInputElement;
+    const enabledInput = advertisingForm?.querySelector(
+      'input#advertisingEnabled'
+    ) as HTMLInputElement;
+
+    enabledInput?.addEventListener('change', async (event) => {
+      const enabled = (event.target as HTMLInputElement).checked;
+      const action = enabled ? 'SHOW' : 'HIDE';
+      const input = timeInput.valueAsNumber;
+      try {
+        if (input && input > 0) {
+          const payload = { duration: input * 1000 };
+          await actions.ably.advertising.hideShow.orThrow({ action, payload });
+        } else {
+          await actions.ably.advertising.hideShow.orThrow({ action });
+        }
+        notification.textContent = `Advertising ${action.toLowerCase()}d`;
+      } catch (error) {
+        console.error(error);
+        notification.textContent = 'Error setting the advertising';
+      } finally {
+        setTimeout(() => {
+          notification.textContent = '';
+        }, 3000);
+      }
+    });
+  </script>
   <style>
     p#notification {
       width: 100%;

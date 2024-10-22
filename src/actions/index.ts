@@ -1,3 +1,4 @@
+import { hideShow } from './ably/advertising/hide-show';
 import { refreshLiveGraphicsToken } from './ably/refresh-live-graphics-token';
 import { setScore } from './ably/scores/set-score';
 import { actionToTimerName } from './ably/stopwatch/action-to-timer-name';
@@ -22,6 +23,9 @@ export const server = {
     },
     score: {
       setScore,
+    },
+    advertising: {
+      hideShow,
     },
   },
 };
