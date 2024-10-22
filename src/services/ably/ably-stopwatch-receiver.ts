@@ -1,5 +1,3 @@
-import Ably from 'ably';
-import { actions } from 'astro:actions';
 import {
   TimerAction,
   TimerWorker,
@@ -11,7 +9,8 @@ import {
   type TickCallback,
 } from 'src/lib/stopwatch-worker';
 
-import { ablyClientIdKey, liveGraphicsStopwatchChannelName } from 'src/services/ably/constants';
+import { liveGraphicsStopwatchChannelName } from 'src/services/ably/constants';
+import { ablyAuthTokenRealtime } from './auth-token-realtime';
 
 export function ablyStopwatchReceiver({
   onTick,
@@ -31,22 +30,7 @@ export function ablyStopwatchReceiver({
     onLimitReached,
   });
 
-  const realtime = new Ably.Realtime({
-    authCallback: async (tokenParams, callback) => {
-      const url = new URL(window.location.href);
-      const ablyClientId =
-        url.searchParams.get(ablyClientIdKey) ?? localStorage.getItem(ablyClientIdKey);
-      try {
-        if (ablyClientId) {
-          tokenParams.clientId = ablyClientId;
-        }
-        const token = await actions.ably.refreshLiveGraphicsToken.orThrow(tokenParams as any);
-        callback(null, token);
-      } catch (error) {
-        callback(`Error while retrieving the token for ClientId: "${tokenParams?.clientId}"`, null);
-      }
-    },
-  });
+  const realtime = ablyAuthTokenRealtime();
 
   realtime.channels.get(liveGraphicsStopwatchChannelName).subscribe((message) => {
     switch (message.name as TimerAction) {
@@ -155,9 +139,5 @@ export function ablyStopwatchReceiver({
         break;
       }
     }
-  });
-
-  window.addEventListener('beforeunload', () => {
-    realtime.close();
   });
 }
