@@ -1,0 +1,166 @@
+---
+import vetustaShield from '@assets/images/big-shield.png';
+import bbxoviedo from '@assets/images/rivals/bbxoviedo.jpg';
+import { Image } from 'astro:assets';
+import { AUTH_SECRET_TOKEN } from 'astro:env/server';
+import CoreGraphics from 'src/layouts/CoreGraphics.astro';
+import { ScoreboardTeam } from 'src/services/ably/scoreboard/constants';
+import { authCoreGraphicsCookieName } from 'src/services/core-graphics/constants';
+import Advertising from './Advertising.astro';
+import LiveStopwatch from './LiveStopwatch.astro';
+import { Score } from './react/_Score';
+
+export const prerender = false;
+// export const partial = true;
+
+const isAuth = Astro.cookies.get(authCoreGraphicsCookieName)?.value === AUTH_SECRET_TOKEN;
+if (!isAuth) {
+  return Astro.redirect('/core-graphics/setup');
+}
+---
+
+<CoreGraphics>
+  <div id='time-container'>
+    <LiveStopwatch />
+  </div>
+
+  <div id='local-scoreboard'>
+    <Image
+      src={vetustaShield.src}
+      width={128}
+      height={128}
+      alt='Escudo Balonmano Vetusta'
+      densities={[2, 1]}
+      loading='eager'
+      style={{
+        borderRadius: '50%',
+        border: '5px solid var(--vetusta-yellow)',
+      }}
+    />
+    <span class='result'>
+      <Score team={ScoreboardTeam.HOME} client:only='react'>
+        <span slot='fallback'>00</span>
+      </Score>
+    </span>
+  </div>
+
+  <div id='visitor-scoreboard'>
+    <Image
+      src={bbxoviedo.src}
+      width={128}
+      height={128}
+      alt='Escudo Balonmano Vetusta'
+      densities={[2, 1]}
+      loading='eager'
+      style={{
+        borderRadius: '50%',
+        border: '5px solid var(--vetusta-yellow)',
+      }}
+    />
+    <span class='result'>
+      <Score team={ScoreboardTeam.AWAY} client:only='react'> <span slot='fallback'>00</span></Score>
+    </span>
+  </div>
+
+  <div id='advertising'>
+    <Advertising />
+  </div>
+</CoreGraphics>
+
+<style>
+  :root {
+    --stopwatch-top: 100px;
+    --scoreboard-team-top: calc(var(--stopwatch-top));
+    --scoreboard-team-translate: 220px;
+    --scoreboard-score-font-size: 64px;
+    --time-font-size: 42px;
+    --number-flow-mask-height: 1;
+  }
+  body {
+    background-color: gray;
+  }
+  /* Advertising */
+  div#advertising {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  /* Stopwatch */
+  div#time-container {
+    position: absolute;
+    top: var(--stopwatch-top);
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 0;
+  }
+
+  /* Local */
+  div#local-scoreboard {
+    position: absolute;
+    top: var(--scoreboard-team-top);
+    left: calc(50% - var(--scoreboard-team-translate));
+    transform: translate(-50%, -50%);
+
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  div#local-scoreboard img {
+    z-index: 1;
+  }
+  div#local-scoreboard span.result {
+    padding: 0;
+    padding-right: 32px;
+    padding-left: 16px;
+    background-color: var(--vetusta-yellow);
+    color: black;
+    font-size: var(--scoreboard-score-font-size);
+    position: relative;
+    right: -20px;
+    border-top-left-radius: 30%;
+    border-bottom-left-radius: 30%;
+    line-height: 0.6;
+    z-index: -1;
+  }
+
+  /* Visitor */
+
+  div#visitor-scoreboard {
+    position: absolute;
+    top: var(--scoreboard-team-top);
+    left: calc(50% + var(--scoreboard-team-translate));
+    transform: translate(-50%, -50%);
+
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  div#visitor-scoreboard img {
+    z-index: 1;
+  }
+  div#visitor-scoreboard span.result {
+    padding: 0;
+    padding-left: 32px;
+    padding-right: 16px;
+    background-color: var(--vetusta-yellow);
+    color: black;
+    font-size: var(--scoreboard-score-font-size);
+    position: relative;
+    left: -20px;
+    border-top-right-radius: 30%;
+    border-bottom-right-radius: 30%;
+    line-height: 0.6;
+    z-index: -1;
+  }
+
+  div#visitor-scoreboard span.result * {
+    padding: 0;
+    margin: 0;
+    line-height: 0.3;
+  }
+</style>

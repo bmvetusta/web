@@ -22,7 +22,12 @@ if (import.meta.env.PROD) {
 // https://astro.build/config
 export default defineConfig({
   site: site.href,
-  integrations: [react()],
+  integrations: [
+    react({
+      include: ['**/react/*'],
+      experimentalReactChildren: true,
+    }),
+  ],
   build: {
     inlineStylesheets: 'always',
   },
@@ -161,6 +166,30 @@ export default defineConfig({
         access: 'public',
         optional: false,
         default: false,
+      }),
+
+      // Ably
+      ABLY_API_KEY: envField.string({
+        context: 'server',
+        access: 'secret',
+        optional: true,
+      }),
+      ABLY_READONLY_API_KEY: envField.string({
+        context: 'server',
+        access: 'secret',
+        optional: true,
+      }),
+      ABLY_VALID_CLIENT_ID: envField.string({
+        context: 'server',
+        access: 'secret',
+        optional: true,
+      }),
+
+      // A key to interact with private apis
+      AUTH_SECRET_TOKEN: envField.string({
+        context: 'server',
+        access: 'secret',
+        optional: true,
       }),
     },
   },

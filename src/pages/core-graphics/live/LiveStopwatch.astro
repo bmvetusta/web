@@ -1,0 +1,124 @@
+---
+import { Image } from 'astro:assets';
+import { AUTH_SECRET_TOKEN } from 'astro:env/server';
+import { authCoreGraphicsCookieName } from 'src/services/core-graphics/constants';
+import rfebmShield from '@assets/images/rfebm-shield.png';
+
+export const partial = true;
+
+const isAuth = Astro.cookies.get(authCoreGraphicsCookieName)?.value === AUTH_SECRET_TOKEN;
+if (!isAuth) {
+  return Astro.redirect('/core-graphics/setup');
+}
+---
+
+<div class='stopwatch'>
+  <span class='rfebm-shield'
+    ><Image src={rfebmShield.src} width={42} height={42} alt='Escudo RFEBM' loading='eager' />
+    <div class='info'>
+      <span id='category'>Primera Nacional</span>
+      <span id='group'>Grupo B</span>
+    </div>
+  </span>
+  <div id='time'>
+    <span id='part'>1T</span>
+    <span id='minutes'>00</span>
+    <span id='seconds'>00</span>
+  </div>
+</div>
+
+<style slot='head'>
+  :root {
+    --shield-title-font-size: 16px;
+    --time-font-size: 48px;
+  }
+  div.stopwatch {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+
+    background-color: var(--vetusta-yellow);
+    border-radius: 15px;
+    width: fit-content;
+    padding: 10px 10px;
+  }
+
+  span.rfebm-shield {
+    font-size: var(--shield-title-font-size, 16px);
+    line-height: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  div.info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    justify-content: flex-start;
+  }
+
+  span#part {
+    display: none;
+    margin-right: 5px;
+  }
+  span#part::after {
+    content: '-';
+  }
+
+  span#minutes::after {
+    content: ':';
+  }
+  span#seconds {
+    margin-left: 0;
+  }
+  div#time {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+    background-color: black;
+    color: white;
+    padding: 5px 8px;
+    border-radius: 10px;
+    font-size: var(--time-font-size, 48px);
+  }
+</style>
+
+<script>
+  import { TimerMessageAction } from 'src/lib/stopwatch-worker';
+  import { ablyStopwatchReceiver } from 'src/services/ably/ably-stopwatch-receiver';
+  const $ = (selector: string) => document.querySelector(selector);
+  const $part = $('span#part');
+  const $minutes = $('span#minutes');
+  const $seconds = $('span#seconds');
+
+  if ($part && $minutes && $seconds) {
+    ablyStopwatchReceiver({
+      onTick: (timerMessage) => {
+        const {
+          elapsed: { minutes, seconds },
+          name,
+        } = timerMessage.payload;
+        $('span#part')!.textContent = name;
+        $('span#minutes')!.textContent = minutes.toString().padStart(2, '0') ?? '00';
+        $('span#seconds')!.textContent = seconds.toString().padStart(2, '0') ?? '00';
+      },
+      onSuccess: (timerMessage) => {
+        if (
+          timerMessage.action === TimerMessageAction.CREATE_SET ||
+          timerMessage.action === TimerMessageAction.RESUME ||
+          timerMessage.action === TimerMessageAction.START
+        ) {
+          $part.textContent = timerMessage.name;
+          $minutes.textContent ??= '00';
+          $seconds.textContent ??= '00';
+        }
+      },
+    });
+  }
+</script>

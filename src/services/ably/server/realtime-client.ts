@@ -1,0 +1,13 @@
+import Ably from 'ably';
+import { ABLY_API_KEY } from 'astro:env/server';
+
+let client: Ably.Realtime | undefined;
+
+export async function getServerRealtimeClient() {
+  if (!client) {
+    client = new Ably.Realtime({ key: ABLY_API_KEY });
+    await client.connection.once();
+  }
+
+  return client;
+}

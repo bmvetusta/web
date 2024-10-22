@@ -1,0 +1,139 @@
+---
+import Layout from '@layouts/Layout.astro';
+import { AUTH_SECRET_TOKEN } from 'astro:env/server';
+import { authCoreGraphicsCookieName } from 'src/services/core-graphics/constants';
+
+export const prerender = false;
+
+let isSettingUp = false;
+
+let authKey: string | null = Astro.cookies.get(authCoreGraphicsCookieName)?.value ?? null;
+
+if (!authKey && Astro.request.method === 'POST') {
+  isSettingUp = true;
+  const data = await Astro.request.formData();
+  authKey = data.get('authKey')?.toString() ?? null;
+}
+
+if (
+  !isSettingUp &&
+  !authKey &&
+  Astro.request.method === 'GET' &&
+  Astro.url.searchParams.has('authKey')
+) {
+  isSettingUp = true;
+  authKey = Astro.url.searchParams.get('authKey');
+}
+
+const isAuth = authKey === AUTH_SECRET_TOKEN;
+
+if (authKey && isSettingUp && isAuth) {
+  Astro.cookies.set(authCoreGraphicsCookieName, authKey, {
+    expires: new Date(Date.now() + 31_536_000_000), // 1 year
+    httpOnly: true,
+    secure: true,
+    sameSite: 'strict',
+    path: '/',
+  });
+}
+
+// if (isAuth) {
+//   return Astro.redirect('/core-graphics/stopwatch'); // TODO Change this
+// }
+---
+
+<Layout title='Setup auth key'>
+  <h2>Setup auth key</h2>
+  <form method='post' enctype='application/x-www-form-urlencoded' action='#'>
+    <fieldset>
+      <input
+        type='text'
+        name='authKey'
+        id='authKey'
+        placeholder='Auth Key'
+        minlength='8'
+        disabled={!!isAuth}
+      />
+      <input type='submit' disabled={isAuth} value='Setup' />
+    </fieldset>
+    {isSettingUp && !isAuth ? <p class='error'>Invalid authKey</p> : ''}
+  </form>
+  {
+    isAuth ? (
+      <>
+        <p class='success'>You already have a valid authKey</p>
+      </>
+    ) : (
+      ''
+    )
+  }
+
+  <form action='#ablyClientId' method='get' id='setAblyClientId'>
+    <fieldset>
+      <label for='ablyClientId'>Define un id para Ably (sincronizacion en vivo de datos)</label>
+      <input type='text' id='ablyClientId' placeholder='Ably Client Id' value='' />
+    </fieldset>
+    <input type='submit' value='Set Ably Client Id' />
+    <span id='ably-message'></span>
+  </form>
+  <script>
+    import { ablyClientIdKey } from 'src/services/ably/constants';
+
+    const form = document.getElementById('setAblyClientId') as HTMLFormElement;
+    form?.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      const ablyClientId =
+        (form?.elements.namedItem('ablyClientId') as HTMLInputElement)?.value ?? null;
+      if (ablyClientId) {
+        localStorage.setItem(ablyClientIdKey, ablyClientId);
+        document.getElementById('ably-message')!.textContent = 'Ably Client Id set';
+      }
+    });
+
+    window.addEventListener('load', () => {
+      const ablyClientId = localStorage.getItem(ablyClientIdKey);
+      if (ablyClientId) {
+        (document.getElementById('ablyClientId') as HTMLInputElement)!.value = ablyClientId;
+      }
+    });
+  </script>
+  <style>
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    fieldset {
+      display: flex;
+      flex-direction: row;
+      gap: 1rem;
+      border: none;
+      outline: none;
+    }
+    input[type='submit'] {
+      padding: 0.5rem 1rem;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 0.25rem;
+      cursor: pointer;
+    }
+    input[type='submit']:disabled {
+      background-color: #ccc;
+      cursor: not-allowed;
+    }
+    form > p.error {
+      font-size: 1.5rem;
+      color: red;
+    }
+    h2 {
+      margin: 1rem auto;
+      font-size: 2rem;
+    }
+    p.success {
+      margin: 1rem auto;
+      color: greenyellow;
+      font-size: 1.5rem;
+    }
+  </style>
+</Layout>

@@ -1,0 +1,59 @@
+---
+export const partial = true;
+---
+
+<img
+  src=`/assets/images/streamings/banners/6.png`
+  alt='Banner'
+  id='banner'
+  width='1200'
+  height='125'
+  id='banner'
+/>
+
+<style>
+  img {
+    background-color: var(--vetusta-yellow);
+    border-radius: 20px;
+  }
+</style>
+
+<script>
+  import { tickWorker } from '../../../lib/tick-worker.js';
+  import { ablyAuthTokenRealtime } from '../../../services/ably/auth-token-realtime';
+  import { liveGraphicsAdvertisingChannelName } from '../../../services/ably/constants';
+
+  const banners = ['1.png', '2.png', '3.png', '4.png', '5.png', '6.png'];
+  const totalBanners = banners.length;
+  const bannerImage = document.getElementById('banner') as HTMLImageElement;
+
+  if (bannerImage) {
+    const ticker: ReturnType<typeof tickWorker> = tickWorker((tick) => {
+      const bannerIndex = tick % totalBanners;
+      const banner = banners[bannerIndex];
+      const imageUrl = `/assets/images/streamings/banners/${banner}`;
+      bannerImage.src = imageUrl;
+      // TODO: Add transition effect
+    });
+
+    // Start by default with 30 secs
+    ticker.start(30_000);
+
+    const realtime = ablyAuthTokenRealtime();
+    realtime.channels.get(liveGraphicsAdvertisingChannelName).subscribe((message) => {
+      if (message.name === 'START') {
+        const tickInterval = (message.data as number) || 3_000;
+        bannerImage.style.display = 'block';
+        ticker.start(tickInterval);
+      }
+
+      if (message.name === 'STOP') {
+        if (ticker) {
+          ticker.stop();
+          const bannerImage = document.getElementById('banner');
+          bannerImage!.style.display = 'none';
+        }
+      }
+    });
+  }
+</script>

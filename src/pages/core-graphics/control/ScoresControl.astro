@@ -1,0 +1,122 @@
+---
+import { AUTH_SECRET_TOKEN } from 'astro:env/server';
+import { authCoreGraphicsCookieName } from 'src/services/core-graphics/constants';
+
+export const partial = true;
+const isAuth = Astro.cookies.get(authCoreGraphicsCookieName)?.value === AUTH_SECRET_TOKEN;
+if (!isAuth) {
+  return Astro.redirect('/core-graphics/setup');
+}
+---
+
+<form action='#' id='local'>
+  <legend>Local</legend>
+  <fieldset>
+    <label for='score'>Score:</label>
+    <input type='number' name='score' min='0' max='99' value='0' />
+    <button id='local-set-score'>Set Score</button>
+  </fieldset>
+
+  <fieldset>
+    <button id='add-local-goal'>Add Local Goal</button>
+    <button id='remove-local-goal'>Remove Local Goal</button>
+  </fieldset>
+</form>
+
+<form action='#' id='visitor'>
+  <legend>Visitor</legend>
+  <fieldset>
+    <label for='score'>Score:</label>
+    <input type='number' name='score' min='0' max='99' value='0' />
+    <button id='visitor-set-score'>Set Score</button>
+  </fieldset>
+
+  <fieldset>
+    <button id='add-visitor-goal'>Add Visitor Goal</button>
+    <button id='remove-visitor-goal'>Remove Visitor Goal</button>
+  </fieldset>
+</form>
+
+<script>
+  import { actions } from 'astro:actions';
+  import { ablyScoreboardReceiver } from 'src/services/ably/scoreboard/ably-scoreboard-receiver';
+  import { ScoreboardTeam } from 'src/services/ably/scoreboard/constants';
+
+  const $ = (selector: string) => document.querySelector(selector);
+  const $localForm = $('form#local') as HTMLFormElement;
+  const $visitorForm = $('form#visitor') as HTMLFormElement;
+  const $localScore = $localForm?.querySelector('input[name="score"]') as HTMLInputElement;
+  const $visitorScore = $visitorForm?.querySelector('input[name="score"]') as HTMLInputElement;
+  const scores = {
+    [ScoreboardTeam.HOME]: $localScore,
+    [ScoreboardTeam.AWAY]: $visitorScore,
+  };
+
+  const $addLocalGoal = $('#add-local-goal');
+  const $removeLocalGoal = $('#remove-local-goal');
+  const $addVisitorGoal = $('#add-visitor-goal');
+  const $removeVisitorGoal = $('#remove-visitor-goal');
+
+  const setScoreForTeam = async (team: ScoreboardTeam, newScore: number) => {
+    const notification = $('#notify');
+    try {
+      await actions.ably.score.setScore.orThrow({ team, payload: newScore });
+      if (notification) {
+        notification.textContent = 'Score updated';
+      }
+    } catch (error) {
+      if (notification) {
+        notification.textContent = 'Error updating score';
+      }
+      console.error(error);
+    }
+  };
+
+  const handleScoreChange = (
+    scoreElement: HTMLInputElement,
+    team: ScoreboardTeam,
+    addScore: number
+  ) => {
+    return async (event: Event) => {
+      event.preventDefault();
+      const payload = scoreElement.valueAsNumber;
+      const newScore = payload + addScore;
+      if (Number.isNaN(payload) || Number.isNaN(newScore)) return;
+      await setScoreForTeam(team, newScore);
+    };
+  };
+
+  function formSubmitForTeam(team: ScoreboardTeam) {
+    return async (event: Event) => {
+      event.preventDefault();
+      const payload = scores[team].valueAsNumber;
+      if (Number.isNaN(payload)) return;
+      await setScoreForTeam(team, payload);
+    };
+  }
+
+  $localForm?.addEventListener('submit', formSubmitForTeam(ScoreboardTeam.HOME));
+  $visitorForm?.addEventListener('submit', formSubmitForTeam(ScoreboardTeam.AWAY));
+  $addLocalGoal?.addEventListener('click', handleScoreChange($localScore, ScoreboardTeam.HOME, 1));
+  $removeLocalGoal?.addEventListener(
+    'click',
+    handleScoreChange($localScore, ScoreboardTeam.HOME, -1)
+  );
+  $addVisitorGoal?.addEventListener(
+    'click',
+    handleScoreChange($visitorScore, ScoreboardTeam.AWAY, 1)
+  );
+  $removeVisitorGoal?.addEventListener(
+    'click',
+    handleScoreChange($visitorScore, ScoreboardTeam.AWAY, -1)
+  );
+
+  ablyScoreboardReceiver({
+    onUpdate: (message) => {
+      if ([ScoreboardTeam.HOME, ScoreboardTeam.AWAY].includes(message.team as ScoreboardTeam)) {
+        const score = message.payload.toString();
+        scores[message.team].value = score;
+      }
+    },
+  });
+</script>

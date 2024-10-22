@@ -57,5 +57,5 @@ export async function rfebmApiFetch<T extends InputSchemaType>(
     forceRevalidate,
     forceCachedDataIfTruthy,
     apiFetcher(url, schema, body)
-  ).then((data) => data ?? null);
+  ).then((data) => data);
 }
