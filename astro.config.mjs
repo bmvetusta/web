@@ -46,6 +46,10 @@ export default defineConfig({
   server: {
     headers,
   },
+  redirects: {
+    '/live': '/core-graphics/setup',
+    '/core-graphics': '/core-graphics/setup',
+  },
   env: {
     schema: {
       // App
