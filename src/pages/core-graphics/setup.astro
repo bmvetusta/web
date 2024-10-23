@@ -8,6 +8,12 @@ export const prerender = false;
 let isSettingUp = false;
 
 let authKey: string | null = Astro.cookies.get(authCoreGraphicsCookieName)?.value ?? null;
+const isValidAuthKey = authKey === AUTH_SECRET_TOKEN;
+
+if (authKey && !isValidAuthKey) {
+  Astro.cookies.delete(authCoreGraphicsCookieName);
+  authKey = null;
+}
 
 if (!authKey && Astro.request.method === 'POST') {
   isSettingUp = true;
