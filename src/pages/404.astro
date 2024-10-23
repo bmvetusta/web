@@ -1,0 +1,43 @@
+---
+import shieldImage from '@assets/images/big-shield.png';
+import { Image } from 'astro:assets';
+import Layout from 'src/layouts/Layout.astro';
+---
+
+<Layout title='404'>
+  <article>
+    <header>
+      <h1>¡Vaya!</h1>
+    </header>
+    <main>
+      <p>Me temo que han perdido el balón de juego y el partido no puede continuar...</p>
+      <small>La página no existe</small>
+      <a href='/' title='Ir a la página principal'>
+        <Image
+          src={shieldImage.src}
+          width={200}
+          height={200}
+          alt='Escudo del Club Balonmano Vetusta'
+          densities={[1, 2]}
+        /></a
+      >
+    </main>
+  </article>
+  <style>
+    h1 {
+      font-size: 2rem;
+    }
+    p {
+      font-size: 1.5rem;
+    }
+    small {
+      font-size: 1rem;
+    }
+    main {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2rem;
+    }
+  </style>
+</Layout>
