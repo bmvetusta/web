@@ -217,56 +217,88 @@ if (!isAuth) {
   };
 
   $('#start-1st')?.addEventListener('click', async () => {
-    await actions.ably.stopwatch.start({
-      name: partTimer.first,
-      payload: {
-        limitMs: 30 * 60_000,
-      },
-    });
+    try {
+      await actions.ably.stopwatch.start.orThrow({
+        name: partTimer.first,
+        payload: {
+          limitMs: 30 * 60_000,
+        },
+      });
+    } catch (error) {
+      console.error('Error pausing timer', error);
+    }
   });
   $('#pause-1st')?.addEventListener('click', async () => {
-    await actions.ably.stopwatch.actionToTimerName({
-      action: TimerAction.PAUSE,
-      name: partTimer.first,
-    });
+    try {
+      await actions.ably.stopwatch.actionToTimerName.orThrow({
+        action: TimerAction.PAUSE,
+        name: partTimer.first,
+      });
+    } catch (error) {
+      console.error('Error pausing timer', error);
+    }
   });
   $('#resume-1st')?.addEventListener('click', async () => {
     await actions.ably.stopwatch.actionToTimerName({
       action: TimerAction.RESUME,
       name: partTimer.first,
     });
+    try {
+    } catch (error) {
+      console.error('Error pausing timer', error);
+    }
   });
   $('#reset-1st')?.addEventListener('click', async () => {
-    await actions.ably.stopwatch.actionToTimerName({
-      action: TimerAction.RESET,
-      name: partTimer.first,
-    });
+    try {
+      await actions.ably.stopwatch.actionToTimerName({
+        action: TimerAction.RESET,
+        name: partTimer.first,
+      });
+    } catch (error) {
+      console.error('Error pausing timer', error);
+    }
   });
   $('#start-2nd')?.addEventListener('click', async () => {
-    await actions.ably.stopwatch.start({
-      name: partTimer.second,
-      payload: {
-        limitMs: 60 * 60_000,
-        offsetMs: 30 * 60_000,
-      },
-    });
+    try {
+      await actions.ably.stopwatch.start({
+        name: partTimer.second,
+        payload: {
+          limitMs: 60 * 60_000,
+          offsetMs: 30 * 60_000,
+        },
+      });
+    } catch (error) {
+      console.error('Error pausing timer', error);
+    }
   });
   $('#pause-2nd')?.addEventListener('click', async () => {
-    await actions.ably.stopwatch.actionToTimerName({
-      action: TimerAction.PAUSE,
-      name: partTimer.second,
-    });
+    try {
+      await actions.ably.stopwatch.actionToTimerName.orThrow({
+        action: TimerAction.PAUSE,
+        name: partTimer.second,
+      });
+    } catch (error) {
+      console.error('Error pausing timer', error);
+    }
   });
   $('#resume-2nd')?.addEventListener('click', async () => {
-    await actions.ably.stopwatch.actionToTimerName({
-      action: TimerAction.RESUME,
-      name: partTimer.second,
-    });
+    try {
+      await actions.ably.stopwatch.actionToTimerName.orThrow({
+        action: TimerAction.RESUME,
+        name: partTimer.second,
+      });
+    } catch (error) {
+      console.error('Error pausing timer', error);
+    }
   });
   $('#reset-2nd')?.addEventListener('click', async () => {
-    await actions.ably.stopwatch.actionToTimerName({
-      action: TimerAction.RESET,
-      name: partTimer.second,
-    });
+    try {
+      await actions.ably.stopwatch.actionToTimerName.orThrow({
+        action: TimerAction.RESET,
+        name: partTimer.second,
+      });
+    } catch (error) {
+      console.error('Error pausing timer', error);
+    }
   });
 </script>
