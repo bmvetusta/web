@@ -4,7 +4,7 @@ import { z } from 'astro:schema';
 import { TimerAction } from 'src/lib/stopwatch-worker';
 import { liveGraphicsStopwatchChannelName } from 'src/services/ably/constants';
 import { getAblyRestClient } from 'src/services/ably/server/rest-client';
-import { isAuth } from '../_is-auth';
+import { isAuth } from '../_is-auth-action';
 
 const input = z.object({
   action: z.enum([

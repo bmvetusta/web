@@ -4,7 +4,7 @@ import { z } from 'astro:schema';
 import { liveGraphicsScoresChannelName } from 'src/services/ably/constants';
 import { ScoreboardAction } from 'src/services/ably/scoreboard/constants';
 import { getAblyRestClient } from 'src/services/ably/server/rest-client';
-import { isAuth } from '../_is-auth';
+import { isAuth } from '../_is-auth-action';
 
 export const teamSchema = z.enum(['HOME', 'AWAY']);
 

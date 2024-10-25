@@ -4,7 +4,7 @@ import { ABLY_VALID_CLIENT_ID } from 'astro:env/server';
 import { z } from 'astro:schema';
 import { liveGraphicsNamespaceName } from 'src/services/ably/constants';
 import { getAblyRestClient } from 'src/services/ably/server/rest-client';
-import { isAuth } from './_is-auth';
+import { isAuth } from './_is-auth-action';
 
 const input = z.object({
   clientId: z.string().optional(),

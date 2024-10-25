@@ -3,7 +3,7 @@ import { defineAction, type ActionAPIContext } from 'astro:actions';
 import { z } from 'astro:schema';
 import { liveGraphicsAdvertisingChannelName } from 'src/services/ably/constants';
 import { getAblyRestClient } from 'src/services/ably/server/rest-client';
-import { isAuth } from '../_is-auth';
+import { isAuth } from '../_is-auth-action';
 
 export const advertisingAction = z.enum(['SHOW', 'HIDE']);
 
