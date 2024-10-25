@@ -9,3 +9,7 @@
 ## Scores
 
 - Persist the scores across multiple instances using redis
+
+## Advertising
+
+- `TOGGLE` action
