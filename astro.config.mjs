@@ -195,6 +195,12 @@ export default defineConfig({
         access: 'secret',
         optional: true,
       }),
+
+      AUTH_BEARER_TOKEN: envField.string({
+        context: 'server',
+        access: 'secret',
+        optional: true,
+      }),
     },
   },
 });
