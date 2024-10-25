@@ -1,7 +1,4 @@
 ---
-import vetustaShield from '@assets/images/big-shield.png';
-import bbxoviedo from '@assets/images/rivals/bbxoviedo.jpg';
-import { Image } from 'astro:assets';
 import { AUTH_SECRET_TOKEN } from 'astro:env/server';
 import CoreGraphics from 'src/layouts/CoreGraphics.astro';
 import { ScoreboardTeam } from 'src/services/ably/scoreboard/constants';
@@ -25,18 +22,13 @@ if (!isAuth) {
   </div>
 
   <div id='local-scoreboard'>
-    <Image
-      src={vetustaShield.src}
+    <img
+      src={'/assets/images/streamings/shields/vetusta.png'}
       width={128}
       height={128}
-      quality={80}
       alt='Escudo Balonmano Vetusta'
-      densities={[2, 1]}
       loading='eager'
-      style={{
-        borderRadius: '50%',
-        border: '5px solid var(--vetusta-yellow)',
-      }}
+      class='shield'
     />
     <span class='result'>
       <Score team={ScoreboardTeam.HOME} client:only='react'>
@@ -46,18 +38,13 @@ if (!isAuth) {
   </div>
 
   <div id='visitor-scoreboard'>
-    <Image
-      src={bbxoviedo.src}
+    <img
+      src={'/assets/images/streamings/shields/bbxoviedo.png'}
       width={128}
       height={128}
-      quality={80}
       alt='Escudo del Club Balonmano Xuntura Base Oviedo'
-      densities={[2, 1]}
       loading='eager'
-      style={{
-        borderRadius: '50%',
-        border: '5px solid var(--vetusta-yellow)',
-      }}
+      class='shield'
     />
     <span class='result'>
       <Score team={ScoreboardTeam.AWAY} client:only='react'> <span slot='fallback'>00</span></Score>
@@ -98,6 +85,15 @@ if (!isAuth) {
     z-index: 0;
   }
 
+  /* Common */
+  img.shield {
+    z-index: 1;
+    width: 128px;
+    height: 128px;
+    border-radius: 50%;
+    border: 5px solid var(--vetusta-yellow);
+  }
+
   /* Local */
   div#local-scoreboard {
     position: absolute;
@@ -110,9 +106,7 @@ if (!isAuth) {
     justify-content: flex-start;
     align-items: center;
   }
-  div#local-scoreboard img {
-    z-index: 1;
-  }
+
   div#local-scoreboard span.result {
     padding: 0;
     padding-right: 32px;
@@ -129,7 +123,6 @@ if (!isAuth) {
   }
 
   /* Visitor */
-
   div#visitor-scoreboard {
     position: absolute;
     top: var(--scoreboard-team-top);
