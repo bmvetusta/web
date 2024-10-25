@@ -5,10 +5,11 @@ import { TimerAction } from 'src/lib/stopwatch-worker';
 import { liveGraphicsStopwatchChannelName } from 'src/services/ably/constants';
 import { getAblyRestClient } from 'src/services/ably/server/rest-client';
 import { isAuth } from '../_is-auth-action';
+import { timeInMsSchema } from './schemas/time-in-ms';
 
 const input = z.object({
   name: z.string(),
-  payload: z.coerce.number(),
+  payload: timeInMsSchema,
 });
 
 export const setOffset = defineAction({
