@@ -8,6 +8,4 @@
 
 ## Scores
 
-- `ADD_SCORE` action
-- `RESET_SCORES` action
 - Persist the scores across multiple instances using redis
