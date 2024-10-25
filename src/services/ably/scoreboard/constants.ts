@@ -5,4 +5,5 @@ export enum ScoreboardTeam {
 
 export enum ScoreboardAction {
   SET_SCORE = 'SCORE_SET',
+  ADD_SCORE = 'SCORE_ADD',
 }
