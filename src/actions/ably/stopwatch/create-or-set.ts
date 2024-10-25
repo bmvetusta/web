@@ -14,7 +14,7 @@ const input = z.object({
       offsetMs: timeInMsSchema.optional(),
       limitMs: timeInMsSchema.optional(),
       backwards: z.boolean().optional(),
-      relativeTimers: z.object({}).optional(),
+      relativeTimers: z.object({}).optional(), // FIXME: This should be a schema for relative timer
       relativeTimersLimitInMs: timeInMsSchema.optional(),
       backwardsRelativeTimers: z.boolean().optional(),
       intervalTimeMs: z.coerce.number().optional(),
