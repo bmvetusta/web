@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+KIOSK_URL="${KIOSK_URL:-"http://localhost:9090/bundles/handball-liveshow-spain/graphics/live.html"}"
+
+xset s noblank
+xset s off
+xset -dpms
+
+unclutter -idle 0.5 -root &
+sed -i 's/"exited_cleanly":false/"exited_cleanly":true/' "${HOME}/.config/chromium/Default/Preferences"
+sed -i 's/"exit_type":"Crashed"/"exit_type":"Normal"/' "${HOME}/.config/chromium/Default/Preferences"
+
+/usr/bin/chromium --noerrdialogs --disable-infobars --kiosk "${KIOSK_URL}" &

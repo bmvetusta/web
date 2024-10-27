@@ -1,0 +1,11 @@
+[Desktop Entry]
+Version=1.0
+Encoding=UTF-8
+Name=Script
+Type=Application
+Exec="/home/nodecg/bin/kiosk"
+Icon=
+Terminal=false
+StartupNotify=false
+Hidden=false
+GenericName=Kiosk
