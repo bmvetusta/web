@@ -16,10 +16,10 @@ if (!isAuth) {
       <legend>Timer Controls</legend>
       <button id='set-1st'>Set 1st</button>
       <button id='set-2nd'>Set 2nd</button>
+      <button id='reset'>Reset</button>
     </fieldset>
     <fieldset>
       <button id='toggle'>Pause/Resume</button>
-      <button id='reset'>Reset</button>
     </fieldset>
   </form>
 
@@ -67,71 +67,90 @@ if (!isAuth) {
   window.currentTimerName = null;
   window.currentTimerIndex = null;
   window.isCurrentTimerRunning = false;
-
-  stopwatchSubscribe({
-    onTick: (timerMessage) => {
-      if (!timerMessage.ok) {
-        console.error('Error receiving timer message', timerMessage);
-      }
-      const {
-        elapsed: { hours = 0, minutes = 0, seconds = 0 },
-      } = timerMessage.payload;
-
-      window.isCurrentTimerRunning = true;
-      const mins = hours + minutes;
-      setMinutesElement.value = mins.toString();
-      setSecondsElement.value = seconds.toString();
+  const timers = [
+    {
+      name: '1T',
+      opts: { limit: '00:30:00', start: 0 },
     },
-    onError: (error) => {
-      console.error('Error receiving timer message', error);
-      window.currentTimerName = error.name;
-      const notification = $('p#notification');
-      if (notification) {
-        notification.textContent = `Timer Error (${error.action}): ${error.error}`;
-        setTimeout(() => {
-          notification.textContent = '';
-        }, 3_000);
-      }
+    {
+      name: '2T',
+      opts: {
+        limit: '00:60:00',
+        offset: '00:30:00',
+        start: 0,
+      },
     },
-    onSuccess: (timerMessage) => {
-      window.currentTimerName = timerMessage.name;
+  ];
 
-      if (
-        timerMessage.action === TimerMessageAction.PAUSE ||
-        timerMessage.action === TimerMessageAction.STOP ||
-        (timerMessage.action === TimerMessageAction.DELETE_TIMER &&
-          timerMessage.name === window.currentTimerName)
-      ) {
-        window.isCurrentTimerRunning = false;
-      }
+  stopwatchSubscribe(
+    {
+      onTick: (timerMessage) => {
+        if (!timerMessage.ok) {
+          console.error('Error receiving timer message', timerMessage);
+        }
+        const {
+          elapsed: { hours = 0, minutes = 0, seconds = 0 },
+        } = timerMessage.payload;
 
-      if (
-        timerMessage.action === TimerMessageAction.START ||
-        timerMessage.action === TimerMessageAction.RESUME
-      ) {
         window.isCurrentTimerRunning = true;
-      }
+        const mins = hours + minutes;
+        setMinutesElement.value = mins.toString();
+        setSecondsElement.value = seconds.toString();
+      },
+      onError: (error) => {
+        console.error('Error receiving timer message', error);
+        window.currentTimerName = error.name;
+        const notification = $('p#notification');
+        if (notification) {
+          notification.textContent = `Timer Error (${error.action}): ${error.error}`;
+          setTimeout(() => {
+            notification.textContent = '';
+          }, 3_000);
+        }
+      },
+      onSuccess: (timerMessage) => {
+        window.currentTimerName = timerMessage.name;
 
-      const notification = $('p#notification');
-      if (notification) {
-        $('p#notification')!.textContent = `Timer ${timerMessage.name} ${timerMessage.action} OK`;
-        setTimeout(() => {
-          $('p#notification')!.textContent = '';
-        }, 3_000);
-      }
-    },
-    onLimitReached: (timerMessage) => {
-      window.isCurrentTimerRunning = false;
+        if (
+          timerMessage.action === TimerMessageAction.PAUSE ||
+          timerMessage.action === TimerMessageAction.STOP ||
+          (timerMessage.action === TimerMessageAction.DELETE_TIMER &&
+            timerMessage.name === window.currentTimerName)
+        ) {
+          window.isCurrentTimerRunning = false;
+        }
 
-      const notification = $('p#notification');
-      if (notification) {
-        $('p#notification')!.textContent = `Timer ${timerMessage.payload.name} reached limit`;
-        setTimeout(() => {
-          $('p#notification')!.textContent = '';
-        }, 3_000);
-      }
+        if (
+          timerMessage.action === TimerMessageAction.START ||
+          timerMessage.action === TimerMessageAction.RESUME
+        ) {
+          window.isCurrentTimerRunning = true;
+        }
+
+        const notification = $('p#notification');
+        if (notification) {
+          $('p#notification')!.textContent = `Timer ${timerMessage.name} ${timerMessage.action} OK`;
+          setTimeout(() => {
+            $('p#notification')!.textContent = '';
+          }, 3_000);
+        }
+      },
+      onLimitReached: (timerMessage) => {
+        window.isCurrentTimerRunning = false;
+
+        const notification = $('p#notification');
+        if (notification) {
+          $('p#notification')!.textContent = `Timer ${timerMessage.payload.name} reached limit`;
+          setTimeout(() => {
+            $('p#notification')!.textContent = '';
+          }, 3_000);
+        }
+      },
     },
-  });
+    timers,
+    true,
+    true
+  );
 
   formSetOffsetElement?.addEventListener('submit', async (event: SubmitEvent) => {
     event.preventDefault();
@@ -191,21 +210,7 @@ if (!isAuth) {
     });
   });
 
-  const timers = [
-    {
-      name: '1T',
-      opts: { limit: '00:30:00', start: 0 },
-    },
-    {
-      name: '2T',
-      opts: {
-        limit: '00:60:00',
-        offset: '00:30:00',
-        start: 0,
-      },
-    },
-  ];
-
+  // FIXME Use timers from store and delete this
   timers.forEach(async (timer) => {
     await actions.liveGraphics.stopwatch.startCreateSet.orThrow({
       name: timer.name,

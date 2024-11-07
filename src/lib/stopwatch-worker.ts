@@ -112,6 +112,7 @@ function timerMillisecondsWorker(self: WorkerGlobalScope) {
         ok: true,
         type: 'TICK',
         action: 'TICK',
+        name,
         payload: {
           name,
           elapsedMs,
@@ -168,6 +169,7 @@ function timerMillisecondsWorker(self: WorkerGlobalScope) {
       ok: true,
       action: 'DELETE_TIMER',
       type: 'success',
+      name,
       success: `Timer "${name}" deleted`,
     };
   }
@@ -785,6 +787,7 @@ function timerMillisecondsWorker(self: WorkerGlobalScope) {
             action: 'GET_RELATIVE_TIMERS',
             type: 'success',
             success: 'Relative Timers',
+            name,
             payload: timersStore?.[name]?.relativeTimers ?? [],
           };
           self.postMessage(message);
@@ -824,6 +827,8 @@ export function TimerWorker(
     onSuccess?: SuccessTimerCallback;
     onLimitReached?: TickTimerCallback;
   },
+  singleton = false,
+  overwriteSingleton = true,
   DEFAULT_TIMER_OPTIONS: TimerOptionsInput = {
     offsetMs: 0,
     limitMs: 0,
@@ -834,6 +839,8 @@ export function TimerWorker(
     intervalTimeMs: 250,
   }
 ) {
+  let activeTimer = '';
+
   const worker = new Worker(
     URL.createObjectURL(
       new Blob([`(${timerMillisecondsWorker.toString()})(self)`], {
@@ -867,10 +874,17 @@ export function TimerWorker(
   });
 
   function deleteTimer(name: TimerName) {
+    if (activeTimer === name) {
+      pause(name);
+      activeTimer = '';
+    }
+
     worker.postMessage({
       type: TimerAction.DELETE_TIMER,
       name,
     });
+
+    return name;
   }
 
   function createOrSet(name: TimerName, payload: TimerOptionsInput = DEFAULT_TIMER_OPTIONS) {
@@ -879,25 +893,53 @@ export function TimerWorker(
       name,
       payload,
     });
+
+    return name;
   }
 
   function pause(name: TimerName, opts: TimerOptionsInput = DEFAULT_TIMER_OPTIONS) {
+    activeTimer = '';
+
     worker.postMessage({
       type: TimerAction.PAUSE,
       name,
       opts,
     });
+
+    return name;
   }
 
   function reset(name: TimerName, opts: TimerOptionsInput = DEFAULT_TIMER_OPTIONS) {
+    if (singleton && !overwriteSingleton && activeTimer !== name) {
+      return activeTimer;
+    }
+
+    if (singleton && overwriteSingleton && activeTimer !== name) {
+      pause(activeTimer);
+    }
+
+    activeTimer = name;
+
     worker.postMessage({
       type: TimerAction.RESET,
       name,
       opts,
     });
+
+    return name;
   }
 
   function resume(name: TimerName, opts: TimerOptionsInput = DEFAULT_TIMER_OPTIONS) {
+    if (singleton && !overwriteSingleton && activeTimer !== name) {
+      return activeTimer;
+    }
+
+    if (singleton && overwriteSingleton && activeTimer !== name) {
+      pause(activeTimer);
+    }
+
+    activeTimer = name;
+
     worker.postMessage({
       type: TimerAction.RESUME,
       name,
@@ -906,27 +948,63 @@ export function TimerWorker(
   }
 
   function toggle(name: TimerName, opts: TimerOptionsInput = DEFAULT_TIMER_OPTIONS) {
+    if (singleton && !overwriteSingleton && activeTimer !== name) {
+      return activeTimer;
+    }
+
+    if (singleton && overwriteSingleton && activeTimer !== name) {
+      pause(activeTimer);
+    }
+
+    activeTimer = name;
+
     worker.postMessage({
       type: TimerAction.TOGGLE,
       name,
       opts,
     });
+
+    return name;
   }
 
   function start(name: TimerName, payload: TimerOptionsInput = DEFAULT_TIMER_OPTIONS) {
+    if (singleton && !overwriteSingleton && activeTimer !== name) {
+      return activeTimer;
+    }
+
+    if (singleton && overwriteSingleton && activeTimer !== name) {
+      pause(activeTimer);
+    }
+
+    activeTimer = name;
+
     worker.postMessage({
       type: TimerAction.START,
       name,
       payload,
     });
+
+    return name;
   }
 
   function stop(name: TimerName, opts: TimerOptionsInput = DEFAULT_TIMER_OPTIONS) {
+    if (singleton && !overwriteSingleton && activeTimer !== name) {
+      return activeTimer;
+    }
+
+    if (singleton && overwriteSingleton && activeTimer !== name) {
+      pause(activeTimer);
+    }
+
+    activeTimer = '';
+
     worker.postMessage({
       type: TimerAction.STOP,
       name,
       opts,
     });
+
+    return name;
   }
 
   function setOffset(
@@ -934,12 +1012,24 @@ export function TimerWorker(
     offsetMs: number,
     opts: TimerOptionsInput = DEFAULT_TIMER_OPTIONS
   ) {
+    if (singleton && !overwriteSingleton && activeTimer !== name) {
+      return activeTimer;
+    }
+
+    if (singleton && overwriteSingleton && activeTimer !== name) {
+      pause(activeTimer);
+    }
+
+    activeTimer = name;
+
     worker.postMessage({
       type: TimerAction.SET_OFFSET,
       name,
       payload: offsetMs,
       opts,
     });
+
+    return name;
   }
 
   function addOffset(
@@ -947,12 +1037,24 @@ export function TimerWorker(
     offset: number,
     opts: TimerOptionsInput = DEFAULT_TIMER_OPTIONS
   ) {
+    if (singleton && !overwriteSingleton && activeTimer !== name) {
+      return activeTimer;
+    }
+
+    if (singleton && overwriteSingleton && activeTimer !== name) {
+      pause(activeTimer);
+    }
+
+    activeTimer = name;
+
     worker.postMessage({
       type: TimerAction.ADD_OFFSET,
       name,
       payload: offset,
       opts,
     });
+
+    return name;
   }
 
   function addRelativeTimers(
@@ -960,12 +1062,24 @@ export function TimerWorker(
     relativeTimers: RelativeTimer[],
     opts: TimerOptionsInput = DEFAULT_TIMER_OPTIONS
   ) {
+    if (singleton && !overwriteSingleton && activeTimer !== name) {
+      return activeTimer;
+    }
+
+    if (singleton && overwriteSingleton && activeTimer !== name) {
+      pause(activeTimer);
+    }
+
+    activeTimer = name;
+
     worker.postMessage({
       type: TimerAction.ADD_RELATIVE_TIMERS,
       name,
       payload: relativeTimers,
       opts,
     });
+
+    return name;
   }
 
   function removeRelativeTimers(
@@ -973,12 +1087,24 @@ export function TimerWorker(
     timerIds: RelativeTimerId[],
     opts: TimerOptionsInput = DEFAULT_TIMER_OPTIONS
   ) {
+    if (singleton && !overwriteSingleton && activeTimer !== name) {
+      return activeTimer;
+    }
+
+    if (singleton && overwriteSingleton && activeTimer !== name) {
+      pause(activeTimer);
+    }
+
+    activeTimer = name;
+
     worker.postMessage({
       type: TimerAction.REMOVE_RELATIVE_TIMERS,
       name,
       payload: timerIds,
       opts,
     });
+
+    return name;
   }
 
   function getRelativeTimers(name: TimerName, opts: TimerOptionsInput = DEFAULT_TIMER_OPTIONS) {

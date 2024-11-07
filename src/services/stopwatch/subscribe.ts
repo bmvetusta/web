@@ -28,14 +28,30 @@ export function stopwatchSubscribe(
     onSuccess?: SuccessTimerCallback;
     onLimitReached?: TickTimerCallback;
   },
-  initials?: InitialTimer[]
+  initials?: InitialTimer[],
+  singleton = false,
+  overwriteSingleton = true,
+  defaultTimerOptions: TimerOptionsInput = {
+    offsetMs: 0,
+    limitMs: 0,
+    backwards: false,
+    relativeTimers: [],
+    relativeTimersLimitInMs: 120_000, // 2 mins
+    backwardsRelativeTimers: true,
+    intervalTimeMs: 250,
+  }
 ) {
-  const timer = TimerWorker({
-    onTick,
-    onError,
-    onSuccess,
-    onLimitReached,
-  });
+  const timer = TimerWorker(
+    {
+      onTick,
+      onError,
+      onSuccess,
+      onLimitReached,
+    },
+    singleton,
+    overwriteSingleton,
+    defaultTimerOptions
+  );
 
   const realtime = ablyAuthTokenRealtime();
 
