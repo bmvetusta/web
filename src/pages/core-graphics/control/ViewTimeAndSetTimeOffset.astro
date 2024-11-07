@@ -14,16 +14,12 @@ if (!isAuth) {
   <form action='#' id='timer-controls'>
     <fieldset>
       <legend>Timer Controls</legend>
-      <button id='start-1st'>Start 1st</button>
-      <button id='pause-1st'>Pause 1st</button>
-      <button id='resume-1st'>Resume 1st</button>
-      <button id='reset-1st'>Reset 1st</button>
+      <button id='set-1st'>Set 1st</button>
+      <button id='set-2nd'>Set 2nd</button>
+      <button id='reset'>Reset</button>
     </fieldset>
     <fieldset>
-      <button id='start-2nd'>Start 2nd</button>
-      <button id='pause-2nd'>Pause 2nd</button>
-      <button id='resume-2nd'>Resume 2nd</button>
-      <button id='reset-2nd'>Reset 2nd</button>
+      <button id='toggle'>Pause/Resume</button>
     </fieldset>
   </form>
 
@@ -51,12 +47,14 @@ if (!isAuth) {
 
 <script>
   import { actions } from 'astro:actions';
-  import { TimerAction, TimerMessageAction } from 'src/lib/stopwatch-worker';
-  import { ablyStopwatchReceiver } from 'src/services/ably/ably-stopwatch-receiver';
+  import { TimerAction } from 'src/schema/timer/actions/type';
+  import { TimerMessageAction } from 'src/schema/timer/messages/action';
+  import { stopwatchSubscribe } from 'src/services/stopwatch/subscribe';
 
   declare global {
     interface Window {
       currentTimerName: string | null;
+      currentTimerIndex: number | null;
       isCurrentTimerRunning: boolean;
     }
   }
@@ -67,71 +65,92 @@ if (!isAuth) {
   const formSetOffsetElement = $('form#set-offset') as HTMLFormElement;
   const addOffsetBtn = $('button#add-offset') as HTMLButtonElement;
   window.currentTimerName = null;
+  window.currentTimerIndex = null;
   window.isCurrentTimerRunning = false;
-
-  ablyStopwatchReceiver({
-    onTick: (timerMessage) => {
-      if (!timerMessage.ok) {
-        console.error('Error receiving timer message', timerMessage);
-      }
-      const {
-        elapsed: { minutes, seconds },
-      } = timerMessage.payload;
-
-      window.isCurrentTimerRunning = true;
-      setMinutesElement.value = minutes.toString();
-      setSecondsElement.value = seconds.toString();
+  const timers = [
+    {
+      name: '1T',
+      opts: { limit: '00:30:00', start: 0 },
     },
-    onError: (error) => {
-      console.error('Error receiving timer message', error);
-      window.currentTimerName = error.name;
-      const notification = $('p#notification');
-      if (notification) {
-        notification.textContent = `Timer Error (${error.action}): ${error.error}`;
-        setTimeout(() => {
-          notification.textContent = '';
-        }, 3_000);
-      }
+    {
+      name: '2T',
+      opts: {
+        limit: '00:60:00',
+        offset: '00:30:00',
+        start: 0,
+      },
     },
-    onSuccess: (timerMessage) => {
-      window.currentTimerName = timerMessage.name;
+  ];
 
-      if (
-        timerMessage.action === TimerMessageAction.PAUSE ||
-        timerMessage.action === TimerMessageAction.STOP ||
-        (timerMessage.action === TimerMessageAction.DELETE_TIMER &&
-          timerMessage.name === window.currentTimerName)
-      ) {
-        window.isCurrentTimerRunning = false;
-      }
+  stopwatchSubscribe(
+    {
+      onTick: (timerMessage) => {
+        if (!timerMessage.ok) {
+          console.error('Error receiving timer message', timerMessage);
+        }
+        const {
+          elapsed: { hours = 0, minutes = 0, seconds = 0 },
+        } = timerMessage.payload;
 
-      if (
-        timerMessage.action === TimerMessageAction.START ||
-        timerMessage.action === TimerMessageAction.RESUME
-      ) {
         window.isCurrentTimerRunning = true;
-      }
+        const mins = hours + minutes;
+        setMinutesElement.value = mins.toString();
+        setSecondsElement.value = seconds.toString();
+      },
+      onError: (error) => {
+        console.error('Error receiving timer message', error);
+        window.currentTimerName = error.name;
+        const notification = $('p#notification');
+        if (notification) {
+          notification.textContent = `Timer Error (${error.action}): ${error.error}`;
+          setTimeout(() => {
+            notification.textContent = '';
+          }, 3_000);
+        }
+      },
+      onSuccess: (timerMessage) => {
+        window.currentTimerName = timerMessage.name;
 
-      const notification = $('p#notification');
-      if (notification) {
-        $('p#notification')!.textContent = `Timer ${timerMessage.name} ${timerMessage.action} OK`;
-        setTimeout(() => {
-          $('p#notification')!.textContent = '';
-        }, 3_000);
-      }
-    },
-    onLimitReached: (timerMessage) => {
-      window.isCurrentTimerRunning = false;
+        if (
+          timerMessage.action === TimerMessageAction.PAUSE ||
+          timerMessage.action === TimerMessageAction.STOP ||
+          (timerMessage.action === TimerMessageAction.DELETE_TIMER &&
+            timerMessage.name === window.currentTimerName)
+        ) {
+          window.isCurrentTimerRunning = false;
+        }
 
-      const notification = $('p#notification');
-      if (notification) {
-        $('p#notification')!.textContent = `Timer ${timerMessage.payload.name} reached limit`;
-        setTimeout(() => {
-          $('p#notification')!.textContent = '';
-        }, 3_000);
-      }
+        if (
+          timerMessage.action === TimerMessageAction.START ||
+          timerMessage.action === TimerMessageAction.RESUME
+        ) {
+          window.isCurrentTimerRunning = true;
+        }
+
+        const notification = $('p#notification');
+        if (notification) {
+          $('p#notification')!.textContent = `Timer ${timerMessage.name} ${timerMessage.action} OK`;
+          setTimeout(() => {
+            $('p#notification')!.textContent = '';
+          }, 3_000);
+        }
+      },
+      onLimitReached: (timerMessage) => {
+        window.isCurrentTimerRunning = false;
+
+        const notification = $('p#notification');
+        if (notification) {
+          $('p#notification')!.textContent = `Timer ${timerMessage.payload.name} reached limit`;
+          setTimeout(() => {
+            $('p#notification')!.textContent = '';
+          }, 3_000);
+        }
+      },
     },
-  });
+    timers,
+    true,
+    true
+  );
 
   formSetOffsetElement?.addEventListener('submit', async (event: SubmitEvent) => {
     event.preventDefault();
@@ -147,7 +166,8 @@ if (!isAuth) {
     }
 
     const offset = minutes * 60_000 + seconds * 1_000;
-    const response = await actions.ably.stopwatch.setOffset({
+    const response = await actions.liveGraphics.stopwatch.offset({
+      type: TimerAction.SET_OFFSET,
       name: window.currentTimerName,
       payload: offset,
     });
@@ -184,121 +204,83 @@ if (!isAuth) {
     }
 
     const offsetMs = minutes * 60_000 + seconds * 1_000;
-    actions.ably.stopwatch.addOffset({
+    actions.liveGraphics.stopwatch.offset.orThrow({
       name: window.currentTimerName,
       payload: offsetMs,
     });
   });
 
-  const timers = [
-    {
-      name: '1T',
-      limitMs: 30 * 60_000,
-    },
-    {
-      name: '2T',
-      limitMs: 60 * 60_000,
-      offsetMs: 30 * 60_000,
-    },
-  ];
-
+  // FIXME Use timers from store and delete this
   timers.forEach(async (timer) => {
-    await actions.ably.stopwatch.createOrSet({
+    await actions.liveGraphics.stopwatch.startCreateSet.orThrow({
       name: timer.name,
-      payload: timer,
+      type: TimerAction.CREATE_OR_SET,
+      payload: timer.opts,
     });
   });
 
+  window.currentTimerIndex = 0;
   window.currentTimerName = timers[0].name;
 
-  const partTimer = {
-    first: timers.at(0)?.name ?? '1T',
-    second: timers.at(1)?.name ?? '2T',
-  };
+  function setTimer(idx: number) {
+    try {
+      window.currentTimerIndex = idx ?? window.currentTimerIndex;
+      if (Number.isNaN(window.currentTimerIndex)) {
+        console.error({
+          idx,
+          currentTimerIndex: window.currentTimerIndex,
+          currentTimerName: window.currentTimerName,
+        });
+        throw new Error('No index was set');
+      }
+      const currentTimer = timers.at(window.currentTimerIndex);
+      if (!currentTimer) {
+        throw new Error('Timer does not exists');
+      }
+      return actions.liveGraphics.stopwatch.startCreateSet.orThrow({
+        type: TimerAction.CREATE_OR_SET,
+        name: currentTimer.name,
+        payload: currentTimer.opts,
+      });
+    } catch (error) {
+      console.error('Error pausing timer', error);
+    }
+  }
 
-  $('#start-1st')?.addEventListener('click', async () => {
+  function actionToTimer(type: TimerAction) {
     try {
-      await actions.ably.stopwatch.start.orThrow({
-        name: partTimer.first,
-        payload: {
-          limitMs: 30 * 60_000,
-        },
+      if (Number.isNaN(window.currentTimerIndex)) {
+        throw new Error('No index was set');
+      }
+
+      const currentTimer = timers.at(window.currentTimerIndex as number);
+      if (!currentTimer) {
+        throw new Error('Timer does not exists');
+      }
+
+      const opts = structuredClone(currentTimer.opts);
+      opts.start = Date.now();
+
+      return actions.liveGraphics.stopwatch.actionToTimerName.orThrow({
+        type: type,
+        name: currentTimer.name,
+        opts: currentTimer.opts,
       });
     } catch (error) {
-      console.error('Error pausing timer', error);
+      console.error('Error "%s" timer', type, error);
     }
+  }
+
+  $('#set-1st')?.addEventListener('click', async () => {
+    await setTimer(0);
   });
-  $('#pause-1st')?.addEventListener('click', async () => {
-    try {
-      await actions.ably.stopwatch.actionToTimerName.orThrow({
-        action: TimerAction.PAUSE,
-        name: partTimer.first,
-      });
-    } catch (error) {
-      console.error('Error pausing timer', error);
-    }
+  $('#set-2nd')?.addEventListener('click', async () => {
+    await setTimer(1);
   });
-  $('#resume-1st')?.addEventListener('click', async () => {
-    await actions.ably.stopwatch.actionToTimerName({
-      action: TimerAction.RESUME,
-      name: partTimer.first,
-    });
-    try {
-    } catch (error) {
-      console.error('Error pausing timer', error);
-    }
+  $('#toggle')?.addEventListener('click', async () => {
+    await actionToTimer(TimerAction.TOGGLE);
   });
-  $('#reset-1st')?.addEventListener('click', async () => {
-    try {
-      await actions.ably.stopwatch.actionToTimerName({
-        action: TimerAction.RESET,
-        name: partTimer.first,
-      });
-    } catch (error) {
-      console.error('Error pausing timer', error);
-    }
-  });
-  $('#start-2nd')?.addEventListener('click', async () => {
-    try {
-      await actions.ably.stopwatch.start({
-        name: partTimer.second,
-        payload: {
-          limitMs: 60 * 60_000,
-          offsetMs: 30 * 60_000,
-        },
-      });
-    } catch (error) {
-      console.error('Error pausing timer', error);
-    }
-  });
-  $('#pause-2nd')?.addEventListener('click', async () => {
-    try {
-      await actions.ably.stopwatch.actionToTimerName.orThrow({
-        action: TimerAction.PAUSE,
-        name: partTimer.second,
-      });
-    } catch (error) {
-      console.error('Error pausing timer', error);
-    }
-  });
-  $('#resume-2nd')?.addEventListener('click', async () => {
-    try {
-      await actions.ably.stopwatch.actionToTimerName.orThrow({
-        action: TimerAction.RESUME,
-        name: partTimer.second,
-      });
-    } catch (error) {
-      console.error('Error pausing timer', error);
-    }
-  });
-  $('#reset-2nd')?.addEventListener('click', async () => {
-    try {
-      await actions.ably.stopwatch.actionToTimerName.orThrow({
-        action: TimerAction.RESET,
-        name: partTimer.second,
-      });
-    } catch (error) {
-      console.error('Error pausing timer', error);
-    }
+  $('#reset')?.addEventListener('click', async () => {
+    await actionToTimer(TimerAction.RESET);
   });
 </script>

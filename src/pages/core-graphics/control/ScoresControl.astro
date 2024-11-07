@@ -60,7 +60,7 @@ if (!isAuth) {
   const setScoreForTeam = async (team: ScoreboardTeam, newScore: number) => {
     const notification = $('#notify');
     try {
-      await actions.ably.score.setScore.orThrow({ team, payload: newScore });
+      await actions.liveGraphics.score.setScore.orThrow({ team, payload: newScore });
       if (notification) {
         notification.textContent = 'Score updated';
       }

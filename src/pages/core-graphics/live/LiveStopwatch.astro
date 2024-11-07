@@ -90,27 +90,30 @@ if (!isAuth) {
 </style>
 
 <script>
-  import { TimerMessageAction } from 'src/lib/stopwatch-worker';
-  import { ablyStopwatchReceiver } from 'src/services/ably/ably-stopwatch-receiver';
+  import { TimerMessageAction } from 'src/schema/timer/messages/action';
+  import { stopwatchSubscribe } from 'src/services/stopwatch/subscribe';
+
   const $ = (selector: string) => document.querySelector(selector);
   const $part = $('span#part');
   const $minutes = $('span#minutes');
   const $seconds = $('span#seconds');
 
   if ($part && $minutes && $seconds) {
-    ablyStopwatchReceiver({
+    stopwatchSubscribe({
       onTick: (timerMessage) => {
         const {
-          elapsed: { minutes, seconds },
+          elapsed: { hours = 0, minutes = 0, seconds = 0 },
           name,
         } = timerMessage.payload;
+
+        const mins = hours * 60 + minutes;
         $('span#part')!.textContent = name;
-        $('span#minutes')!.textContent = minutes.toString().padStart(2, '0') ?? '00';
+        $('span#minutes')!.textContent = mins.toString().padStart(2, '0') ?? '00';
         $('span#seconds')!.textContent = seconds.toString().padStart(2, '0') ?? '00';
       },
       onSuccess: (timerMessage) => {
         if (
-          timerMessage.action === TimerMessageAction.CREATE_SET ||
+          timerMessage.action === TimerMessageAction.CREATE_OR_SET ||
           timerMessage.action === TimerMessageAction.RESUME ||
           timerMessage.action === TimerMessageAction.START
         ) {

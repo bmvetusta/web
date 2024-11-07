@@ -1,24 +1,22 @@
-import { hideShow } from './ably/advertising/hide-show';
 import { refreshLiveGraphicsToken } from './ably/refresh-live-graphics-token';
-import { addScore } from './ably/scores/add';
-import { setScore } from './ably/scores/set-score';
-import { actionToTimerName } from './ably/stopwatch/action-to-timer-name';
-import { addOffset } from './ably/stopwatch/add-offset';
-import { addRelativeTimers } from './ably/stopwatch/add-relative-timers';
-import { createOrSet } from './ably/stopwatch/create-or-set';
-import { removeRelativeTimers } from './ably/stopwatch/remove-relative-timers';
-import { setOffset } from './ably/stopwatch/set-offset';
-import { start } from './ably/stopwatch/start';
+import { hideShow } from './live-graphics/advertising/hide-show';
+import { addScore } from './live-graphics/scores/add';
+import { setScore } from './live-graphics/scores/set-score';
+import { actionToTimerName } from './live-graphics/stopwatch/action-to-timer-name';
+import { addRelativeTimers } from './live-graphics/stopwatch/add-relative-timers';
+import { offset } from './live-graphics/stopwatch/offset';
+import { removeRelativeTimers } from './live-graphics/stopwatch/remove-relative-timers';
+import { startCreateSet } from './live-graphics/stopwatch/start-create-set';
 
 export const server = {
   ably: {
     refreshLiveGraphicsToken,
+  },
+  liveGraphics: {
     stopwatch: {
-      start,
-      createOrSet,
+      startCreateSet,
       actionToTimerName,
-      setOffset,
-      addOffset,
+      offset,
       addRelativeTimers,
       removeRelativeTimers,
     },

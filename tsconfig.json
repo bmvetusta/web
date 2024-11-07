@@ -13,6 +13,7 @@
       "@public/*": ["public/*"],
       "@well-known/*": ["src/pages/.well-known/*"]
     },
+    "lib": ["es2023"],
     "jsx": "react-jsx",
     "jsxImportSource": "react",
     "strictNullChecks": true,
