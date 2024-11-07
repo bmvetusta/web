@@ -1,11 +1,10 @@
-import { ActionError } from 'astro:actions';
-import { z } from 'astro:schema';
+import { z } from 'zod';
 
 // [[HH:]mm:]ss.ms
 const convertSemicolonTimeToMs = (time: string) => {
   const parts = time.split(':').map(Number);
   if (parts.some(Number.isNaN)) {
-    throw new ActionError({ message: 'Invalid time format', code: 'BAD_REQUEST' });
+    throw new Error('Invalid time format');
   }
 
   let seconds = 0;
@@ -25,12 +24,15 @@ const convertSemicolonTimeToMs = (time: string) => {
   return hours * 3_600_000 + minutes * 60_000 + seconds * 1000;
 };
 
-export const timeInMsSchema = z.coerce.number().or(
-  z
-    .string()
-    .refine((v) => v.includes(':'), {
-      message: 'Invalid time format',
-    })
-    .transform(convertSemicolonTimeToMs)
-    .pipe(z.coerce.number())
-);
+export const timeInMsSchema = z.coerce
+  .number()
+  .default(0)
+  .or(
+    z
+      .string()
+      .refine((v) => v.includes(':'), {
+        message: 'Invalid time format',
+      })
+      .transform(convertSemicolonTimeToMs)
+      .pipe(z.coerce.number())
+  );

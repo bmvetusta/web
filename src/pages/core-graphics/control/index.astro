@@ -55,9 +55,9 @@ if (!isAuth) {
       try {
         if (input && input > 0) {
           const payload = { duration: input * 1000 };
-          await actions.ably.advertising.hideShow.orThrow({ action, payload });
+          await actions.liveGraphics.advertising.hideShow.orThrow({ action, payload });
         } else {
-          await actions.ably.advertising.hideShow.orThrow({ action });
+          await actions.liveGraphics.advertising.hideShow.orThrow({ action });
         }
         notification.textContent = `Advertising ${action.toLowerCase()}d`;
       } catch (error) {

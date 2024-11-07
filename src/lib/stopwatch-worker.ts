@@ -1,243 +1,62 @@
-type TimerName = string;
-export type RelativeTimeId = string | number;
-export type RelativeTime = { id: RelativeTimeId; start: number };
-type RelativeTimerElapsed = RelativeTime & { elapsedMs: number };
-type RelativeTimers = Array<RelativeTime[]>;
-type Timer = {
-  start: number;
-  offsetMs: number;
-  limitMs: number;
-  backwards: boolean;
-  relativeTimers: RelativeTimers;
-  relativeTimersLimitInMs: number;
-  lastCalculatedElapsedMs: number;
-  backwardsRelativeTimers: boolean;
-  intervalTimeMs: number;
-  interval: ReturnType<typeof setInterval> | null; // SetInterval it is not the same type in node and browser
-};
-export type CreateTimerOptions = Partial<
-  Omit<Timer, 'start' | 'lastCalculatedElapsedMs' | 'interval'>
->;
-
-export type TickCallback = (message: TickMessage) => void;
-export type ErrorCallback = (message: ErrorMessage) => void;
-export type SuccessCallback = (message: SuccessMessage) => void;
-
-export enum TimerAction {
-  START = 'START',
-  STOP = 'STOP',
-  RESET = 'RESET',
-  SET_OFFSET = 'SET_OFFSET',
-  ADD_OFFSET = 'ADD_OFFSET',
-  ADD_RELATIVE_TIMERS = 'ADD_RELATIVE_TIMERS',
-  REMOVE_RELATIVE_TIMERS = 'REMOVE_RELATIVE_TIMERS',
-  GET_RELATIVE_TIMERS = 'GET_RELATIVE_TIMERS',
-  CREATE_SET = 'CREATE_OR_SET_TIMER_OPTIONS',
-  RESUME = 'RESUME',
-  PAUSE = 'PAUSE',
-
-  DELETE_TIMER = 'DELETE_TIMER',
-}
-
-export enum TimerMessageAction {
-  UNKNOWN = 'UNKNOWN',
-  TICK = 'TICK',
-  TICK_LIMIT_REACHED = 'TICK_LIMIT_REACHED',
-  CREATE_SET = 'CREATE_OR_SET_TIMER_OPTIONS',
-  START = 'START',
-  RESUME = 'RESUME',
-  PAUSE = 'PAUSE',
-  RESET = 'RESET',
-  STOP = 'STOP',
-  SET_OFFSET = 'SET_OFFSET',
-  ADD_OFFSET = 'ADD_OFFSET',
-  ADD_RELATIVE_TIMERS = 'ADD_RELATIVE_TIMERS',
-  REMOVE_RELATIVE_TIMERS = 'REMOVE_RELATIVE_TIMERS',
-  GET_RELATIVE_TIMERS = 'GET_RELATIVE_TIMERS',
-  DELETE_TIMER = 'DELETE_TIMER',
-}
-
-type TickMessage = {
-  ok: true;
-  type: TimerMessageAction.TICK | TimerMessageAction.TICK_LIMIT_REACHED;
-  action: TimerMessageAction.TICK;
-  payload: {
-    name: TimerName;
-    elapsed: {
-      // days: number;
-      // hours: number;
-      minutes: number;
-      seconds: number;
-      milliseconds: number;
-    };
-    elapsedMs: number;
-    limitReached: boolean;
-    relativeTimers: Array<RelativeTimerElapsed[]>;
-    timerOptions: CreateTimerOptions;
-  };
-};
-
-type ErrorMessage = {
-  ok: false;
-  action: Exclude<TimerMessageAction, TimerMessageAction.TICK>;
-  name: TimerName;
-  type: 'error';
-  error: string;
-  timerOptions?: CreateTimerOptions;
-};
-
-type SuccessMessage = {
-  ok: true;
-  action: Omit<
-    TimerMessageAction,
-    | TimerMessageAction.TICK
-    | TimerMessageAction.TICK_LIMIT_REACHED
-    | TimerMessageAction.GET_RELATIVE_TIMERS
-    | TimerMessageAction.DELETE_TIMER
-  >;
-  type: 'success';
-  success: string;
-  name: TimerName;
-  timerOptions: CreateTimerOptions;
-};
-
-type GetRelativeTimersMessage = {
-  ok: true;
-  action: TimerMessageAction.GET_RELATIVE_TIMERS;
-  type: 'success';
-  success: 'Relative timers';
-  payload: RelativeTimers;
-};
-
-type DeleteTimerMessage = {
-  ok: true;
-  action: TimerMessageAction.DELETE_TIMER;
-  type: 'success';
-  success: string;
-};
-
-type Message =
-  | TickMessage
-  | ErrorMessage
-  | SuccessMessage
-  | GetRelativeTimersMessage
-  | DeleteTimerMessage;
-
-type CreateAction = {
-  type: TimerAction.CREATE_SET;
-  name: TimerName;
-  payload: CreateTimerOptions;
-};
-
-type StartAction = {
-  // Create + Resume
-  type: TimerAction.START;
-  name: TimerName;
-  payload: CreateTimerOptions;
-};
-
-type ResumeAction = {
-  type: TimerAction.RESUME;
-  name: TimerName;
-};
-
-type StopAction = {
-  type: TimerAction.STOP; // Stop means pause and reset
-  name: TimerName;
-};
-
-type PauseAction = {
-  type: TimerAction.PAUSE;
-  name: TimerName;
-};
-
-type ResetAction = {
-  type: TimerAction.RESET;
-  name: TimerName;
-};
-
-type SetOffsetAction = {
-  type: TimerAction.SET_OFFSET;
-  name: TimerName;
-  payload: number;
-};
-
-type AddOffsetAction = {
-  type: TimerAction.ADD_OFFSET;
-  name: TimerName;
-  payload: number;
-};
-
-type AddRelativeTimers = {
-  type: TimerAction.ADD_RELATIVE_TIMERS;
-  name: TimerName;
-  index: number;
-  payload: RelativeTime[];
-};
-
-type RemoveRelativeTimers = {
-  type: TimerAction.REMOVE_RELATIVE_TIMERS;
-  name: TimerName;
-  index: number;
-  payload: RelativeTimeId[]; //
-};
-
-type GetRelativeTimers = {
-  type: TimerAction.GET_RELATIVE_TIMERS;
-  name: TimerName;
-};
-
-type DeleteTimer = {
-  type: TimerAction.DELETE_TIMER;
-  name: TimerName;
-};
-
-type Action =
-  | CreateAction
-  | ResumeAction
-  | PauseAction
-  | StartAction // Create + Resume
-  | StopAction // Pause + Reset
-  | ResetAction
-  | SetOffsetAction
-  | AddOffsetAction
-  | AddRelativeTimers
-  | RemoveRelativeTimers
-  | GetRelativeTimers
-  | DeleteTimer;
+import { ActionTimer } from 'src/schema/timer/actions/action';
+import type { OffsetActionTimer } from 'src/schema/timer/actions/offset';
+import type { AddRelativeActionTimer } from 'src/schema/timer/actions/relative/add';
+import { GetRelativeActionTimer } from 'src/schema/timer/actions/relative/get';
+import type { RemoveRelativeActionTimer } from 'src/schema/timer/actions/relative/remove';
+import type { StartCreateActionTimer } from 'src/schema/timer/actions/start-create';
+import { TimerAction } from 'src/schema/timer/actions/type';
+import type {
+  ErrorTimerCallback,
+  SuccessTimerCallback,
+  TickTimerCallback,
+} from 'src/schema/timer/messages/callbacks';
+import type { SuccessTimerMessage } from 'src/schema/timer/messages/success';
+import { TickMessage } from 'src/schema/timer/messages/tick';
+import { TimerMessage } from 'src/schema/timer/messages/timer';
+import { type TimerOptions, type TimerOptionsInput } from 'src/schema/timer/options';
+import {
+  RelativeTimer,
+  RelativeTimerElapsed,
+  type RelativeTimerId,
+} from 'src/schema/timer/relative';
+import { type StoreTimer, type TimerName } from 'src/schema/timer/store';
 
 // biome-ignore lint/suspicious/noExplicitAny: Can not get the type of WorkerGlobalScope
 type WorkerGlobalScope = /* unresolved */ any;
 
 function timerMillisecondsWorker(self: WorkerGlobalScope) {
-  const timersStore: {
-    [key: TimerName]: Timer;
-  } = {}; // { name: { start: timestamp, offsetMs: 0, limit: 0, backwards: boolean, interval: <Interval> } }
+  const timersStore: StoreTimer = {};
 
   // const DAY_IN_MS = 86_400_000;
-  // const HOUR_IN_MS = 3_600_000;
+  const HOUR_IN_MS = 3_600_000;
   const MINUTE_IN_MS = 60_000;
   const SECOND_IN_MS = 1_000;
 
+  const DEFAULT_TIMER_OPTIONS: TimerOptions = {
+    start: 0,
+    offsetMs: 0,
+    limitMs: 0,
+    backwards: false,
+    relativeTimers: [],
+    relativeTimersLimitInMs: 120_000, // 2 mins
+    backwardsRelativeTimers: true,
+    intervalTimeMs: 250,
+  };
+
   function getElapsedObjectFromMs(ms: number) {
     // This should be configurable by choosing the max unit
-    // const days = Math.floor(ms / DAY_IN_MS);
-    // const daysOdd = ms % DAY_IN_MS;
+    const hours = Math.floor(ms / HOUR_IN_MS);
+    const hoursOdd = ms % HOUR_IN_MS;
 
-    //const hours = Math.floor(daysOdd / HOUR_IN_MS);
-    //const hoursOdd = daysOdd % HOUR_IN_MS;
-
-    //const minutes = Math.floor(hoursOdd / MINUTE_IN_MS);
-    //const minutesOdd = hoursOdd % MINUTE_IN_MS;
-    const minutes = Math.floor(ms / MINUTE_IN_MS);
-    const minutesOdd = ms % MINUTE_IN_MS;
+    const minutes = Math.floor(hoursOdd / MINUTE_IN_MS);
+    const minutesOdd = hoursOdd % MINUTE_IN_MS;
 
     const seconds = Math.floor(minutesOdd / SECOND_IN_MS);
     const milliseconds = Math.floor(ms % SECOND_IN_MS);
 
     return {
       // days,
-      // hours,
+      hours,
       minutes,
       seconds,
       milliseconds,
@@ -245,14 +64,14 @@ function timerMillisecondsWorker(self: WorkerGlobalScope) {
   }
 
   function calculateRelativeTimes(
-    relativeTimers: RelativeTime[],
+    relativeTimers: RelativeTimer[],
     elapsedWithOffset: number,
     relativeTimersLimitInMs: number,
     backwarsRelativeTimers: boolean
   ): RelativeTimerElapsed[] {
     return relativeTimers
       .filter(
-        ({ start: startTimeMs }: RelativeTime) =>
+        ({ start: startTimeMs }: RelativeTimer) =>
           relativeTimersLimitInMs > 0 && elapsedWithOffset <= startTimeMs + relativeTimersLimitInMs
       )
       .map((relative) => {
@@ -291,20 +110,18 @@ function timerMillisecondsWorker(self: WorkerGlobalScope) {
       // Message
       const message: TickMessage = {
         ok: true,
-        type: TimerMessageAction.TICK,
-        action: TimerMessageAction.TICK,
+        type: 'TICK',
+        action: 'TICK',
         payload: {
           name,
           elapsedMs,
           elapsed: getElapsedObjectFromMs(elapsedMs),
           limitReached: false,
-          relativeTimers: relativeTimers.map((relativeTimersForIndex) =>
-            calculateRelativeTimes(
-              relativeTimersForIndex,
-              elapsedWithOffset,
-              relativeTimersLimitInMs,
-              backwardsRelativeTimers
-            )
+          relativeTimers: calculateRelativeTimes(
+            relativeTimers,
+            elapsedWithOffset,
+            relativeTimersLimitInMs,
+            backwardsRelativeTimers
           ),
           timerOptions: {
             offsetMs,
@@ -326,7 +143,7 @@ function timerMillisecondsWorker(self: WorkerGlobalScope) {
         message.payload.limitReached = true;
         message.payload.elapsed = getElapsedObjectFromMs(limitMs); // Recalculate elapsed time
         self.postMessage(message); // Send last tick
-        message.type = TimerMessageAction.TICK_LIMIT_REACHED; // Send also a limit reached message
+        message.type = 'TICK_LIMIT_REACHED'; // Send also a limit reached message
         timersStore[name].start = 0; // Stop the timer
       }
 
@@ -341,7 +158,7 @@ function timerMillisecondsWorker(self: WorkerGlobalScope) {
   }
 
   // Stop & delete
-  function deleteTimer(name: TimerName): Message {
+  function deleteTimer(name: TimerName): TimerMessage {
     if (timersStore?.[name]) {
       stop(name);
       delete timersStore[name];
@@ -349,105 +166,107 @@ function timerMillisecondsWorker(self: WorkerGlobalScope) {
 
     return {
       ok: true,
-      action: TimerMessageAction.DELETE_TIMER,
+      action: 'DELETE_TIMER',
       type: 'success',
       success: `Timer "${name}" deleted`,
     };
   }
 
-  function createOrSetTimer(
+  function setTimerOptions(
+    action: string,
     name: TimerName,
-    {
-      offsetMs,
-      limitMs,
-      backwards,
-      relativeTimers = [],
-      relativeTimersLimitInMs,
-      backwardsRelativeTimers,
-      intervalTimeMs,
-    }: CreateTimerOptions = {}
-  ): Message {
-    if (backwards && !limitMs) {
+    timerOptions: TimerOptions = DEFAULT_TIMER_OPTIONS
+  ): TimerMessage {
+    const {
+      start = 0,
+      backwards = DEFAULT_TIMER_OPTIONS.backwards,
+      offsetMs = DEFAULT_TIMER_OPTIONS.offsetMs,
+      limitMs = DEFAULT_TIMER_OPTIONS.limitMs,
+      relativeTimers = DEFAULT_TIMER_OPTIONS.relativeTimers,
+      relativeTimersLimitInMs = DEFAULT_TIMER_OPTIONS.relativeTimersLimitInMs,
+      backwardsRelativeTimers = DEFAULT_TIMER_OPTIONS.backwardsRelativeTimers,
+      intervalTimeMs = DEFAULT_TIMER_OPTIONS.intervalTimeMs,
+    } = timerOptions;
+    if (start < 0) {
       return {
         ok: false,
-        action: TimerMessageAction.CREATE_SET,
+        action,
         type: 'error',
-        error: `Backwards Timer "${name}" requires a limit`,
+        error: `Timer "${name}" start option if provided must be a positive integer number`,
         name,
-        timerOptions: {
-          offsetMs,
-          limitMs,
-          backwards,
-          relativeTimers,
-          relativeTimersLimitInMs,
-          backwardsRelativeTimers,
-          intervalTimeMs, // Default 250ms which is the maximum recomended. It is also recomended to use values that are multiple of 1000ms
-        },
+        timerOptions,
+      };
+    }
+
+    if (backwards && limitMs <= 0) {
+      return {
+        ok: false,
+        action,
+        type: 'error',
+        error: `Timer "${name}" backwards required a limit in Ms greater than 0`,
+        name,
+        timerOptions,
+      };
+    }
+
+    if (backwardsRelativeTimers && relativeTimersLimitInMs <= 0) {
+      return {
+        ok: false,
+        action,
+        type: 'error',
+        error: `Timer "${name}" relative time backwards required a relative timer limit in Ms greater than 0`,
+        name,
+        timerOptions,
+      };
+    }
+
+    if (offsetMs > limitMs) {
+      return {
+        ok: false,
+        action,
+        type: 'error',
+        error: `Timer "${name}" offset is greater than the limit`,
+        name,
+        timerOptions,
       };
     }
 
     timersStore[name] = {
-      start: timersStore[name]?.start ?? 0,
-      offsetMs: offsetMs ?? timersStore[name]?.offsetMs ?? 0,
-      limitMs: limitMs ?? timersStore[name]?.limitMs ?? 0,
-      backwards: backwards ?? timersStore[name]?.backwards ?? false,
-      relativeTimers: relativeTimers ?? timersStore[name]?.relativeTimers ?? [],
-      relativeTimersLimitInMs:
-        relativeTimersLimitInMs ?? timersStore[name]?.relativeTimersLimitInMs ?? 0,
-      lastCalculatedElapsedMs: timersStore[name]?.lastCalculatedElapsedMs ?? 0,
-      backwardsRelativeTimers:
-        timersStore[name]?.backwardsRelativeTimers ?? backwardsRelativeTimers ?? true,
-      intervalTimeMs: timersStore[name]?.intervalTimeMs ?? intervalTimeMs ?? 250,
-      interval: timersStore[name]?.interval ?? null,
+      start,
+      offsetMs,
+      limitMs,
+      backwards,
+      relativeTimers,
+      relativeTimersLimitInMs,
+      backwardsRelativeTimers,
+      intervalTimeMs,
+      lastCalculatedElapsedMs: 0,
     };
 
-    // If there is a limit but the offset is greater than the limit, return an error
-    if (limitMs && offsetMs && limitMs > 0 && offsetMs >= limitMs) {
-      return {
-        ok: false,
-        action: TimerMessageAction.CREATE_SET,
-        type: 'error',
-        error: 'OffsetMs can not be greater than limitMs',
-        name,
-        timerOptions: {
-          offsetMs,
-          limitMs,
-          backwards,
-          relativeTimers,
-          relativeTimersLimitInMs,
-          backwardsRelativeTimers,
-          intervalTimeMs,
-        },
-      };
+    if (start > 0) {
+      timersStore[name].interval = setInterval(
+        intervalCallback(name),
+        timersStore[name].intervalTimeMs
+      );
     }
 
     return {
       ok: true,
-      action: TimerMessageAction.CREATE_SET,
+      action,
+      success: 'Options set',
       type: 'success',
       name,
-      success: `Timer "${name}" created or new options applied`,
-      timerOptions: {
-        offsetMs,
-        limitMs,
-        backwards,
-        relativeTimers,
-        relativeTimersLimitInMs,
-        backwardsRelativeTimers,
-        intervalTimeMs,
-      },
+      timerOptions,
     };
   }
 
-  function resume(name: TimerName): Message {
+  function resume(name: TimerName, opts?: TimerOptions): TimerMessage {
     if (!timersStore[name]) {
-      return {
-        ok: false,
-        action: TimerMessageAction.RESUME,
-        type: 'error',
-        name,
-        error: `Timer "${name}" does not exist`,
-      };
+      const msg = setTimerOptions('RESUME', name, opts);
+
+      if (!msg.ok) {
+        return msg;
+      }
     }
 
     if (timersStore[name].offsetMs < 0) {
@@ -473,7 +292,7 @@ function timerMillisecondsWorker(self: WorkerGlobalScope) {
     } = timersStore[name];
     return {
       ok: true,
-      action: TimerMessageAction.RESUME,
+      action: 'RESUME',
       type: 'success',
       name,
       success: `Timer "${name}" resumed`,
@@ -489,16 +308,22 @@ function timerMillisecondsWorker(self: WorkerGlobalScope) {
     };
   }
 
-  function pause(name: TimerName): Message {
+  function pause(name: TimerName, opts?: TimerOptions): TimerMessage {
     if (!timersStore[name]) {
-      return {
-        ok: false,
-        action: TimerMessageAction.PAUSE,
-        type: 'error',
-        name,
-        error: `Timer "${name}" does not exist`,
-      };
+      const msg = setTimerOptions('PAUSE', name, opts);
+      if (!msg.ok) {
+        return msg;
+      }
     }
+
+    const {
+      limitMs,
+      backwards,
+      relativeTimers,
+      relativeTimersLimitInMs,
+      backwardsRelativeTimers,
+      intervalTimeMs,
+    } = timersStore[name];
 
     if (timersStore[name].start > 0) {
       if (timersStore[name].interval) {
@@ -507,50 +332,16 @@ function timerMillisecondsWorker(self: WorkerGlobalScope) {
 
       timersStore[name].start = 0;
       timersStore[name].offsetMs = timersStore[name].lastCalculatedElapsedMs;
-      const {
-        offsetMs,
-        limitMs,
-        backwards,
-        relativeTimers,
-        relativeTimersLimitInMs,
-        backwardsRelativeTimers,
-        intervalTimeMs,
-      } = timersStore[name];
-      return {
-        ok: true,
-        action: TimerMessageAction.PAUSE,
-        type: 'success',
-        name,
-        success: `Timer "${name}" stopped`,
-        timerOptions: {
-          offsetMs,
-          limitMs,
-          backwards,
-          relativeTimers,
-          relativeTimersLimitInMs,
-          backwardsRelativeTimers,
-          intervalTimeMs,
-        },
-      };
     }
 
-    const {
-      offsetMs,
-      limitMs,
-      backwards,
-      relativeTimers,
-      relativeTimersLimitInMs,
-      backwardsRelativeTimers,
-      intervalTimeMs,
-    } = timersStore[name];
     return {
       ok: true,
-      action: TimerMessageAction.PAUSE,
+      action: 'PAUSE',
       type: 'success',
       name,
       success: `Timer "${name}" already stopped`,
       timerOptions: {
-        offsetMs,
+        offsetMs: timersStore[name].lastCalculatedElapsedMs,
         limitMs,
         backwards,
         relativeTimers,
@@ -561,23 +352,16 @@ function timerMillisecondsWorker(self: WorkerGlobalScope) {
     };
   }
 
-  function reset(name: TimerName): Message {
-    if (!timersStore[name]) {
-      return {
-        ok: false,
-        action: TimerMessageAction.RESET,
-        type: 'error',
-        name,
-        error: `Timer "${name}" does not exist`,
-      };
+  function reset(name: TimerName, opts: TimerOptions = DEFAULT_TIMER_OPTIONS): TimerMessage {
+    const start = opts?.start ?? -1;
+    const isRunning = start > 0 || (start < 0 && timersStore?.[name]?.start > 0);
+
+    const msg = setTimerOptions('RESET', name, opts);
+    if (!msg.ok) {
+      return msg;
     }
 
-    // Reset values
-    timersStore[name].offsetMs = 0;
-    timersStore[name].lastCalculatedElapsedMs = 0;
-    timersStore[name].relativeTimers = [];
-
-    const isRunning = timersStore[name].start > 0;
+    // Tick
     const {
       offsetMs,
       limitMs,
@@ -587,35 +371,18 @@ function timerMillisecondsWorker(self: WorkerGlobalScope) {
       backwardsRelativeTimers,
       intervalTimeMs,
     } = timersStore[name];
-    if (isRunning) {
-      timersStore[name].start = Date.now();
-      return {
-        ok: true,
-        action: TimerMessageAction.RESET,
-        type: 'success',
-        name,
-        success: `Timer "${name}" reset`,
-        timerOptions: {
-          offsetMs,
-          limitMs,
-          backwards,
-          relativeTimers,
-          relativeTimersLimitInMs,
-          backwardsRelativeTimers,
-          intervalTimeMs,
-        },
-      };
-    }
 
     timersStore[name].start = Date.now();
+    if (!isRunning) {
+      intervalCallback(name)(); // Tick once
+      timersStore[name].start = 0; // Stop the timer
+    }
     timersStore[name].lastCalculatedElapsedMs = 0;
 
-    intervalCallback(name)(); // Tick once
-    timersStore[name].start = 0; // Stop the timer
-
+    // Result
     return {
       ok: true,
-      action: TimerMessageAction.RESET,
+      action: 'RESET',
       type: 'success',
       name,
       success: `Timer "${name}" reset`,
@@ -631,23 +398,55 @@ function timerMillisecondsWorker(self: WorkerGlobalScope) {
     };
   }
 
+  function createOrSetTimer(
+    name: TimerName,
+    opts: TimerOptions = DEFAULT_TIMER_OPTIONS
+  ): TimerMessage {
+    const msg = setTimerOptions('CREATE_OR_SET', name, opts);
+
+    if (!msg.ok) {
+      return msg;
+    }
+
+    // Tick once
+    reset(name, opts);
+
+    return {
+      ok: true,
+      action: 'CREATE_OR_SET',
+      type: 'success',
+      name,
+      success: `Timer "${name}" created or new options applied`,
+      timerOptions: opts,
+    };
+  }
+
+  // toggle
+  function toggle(name: TimerName, opts?: TimerOptions) {
+    const started = timersStore[name]?.start ?? 0;
+    const isRunning = started > 0;
+    if (isRunning) {
+      return pause(name, opts);
+    }
+
+    return resume(name, opts);
+  }
+
   // Create & Resume
-  function start(name: TimerName, payload: CreateTimerOptions): Message {
+  function start(name: TimerName, payload?: TimerOptions): TimerMessage {
     const createResult = createOrSetTimer(name, payload);
     if (!createResult.ok) {
-      createResult.action = TimerMessageAction.START;
       return createResult;
     }
 
-    const resumeResult = resume(name);
+    const resumeResult = resume(name, payload);
     if (!resumeResult.ok) {
-      resumeResult.action = TimerMessageAction.START;
       return resumeResult;
     }
 
     return {
       ok: true,
-      action: TimerMessageAction.START,
+      action: 'START',
       type: 'success',
       name,
       success: `Timer "${name}" started`,
@@ -664,15 +463,14 @@ function timerMillisecondsWorker(self: WorkerGlobalScope) {
   }
 
   // Pause & Reset
-  function stop(name: TimerName): Message {
-    const pauseMessage = pause(name);
+  function stop(name: TimerName, opts?: TimerOptions): TimerMessage {
+    const pauseMessage = pause(name, opts);
     if (!pauseMessage.ok) {
       return pauseMessage;
     }
-    const resetMessage = reset(name);
+    const resetMessage = reset(name, opts);
 
     if (!resetMessage.ok) {
-      resetMessage.action = TimerMessageAction.STOP;
       return resetMessage;
     }
 
@@ -687,7 +485,7 @@ function timerMillisecondsWorker(self: WorkerGlobalScope) {
     } = timersStore[name];
     return {
       ok: true,
-      action: TimerMessageAction.STOP,
+      action: 'STOP',
       type: 'success',
       name,
       success: `Timer "${name}" stopped`,
@@ -703,15 +501,12 @@ function timerMillisecondsWorker(self: WorkerGlobalScope) {
     };
   }
 
-  function setOffset(name: TimerName, offsetMs: number): Message {
+  function setOffset(name: TimerName, offsetMs: number, opts?: TimerOptions): TimerMessage {
     if (!timersStore[name]) {
-      return {
-        ok: false,
-        action: TimerMessageAction.SET_OFFSET,
-        type: 'error',
-        name,
-        error: `Timer "${name}" does not exist`,
-      };
+      const msg = setTimerOptions('SET_OFFSET', name, opts);
+      if (!msg.ok) {
+        return msg;
+      }
     }
 
     const isRunning = timersStore[name].start > 0;
@@ -737,7 +532,7 @@ function timerMillisecondsWorker(self: WorkerGlobalScope) {
     } = timersStore[name];
     return {
       ok: true,
-      action: TimerMessageAction.SET_OFFSET,
+      action: 'SET_OFFSET',
       type: 'success',
       name,
       success: `Timer "${name}" offset set from "${oldOffset}" to "${offsetMs}". Changes will happen on next tick`,
@@ -753,15 +548,12 @@ function timerMillisecondsWorker(self: WorkerGlobalScope) {
     };
   }
 
-  function addOffset(name: TimerName, offsetMs: number): Message {
+  function addOffset(name: TimerName, offsetMs: number, opts?: TimerOptions): TimerMessage {
     if (!timersStore[name]) {
-      return {
-        ok: false,
-        action: TimerMessageAction.ADD_OFFSET,
-        type: 'error',
-        name,
-        error: `Timer "${name}" does not exist`,
-      };
+      const msg = setTimerOptions('ADD_OFFSET', name, opts);
+      if (!msg.ok) {
+        return msg;
+      }
     }
 
     const isRunning = timersStore[name].start > 0;
@@ -777,7 +569,7 @@ function timerMillisecondsWorker(self: WorkerGlobalScope) {
     if (probablyElapse < 0) {
       return {
         ok: false,
-        action: TimerMessageAction.ADD_OFFSET,
+        action: 'ADD_OFFSET',
         type: 'error',
         name,
         error: `Timer "${name}" total offset can not be negative`,
@@ -812,7 +604,7 @@ function timerMillisecondsWorker(self: WorkerGlobalScope) {
     } = timersStore[name];
     return {
       ok: true,
-      action: TimerMessageAction.ADD_OFFSET,
+      action: 'ADD_OFFSET',
       type: 'success',
       name,
       success: `Timer "${name}" offset has changed from "${oldOffset}" to "${newOffset}". Changes will happen on next tick`,
@@ -828,54 +620,20 @@ function timerMillisecondsWorker(self: WorkerGlobalScope) {
     };
   }
 
-  function addRelativeTimer(
+  function addRelativeTimers(
     name: TimerName,
-    index: number,
-    relativeTimers: RelativeTime[]
-  ): Message {
+    relativeTimers: RelativeTimer[],
+    opts?: TimerOptions
+  ): TimerMessage {
     if (!timersStore[name]) {
-      return {
-        ok: false,
-        action: TimerMessageAction.ADD_RELATIVE_TIMERS,
-        type: 'error',
-        name,
-        error: `Timer "${name}" does not exist`,
-      };
-    }
-
-    const idx = Number(index);
-
-    if (isNaN(idx)) {
-      const {
-        offsetMs,
-        limitMs,
-        backwards,
-        relativeTimers: storedRelativeTimers,
-        relativeTimersLimitInMs,
-        backwardsRelativeTimers,
-        intervalTimeMs,
-      } = timersStore[name];
-      return {
-        ok: false,
-        action: TimerMessageAction.ADD_RELATIVE_TIMERS,
-        type: 'error',
-        name,
-        error: `Team index "${index}" is not a number`,
-        timerOptions: {
-          offsetMs,
-          limitMs,
-          backwards,
-          relativeTimers: storedRelativeTimers,
-          relativeTimersLimitInMs,
-          backwardsRelativeTimers,
-          intervalTimeMs,
-        },
-      };
+      const msg = setTimerOptions('ADD_RELATIVE_TIMERS', name, opts);
+      if (!msg.ok) {
+        return msg;
+      }
     }
 
     timersStore[name].relativeTimers ??= [];
-    timersStore[name].relativeTimers[idx] ??= [];
-    timersStore[name].relativeTimers[idx].push(...relativeTimers);
+    timersStore[name].relativeTimers.push(...relativeTimers);
 
     intervalCallback(name)();
 
@@ -890,10 +648,10 @@ function timerMillisecondsWorker(self: WorkerGlobalScope) {
     } = timersStore[name];
     return {
       ok: true,
-      action: TimerMessageAction.ADD_RELATIVE_TIMERS,
+      action: 'ADD_RELATIVE_TIMERS',
       type: 'success',
       name,
-      success: `Timer "${name}" added ${relativeTimers.length} timers to ${index}`,
+      success: `Timer "${name}" added ${relativeTimers.length} timers`,
       timerOptions: {
         offsetMs,
         limitMs,
@@ -908,79 +666,18 @@ function timerMillisecondsWorker(self: WorkerGlobalScope) {
 
   function removeRelativeTimers(
     name: TimerName,
-    index: number,
-    timersIds: RelativeTimeId[]
-  ): Message {
+    timersIds: RelativeTimerId[],
+    opts?: TimerOptions
+  ): TimerMessage {
     if (!timersStore[name]) {
-      return {
-        ok: false,
-        action: TimerMessageAction.REMOVE_RELATIVE_TIMERS,
-        type: 'error',
-        name,
-        error: `Timer "${name}" does not exist`,
-      };
+      const msg = setTimerOptions('REMOVE_RELATIVE_TIMERS', name, opts);
+      if (!msg.ok) {
+        return msg;
+      }
     }
 
-    const idx = Number(index);
-
-    if (isNaN(idx)) {
-      const {
-        offsetMs,
-        limitMs,
-        backwards,
-        relativeTimers,
-        relativeTimersLimitInMs,
-        backwardsRelativeTimers,
-        intervalTimeMs,
-      } = timersStore[name];
-      return {
-        ok: false,
-        action: TimerMessageAction.REMOVE_RELATIVE_TIMERS,
-        type: 'error',
-        name,
-        error: `Team index "${index}" is not a number`,
-        timerOptions: {
-          offsetMs,
-          limitMs,
-          backwards,
-          relativeTimers,
-          relativeTimersLimitInMs,
-          backwardsRelativeTimers,
-          intervalTimeMs,
-        },
-      };
-    }
-
-    if (!timersStore?.[name]?.relativeTimers?.[idx]) {
-      const {
-        offsetMs,
-        limitMs,
-        backwards,
-        relativeTimers,
-        relativeTimersLimitInMs,
-        backwardsRelativeTimers,
-        intervalTimeMs,
-      } = timersStore[name];
-      return {
-        ok: false,
-        action: TimerMessageAction.REMOVE_RELATIVE_TIMERS,
-        type: 'error',
-        name,
-        error: `Team "${index}" does not exist`,
-        timerOptions: {
-          offsetMs,
-          limitMs,
-          backwards,
-          relativeTimers,
-          relativeTimersLimitInMs,
-          backwardsRelativeTimers,
-          intervalTimeMs,
-        },
-      };
-    }
-
-    timersStore[name].relativeTimers[idx] = timersStore[name].relativeTimers[idx].filter(
-      ({ id }: RelativeTime) => !timersIds.includes(id)
+    timersStore[name].relativeTimers = timersStore[name].relativeTimers.filter(
+      ({ id }: RelativeTimer) => !timersIds.includes(id)
     );
 
     intervalCallback(name)(); // Recalculate elapsed time
@@ -995,10 +692,10 @@ function timerMillisecondsWorker(self: WorkerGlobalScope) {
     } = timersStore[name];
     return {
       ok: true,
-      action: TimerMessageAction.REMOVE_RELATIVE_TIMERS,
+      action: 'REMOVE_RELATIVE_TIMERS',
       type: 'success',
       name,
-      success: `Timer "${name}" removed ${timersIds.length} timers from ${index}`,
+      success: `Timer "${name}" removed ${timersIds.length} timers`,
       timerOptions: {
         offsetMs,
         limitMs,
@@ -1011,98 +708,132 @@ function timerMillisecondsWorker(self: WorkerGlobalScope) {
     };
   }
 
-  self.addEventListener('message', (event: { data: Action }) => {
-    switch (event.data.type as Action['type']) {
-      case TimerAction.CREATE_SET: {
-        const { name, payload = {} } = event.data as StartAction;
-        self.postMessage(createOrSetTimer(name, payload));
-        break;
+  self.addEventListener('message', (event: { data: ActionTimer }) => {
+    try {
+      const { type, name } = event.data;
+
+      switch (type) {
+        case 'CREATE_OR_SET': {
+          const { payload } = event.data as StartCreateActionTimer;
+          self.postMessage(createOrSetTimer(name, payload));
+          break;
+        }
+        case 'START': {
+          const { payload } = event.data as StartCreateActionTimer;
+          self.postMessage(start(name, payload));
+          break;
+        }
+
+        case 'RESUME': {
+          const { opts: timerOptions } = event.data;
+          self.postMessage(resume(name, timerOptions));
+          break;
+        }
+
+        case 'PAUSE': {
+          const { opts: timerOptions } = event.data;
+          self.postMessage(pause(name, timerOptions));
+          break;
+        }
+
+        case 'RESET': {
+          const { opts: timerOptions } = event.data;
+          self.postMessage(reset(name, timerOptions));
+          break;
+        }
+
+        case 'TOGGLE': {
+          const { opts: timerOptions } = event.data;
+          self.postMessage(toggle(name, timerOptions));
+          break;
+        }
+
+        case 'STOP': {
+          const { opts: timerOptions } = event.data;
+          self.postMessage(stop(name, timerOptions));
+          break;
+        }
+
+        case 'SET_OFFSET': {
+          const { payload, opts: timerOptions } = event.data as OffsetActionTimer;
+          self.postMessage(setOffset(name, payload, timerOptions));
+          break;
+        }
+
+        case 'ADD_OFFSET': {
+          const { payload, opts: timerOptions } = event.data as OffsetActionTimer;
+          self.postMessage(addOffset(name, payload, timerOptions));
+          break;
+        }
+
+        case 'ADD_RELATIVE_TIMERS': {
+          const { payload, opts: timerOptions } = event.data as AddRelativeActionTimer;
+          self.postMessage(addRelativeTimers(name, payload, timerOptions));
+          break;
+        }
+
+        case 'REMOVE_RELATIVE_TIMERS': {
+          const { payload, opts: timerOptions } = event.data as RemoveRelativeActionTimer;
+          self.postMessage(removeRelativeTimers(name, payload, timerOptions));
+          break;
+        }
+
+        case 'GET_RELATIVE_TIMERS': {
+          const { name } = event.data as GetRelativeActionTimer;
+          const message: TimerMessage = {
+            ok: true,
+            action: 'GET_RELATIVE_TIMERS',
+            type: 'success',
+            success: 'Relative Timers',
+            payload: timersStore?.[name]?.relativeTimers ?? [],
+          };
+          self.postMessage(message);
+          break;
+        }
+
+        case 'DELETE_TIMER': {
+          const { name } = event.data as ActionTimer;
+          self.postMessage(deleteTimer(name));
+          break;
+        }
+
+        default:
+          self.postMessage({
+            ok: false,
+            action: 'UNKNOWN',
+            type: 'error',
+            error: `Unknown action ${(event.data as ActionTimer).type}`,
+          });
       }
-      case TimerAction.RESUME:
-        self.postMessage(resume(event.data.name));
-        break;
-
-      case TimerAction.PAUSE:
-        self.postMessage(pause(event.data.name));
-        break;
-
-      case TimerAction.RESET:
-        self.postMessage(reset(event.data.name));
-        break;
-
-      case TimerAction.START: {
-        const { name, payload } = event.data as StartAction;
-        self.postMessage(start(name, payload));
-        break;
-      }
-
-      case TimerAction.STOP:
-        self.postMessage(stop(event.data.name));
-        break;
-
-      case TimerAction.SET_OFFSET: {
-        const { name, payload } = event.data as SetOffsetAction;
-        self.postMessage(setOffset(name, payload));
-        break;
-      }
-
-      case TimerAction.ADD_OFFSET: {
-        const { name, payload } = event.data as AddOffsetAction;
-        self.postMessage(addOffset(name, payload));
-        break;
-      }
-      case TimerAction.ADD_RELATIVE_TIMERS: {
-        const { name, index, payload } = event.data as AddRelativeTimers;
-        self.postMessage(addRelativeTimer(name, index, payload));
-        break;
-      }
-      case TimerAction.REMOVE_RELATIVE_TIMERS: {
-        const { name, index, payload } = event.data as RemoveRelativeTimers;
-        self.postMessage(removeRelativeTimers(name, index, payload));
-        break;
-      }
-
-      case TimerAction.GET_RELATIVE_TIMERS: {
-        const { name } = event.data as GetRelativeTimers;
-        const message: Message = {
-          ok: true,
-          action: TimerMessageAction.GET_RELATIVE_TIMERS,
-          type: 'success',
-          success: 'Relative timers',
-          payload: timersStore?.[name]?.relativeTimers ?? [],
-        };
-        self.postMessage(message);
-        break;
-      }
-
-      case TimerAction.DELETE_TIMER: {
-        const { name } = event.data as Action;
-        self.postMessage(deleteTimer(name));
-        break;
-      }
-
-      default:
-        self.postMessage({
-          ok: false,
-          action: TimerMessageAction.UNKNOWN,
-          type: 'error',
-          error: `Unknown action ${(event.data as Action).type}`,
-        });
+    } catch (error) {
+      console.error('Wrong message received');
+      console.error(error);
     }
   });
 }
 
-export function TimerWorker({
-  onTick,
-  onError,
-  onSuccess,
-  onLimitReached,
-}: {
-  onTick: TickCallback;
-  onError?: ErrorCallback;
-  onSuccess?: SuccessCallback;
-  onLimitReached?: TickCallback;
-}) {
+export function TimerWorker(
+  {
+    onTick,
+    onError: onTimerError,
+    onSuccess,
+    onLimitReached,
+  }: {
+    onTick: TickTimerCallback;
+    onError?: ErrorTimerCallback;
+    onSuccess?: SuccessTimerCallback;
+    onLimitReached?: TickTimerCallback;
+  },
+  DEFAULT_TIMER_OPTIONS: TimerOptionsInput = {
+    offsetMs: 0,
+    limitMs: 0,
+    backwards: false,
+    relativeTimers: [],
+    relativeTimersLimitInMs: 120_000, // 2 mins
+    backwardsRelativeTimers: true,
+    intervalTimeMs: 250,
+  }
+) {
   const worker = new Worker(
     URL.createObjectURL(
       new Blob([`(${timerMillisecondsWorker.toString()})(self)`], {
@@ -1111,17 +842,27 @@ export function TimerWorker({
     )
   );
 
-  worker.addEventListener('message', (event: { data: Message }) => {
-    if (event.data.ok) {
-      if (event.data.action === TimerMessageAction.TICK) {
-        onTick(event.data as TickMessage);
-      } else if (event.data.action === TimerMessageAction.TICK_LIMIT_REACHED) {
-        onLimitReached?.(event.data as TickMessage);
-      } else {
-        onSuccess?.(event.data as SuccessMessage);
+  worker.addEventListener('message', (event: { data: TimerMessage }) => {
+    try {
+      const message = TimerMessage.parse(event.data);
+
+      if (message.type === 'TICK' || message.type === 'TICK_LIMIT_REACHED') {
+        onTick(message);
+
+        if (message.type === 'TICK') {
+          return;
+        }
       }
-    } else {
-      onError?.(event.data as ErrorMessage);
+
+      if ('TICK_LIMIT_REACHED' === message.type) {
+        onLimitReached?.(message);
+      } else if (message.type === 'success') {
+        onSuccess?.(message as SuccessTimerMessage);
+      } else if (message.type === 'error') {
+        onTimerError?.(message);
+      }
+    } catch (error) {
+      console.error('Received and invalid message', event.data);
     }
   });
 
@@ -1132,36 +873,47 @@ export function TimerWorker({
     });
   }
 
-  function createOrSet(name: TimerName, payload: CreateTimerOptions = {}) {
+  function createOrSet(name: TimerName, payload: TimerOptionsInput = DEFAULT_TIMER_OPTIONS) {
     worker.postMessage({
-      type: TimerAction.CREATE_SET,
+      type: TimerAction.CREATE_OR_SET,
       name,
       payload,
     });
   }
 
-  function pause(name: TimerName) {
+  function pause(name: TimerName, opts: TimerOptionsInput = DEFAULT_TIMER_OPTIONS) {
     worker.postMessage({
       type: TimerAction.PAUSE,
       name,
+      opts,
     });
   }
 
-  function reset(name: TimerName) {
+  function reset(name: TimerName, opts: TimerOptionsInput = DEFAULT_TIMER_OPTIONS) {
     worker.postMessage({
       type: TimerAction.RESET,
       name,
+      opts,
     });
   }
 
-  function resume(name: TimerName) {
+  function resume(name: TimerName, opts: TimerOptionsInput = DEFAULT_TIMER_OPTIONS) {
     worker.postMessage({
       type: TimerAction.RESUME,
       name,
+      opts,
     });
   }
 
-  function start(name: TimerName, payload: CreateTimerOptions = {}) {
+  function toggle(name: TimerName, opts: TimerOptionsInput = DEFAULT_TIMER_OPTIONS) {
+    worker.postMessage({
+      type: TimerAction.TOGGLE,
+      name,
+      opts,
+    });
+  }
+
+  function start(name: TimerName, payload: TimerOptionsInput = DEFAULT_TIMER_OPTIONS) {
     worker.postMessage({
       type: TimerAction.START,
       name,
@@ -1169,51 +921,71 @@ export function TimerWorker({
     });
   }
 
-  function stop(name: TimerName) {
+  function stop(name: TimerName, opts: TimerOptionsInput = DEFAULT_TIMER_OPTIONS) {
     worker.postMessage({
       type: TimerAction.STOP,
       name,
+      opts,
     });
   }
 
-  function setOffset(name: TimerName, offsetMs: number) {
+  function setOffset(
+    name: TimerName,
+    offsetMs: number,
+    opts: TimerOptionsInput = DEFAULT_TIMER_OPTIONS
+  ) {
     worker.postMessage({
       type: TimerAction.SET_OFFSET,
       name,
       payload: offsetMs,
+      opts,
     });
   }
 
-  function addOffset(name: TimerName, offset: number) {
+  function addOffset(
+    name: TimerName,
+    offset: number,
+    opts: TimerOptionsInput = DEFAULT_TIMER_OPTIONS
+  ) {
     worker.postMessage({
       type: TimerAction.ADD_OFFSET,
       name,
       payload: offset,
+      opts,
     });
   }
 
-  function addRelativeTimers(name: TimerName, index: number, relativeTimers: RelativeTime[]) {
+  function addRelativeTimers(
+    name: TimerName,
+    relativeTimers: RelativeTimer[],
+    opts: TimerOptionsInput = DEFAULT_TIMER_OPTIONS
+  ) {
     worker.postMessage({
       type: TimerAction.ADD_RELATIVE_TIMERS,
       name,
-      index,
       payload: relativeTimers,
+      opts,
     });
   }
 
-  function removeRelativeTimers(name: TimerName, index: number, timerIds: RelativeTimeId[]) {
+  function removeRelativeTimers(
+    name: TimerName,
+    timerIds: RelativeTimerId[],
+    opts: TimerOptionsInput = DEFAULT_TIMER_OPTIONS
+  ) {
     worker.postMessage({
       type: TimerAction.REMOVE_RELATIVE_TIMERS,
       name,
-      index,
       payload: timerIds,
+      opts,
     });
   }
 
-  function getRelativeTimers(name: TimerName) {
+  function getRelativeTimers(name: TimerName, opts: TimerOptionsInput = DEFAULT_TIMER_OPTIONS) {
     worker.postMessage({
       type: TimerAction.GET_RELATIVE_TIMERS,
       name,
+      opts,
     });
   }
 
@@ -1223,6 +995,7 @@ export function TimerWorker({
     createOrSet,
     pause,
     resume,
+    toggle,
     reset,
     start,
     stop,
