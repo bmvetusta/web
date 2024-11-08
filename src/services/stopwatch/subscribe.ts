@@ -152,25 +152,11 @@ export function stopwatchSubscribe(
   });
 
   // TODO Move this to other part
+  const $info = document.querySelector('div#info') as HTMLElement;
+  const $root = document.querySelector(':root') as HTMLElement;
+
   realtime.channels.get(liveGraphicsSceneChannelName).subscribe((message: Message) => {
     const { data = {} } = message;
-    /**
-     {
-      "type": "TEXT_INFO",
-      "value": "any text..."
-     }
-     */
-    const $info = document.querySelector('div#info') as HTMLElement;
-    if ($info) {
-      if (data.type === 'TEXT_INFO' && data.value !== undefined) {
-        $info.textContent = data.value;
-      }
-      if (data.type === 'TEXT_INFO' && !data.value) {
-        $info.textContent = '';
-        $info.style.display = 'none';
-      }
-    }
-
     /**
      {
       "type": "SCENE",
@@ -178,19 +164,29 @@ export function stopwatchSubscribe(
       "text": "optional text info"
      }
      */
-    const $root = document.querySelector(':root') as HTMLElement;
     if ($root) {
       if (data.type === 'SCENE') {
         $root.setAttribute('data-scene', data.value ?? 'live');
       }
 
-      if (data.type === 'SCENE' && data.value === 'timeout' && data.text !== undefined) {
-        $info.textContent = data.text;
-        $info.style.display = 'block';
+      if (data.text !== undefined && $info) {
+        $info.nodeValue = data.text;
       }
-      if ((data.type === 'SCENE' && data.text === undefined) || data.value !== 'timeout') {
-        $info.style.display = 'none';
-      }
+    }
+
+    /**
+     {
+      "type": "TEXT_INFO", // But works with any object that has "text"
+      "text": "any text..."
+     }
+     */
+    if ($info) {
+      console.log('$info', { data });
+      $info.textContent = data.text ?? '';
+
+      const textLen = $info.textContent?.length ?? 0;
+      const showText = $root.getAttribute('data-scene') === 'timeout' && textLen > 0;
+      $info.style.display = showText ? 'block' : 'none';
     }
   });
 

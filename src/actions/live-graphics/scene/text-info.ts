@@ -13,7 +13,7 @@ export const textInfo = defineAction({
     await publishMessage(liveGraphicsSceneChannelName, {
       data: {
         type: 'TEXT_INFO',
-        value: input,
+        text: input,
       },
     });
   },
