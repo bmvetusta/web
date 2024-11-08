@@ -181,7 +181,6 @@ export function stopwatchSubscribe(
      }
      */
     if ($info) {
-      console.log('$info', { data });
       $info.textContent = data.text ?? '';
 
       const textLen = $info.textContent?.length ?? 0;
