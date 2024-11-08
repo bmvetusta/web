@@ -2,6 +2,8 @@
 import { AUTH_SECRET_TOKEN } from 'astro:env/server';
 import Layout from 'src/layouts/Layout.astro';
 import { authCoreGraphicsCookieName } from 'src/services/core-graphics/constants';
+import Advertising from './Advertising.astro';
+import Scenes from './Scenes.astro';
 import ScoresControl from './ScoresControl.astro';
 import ViewTimeAndSetTimeOffset from './ViewTimeAndSetTimeOffset.astro';
 
@@ -28,48 +30,15 @@ if (!isAuth) {
   <section>
     <h2>Advertising</h2>
 
-    <form action='#' id='advertising'>
-      <fieldset>
-        <label for='advertisingTime'>Time to show the advertising in secs</label>
-        <input type='number' id='advertisingTime' name='time' value='30' />
-        <label for='advertisingEnabled'>Enable advertising</label>
-        <input type='checkbox' id='advertisingEnabled' name='advertisingEnabled' checked />
-      </fieldset>
-    </form>
+    <Advertising />
   </section>
 
-  <script>
-    import { actions } from 'astro:actions';
+  <section>
+    <h2>Scenes control</h2>
 
-    const advertisingForm = document.querySelector('form#advertising') as HTMLFormElement;
-    const notification = document.querySelector('p#notification') as HTMLParagraphElement;
-    const timeInput = advertisingForm?.querySelector('input#advertisingTime') as HTMLInputElement;
-    const enabledInput = advertisingForm?.querySelector(
-      'input#advertisingEnabled'
-    ) as HTMLInputElement;
+    <Scenes />
+  </section>
 
-    enabledInput?.addEventListener('change', async (event) => {
-      const enabled = (event.target as HTMLInputElement).checked;
-      const action = enabled ? 'SHOW' : 'HIDE';
-      const input = timeInput.valueAsNumber;
-      try {
-        if (input && input > 0) {
-          const payload = { duration: input * 1000 };
-          await actions.liveGraphics.advertising.hideShow.orThrow({ action, payload });
-        } else {
-          await actions.liveGraphics.advertising.hideShow.orThrow({ action });
-        }
-        notification.textContent = `Advertising ${action.toLowerCase()}d`;
-      } catch (error) {
-        console.error(error);
-        notification.textContent = 'Error setting the advertising';
-      } finally {
-        setTimeout(() => {
-          notification.textContent = '';
-        }, 3000);
-      }
-    });
-  </script>
   <style>
     p#notification {
       width: 100%;

@@ -1,3 +1,4 @@
+import type { Message } from 'ably';
 import { TimerWorker } from 'src/lib/stopwatch-worker';
 import { AblyStopwatchActionMessage } from 'src/schema/ably/stopwatch-action-message';
 import type { OffsetActionTimer } from 'src/schema/timer/actions/offset';
@@ -12,7 +13,7 @@ import type {
 } from 'src/schema/timer/messages/callbacks';
 import type { TimerOptionsInput } from 'src/schema/timer/options';
 import { ablyAuthTokenRealtime } from '../ably/auth-token-realtime';
-import { liveGraphicsStopwatchChannelName } from '../ably/constants';
+import { liveGraphicsSceneChannelName, liveGraphicsStopwatchChannelName } from '../ably/constants';
 
 type InitialTimer = TimerOptionsInput & { name: string; start?: number; active?: boolean };
 
@@ -147,6 +148,49 @@ export function stopwatchSubscribe(
       }
     } catch (error) {
       console.error(error);
+    }
+  });
+
+  // TODO Move this to other part
+  realtime.channels.get(liveGraphicsSceneChannelName).subscribe((message: Message) => {
+    const { data = {} } = message;
+    /**
+     {
+      "type": "TEXT_INFO",
+      "value": "any text..."
+     }
+     */
+    const $info = document.querySelector('div#info') as HTMLElement;
+    if ($info) {
+      if (data.type === 'TEXT_INFO' && data.value !== undefined) {
+        $info.textContent = data.value;
+      }
+      if (data.type === 'TEXT_INFO' && !data.value) {
+        $info.textContent = '';
+        $info.style.display = 'none';
+      }
+    }
+
+    /**
+     {
+      "type": "SCENE",
+      "value": "any scene name",
+      "text": "optional text info"
+     }
+     */
+    const $root = document.querySelector(':root') as HTMLElement;
+    if ($root) {
+      if (data.type === 'SCENE') {
+        $root.setAttribute('data-scene', data.value ?? 'live');
+      }
+
+      if (data.type === 'SCENE' && data.value === 'timeout' && data.text !== undefined) {
+        $info.textContent = data.text;
+        $info.style.display = 'block';
+      }
+      if ((data.type === 'SCENE' && data.text === undefined) || data.value !== 'timeout') {
+        $info.style.display = 'none';
+      }
     }
   });
 

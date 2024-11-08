@@ -2,7 +2,7 @@ import { defineAction, type ActionAPIContext } from 'astro:actions';
 import { z } from 'astro:schema';
 import { RemoveRelativeActionTimer } from 'src/schema/timer/actions/relative/remove';
 import { TimerAction } from 'src/schema/timer/actions/type';
-import { stopwatchPublishMessage } from 'src/services/stopwatch/publish-message';
+import { stopwatchPublishMessage } from 'src/services/stopwatch/stopwatch-publish-message';
 import { isAuth } from '../_is-auth-action';
 
 const input = RemoveRelativeActionTimer.merge(

@@ -1,0 +1,87 @@
+---
+import { AUTH_SECRET_TOKEN } from 'astro:env/server';
+import { authCoreGraphicsCookieName } from 'src/services/core-graphics/constants';
+
+const isAuth = Astro.cookies.get(authCoreGraphicsCookieName)?.value === AUTH_SECRET_TOKEN;
+if (!isAuth) {
+  return Astro.redirect('/core-graphics/setup');
+}
+---
+
+<form action='#' id='scenes'>
+  <fieldset>
+    <label for='scene'>Choose a scene</label>
+    <select name='scenes' id='scene'>
+      <option value='live' selected>Jugando</option>
+      <option value='pause'>Pausa</option>
+      <option value='timeout'>Timeout</option>
+      <option value='rest'>Descanso</option>
+      <option value='end'>Final</option>
+    </select>
+
+    <input type='text' id='info' name='info' value='Descanso' />
+    <button id='set-text-info'>Set Text Info</button>
+  </fieldset>
+</form>
+<script>
+  import { actions } from 'astro:actions';
+
+  const $scenesForm = document.querySelector('form#scenes') as HTMLFormElement;
+  const $notification = document.querySelector('p#notification') as HTMLParagraphElement;
+  const $sceneChanger = document.querySelector('select#scene') as HTMLSelectElement;
+  const $textInfoInput = document.querySelector('input#info') as HTMLInputElement;
+  const $btnSetTextInfo = document.querySelector('button#set-text-info') as HTMLButtonElement;
+
+  const handleChangeTextInfo = async () => {
+    try {
+      const text = $textInfoInput.value;
+      await actions.liveGraphics.scene.textInfo.orThrow(text);
+    } catch (error) {
+      console.error(error);
+      $notification.textContent = 'Error setting the text';
+    } finally {
+      setTimeout(() => {
+        $notification.textContent = '';
+      }, 3000);
+    }
+  };
+
+  const handleChangeScene = async (event: Event) => {
+    try {
+      const target = event.target as HTMLSelectElement;
+      const scene = target.value === 'live' ? 'live' : 'timeout';
+
+      if (target.value === 'timeout') {
+        $textInfoInput.value = 'Tiempo Muerto';
+      }
+
+      if (target.value === 'rest') {
+        $textInfoInput.value = 'Descanso';
+      }
+
+      if (target.value === 'end') {
+        $textInfoInput.value = 'Final';
+      }
+
+      await actions.liveGraphics.scene.change.orThrow({ scene, text: $textInfoInput.value });
+    } catch (error) {
+      console.error(error);
+      $notification.textContent = 'Error setting the scene';
+    } finally {
+      setTimeout(() => {
+        $notification.textContent = '';
+      }, 3000);
+    }
+  };
+
+  $scenesForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    return false;
+  });
+
+  $sceneChanger.addEventListener('change', handleChangeScene);
+  $btnSetTextInfo.addEventListener('click', (event) => {
+    event.preventDefault();
+    handleChangeTextInfo();
+  });
+</script>

@@ -1,5 +1,7 @@
 import { refreshLiveGraphicsToken } from './ably/refresh-live-graphics-token';
 import { hideShow } from './live-graphics/advertising/hide-show';
+import { change } from './live-graphics/scene/change';
+import { textInfo } from './live-graphics/scene/text-info';
 import { addScore } from './live-graphics/scores/add';
 import { setScore } from './live-graphics/scores/set-score';
 import { actionToTimerName } from './live-graphics/stopwatch/action-to-timer-name';
@@ -26,6 +28,10 @@ export const server = {
     },
     advertising: {
       hideShow,
+    },
+    scene: {
+      textInfo,
+      change,
     },
   },
 };

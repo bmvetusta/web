@@ -17,11 +17,11 @@ if (!isAuth) {
 ---
 
 <CoreGraphics>
-  <div id='time-container'>
+  <div id='time-container' class='stopwatch'>
     <LiveStopwatch />
   </div>
 
-  <div id='local-scoreboard'>
+  <div id='local-scoreboard' class='scoreboard local'>
     <img
       src={'/assets/images/streamings/shields/vetusta.png'}
       width={128}
@@ -37,7 +37,7 @@ if (!isAuth) {
     </span>
   </div>
 
-  <div id='visitor-scoreboard'>
+  <div id='visitor-scoreboard' class='scoreboard visitor'>
     <img
       src={'/assets/images/streamings/shields/atletica.png'}
       width={128}
@@ -51,9 +51,11 @@ if (!isAuth) {
     </span>
   </div>
 
-  <div id='advertising'>
+  <div id='advertising' class='advertising'>
     <Advertising />
   </div>
+
+  <div id='info'></div>
 </CoreGraphics>
 
 <style>
@@ -65,15 +67,23 @@ if (!isAuth) {
     --time-font-size: 42px;
     --number-flow-mask-height: 1;
   }
+
+  /* Default scene */
   body {
     background-color: #00ff00;
   }
+
+  div#info {
+    display: none;
+  }
+
   /* Advertising */
   div#advertising {
     position: absolute;
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
+    z-index: 9;
   }
 
   /* Stopwatch */
@@ -94,68 +104,91 @@ if (!isAuth) {
     border: 5px solid var(--vetusta-yellow);
   }
 
-  /* Local */
-  div#local-scoreboard {
+  /* Scoreboard */
+  .scoreboard {
     position: absolute;
-    top: var(--scoreboard-team-top);
-    left: calc(50% - var(--scoreboard-team-translate));
     transform: translate(-50%, -50%);
-
     display: flex;
-    flex-direction: row-reverse;
     justify-content: flex-start;
     align-items: center;
   }
 
-  div#local-scoreboard span.result {
+  .scoreboard.visitor {
+    flex-direction: row;
+  }
+
+  .scoreboard span.result {
     padding: 0;
-    padding-right: 32px;
-    padding-left: 16px;
     background-color: var(--vetusta-yellow);
     color: black;
     font-size: var(--scoreboard-score-font-size);
     position: relative;
+    line-height: 0.6;
+  }
+
+  /* Local */
+  .scoreboard.local {
+    flex-direction: row-reverse;
+    top: var(--scoreboard-team-top);
+    left: calc(50% - var(--scoreboard-team-translate));
+  }
+
+  .scoreboard.local span.result {
+    padding-right: 32px;
+    padding-left: 16px;
     right: -20px;
     border-top-left-radius: 30%;
     border-bottom-left-radius: 30%;
-    line-height: 0.6;
-    z-index: -1;
   }
 
   /* Visitor */
-  div#visitor-scoreboard {
-    position: absolute;
+  .scoreboard.visitor {
     top: var(--scoreboard-team-top);
     left: calc(50% + var(--scoreboard-team-translate));
-    transform: translate(-50%, -50%);
-
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: center;
   }
 
-  div#visitor-scoreboard img {
-    z-index: 1;
-  }
-  div#visitor-scoreboard span.result {
-    padding: 0;
+  .scoreboard.visitor span.result {
     padding-left: 32px;
     padding-right: 16px;
-    background-color: var(--vetusta-yellow);
-    color: black;
-    font-size: var(--scoreboard-score-font-size);
-    position: relative;
     left: -20px;
     border-top-right-radius: 30%;
     border-bottom-right-radius: 30%;
-    line-height: 0.6;
-    z-index: -1;
   }
 
-  div#visitor-scoreboard span.result * {
-    padding: 0;
-    margin: 0;
-    line-height: 0.3;
+  /* Timeout scene */
+  :root[data-scene='timeout'] {
+    & body {
+      background-color: var(--vetusta-yellow);
+    }
+    & div.scoreboard {
+      zoom: 2;
+    }
+    & div.scoreboard span.result {
+      position: absolute;
+      top: 100%;
+      left: 45%;
+      transform: translateX(-50%);
+    }
+    & div.stopwatch {
+      zoom: 1.5;
+    }
+    & div#info {
+      display: block;
+      position: absolute;
+      top: 400px;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-family: 'Alumni Sans', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+        'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+      font-weight: 800;
+      font-size: 64px;
+      width: 500px;
+      height: 200px;
+      text-align: center;
+      text-wrap: pretty;
+    }
+    & div#advertising {
+      zoom: 1.5;
+    }
   }
 </style>

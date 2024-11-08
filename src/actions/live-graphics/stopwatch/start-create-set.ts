@@ -1,7 +1,7 @@
 import { defineAction, type ActionAPIContext } from 'astro:actions';
 import { StartCreateActionTimer } from 'src/schema/timer/actions/start-create';
 import { TimerAction } from 'src/schema/timer/actions/type';
-import { stopwatchPublishMessage } from 'src/services/stopwatch/publish-message';
+import { stopwatchPublishMessage } from 'src/services/stopwatch/stopwatch-publish-message';
 import { z } from 'zod';
 import { isAuth } from '../_is-auth-action';
 
