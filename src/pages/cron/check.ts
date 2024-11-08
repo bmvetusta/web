@@ -41,7 +41,7 @@ async function checkProxy() {
 export async function GET({ request }: APIContext) {
   if (
     !process.env.CRON_SECRET ||
-    request.headers.get('authorization')?.includes(process.env.CRON_SECRET) // `Bearer ${process.env.CRON_SECRET}`
+    request.headers.get('authorization') !== `Bearer ${process.env.CRON_SECRET}`
   ) {
     console.error('Unauthorized call to check cronjob');
     return new Response('Unauthorized', { status: 401 });
