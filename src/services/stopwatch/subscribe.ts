@@ -154,6 +154,10 @@ export function stopwatchSubscribe(
   // TODO Move this to other part
   const $info = document.querySelector('div#info') as HTMLElement;
   const $root = document.querySelector(':root') as HTMLElement;
+  const $title = document.querySelector('div#title');
+  const $titleH3 = $title?.querySelector('h3');
+  const $titleH4 = $title?.querySelector('h4');
+  const $bannerImage = document.getElementById('banner');
 
   realtime.channels.get(liveGraphicsSceneChannelName).subscribe((message: Message) => {
     const { data = {} } = message;
@@ -186,6 +190,40 @@ export function stopwatchSubscribe(
       const textLen = $info.textContent?.length ?? 0;
       const showText = $root.getAttribute('data-scene') === 'timeout' && textLen > 0;
       $info.style.display = showText ? 'block' : 'none';
+    }
+
+    /**
+     {
+      "type": "TITLE", // But works with any object that has "text"
+      "title": "any text...",
+      "subtitle": "any text..."
+     }
+     */
+    if ($title) {
+      const display = $bannerImage?.style.display ?? 'none';
+      const isAdvertisingVisible = display !== 'none';
+      if (data.type === 'TITLES') {
+        if ($titleH3 && data.title) {
+          $titleH3.textContent = data.title;
+        }
+
+        if ($titleH4 && data.subtitle) {
+          $titleH4.textContent = data.subtitle;
+        }
+
+        if ($bannerImage && isAdvertisingVisible) {
+          $bannerImage.style.display = 'none';
+        }
+
+        $title.classList.add('view');
+
+        setTimeout(() => {
+          if ($bannerImage) {
+            setTimeout(() => ($bannerImage.style.display = display), 1000);
+          }
+          $title.classList.remove('view');
+        }, 5000);
+      }
     }
   });
 

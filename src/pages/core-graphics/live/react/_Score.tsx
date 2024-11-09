@@ -14,6 +14,9 @@ export function Score({ team }: { team: ScoreboardTeam }) {
       }}
       trend={true}
       value={value}
+      style={{
+        fontFamily: '"Digital 7", monospace',
+      }}
     ></NumberFlow>
   );
 }

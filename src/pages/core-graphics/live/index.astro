@@ -56,6 +56,10 @@ if (!isAuth) {
   </div>
 
   <div id='info'></div>
+  <div id='title'>
+    <h3>Título</h3>
+    <h4>Subtitulo</h4>
+  </div>
 </CoreGraphics>
 
 <style>
@@ -71,6 +75,39 @@ if (!isAuth) {
   /* Default scene */
   body {
     background-color: #00ff00;
+  }
+
+  div#title {
+    /* display: none; */
+    position: absolute;
+    transform: translateX(-50%);
+    left: -100%;
+    bottom: 32px;
+    z-index: 9;
+    transition: 1s;
+    width: 100%;
+    font-family: 'Alumni Sans', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+      'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    width: 90%;
+    background-color: var(--vetusta-yellow);
+    border-radius: 10px 10px;
+    color: antiquewhite;
+    overflow: hidden;
+    text-indent: 1rem;
+
+    h3 {
+      font-size: 42px;
+      background-color: black;
+    }
+
+    h4 {
+      font-size: 38px;
+      color: #444;
+    }
+  }
+
+  .view {
+    left: 50% !important;
   }
 
   div#info {

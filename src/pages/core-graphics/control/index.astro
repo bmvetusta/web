@@ -36,8 +36,24 @@ if (!isAuth) {
   <section>
     <h2>Scenes control</h2>
 
+    <button id='tt'>Show Title</button>
+
     <Scenes />
   </section>
+
+  <script>
+    import { actions } from 'astro:actions';
+
+    const $tt = document.querySelector('#tt');
+    if ($tt) {
+      $tt.addEventListener('click', async () => {
+        await actions.liveGraphics.showTitles({
+          title: 'Pablo Miyar',
+          subtitle: 'Narración y comentarios',
+        });
+      });
+    }
+  </script>
 
   <style>
     p#notification {
