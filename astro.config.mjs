@@ -25,7 +25,6 @@ export default defineConfig({
     svg: {
       mode: 'inline',
     },
-    responsiveImages: true,
   },
   site: site.href,
   integrations: [
