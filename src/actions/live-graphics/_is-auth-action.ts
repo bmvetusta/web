@@ -10,11 +10,9 @@ export function isAuth(context: ActionAPIContext) {
   const isBearerAuth =
     AUTH_BEARER_TOKEN &&
     context.request.headers.get('Authorization') === `Bearer ${AUTH_BEARER_TOKEN}`;
-
   const isAuth = isAuthCookie || isBearerAuth;
   if (!isAuth) {
     console.error('Unauthorized cookie or not present');
-
     throw new ActionError({ message: 'Unauthorized', code: 'UNAUTHORIZED' });
   }
 }
