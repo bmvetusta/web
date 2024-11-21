@@ -1,6 +1,6 @@
 // @ts-check
 import react from '@astrojs/react';
-import vercel from '@astrojs/vercel/serverless';
+import vercel from '@astrojs/vercel';
 import { defineConfig, envField } from 'astro/config';
 import { site } from './.meta/site-url.mjs';
 
@@ -21,6 +21,12 @@ if (import.meta.env.PROD) {
 
 // https://astro.build/config
 export default defineConfig({
+  experimental: {
+    svg: {
+      mode: 'inline',
+    },
+    responsiveImages: true,
+  },
   site: site.href,
   integrations: [
     react({
