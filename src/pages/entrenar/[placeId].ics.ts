@@ -1,10 +1,12 @@
 import type { APIContext } from 'astro';
-import trainings from 'src/content/trainings/data.json' with { type: 'json' };
+import trainingsObj from 'src/content/trainings/data.json' with { type: 'json' };
 import { generateTrainingICS } from 'src/services/generate-training-ics';
+
+const trainings = Object.values(trainingsObj);
 
 function findPlace(placeId?: string) {
   if (placeId) {
-    return trainings.find((t) => t.id === placeId);
+    return Object.values(trainings).find((t) => t.id === placeId);
   }
 }
 

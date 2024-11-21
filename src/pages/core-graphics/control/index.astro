@@ -36,7 +36,17 @@ if (!isAuth) {
   <section>
     <h2>Scenes control</h2>
 
-    <button id='tt'>Show Title</button>
+    <fieldset>
+      <input type='text' name='title' id='titleInput' value='Pablo Miyar' placeholder='Title' />
+      <input
+        type='text'
+        name='subtitle'
+        id='subtitleInput'
+        value='Narración y comentarios'
+        placeholder='Subtitle'
+      />
+      <button id='tt'>Show Title</button>
+    </fieldset>
 
     <Scenes />
   </section>
@@ -45,11 +55,13 @@ if (!isAuth) {
     import { actions } from 'astro:actions';
 
     const $tt = document.querySelector('#tt');
+    const $t = document.querySelector('input#titleInput') as HTMLInputElement;
+    const $st = document.querySelector('input#subtitleInput') as HTMLInputElement;
     if ($tt) {
       $tt.addEventListener('click', async () => {
         await actions.liveGraphics.showTitles({
-          title: 'Pablo Miyar',
-          subtitle: 'Narración y comentarios',
+          title: $t?.value ?? 'Pablo Miyar',
+          subtitle: $st?.value ?? 'Narración y comentarios',
         });
       });
     }

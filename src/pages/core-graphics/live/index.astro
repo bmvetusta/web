@@ -39,7 +39,7 @@ if (!isAuth) {
 
   <div id='visitor-scoreboard' class='scoreboard visitor'>
     <img
-      src={'/assets/images/streamings/shields/sdcastillero.png'}
+      src={'https://balonmano.isquad.es/images/afiliacion_clubs/112/square_626a3568337770617030.jpg'}
       width={128}
       height={128}
       alt='Escudo del equipo visitante'
@@ -157,13 +157,14 @@ if (!isAuth) {
     flex-direction: row;
   }
 
-  .scoreboard span.result {
+  .scoreboard .result {
     padding: 0;
     background-color: var(--vetusta-yellow);
     color: black;
     font-size: var(--scoreboard-score-font-size);
     position: relative;
-    line-height: 0.6;
+    line-height: 1;
+    font-family: 'Digital 7';
   }
 
   /* Local */
@@ -173,12 +174,12 @@ if (!isAuth) {
     left: calc(50% - var(--scoreboard-team-translate));
   }
 
-  .scoreboard.local span.result {
+  .scoreboard.local .result {
     padding-right: 32px;
     padding-left: 16px;
     right: -20px;
-    border-top-left-radius: 30%;
-    border-bottom-left-radius: 30%;
+    border-top-left-radius: 500px;
+    border-bottom-left-radius: 500px;
   }
 
   /* Visitor */
@@ -191,8 +192,8 @@ if (!isAuth) {
     padding-left: 32px;
     padding-right: 16px;
     left: -20px;
-    border-top-right-radius: 30%;
-    border-bottom-right-radius: 30%;
+    border-top-right-radius: 500px;
+    border-bottom-right-radius: 500px;
   }
 
   /* Timeout scene */

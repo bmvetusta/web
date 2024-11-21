@@ -4,7 +4,7 @@ import TrainingPlaceItem from './TrainingPlaceItem.astro';
 ---
 
 <div>
-  {trainingPlaces?.map((place) => <TrainingPlaceItem {...place} />)}
+  {Object.values(trainingPlaces).map((place) => <TrainingPlaceItem {...place} />)}
 </div>
 
 <style>
