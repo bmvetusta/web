@@ -36,14 +36,20 @@ if (!isAuth) {
   <section>
     <h2>Scenes control</h2>
 
-    <fieldset>
-      <input type='text' name='title' id='titleInput' value='Pablo Miyar' placeholder='Title' />
+    <fieldset style={{ flexDirection: 'column', gap: '5px' }}>
       <input
-        type='text'
+        type='search'
         name='subtitle'
         id='subtitleInput'
-        value='Narración y comentarios'
+        value='Narración'
         placeholder='Subtitle'
+      />
+      <input type='search' name='title' id='titleInput' value='Pablo Miyar' placeholder='Title' />
+      <input
+        type='search'
+        name='description'
+        id='descriptionInput'
+        placeholder='Descripción más larga'
       />
       <button id='tt'>Show Title</button>
     </fieldset>
@@ -57,11 +63,13 @@ if (!isAuth) {
     const $tt = document.querySelector('#tt');
     const $t = document.querySelector('input#titleInput') as HTMLInputElement;
     const $st = document.querySelector('input#subtitleInput') as HTMLInputElement;
+    const $td = document.querySelector('input#descriptionInput') as HTMLInputElement;
     if ($tt) {
       $tt.addEventListener('click', async () => {
         await actions.liveGraphics.showTitles({
-          title: $t?.value ?? 'Pablo Miyar',
-          subtitle: $st?.value ?? 'Narración y comentarios',
+          title: $t?.value,
+          subtitle: $st?.value,
+          description: $td?.value,
         });
       });
     }

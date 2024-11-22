@@ -16,7 +16,7 @@ export const change = defineAction({
     await publishMessage(liveGraphicsSceneChannelName, {
       data: {
         type: 'SCENE',
-        value: input.scene,
+        scene: input.scene,
         text: input.text,
       },
     });

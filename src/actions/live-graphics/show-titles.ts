@@ -7,7 +7,9 @@ import { isAuth } from './_is-auth-action';
 const input = z.object({
   type: z.literal('TITLES').default('TITLES'),
   title: z.string(),
-  subtitle: z.string().default(''),
+  subtitle: z.string().nullable(),
+  description: z.string().nullable(),
+  time: z.number().default(5_000),
 });
 
 export const showTitles = defineAction({

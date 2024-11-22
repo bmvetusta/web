@@ -14,6 +14,8 @@ import type {
 import type { TimerOptionsInput } from 'src/schema/timer/options';
 import { ablyAuthTokenRealtime } from '../ably/auth-token-realtime';
 import { liveGraphicsSceneChannelName, liveGraphicsStopwatchChannelName } from '../ably/constants';
+import { sceneSwitcher } from './scene-switcher';
+import { titleGraphics } from './title-graphics';
 
 type InitialTimer = TimerOptionsInput & { name: string; start?: number; active?: boolean };
 
@@ -151,14 +153,6 @@ export function stopwatchSubscribe(
     }
   });
 
-  // TODO Move this to other part
-  const $info = document.querySelector('div#info') as HTMLElement;
-  const $root = document.querySelector(':root') as HTMLElement;
-  const $title = document.querySelector('div#title');
-  const $titleH3 = $title?.querySelector('h3');
-  const $titleH4 = $title?.querySelector('h4');
-  const $bannerImage = document.getElementById('banner');
-
   realtime.channels.get(liveGraphicsSceneChannelName).subscribe((message: Message) => {
     const { data = {} } = message;
     /**
@@ -168,62 +162,28 @@ export function stopwatchSubscribe(
       "text": "optional text info"
      }
      */
-    if ($root) {
-      if (data.type === 'SCENE') {
-        $root.setAttribute('data-scene', data.value ?? 'live');
-      }
-
-      if (data.text !== undefined && $info) {
-        $info.nodeValue = data.text;
-      }
-    }
-
     /**
      {
       "type": "TEXT_INFO", // But works with any object that has "text"
       "text": "any text..."
      }
      */
-    if ($info) {
-      $info.textContent = data.text ?? '';
-
-      const textLen = $info.textContent?.length ?? 0;
-      const showText = $root.getAttribute('data-scene') === 'timeout' && textLen > 0;
-      $info.style.display = showText ? 'block' : 'none';
+    if (data.type === 'SCENE' || data.type === 'TEXT_INFO') {
+      sceneSwitcher(data);
     }
 
     /**
      {
-      "type": "TITLE", // But works with any object that has "text"
+      "type": "TITLE", // But works with any object that has "text",
+      "description": "any text...",
       "title": "any text...",
-      "subtitle": "any text..."
+      "subtitle": "any text...",
+      "description": "any text...",
+      "time": 5_000
      }
      */
-    if ($title) {
-      const display = $bannerImage?.style.display ?? 'none';
-      const isAdvertisingVisible = display !== 'none';
-      if (data.type === 'TITLES') {
-        if ($titleH3 && data.title) {
-          $titleH3.textContent = data.title;
-        }
-
-        if ($titleH4 && data.subtitle) {
-          $titleH4.textContent = data.subtitle;
-        }
-
-        if ($bannerImage && isAdvertisingVisible) {
-          $bannerImage.style.display = 'none';
-        }
-
-        $title.classList.add('view');
-
-        setTimeout(() => {
-          if ($bannerImage) {
-            setTimeout(() => ($bannerImage.style.display = display), 1000);
-          }
-          $title.classList.remove('view');
-        }, 5000);
-      }
+    if (data.type === 'TITLES') {
+      titleGraphics(data);
     }
   });
 
