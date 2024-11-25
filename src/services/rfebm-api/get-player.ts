@@ -1,4 +1,4 @@
-import { z } from 'zod';
+import { responsePlayerSchema } from 'src/schema/player/response';
 import { rfebmApiFetch } from './core';
 import { DAY_IN_SECS } from './lib/secs';
 
@@ -19,7 +19,7 @@ export async function rfebmAPIGetPlayer(
 
   return rfebmApiFetch(
     pathname,
-    z.any(),
+    responsePlayerSchema,
     body,
     cacheTTL,
     cacheAsFallback,
