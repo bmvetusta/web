@@ -118,7 +118,14 @@ export const transformTeamSchema = z
       capacity: null,
     };
 
-    const groups = [];
+    const groups: Array<{
+      id?: number;
+      phaseId?: number;
+      competitionId?: number;
+      name?: string;
+      phase?: string;
+      competition?: string;
+    }> = [];
 
     const groupIds = commaNumberValues.safeParse(v.grupo_ids).data ?? [];
     const phaseIds = commaNumberValues.safeParse(v.fase_ids).data ?? [];
