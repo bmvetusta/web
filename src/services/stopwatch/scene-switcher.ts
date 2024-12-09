@@ -38,7 +38,11 @@ export function sceneSwitcher({ scene, text }: { scene?: string; text?: string }
       if (!player) return;
 
       while (player.volume > 0) {
-        player.volume -= 0.1;
+        if (player.volume > 0.1) {
+          player.volume -= 0.1;
+        } else {
+          player.volume = 0;
+        }
         await sleep(200);
       }
 
