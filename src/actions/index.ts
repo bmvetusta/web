@@ -1,5 +1,6 @@
 import { refreshLiveGraphicsToken } from './ably/refresh-live-graphics-token';
 import { hideShow } from './live-graphics/advertising/hide-show';
+import { player } from './live-graphics/music/player';
 import { change } from './live-graphics/scene/change';
 import { textInfo } from './live-graphics/scene/text-info';
 import { addScore } from './live-graphics/scores/add';
@@ -39,5 +40,9 @@ export const server = {
     },
 
     showTitles,
+
+    music: {
+      player,
+    },
   },
 };

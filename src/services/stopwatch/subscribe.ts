@@ -19,6 +19,45 @@ import { titleGraphics } from './title-graphics';
 
 type InitialTimer = TimerOptionsInput & { name: string; start?: number; active?: boolean };
 
+const playlist: Array<{
+  file: string;
+  [key: string]: string | number;
+}> = await fetch('/assets/audio/audio.json').then((res) => res.json());
+
+const player = document.querySelector('audio#audioplayer') as HTMLAudioElement | null;
+let currentIndex = 0;
+if (player) {
+  player.src = playlist.at(currentIndex)?.file ?? '';
+}
+
+function loadSong(file?: string | number) {
+  if (!player) {
+    console.error('No player found');
+    return;
+  }
+
+  if (Number.isNaN(file) && file !== undefined) {
+    player.src = file as string;
+  } else if (Number.isInteger(file)) {
+    const nextIndex = (file as number) % playlist.length;
+    currentIndex = nextIndex;
+    player.src = '';
+    player.src = playlist.at(currentIndex)?.file ?? '';
+  } else {
+    const nextIndex = ++currentIndex % playlist.length;
+    currentIndex = nextIndex;
+    player.src = '';
+  }
+
+  if (!player.src) {
+    player.src = playlist.at(currentIndex)?.file ?? '';
+  }
+
+  player.play();
+}
+
+player?.addEventListener('ended', () => loadSong());
+
 export function stopwatchSubscribe(
   {
     onTick,
@@ -155,6 +194,34 @@ export function stopwatchSubscribe(
 
   realtime.channels.get(liveGraphicsSceneChannelName).subscribe((message: Message) => {
     const { data = {} } = message;
+    /**
+     {
+      "type": "MUSIC",
+      "action": "PLAY", // "PAUSE"
+      "file"?: "file or number"
+     }
+     */
+
+    if (player && data.type === 'MUSIC') {
+      const isPlayAction = data.action === 'PLAY' || (data.action === 'TOGGLE' && !player.paused);
+      if (isPlayAction) {
+        player.volume = 1;
+        if (data.file) {
+          loadSong(data.file);
+        }
+
+        if (!data.file && !player.src) {
+          loadSong();
+        }
+
+        player.play();
+      }
+
+      if (data.action === 'PAUSE' || data.action === 'STOP') {
+        player.pause();
+      }
+    }
+
     /**
      {
       "type": "SCENE",

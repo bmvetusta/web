@@ -6,6 +6,7 @@ import Advertising from './Advertising.astro';
 import Scenes from './Scenes.astro';
 import ScoresControl from './ScoresControl.astro';
 import ViewTimeAndSetTimeOffset from './ViewTimeAndSetTimeOffset.astro';
+import playlist from 'public/assets/audio/audio.json' with { type: 'json' };
 
 export const prerender = false;
 
@@ -55,6 +56,15 @@ if (!isAuth) {
     </fieldset>
 
     <Scenes />
+
+    <fieldset>
+      <legend>Music</legend>
+      <select name='songs' id='songs'
+        >{playlist.map((song, index) => <option value={index}>{song.title}</option>)}</select
+      >
+      <button id='playmusic'>Play</button>
+      <button id='pausemusic'>Pause</button>
+    </fieldset>
   </section>
 
   <script>
@@ -73,6 +83,27 @@ if (!isAuth) {
         });
       });
     }
+
+    const playmusic = document.getElementById('playmusic');
+    const pausemusic = document.getElementById('pausemusic');
+    const songs = document.getElementById('songs');
+    let song = 0;
+    songs?.addEventListener('change', (event) => {
+      const input = event.target as HTMLSelectElement;
+      const n = +input.value;
+
+      if (!Number.isNaN(n)) {
+        song = +input.value;
+      }
+    });
+
+    playmusic?.addEventListener('click', () => {
+      actions.liveGraphics.music.player.orThrow({ action: 'PLAY', file: song });
+    });
+
+    pausemusic?.addEventListener('click', () => {
+      actions.liveGraphics.music.player.orThrow({ action: 'PAUSE' });
+    });
   </script>
 
   <style>

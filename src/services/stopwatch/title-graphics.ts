@@ -1,5 +1,5 @@
 export function titleGraphics({
-  time = 5_000,
+  time = 8_000,
   showBannerTime = 1_000,
   title = '',
   subtitle = '',
