@@ -1,11 +1,5 @@
 [
   {
-    "file": "/assets/audio/A New Orleans Crawfish Boil - Unicorn Heads.mp3",
-    "title": "A New Orleans Crawfish Boil",
-    "artist": "Unicorn Heads",
-    "cover": ""
-  },
-  {
     "file": "/assets/audio/Enough - NEFFEX.mp3",
     "title": "Enough",
     "artist": "NEFFEX",
@@ -20,6 +14,12 @@
   {
     "file": "/assets/audio/My Train's A Comin' - Unicorn Heads.mp3",
     "title": "My Train's A Comin'",
+    "artist": "Unicorn Heads",
+    "cover": ""
+  },
+  {
+    "file": "/assets/audio/A New Orleans Crawfish Boil - Unicorn Heads.mp3",
+    "title": "A New Orleans Crawfish Boil",
     "artist": "Unicorn Heads",
     "cover": ""
   }

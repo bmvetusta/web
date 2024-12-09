@@ -41,8 +41,11 @@ function loadSong(file?: string | number) {
   } else if (Number.isInteger(file)) {
     const nextIndex = (file as number) % playlist.length;
     currentIndex = nextIndex;
-    player.src = '';
-    player.src = playlist.at(currentIndex)?.file ?? '';
+    const src = playlist.at(currentIndex)?.file;
+
+    if (src && player.src !== src) {
+      player.src = src;
+    }
   } else {
     const nextIndex = ++currentIndex % playlist.length;
     currentIndex = nextIndex;
@@ -203,10 +206,17 @@ export function stopwatchSubscribe(
      */
 
     if (player && data.type === 'MUSIC') {
-      const isPlayAction = data.action === 'PLAY' || (data.action === 'TOGGLE' && !player.paused);
+      const isPlaying = !player.paused;
+      const isPlayAction = data.action === 'PLAY' || (data.action === 'TOGGLE' && !isPlaying);
+      const isPauseAction =
+        data.action === 'PAUSE' ||
+        data.action === 'STOP' ||
+        (data.action === 'TOGGLE' && isPlaying);
+
       if (isPlayAction) {
         player.volume = 1;
-        if (data.file) {
+        const canSetFile = !isPlaying && data.file;
+        if (canSetFile) {
           loadSong(data.file);
         }
 
@@ -217,7 +227,7 @@ export function stopwatchSubscribe(
         player.play();
       }
 
-      if (data.action === 'PAUSE' || data.action === 'STOP') {
+      if (isPauseAction) {
         player.pause();
       }
     }
