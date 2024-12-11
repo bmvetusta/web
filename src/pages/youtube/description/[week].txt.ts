@@ -1,7 +1,7 @@
 import type { APIContext } from 'astro';
 import { capitalizeString } from 'src/lib/capitalize-string';
-import { getWeekData } from '../../../services/get-week-data';
-import { rfebmAPIGetPreviousData } from '../../../services/rfebm-api/get-previous';
+import { getWeekData } from 'src/services/get-week-data';
+import { rfebmAPIGetPreviousData } from 'src/services/rfebm-api/get-previous';
 
 export const prerender = false;
 

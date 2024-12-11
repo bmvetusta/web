@@ -1,4 +1,4 @@
-import type { RedisStoredObject } from '../../../../types';
+import type { RedisStoredObject } from 'types';
 
 export function isRedisStoredObjectExpiredData(
   data: RedisStoredObject<any> | null,

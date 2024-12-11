@@ -19,9 +19,9 @@ export const partial = true;
 </style>
 
 <script>
-  import { tickWorker } from '../../../lib/tick-worker.js';
-  import { ablyAuthTokenRealtime } from '../../../services/ably/auth-token-realtime';
-  import { liveGraphicsAdvertisingChannelName } from '../../../services/ably/constants';
+  import { tickWorker } from 'src/lib/tick-worker';
+  import { ablyAuthTokenRealtime } from 'src/services/ably/auth-token-realtime';
+  import { liveGraphicsAdvertisingChannelName } from 'src/services/ably/constants';
 
   const banners = ['1.png', '2.png', '3.png', '4.png', '5.png', '6.png'];
   const totalBanners = banners.length;

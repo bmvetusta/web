@@ -4,8 +4,8 @@ import CoreGraphics from 'src/layouts/CoreGraphics.astro';
 import { ScoreboardTeam } from 'src/services/ably/scoreboard/constants';
 import { authCoreGraphicsCookieName } from 'src/services/core-graphics/constants';
 import Advertising from './Advertising.astro';
+import AudioPlayer from './Audioplayer.astro';
 import LiveStopwatch from './LiveStopwatch.astro';
-import Player from './Player.astro';
 import { Score } from './react/_Score';
 
 export const prerender = false;
@@ -74,9 +74,7 @@ if (!isAuth) {
     </article>
   </div>
 
-  <div id='player'>
-    <Player />
-  </div>
+  <AudioPlayer />
 
   <style>
     :root {

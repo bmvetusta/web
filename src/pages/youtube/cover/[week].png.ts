@@ -1,9 +1,9 @@
 import { ImageResponse } from '@vercel/og';
 import type { APIContext } from 'astro';
 import { PRIMERA_TEAM_ID } from 'astro:env/server';
-import { YoutubeCover } from '../../../components/youtube-cover/react';
-import { getFontOptionsFromFontPaths } from '../../../lib/get-font-options-from-font-paths';
-import { getWeekData } from '../../../services/get-week-data';
+import { YoutubeCover } from 'src/components/youtube-cover/react';
+import { getFontOptionsFromFontPaths } from 'src/lib/get-font-options-from-font-paths';
+import { getWeekData } from 'src/services/get-week-data';
 
 export const prerender = false;
 

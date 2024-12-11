@@ -1,6 +1,6 @@
 import type Redis from 'ioredis';
+import type { ApiFetcherFactory, InputSchemaType, RedisStoredObject } from 'types';
 import type { z } from 'zod';
-import type { ApiFetcherFactory, InputSchemaType, RedisStoredObject } from '../../../types';
 import { ExpiredDataAsError } from '../rfebm-api/core/expired-data-as-error';
 import { isRedisStoredObjectExpiredData } from '../rfebm-api/core/is-redis-stored-object-expired-data';
 import { getJSONTypedRedisData } from './get-json-typed-redis-data';
