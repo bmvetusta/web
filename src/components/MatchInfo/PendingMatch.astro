@@ -11,7 +11,7 @@ interface Props {
 const { match, isTodayMatch, urlStreaming = null } = Astro.props as Props;
 ---
 
-<article>
+<article id='nextmatchinfo'>
   <header>
     {isTodayMatch ? <h2>GAMEDAY</h2> : <h2>Próximo partido</h2>}
   </header>
