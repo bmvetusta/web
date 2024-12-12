@@ -10,9 +10,9 @@ export function Score({ team }: { team: ScoreboardTeam }) {
     <NumberFlow
       format={{
         minimumIntegerDigits: 2,
-        useGrouping: false,
       }}
-      trend={true}
+      animated={true}
+      trend={1}
       value={value}
       style={{
         fontFamily: '"Digital 7", monospace',

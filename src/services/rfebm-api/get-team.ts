@@ -1,14 +1,14 @@
 import { responseTeamSchema } from 'src/schema/team/response';
 import { rfebmApiFetch } from './core';
 import { getCurrentSeasonId } from './lib/get-current-season-id';
-import { HOUR_IN_SECS } from './lib/secs';
+import { DAY_IN_SECS } from './lib/secs';
 
 export async function rfebmAPIGetTeam(
   teamId?: string | number,
   seasonId: string | number = getCurrentSeasonId(),
   ambitoId: string | number = 1,
-  cacheTTL = HOUR_IN_SECS,
-  cacheAsFallback = true,
+  cacheTTL = DAY_IN_SECS,
+  cacheAsFallback = false,
   forceRevalidate = false,
   forceCachedDataIfTruthy = false
 ) {

@@ -1,12 +1,11 @@
 import { responseOfficialReportSchema } from 'src/schema/official-report/response';
 import { rfebmApiFetch } from './core';
-import { MINUTE_IN_SECS } from './lib/secs';
 
 export async function rfebmAPIGetOfficialReport(
   groupId?: string | number,
   matchId?: string | number,
-  cacheTTL = MINUTE_IN_SECS,
-  cacheAsFallback = true,
+  cacheTTL = 10, // In secs
+  cacheAsFallback = false,
   forceRevalidate = false,
   forceCachedDataIfTruthy = false
 ) {

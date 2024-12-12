@@ -1,11 +1,5 @@
 ---
-import { AUTH_SECRET_TOKEN } from 'astro:env/server';
-import { authCoreGraphicsCookieName } from 'src/services/core-graphics/constants';
 
-const isAuth = Astro.cookies.get(authCoreGraphicsCookieName)?.value === AUTH_SECRET_TOKEN;
-if (!isAuth) {
-  return Astro.redirect('/core-graphics/setup');
-}
 ---
 
 <section>

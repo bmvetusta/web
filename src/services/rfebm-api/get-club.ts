@@ -6,7 +6,7 @@ export async function rfebmApiGetClub(
   clubId: string | number,
   ambitoId: string | number = 13,
   cacheTTL = DAY_IN_SECS,
-  cacheAsFallback = true,
+  cacheAsFallback = false,
   forceRevalidate = false,
   forceCachedDataIfTruthy = false
 ) {

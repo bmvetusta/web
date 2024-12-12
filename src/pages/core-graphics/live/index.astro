@@ -3,15 +3,17 @@ import { AUTH_SECRET_TOKEN } from 'astro:env/server';
 import CoreGraphics from 'src/layouts/CoreGraphics.astro';
 import { ScoreboardTeam } from 'src/services/ably/scoreboard/constants';
 import { authCoreGraphicsCookieName } from 'src/services/core-graphics/constants';
-import Advertising from './Advertising.astro';
-import AudioPlayer from './Audioplayer.astro';
-import LiveStopwatch from './LiveStopwatch.astro';
+import Advertising from './_Advertising.astro';
+import AudioPlayer from './_Audioplayer.astro';
+import LiveStopwatch from './_LiveStopwatch.astro';
 import { Score } from './react/_Score';
 
 export const prerender = false;
 // export const partial = true;
 
-const isAuth = Astro.cookies.get(authCoreGraphicsCookieName)?.value === AUTH_SECRET_TOKEN;
+const isAuth =
+  Astro.cookies.get(authCoreGraphicsCookieName)?.value === AUTH_SECRET_TOKEN ||
+  Astro.site?.searchParams.get('token') === AUTH_SECRET_TOKEN;
 if (!isAuth) {
   return Astro.redirect('/core-graphics/setup');
 }
@@ -192,7 +194,7 @@ if (!isAuth) {
     }
 
     .scoreboard .result {
-      padding: 0;
+      width: 90px;
       background-color: var(--vetusta-yellow);
       color: black;
       font-size: var(--scoreboard-score-font-size);
@@ -209,7 +211,8 @@ if (!isAuth) {
     }
 
     .scoreboard.local .result {
-      padding-right: 32px;
+      text-align: right;
+      padding-right: 52px;
       padding-left: 16px;
       right: -20px;
       border-top-left-radius: 500px;
@@ -223,7 +226,7 @@ if (!isAuth) {
     }
 
     .scoreboard.visitor span.result {
-      padding-left: 32px;
+      padding-left: 52px;
       padding-right: 16px;
       left: -20px;
       border-top-right-radius: 500px;

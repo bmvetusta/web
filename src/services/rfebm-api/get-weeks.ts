@@ -1,11 +1,11 @@
 import { responseWeeksSchema } from '../../schema/weeks/response';
 import { rfebmApiFetch } from './core';
-import { HOUR_IN_SECS } from './lib/secs';
+import { DAY_IN_SECS } from './lib/secs';
 
 export async function rfebmAPIGetWeeks(
   groupId?: string | number,
-  cacheTTL = HOUR_IN_SECS,
-  cacheAsFallback = true,
+  cacheTTL = DAY_IN_SECS,
+  cacheAsFallback = false,
   forceRevalidate = false,
   forceCachedDataIfTruthy = false
 ) {

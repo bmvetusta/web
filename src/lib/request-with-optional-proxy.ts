@@ -11,10 +11,10 @@ async function proxyAgentByURL(inputUrl: string | URL): Promise<Agent | undefine
     return import('https-proxy-agent').then(({ HttpsProxyAgent }) => new HttpsProxyAgent(url.href));
   }
 
-  if (url.protocol === 'http:') {
-    // console.debug('Using HttpProxyAgent');
-    return import('http-proxy-agent').then(({ HttpProxyAgent }) => new HttpProxyAgent(url.href));
-  }
+  // if (url.protocol === 'http:') {
+  //   // console.debug('Using HttpProxyAgent');
+  //   return import('http-proxy-agent').then(({ HttpProxyAgent }) => new HttpProxyAgent(url.href));
+  // }
 
   if (url.protocol.startsWith('socks')) {
     // console.debug('Using SocksProxyAgent');

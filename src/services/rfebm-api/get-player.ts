@@ -5,7 +5,7 @@ import { DAY_IN_SECS } from './lib/secs';
 export async function rfebmAPIGetPlayer(
   playerId?: string | number,
   cacheTTL = DAY_IN_SECS,
-  cacheAsFallback = true,
+  cacheAsFallback = false,
   forceRevalidate = false,
   forceCachedDataIfTruthy = false
 ) {

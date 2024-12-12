@@ -9,6 +9,7 @@ import MatchInformation from './MatchInformation.astro';
 import YoutubeLiveVideo from './YoutubeLiveVideo.astro';
 
 const today = new Date();
+const todayDate = `${today.getFullYear()}-${today.getMonth().toString().padStart(2, '0')}-${today.getDay().toString().padStart(2, '0')}`;
 
 function getProbablyMatchStatus(matchDate?: string | null, matchTime?: string | null) {
   if (!matchDate || !matchTime) {
@@ -51,9 +52,9 @@ async function getTeamMatches() {
 }
 
 const teamMatches = await getTeamMatches();
-const match =
-  teamMatches.find((match) => ['PENDING', 'PLAYING'].includes(match.status)) ??
-  teamMatches.findLast((match) => match.status === 'ENDED');
+const match = teamMatches.find(
+  (match) => match.date === todayDate || ['PENDING', 'PLAYING'].includes(match.status)
+);
 
 const isOwnChannelLive = await isYoutubeChannelLive(YOUTUBE_CHANNEL);
 

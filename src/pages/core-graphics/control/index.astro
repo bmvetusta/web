@@ -2,15 +2,17 @@
 import { AUTH_SECRET_TOKEN } from 'astro:env/server';
 import Layout from 'src/layouts/Layout.astro';
 import { authCoreGraphicsCookieName } from 'src/services/core-graphics/constants';
-import Advertising from './Advertising.astro';
-import Scenes from './Scenes.astro';
-import ScoresControl from './ScoresControl.astro';
-import ViewTimeAndSetTimeOffset from './ViewTimeAndSetTimeOffset.astro';
+import Advertising from './_Advertising.astro';
+import Scenes from './_Scenes.astro';
+import ScoresControl from './_ScoresControl.astro';
+import ViewTimeAndSetTimeOffset from './_ViewTimeAndSetTimeOffset.astro';
 import playlist from 'public/assets/audio/audio.json' with { type: 'json' };
 
 export const prerender = false;
 
-const isAuth = Astro.cookies.get(authCoreGraphicsCookieName)?.value === AUTH_SECRET_TOKEN;
+const isAuth =
+  Astro.cookies.get(authCoreGraphicsCookieName)?.value === AUTH_SECRET_TOKEN ||
+  Astro.site?.searchParams.get('token') === AUTH_SECRET_TOKEN;
 if (!isAuth) {
   return Astro.redirect('/core-graphics/setup');
 }

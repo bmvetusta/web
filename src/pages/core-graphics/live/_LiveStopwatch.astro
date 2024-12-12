@@ -1,15 +1,6 @@
 ---
 import { Image } from 'astro:assets';
-import { AUTH_SECRET_TOKEN } from 'astro:env/server';
-import { authCoreGraphicsCookieName } from 'src/services/core-graphics/constants';
 import rfebmShield from '@assets/images/rfebm-shield.png';
-
-export const partial = true;
-
-const isAuth = Astro.cookies.get(authCoreGraphicsCookieName)?.value === AUTH_SECRET_TOKEN;
-if (!isAuth) {
-  return Astro.redirect('/core-graphics/setup');
-}
 ---
 
 <div class='stopwatch'>
