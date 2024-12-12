@@ -10,6 +10,7 @@ export function Score({ team }: { team: ScoreboardTeam }) {
     <NumberFlow
       format={{
         minimumIntegerDigits: 2,
+        useGrouping: false,
       }}
       animated={true}
       trend={true}
