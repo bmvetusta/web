@@ -1,4 +1,4 @@
-import { z } from 'zod';
+import { responseInitialSchema } from 'src/schema/initial/response';
 import { rfebmApiFetch } from './core';
 import { WEEK_IN_SECS } from './lib/secs';
 
@@ -14,7 +14,7 @@ export async function rfebmAPIGetInitialData(
 
   return rfebmApiFetch(
     pathname,
-    z.any(),
+    responseInitialSchema,
     body,
     cacheTTL,
     cacheAsFallback,
