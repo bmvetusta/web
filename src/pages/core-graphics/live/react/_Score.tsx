@@ -12,7 +12,7 @@ export function Score({ team }: { team: ScoreboardTeam }) {
         minimumIntegerDigits: 2,
       }}
       animated={true}
-      trend={1}
+      trend={true}
       value={value}
       style={{
         fontFamily: '"Digital 7", monospace',

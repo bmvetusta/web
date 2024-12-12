@@ -20,7 +20,7 @@
     "@astrojs/react": "4.1.0",
     "@astrojs/vercel": "8.0.0",
     "@justinribeiro/lite-youtube": "1.6.0",
-    "@number-flow/react": "0.4.2",
+    "@number-flow/react": "0.2.6",
     "@types/react": "19.0.1",
     "@types/react-dom": "19.0.2",
     "@vercel/og": "0.6.4",
