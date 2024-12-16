@@ -1,6 +1,7 @@
 // @ts-check
 import react from '@astrojs/react';
 import vercel from '@astrojs/vercel';
+import worker from '@astropub/worker';
 import { defineConfig, envField } from 'astro/config';
 import { site } from './.meta/site-url.mjs';
 
@@ -32,6 +33,7 @@ export default defineConfig({
       include: ['**/react/*'],
       experimentalReactChildren: true,
     }),
+    worker(),
   ],
   build: {
     inlineStylesheets: 'always',

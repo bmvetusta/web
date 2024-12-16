@@ -19,6 +19,7 @@
     "@astrojs/check": "0.9.4",
     "@astrojs/react": "4.1.0",
     "@astrojs/vercel": "8.0.0",
+    "@astropub/worker": "0.2.0",
     "@justinribeiro/lite-youtube": "1.6.0",
     "@number-flow/react": "0.2.6",
     "@types/react": "19.0.1",
